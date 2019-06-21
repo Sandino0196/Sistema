@@ -59,6 +59,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ingreso_de_Articulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ingreso_de_Articulo.Designer.cs">
+      <DependentUpon>Ingreso_de_Articulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ingreso_de_Cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ingreso_de_Cliente.Designer.cs">
+      <DependentUpon>Ingreso_de_Cliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +85,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ingreso_de_Articulo.resx">
+      <DependentUpon>Ingreso_de_Articulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ingreso_de_Cliente.resx">
+      <DependentUpon>Ingreso_de_Cliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
