@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace Sistema_Empenos_Anderson
 {
-    public partial class Facturacion : Form
+    public partial class Pago_de_Cuotas : Form
     {
-        public Facturacion()
+        public Pago_de_Cuotas()
         {
             InitializeComponent();
         }
 
-        private void bttRegresar_Click(object sender, EventArgs e)
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
