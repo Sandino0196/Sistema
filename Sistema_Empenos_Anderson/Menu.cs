@@ -16,29 +16,5 @@ namespace Sistema_Empenos_Anderson
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if(rdbIngresarArticulo.Checked)
-            {
-                Ingreso_de_Articulo ingreso = new Ingreso_de_Articulo();
-                ingreso.Show();
-            }
-            if (rdbPagoIntereses.Checked)
-            {
-                Pago_de_Cuotas pago = new Pago_de_Cuotas();
-                pago.Show();
-            }
-            if (rdbRetirarArticulo.Checked)
-            {
-
-            }
-            if(rdbVender.Checked)
-            {
-                Facturacion facturacion = new Facturacion();
-                facturacion.Show();
-            }
-
-        }
     }
 }
