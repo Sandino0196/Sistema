@@ -16,5 +16,16 @@ namespace Sistema_Empenos_Anderson
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Menu menu = new Menu();
+            menu.Show();
+        }
     }
 }

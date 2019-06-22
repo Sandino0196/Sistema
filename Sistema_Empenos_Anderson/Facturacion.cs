@@ -16,5 +16,10 @@ namespace Sistema_Empenos_Anderson
         {
             InitializeComponent();
         }
+
+        private void bttRegresar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

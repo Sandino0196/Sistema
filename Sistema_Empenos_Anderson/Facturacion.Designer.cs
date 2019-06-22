@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.gbInfoComp = new System.Windows.Forms.GroupBox();
-            this.lblNomComp = new System.Windows.Forms.Label();
-            this.lblApellidoCom = new System.Windows.Forms.Label();
-            this.lbIDComp = new System.Windows.Forms.Label();
-            this.lblVendedor = new System.Windows.Forms.Label();
-            this.txtNomComp = new System.Windows.Forms.TextBox();
-            this.txtApeCom = new System.Windows.Forms.TextBox();
-            this.txtIDComp = new System.Windows.Forms.TextBox();
             this.txtVendedor = new System.Windows.Forms.TextBox();
+            this.txtIDComp = new System.Windows.Forms.TextBox();
+            this.txtApeCom = new System.Windows.Forms.TextBox();
+            this.txtNomComp = new System.Windows.Forms.TextBox();
+            this.lblVendedor = new System.Windows.Forms.Label();
+            this.lbIDComp = new System.Windows.Forms.Label();
+            this.lblApellidoCom = new System.Windows.Forms.Label();
+            this.lblNomComp = new System.Windows.Forms.Label();
             this.lblBusqueda = new System.Windows.Forms.Label();
             this.lblNumSerie = new System.Windows.Forms.Label();
             this.lblNumRecibo = new System.Windows.Forms.Label();
@@ -83,32 +83,33 @@
             this.gbInfoComp.TabStop = false;
             this.gbInfoComp.Text = "Información Comprador";
             // 
-            // lblNomComp
+            // txtVendedor
             // 
-            this.lblNomComp.AutoSize = true;
-            this.lblNomComp.Location = new System.Drawing.Point(6, 29);
-            this.lblNomComp.Name = "lblNomComp";
-            this.lblNomComp.Size = new System.Drawing.Size(101, 13);
-            this.lblNomComp.TabIndex = 0;
-            this.lblNomComp.Text = "Nombre Comprador:";
+            this.txtVendedor.Location = new System.Drawing.Point(366, 61);
+            this.txtVendedor.Name = "txtVendedor";
+            this.txtVendedor.Size = new System.Drawing.Size(100, 20);
+            this.txtVendedor.TabIndex = 7;
             // 
-            // lblApellidoCom
+            // txtIDComp
             // 
-            this.lblApellidoCom.AutoSize = true;
-            this.lblApellidoCom.Location = new System.Drawing.Point(6, 64);
-            this.lblApellidoCom.Name = "lblApellidoCom";
-            this.lblApellidoCom.Size = new System.Drawing.Size(101, 13);
-            this.lblApellidoCom.TabIndex = 1;
-            this.lblApellidoCom.Text = "Apellido Comprador:";
+            this.txtIDComp.Location = new System.Drawing.Point(366, 26);
+            this.txtIDComp.Name = "txtIDComp";
+            this.txtIDComp.Size = new System.Drawing.Size(100, 20);
+            this.txtIDComp.TabIndex = 6;
             // 
-            // lbIDComp
+            // txtApeCom
             // 
-            this.lbIDComp.AutoSize = true;
-            this.lbIDComp.Location = new System.Drawing.Point(238, 29);
-            this.lbIDComp.Name = "lbIDComp";
-            this.lbIDComp.Size = new System.Drawing.Size(125, 13);
-            this.lbIDComp.TabIndex = 2;
-            this.lbIDComp.Text = "Identidad del Comprador:";
+            this.txtApeCom.Location = new System.Drawing.Point(112, 61);
+            this.txtApeCom.Name = "txtApeCom";
+            this.txtApeCom.Size = new System.Drawing.Size(100, 20);
+            this.txtApeCom.TabIndex = 5;
+            // 
+            // txtNomComp
+            // 
+            this.txtNomComp.Location = new System.Drawing.Point(112, 26);
+            this.txtNomComp.Name = "txtNomComp";
+            this.txtNomComp.Size = new System.Drawing.Size(100, 20);
+            this.txtNomComp.TabIndex = 4;
             // 
             // lblVendedor
             // 
@@ -119,33 +120,32 @@
             this.lblVendedor.TabIndex = 3;
             this.lblVendedor.Text = "Vendedor:";
             // 
-            // txtNomComp
+            // lbIDComp
             // 
-            this.txtNomComp.Location = new System.Drawing.Point(112, 26);
-            this.txtNomComp.Name = "txtNomComp";
-            this.txtNomComp.Size = new System.Drawing.Size(100, 20);
-            this.txtNomComp.TabIndex = 4;
+            this.lbIDComp.AutoSize = true;
+            this.lbIDComp.Location = new System.Drawing.Point(238, 29);
+            this.lbIDComp.Name = "lbIDComp";
+            this.lbIDComp.Size = new System.Drawing.Size(125, 13);
+            this.lbIDComp.TabIndex = 2;
+            this.lbIDComp.Text = "Identidad del Comprador:";
             // 
-            // txtApeCom
+            // lblApellidoCom
             // 
-            this.txtApeCom.Location = new System.Drawing.Point(112, 61);
-            this.txtApeCom.Name = "txtApeCom";
-            this.txtApeCom.Size = new System.Drawing.Size(100, 20);
-            this.txtApeCom.TabIndex = 5;
+            this.lblApellidoCom.AutoSize = true;
+            this.lblApellidoCom.Location = new System.Drawing.Point(6, 64);
+            this.lblApellidoCom.Name = "lblApellidoCom";
+            this.lblApellidoCom.Size = new System.Drawing.Size(101, 13);
+            this.lblApellidoCom.TabIndex = 1;
+            this.lblApellidoCom.Text = "Apellido Comprador:";
             // 
-            // txtIDComp
+            // lblNomComp
             // 
-            this.txtIDComp.Location = new System.Drawing.Point(366, 26);
-            this.txtIDComp.Name = "txtIDComp";
-            this.txtIDComp.Size = new System.Drawing.Size(100, 20);
-            this.txtIDComp.TabIndex = 6;
-            // 
-            // txtVendedor
-            // 
-            this.txtVendedor.Location = new System.Drawing.Point(366, 61);
-            this.txtVendedor.Name = "txtVendedor";
-            this.txtVendedor.Size = new System.Drawing.Size(100, 20);
-            this.txtVendedor.TabIndex = 7;
+            this.lblNomComp.AutoSize = true;
+            this.lblNomComp.Location = new System.Drawing.Point(6, 29);
+            this.lblNomComp.Name = "lblNomComp";
+            this.lblNomComp.Size = new System.Drawing.Size(101, 13);
+            this.lblNomComp.TabIndex = 0;
+            this.lblNomComp.Text = "Nombre Comprador:";
             // 
             // lblBusqueda
             // 
@@ -337,6 +337,7 @@
             this.bttRegresar.TabIndex = 23;
             this.bttRegresar.Text = "Regresar";
             this.bttRegresar.UseVisualStyleBackColor = true;
+            this.bttRegresar.Click += new System.EventHandler(this.bttRegresar_Click);
             // 
             // bttLimpiar
             // 
