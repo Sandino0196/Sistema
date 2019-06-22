@@ -38,6 +38,11 @@ namespace Sistema_Empenos_Anderson
                 Facturacion facturacion = new Facturacion();
                 facturacion.Show();
             }
+            if(rdbConsulta.Checked)
+            {
+                Consultas consulta = new Consultas();
+                consulta.Show();
+            }
 
         }
     }
