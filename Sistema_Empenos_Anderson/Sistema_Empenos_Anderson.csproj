@@ -91,6 +91,7 @@
     <Compile Include="Retiro1.Designer.cs">
       <DependentUpon>Retiro1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Solo_Prueba.cs" />
     <Compile Include="Usuario.cs" />
     <EmbeddedResource Include="Facturacion.resx">
       <DependentUpon>Facturacion.cs</DependentUpon>
