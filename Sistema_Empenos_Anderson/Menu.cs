@@ -45,5 +45,15 @@ namespace Sistema_Empenos_Anderson
             }
 
         }
+
+        private void rdbRetirarArticulo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbRetirarArticulo.Checked)
+            {
+
+                Retiro1 Retiro = new Retiro1();
+                Retiro.Show();
+            }
+        }
     }
 }

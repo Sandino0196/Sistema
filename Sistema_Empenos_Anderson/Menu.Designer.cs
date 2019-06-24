@@ -83,6 +83,7 @@
             this.rdbRetirarArticulo.TabIndex = 2;
             this.rdbRetirarArticulo.Text = "Retirar Articulo";
             this.rdbRetirarArticulo.UseVisualStyleBackColor = true;
+            this.rdbRetirarArticulo.CheckedChanged += new System.EventHandler(this.rdbRetirarArticulo_CheckedChanged);
             // 
             // rdbPagoIntereses
             // 
