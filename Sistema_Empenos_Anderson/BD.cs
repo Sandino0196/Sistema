@@ -14,7 +14,7 @@ namespace Sistema_Empenos_Anderson
 
         public static void OpenConnection()
         {
-            connection.ConnectionString = @"Data Source=DESKTOP-H4LNV2M; Initial Catalog=Base_Empeños; Integrated Security=Yes";
+            connection.ConnectionString = @"Data Source=DESKTOP-T785USI; Initial Catalog=Base_Empeños; Integrated Security=Yes";
             connection.Open();
             //Donde dice DATA SOURCE le ponen el nombre de su máquina; 
         }
@@ -47,6 +47,57 @@ namespace Sistema_Empenos_Anderson
             login = int.Parse(command.Parameters["@login"].Value.ToString());
 
             return login;
+        }
+
+        public static int Busqueda_Cliente(string Identidad)
+        {
+            int Verificador = 0;
+
+            OpenConnection();
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SP_BusquedaCliente";
+            command.Connection = connection;
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.Add(new SqlParameter("@Identidad", Identidad));
+
+            SqlParameter verificador = new SqlParameter("@Verificador", 0);
+            verificador.Direction = ParameterDirection.Output;
+            command.Parameters.Add(verificador);
+
+            SqlParameter nombre = new SqlParameter("@Nombre", " ");
+            nombre.Direction = ParameterDirection.Output;
+            nombre.Size = 50;
+            command.Parameters.Add(nombre);
+
+            SqlParameter apellido = new SqlParameter("@Apellido", " ");
+            apellido.Direction = ParameterDirection.Output;
+            apellido.Size = 50;
+            command.Parameters.Add(apellido);
+
+            SqlParameter telefono = new SqlParameter("@Telefono", " ");
+            telefono.Direction = ParameterDirection.Output;
+            telefono.Size = 50;
+            command.Parameters.Add(telefono);
+
+            SqlParameter correo = new SqlParameter("@Correo", " ");
+            correo.Direction = ParameterDirection.Output;
+            correo.Size = 50;
+            command.Parameters.Add(correo);
+
+            command.ExecuteNonQuery();
+
+            CloseConnection();
+
+            Verificador = Int32.Parse(command.Parameters["@Verificador"].Value.ToString());
+
+            Cliente.Nombre_Cliente = command.Parameters["@Nombre"].Value.ToString();
+            Cliente.Apellido_Cliente = command.Parameters["@Apellido"].Value.ToString();
+            Cliente.Telefono_Cliente = command.Parameters["@Telefono"].Value.ToString();
+            Cliente.Correo_Cliente = command.Parameters["@Correo"].Value.ToString();
+
+
+            return Verificador;
         }
 
     }
