@@ -8,7 +8,7 @@ namespace Sistema_Empenos_Anderson
 {
     public class Cliente
     {
-        private string Identidad_Cliente, Nombre_Cliente, Apellido_Cliente, Telefono_Cliente, Correo_Cliente;
+        public static string Identidad_Cliente, Nombre_Cliente, Apellido_Cliente, Telefono_Cliente, Correo_Cliente;
 
         public Cliente()
         {
@@ -22,35 +22,6 @@ namespace Sistema_Empenos_Anderson
             Telefono_Cliente = telefono_Cliente;
             Correo_Cliente = correo_Cliente;
         }
-
-        public string identidad_Cliente
-        {
-            get { return Identidad_Cliente; }
-            set { this.Identidad_Cliente = value; }
-        }
-
-        public string nombre_Cliente
-        {
-            get { return Nombre_Cliente; }
-            set { this.Nombre_Cliente = value; }
-        }
-
-        public string apellido_Cliente
-        {
-            get { return Apellido_Cliente; }
-            set { this.Apellido_Cliente = value; }
-        }
-
-        public string telefono_Cliente
-        {
-            get { return Telefono_Cliente; }
-            set { this.Telefono_Cliente = value; }
-        }
-
-        public string correo_Cliente
-        {
-            get { return Correo_Cliente; }
-            set { this.Correo_Cliente = value; }
-        }
+        
     }
 }

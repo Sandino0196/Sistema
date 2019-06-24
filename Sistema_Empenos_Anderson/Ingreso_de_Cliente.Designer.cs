@@ -42,7 +42,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtIdentidad = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgv_Info_Cliente = new System.Windows.Forms.DataGridView();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,7 +52,7 @@
             this.btnAñadir = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.grpInfo_Nuevo_Cliente.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_Info_Cliente)).BeginInit();
             this.SuspendLayout();
             // 
             // lblBusqueda_ID
@@ -79,6 +79,7 @@
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // grpInfo_Nuevo_Cliente
             // 
@@ -180,19 +181,19 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Identidad:";
             // 
-            // dataGridView1
+            // dtgv_Info_Cliente
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgv_Info_Cliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv_Info_Cliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nombre,
             this.Apellido,
             this.Telefono,
             this.Correo_Electronico});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 147);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(443, 47);
-            this.dataGridView1.TabIndex = 4;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dtgv_Info_Cliente.Location = new System.Drawing.Point(12, 147);
+            this.dtgv_Info_Cliente.Name = "dtgv_Info_Cliente";
+            this.dtgv_Info_Cliente.Size = new System.Drawing.Size(443, 47);
+            this.dtgv_Info_Cliente.TabIndex = 4;
+            this.dtgv_Info_Cliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Nombre
             // 
@@ -263,7 +264,7 @@
             this.Controls.Add(this.btnAñadir);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnAvanzar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtgv_Info_Cliente);
             this.Controls.Add(this.grpInfo_Nuevo_Cliente);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtBusqueda_ID);
@@ -272,7 +273,7 @@
             this.Text = "Ingreso de Cliente";
             this.grpInfo_Nuevo_Cliente.ResumeLayout(false);
             this.grpInfo_Nuevo_Cliente.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_Info_Cliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,7 +285,7 @@
         private System.Windows.Forms.TextBox txtBusqueda_ID;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.GroupBox grpInfo_Nuevo_Cliente;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtgv_Info_Cliente;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtTelefono;

@@ -21,7 +21,7 @@ namespace Sistema_Empenos_Anderson
         {
             if(rdbIngresarArticulo.Checked)
             {
-                Ingreso_de_Articulo ingreso = new Ingreso_de_Articulo();
+                Ingreso_de_Cliente ingreso = new Ingreso_de_Cliente();
                 ingreso.Show();
             }
             if (rdbPagoIntereses.Checked)
