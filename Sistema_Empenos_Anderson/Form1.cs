@@ -24,8 +24,14 @@ namespace Sistema_Empenos_Anderson
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Menu menu = new Menu();
-            menu.Show();
+            if(BD.Login(txtUsuario.Text,txtPassword.Text) > 0)
+            {
+                Menu menu = new Menu();
+                menu.Show();
+            } else
+            {
+                MessageBox.Show("Error","Usuario no encontrado");
+            }
         }
     }
 }
