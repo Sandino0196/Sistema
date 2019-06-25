@@ -16,5 +16,10 @@ namespace Sistema_Empenos_Anderson
         {
             InitializeComponent();
         }
+
+        private void b_Pagar_Retiro2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

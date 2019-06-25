@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Retiros2));
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.b_Regresar_Retiro2 = new System.Windows.Forms.Button();
+            this.b_Pagar_Retiro2 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,25 +39,26 @@
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button3
+            // b_Regresar_Retiro2
             // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Location = new System.Drawing.Point(397, 338);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 34);
-            this.button3.TabIndex = 61;
-            this.button3.Text = "Regresar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.b_Regresar_Retiro2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.b_Regresar_Retiro2.Location = new System.Drawing.Point(397, 338);
+            this.b_Regresar_Retiro2.Name = "b_Regresar_Retiro2";
+            this.b_Regresar_Retiro2.Size = new System.Drawing.Size(75, 34);
+            this.b_Regresar_Retiro2.TabIndex = 61;
+            this.b_Regresar_Retiro2.Text = "Regresar";
+            this.b_Regresar_Retiro2.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // b_Pagar_Retiro2
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Location = new System.Drawing.Point(274, 338);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 34);
-            this.button2.TabIndex = 60;
-            this.button2.Text = "Pagar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.b_Pagar_Retiro2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.b_Pagar_Retiro2.Location = new System.Drawing.Point(274, 338);
+            this.b_Pagar_Retiro2.Name = "b_Pagar_Retiro2";
+            this.b_Pagar_Retiro2.Size = new System.Drawing.Size(75, 34);
+            this.b_Pagar_Retiro2.TabIndex = 60;
+            this.b_Pagar_Retiro2.Text = "Pagar";
+            this.b_Pagar_Retiro2.UseVisualStyleBackColor = true;
+            this.b_Pagar_Retiro2.Click += new System.EventHandler(this.b_Pagar_Retiro2_Click);
             // 
             // label4
             // 
@@ -120,8 +121,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(678, 413);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.b_Regresar_Retiro2);
+            this.Controls.Add(this.b_Pagar_Retiro2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.label3);
@@ -135,8 +136,8 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button b_Regresar_Retiro2;
+        private System.Windows.Forms.Button b_Pagar_Retiro2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.RichTextBox richTextBox2;
         private System.Windows.Forms.Label label3;
