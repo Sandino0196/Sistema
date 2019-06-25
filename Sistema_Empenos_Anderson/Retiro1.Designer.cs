@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Retiro1));
             this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.Aceptar_R1 = new System.Windows.Forms.Button();
-            this.Codigo_Retiro1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -40,14 +40,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.Calendario_Retiro1 = new System.Windows.Forms.MonthCalendar();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Rb_Desc_No = new System.Windows.Forms.RadioButton();
-            this.Rb_Desc_SI = new System.Windows.Forms.RadioButton();
-            this.b_Aceptar_Retiro1 = new System.Windows.Forms.Button();
-            this.b_Regresar_Retiro1 = new System.Windows.Forms.Button();
-            this.Monto_Desc_Retiro1 = new System.Windows.Forms.TextBox();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -71,23 +71,22 @@
             this.label9.TabIndex = 34;
             this.label9.Text = resources.GetString("label9.Text");
             // 
-            // Aceptar_R1
+            // button1
             // 
-            this.Aceptar_R1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Aceptar_R1.Location = new System.Drawing.Point(203, 225);
-            this.Aceptar_R1.Name = "Aceptar_R1";
-            this.Aceptar_R1.Size = new System.Drawing.Size(75, 23);
-            this.Aceptar_R1.TabIndex = 32;
-            this.Aceptar_R1.Text = "Aceptar";
-            this.Aceptar_R1.UseVisualStyleBackColor = true;
-            this.Aceptar_R1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Location = new System.Drawing.Point(203, 225);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 32;
+            this.button1.Text = "Aceptar";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // Codigo_Retiro1
+            // textBox1
             // 
-            this.Codigo_Retiro1.Location = new System.Drawing.Point(135, 164);
-            this.Codigo_Retiro1.Name = "Codigo_Retiro1";
-            this.Codigo_Retiro1.Size = new System.Drawing.Size(165, 20);
-            this.Codigo_Retiro1.TabIndex = 31;
+            this.textBox1.Location = new System.Drawing.Point(135, 164);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(165, 20);
+            this.textBox1.TabIndex = 31;
             // 
             // label2
             // 
@@ -109,7 +108,6 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(165, 21);
             this.comboBox1.TabIndex = 29;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -157,11 +155,11 @@
             this.label4.TabIndex = 38;
             this.label4.Text = "Datos del Artículo:";
             // 
-            // Calendario_Retiro1
+            // monthCalendar1
             // 
-            this.Calendario_Retiro1.Location = new System.Drawing.Point(421, 88);
-            this.Calendario_Retiro1.Name = "Calendario_Retiro1";
-            this.Calendario_Retiro1.TabIndex = 39;
+            this.monthCalendar1.Location = new System.Drawing.Point(421, 88);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 39;
             // 
             // label5
             // 
@@ -174,8 +172,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.Rb_Desc_No);
-            this.groupBox1.Controls.Add(this.Rb_Desc_SI);
+            this.groupBox1.Controls.Add(this.radioButton2);
+            this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Location = new System.Drawing.Point(407, 297);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(139, 68);
@@ -183,55 +181,55 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "¿Descuento?";
             // 
-            // Rb_Desc_No
+            // radioButton2
             // 
-            this.Rb_Desc_No.AutoSize = true;
-            this.Rb_Desc_No.Location = new System.Drawing.Point(26, 42);
-            this.Rb_Desc_No.Name = "Rb_Desc_No";
-            this.Rb_Desc_No.Size = new System.Drawing.Size(39, 17);
-            this.Rb_Desc_No.TabIndex = 1;
-            this.Rb_Desc_No.TabStop = true;
-            this.Rb_Desc_No.Text = "No";
-            this.Rb_Desc_No.UseVisualStyleBackColor = true;
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(26, 42);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(39, 17);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "No";
+            this.radioButton2.UseVisualStyleBackColor = true;
             // 
-            // Rb_Desc_SI
+            // radioButton1
             // 
-            this.Rb_Desc_SI.AutoSize = true;
-            this.Rb_Desc_SI.Location = new System.Drawing.Point(26, 19);
-            this.Rb_Desc_SI.Name = "Rb_Desc_SI";
-            this.Rb_Desc_SI.Size = new System.Drawing.Size(34, 17);
-            this.Rb_Desc_SI.TabIndex = 0;
-            this.Rb_Desc_SI.TabStop = true;
-            this.Rb_Desc_SI.Text = "Si";
-            this.Rb_Desc_SI.UseVisualStyleBackColor = true;
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(26, 19);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(34, 17);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Si";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // b_Aceptar_Retiro1
+            // button2
             // 
-            this.b_Aceptar_Retiro1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.b_Aceptar_Retiro1.Location = new System.Drawing.Point(471, 509);
-            this.b_Aceptar_Retiro1.Name = "b_Aceptar_Retiro1";
-            this.b_Aceptar_Retiro1.Size = new System.Drawing.Size(75, 23);
-            this.b_Aceptar_Retiro1.TabIndex = 42;
-            this.b_Aceptar_Retiro1.Text = "Aceptar";
-            this.b_Aceptar_Retiro1.UseVisualStyleBackColor = true;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Location = new System.Drawing.Point(471, 509);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 42;
+            this.button2.Text = "Aceptar";
+            this.button2.UseVisualStyleBackColor = true;
             // 
-            // b_Regresar_Retiro1
+            // button3
             // 
-            this.b_Regresar_Retiro1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.b_Regresar_Retiro1.Location = new System.Drawing.Point(598, 509);
-            this.b_Regresar_Retiro1.Name = "b_Regresar_Retiro1";
-            this.b_Regresar_Retiro1.Size = new System.Drawing.Size(75, 23);
-            this.b_Regresar_Retiro1.TabIndex = 43;
-            this.b_Regresar_Retiro1.Text = "Regresar";
-            this.b_Regresar_Retiro1.UseVisualStyleBackColor = true;
-            this.b_Regresar_Retiro1.Click += new System.EventHandler(this.button3_Click);
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button3.Location = new System.Drawing.Point(598, 509);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 43;
+            this.button3.Text = "Regresar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // Monto_Desc_Retiro1
+            // textBox2
             // 
-            this.Monto_Desc_Retiro1.Location = new System.Drawing.Point(457, 446);
-            this.Monto_Desc_Retiro1.Name = "Monto_Desc_Retiro1";
-            this.Monto_Desc_Retiro1.Size = new System.Drawing.Size(165, 20);
-            this.Monto_Desc_Retiro1.TabIndex = 45;
+            this.textBox2.Location = new System.Drawing.Point(457, 446);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(165, 20);
+            this.textBox2.TabIndex = 45;
             // 
             // label7
             // 
@@ -248,20 +246,20 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(797, 605);
-            this.Controls.Add(this.Monto_Desc_Retiro1);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.b_Regresar_Retiro1);
-            this.Controls.Add(this.b_Aceptar_Retiro1);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.Calendario_Retiro1);
+            this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.Aceptar_R1);
-            this.Controls.Add(this.Codigo_Retiro1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
@@ -278,8 +276,8 @@
         #endregion
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button Aceptar_R1;
-        private System.Windows.Forms.TextBox Codigo_Retiro1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
@@ -287,14 +285,14 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox richTextBox2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.MonthCalendar Calendario_Retiro1;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton Rb_Desc_No;
-        private System.Windows.Forms.RadioButton Rb_Desc_SI;
-        private System.Windows.Forms.Button b_Aceptar_Retiro1;
-        private System.Windows.Forms.Button b_Regresar_Retiro1;
-        private System.Windows.Forms.TextBox Monto_Desc_Retiro1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label7;
     }
 }
