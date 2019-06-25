@@ -17,6 +17,12 @@ namespace Sistema_Empenos_Anderson
             InitializeComponent();
         }
 
+        protected override void OnClosed(EventArgs e)
+        {
+            Menu men = new Menu();
+            men.Show();
+        }
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -39,6 +45,13 @@ namespace Sistema_Empenos_Anderson
                 btnAñadir.Enabled = true;
 
             }
+        }
+
+        private void btnAvanzar_Click(object sender, EventArgs e)
+        {
+            Ingreso_de_Articulo Articulos = new Ingreso_de_Articulo();
+            Articulos.Show();
+            this.Hide();
         }
     }
 }

@@ -17,6 +17,12 @@ namespace Sistema_Empenos_Anderson
             InitializeComponent();
         }
 
+        protected override void OnClosed(EventArgs e)
+        {
+            Menu men = new Menu();
+            men.Show();
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
 

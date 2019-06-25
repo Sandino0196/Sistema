@@ -356,6 +356,7 @@
             this.bttAceptar.TabIndex = 25;
             this.bttAceptar.Text = "Aceptar";
             this.bttAceptar.UseVisualStyleBackColor = true;
+            this.bttAceptar.Click += new System.EventHandler(this.bttAceptar_Click);
             // 
             // Facturacion
             // 

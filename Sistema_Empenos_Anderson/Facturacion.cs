@@ -17,7 +17,18 @@ namespace Sistema_Empenos_Anderson
             InitializeComponent();
         }
 
+        protected override void OnClosed(EventArgs e)
+        {
+            Menu men = new Sistema_Empenos_Anderson.Menu();
+            men.Show();
+        }
+
         private void bttRegresar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bttAceptar_Click(object sender, EventArgs e)
         {
 
         }

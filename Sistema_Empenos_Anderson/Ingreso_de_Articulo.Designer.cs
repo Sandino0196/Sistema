@@ -280,6 +280,7 @@
             this.btnAvanzar.TabIndex = 30;
             this.btnAvanzar.Text = "Avanzar";
             this.btnAvanzar.UseVisualStyleBackColor = true;
+            this.btnAvanzar.Click += new System.EventHandler(this.btnAvanzar_Click);
             // 
             // btnAgregar
             // 

@@ -12,6 +12,13 @@ namespace Sistema_Empenos_Anderson
 {
     public partial class Consultas : Form
     {
+
+        protected override void OnClosed(EventArgs e)
+        {
+            Menu men = new Sistema_Empenos_Anderson.Menu();
+            men.Show();
+        }
+
         public Consultas()
         {
             InitializeComponent();

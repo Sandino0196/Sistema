@@ -27,11 +27,13 @@ namespace Sistema_Empenos_Anderson
             if(BD.Login(txtUsuario.Text,txtPassword.Text) > 0)
             {
                 Menu menu = new Menu();
+                this.Hide();
                 menu.Show();
             } else
             {
                 MessageBox.Show("Error","Usuario no encontrado");
             }
+            
         }
     }
 }
