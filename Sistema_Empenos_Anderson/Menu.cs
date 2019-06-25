@@ -31,7 +31,8 @@ namespace Sistema_Empenos_Anderson
             }
             if (rdbRetirarArticulo.Checked)
             {
-
+                Retiro1 Retiro = new Retiro1();
+                Retiro.Show();
             }
             if(rdbVender.Checked)
             {
@@ -48,12 +49,7 @@ namespace Sistema_Empenos_Anderson
 
         private void rdbRetirarArticulo_CheckedChanged(object sender, EventArgs e)
         {
-            if (rdbRetirarArticulo.Checked)
-            {
-
-                Retiro1 Retiro = new Retiro1();
-                Retiro.Show();
-            }
+           
         }
     }
 }
