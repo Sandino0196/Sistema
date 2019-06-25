@@ -27,5 +27,10 @@ namespace Sistema_Empenos_Anderson
         {
 
         }
+
+        private void Pago_de_Cuotas_Load(object sender, EventArgs e)
+        {
+            this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
+        }
     }
 }

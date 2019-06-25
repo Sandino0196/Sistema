@@ -391,6 +391,7 @@
             this.Controls.Add(this.gbInfoComp);
             this.Name = "Facturacion";
             this.Text = "Facturacion";
+            this.Load += new System.EventHandler(this.Facturacion_Load);
             this.gbInfoComp.ResumeLayout(false);
             this.gbInfoComp.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

@@ -321,6 +321,7 @@
             this.Controls.Add(this.label6);
             this.Name = "Ingreso_de_Articulo";
             this.Text = "Ingreso de Articulo";
+            this.Load += new System.EventHandler(this.Ingreso_de_Articulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvArticulos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

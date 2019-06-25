@@ -53,5 +53,10 @@ namespace Sistema_Empenos_Anderson
             Articulos.Show();
             this.Hide();
         }
+
+        private void Ingreso_de_Cliente_Load(object sender, EventArgs e)
+        {
+            this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
+        }
     }
 }

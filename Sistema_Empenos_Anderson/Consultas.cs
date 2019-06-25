@@ -69,5 +69,10 @@ namespace Sistema_Empenos_Anderson
         {
             this.Close();
         }
+
+        private void Consultas_Load(object sender, EventArgs e)
+        {
+            this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
+        }
     }
 }
