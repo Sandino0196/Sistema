@@ -61,9 +61,7 @@ namespace Sistema_Empenos_Anderson
 
             command.Parameters.Add(new SqlParameter("@Identidad", Identidad));
 
-            SqlParameter verificador = new SqlParameter("@Verificador", 0);
-            verificador.Direction = ParameterDirection.Output;
-            command.Parameters.Add(verificador);
+            
 
             SqlParameter nombre = new SqlParameter("@Nombre", " ");
             nombre.Direction = ParameterDirection.Output;
@@ -85,20 +83,67 @@ namespace Sistema_Empenos_Anderson
             correo.Size = 50;
             command.Parameters.Add(correo);
 
+            SqlParameter verificador = new SqlParameter("@Verificador", 0);
+            verificador.Direction = ParameterDirection.Output;
+            command.Parameters.Add(verificador);
+
             command.ExecuteNonQuery();
 
             CloseConnection();
 
-            Verificador = Int32.Parse(command.Parameters["@Verificador"].Value.ToString());
+            Verificador = int.Parse(command.Parameters["@Verificador"].Value.ToString());
 
             Cliente.Nombre_Cliente = command.Parameters["@Nombre"].Value.ToString();
             Cliente.Apellido_Cliente = command.Parameters["@Apellido"].Value.ToString();
             Cliente.Telefono_Cliente = command.Parameters["@Telefono"].Value.ToString();
             Cliente.Correo_Cliente = command.Parameters["@Correo"].Value.ToString();
-
+           
 
             return Verificador;
         }
+
+        public static void Ingreso_Recibo(int Codigo, string Identidad, int Codigo_user, string Fecha)
+        {
+            OpenConnection();
+
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SP_IngresarRecibo";
+            command.Connection = connection;
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.Add(new SqlParameter("@Codigo", Codigo));
+            command.Parameters.Add(new SqlParameter("@Id_Cliente", Identidad));
+            command.Parameters.Add(new SqlParameter("@Cod_Usuario", Codigo_user));
+            command.Parameters.Add(new SqlParameter("@Fecha_Recibo", Fecha));
+
+            command.ExecuteNonQuery();
+            CloseConnection();
+        }
+
+        public static void Ingreso_Articulo( int codigo, string Numero_Serie, int Tipo_Art, string Descripcion, string Marca, string Modelo, double Monto, double Tasa, int Estado)
+        {
+            OpenConnection();
+
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SP_Ingreso_Articulo";
+            command.Connection = connection;
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.Add(new SqlParameter("@Codigo", codigo));
+            command.Parameters.Add(new SqlParameter("@Numero_Serie", Numero_Serie));
+            command.Parameters.Add(new SqlParameter("@Tipo_Articulo", Tipo_Art));
+            command.Parameters.Add(new SqlParameter("@Descripcion", Descripcion));
+            command.Parameters.Add(new SqlParameter("@Marca", Marca));
+            command.Parameters.Add(new SqlParameter("@Modelo", Modelo));
+            command.Parameters.Add(new SqlParameter("@Monto", Monto));
+            command.Parameters.Add(new SqlParameter("@Tasa", Tasa));
+            command.Parameters.Add(new SqlParameter("@Estado", Estado));
+
+            command.ExecuteNonQuery();
+
+            CloseConnection();
+        }
+
 
     }
 }

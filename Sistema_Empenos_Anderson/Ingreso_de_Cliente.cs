@@ -33,14 +33,15 @@ namespace Sistema_Empenos_Anderson
             
             if (BD.Busqueda_Cliente(txtBusqueda_ID.Text) > 0)
             {
+                Cliente.Identidad_Cliente = txtBusqueda_ID.Text;
                 dtgv_Info_Cliente.Rows[0].Cells[0].Value = Cliente.Nombre_Cliente;
                 dtgv_Info_Cliente.Rows[0].Cells[1].Value = Cliente.Apellido_Cliente;
                 dtgv_Info_Cliente.Rows[0].Cells[2].Value = Cliente.Telefono_Cliente;
                 dtgv_Info_Cliente.Rows[0].Cells[3].Value = Cliente.Correo_Cliente;
                 btnAvanzar.Enabled = true;
-            }
-            else
+            }else
             {
+                MessageBox.Show("No se encontro el cliente en la Base de Datos\nDesea Agregarlo?","ALERTA", MessageBoxButtons.YesNo);
                 grpInfo_Nuevo_Cliente.Enabled = true;
                 btnAñadir.Enabled = true;
 
