@@ -14,7 +14,7 @@ namespace Sistema_Empenos_Anderson
 
         public static void OpenConnection()
         {
-            connection.ConnectionString = @"Data Source=DESKTOP-T785USI; Initial Catalog=Base_Empeños; Integrated Security=Yes";
+            connection.ConnectionString = @"Data Source=DESKTOP-D1B8U5J; Initial Catalog=Base_Empeños; Integrated Security=Yes";
             connection.Open();
             //Donde dice DATA SOURCE le ponen el nombre de su máquina; 
         }
@@ -91,11 +91,13 @@ namespace Sistema_Empenos_Anderson
 
             Verificador = Int32.Parse(command.Parameters["@Verificador"].Value.ToString());
 
-            Cliente.Nombre_Cliente = command.Parameters["@Nombre"].Value.ToString();
-            Cliente.Apellido_Cliente = command.Parameters["@Apellido"].Value.ToString();
-            Cliente.Telefono_Cliente = command.Parameters["@Telefono"].Value.ToString();
-            Cliente.Correo_Cliente = command.Parameters["@Correo"].Value.ToString();
-
+            if (Verificador == 1)
+            {
+                Cliente.Nombre_Cliente = command.Parameters["@Nombre"].Value.ToString();
+                Cliente.Apellido_Cliente = command.Parameters["@Apellido"].Value.ToString();
+                Cliente.Telefono_Cliente = command.Parameters["@Telefono"].Value.ToString();
+                Cliente.Correo_Cliente = command.Parameters["@Correo"].Value.ToString();
+            }
 
             return Verificador;
         }
