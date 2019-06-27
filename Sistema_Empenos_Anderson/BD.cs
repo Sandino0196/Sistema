@@ -60,9 +60,7 @@ namespace Sistema_Empenos_Anderson
             command.Connection = connection;
             command.CommandType = CommandType.StoredProcedure;
 
-            command.Parameters.Add(new SqlParameter("@Identidad", Identidad));
-
-            
+            command.Parameters.Add(new SqlParameter("@Identidad", Identidad));          
 
             SqlParameter nombre = new SqlParameter("@Nombre", " ");
             nombre.Direction = ParameterDirection.Output;
