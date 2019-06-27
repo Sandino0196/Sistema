@@ -92,8 +92,6 @@ namespace Sistema_Empenos_Anderson
 
             CloseConnection();
 
-            
-
             try
             {
                 Verificador = int.Parse(command.Parameters["@Verificador"].Value.ToString());
