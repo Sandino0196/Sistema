@@ -356,6 +356,7 @@
             this.bttAceptar.TabIndex = 25;
             this.bttAceptar.Text = "Aceptar";
             this.bttAceptar.UseVisualStyleBackColor = true;
+            this.bttAceptar.Click += new System.EventHandler(this.bttAceptar_Click);
             // 
             // Facturacion
             // 
@@ -390,6 +391,7 @@
             this.Controls.Add(this.gbInfoComp);
             this.Name = "Facturacion";
             this.Text = "Facturacion";
+            this.Load += new System.EventHandler(this.Facturacion_Load);
             this.gbInfoComp.ResumeLayout(false);
             this.gbInfoComp.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

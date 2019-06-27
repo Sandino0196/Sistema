@@ -17,6 +17,11 @@ namespace Sistema_Empenos_Anderson
             InitializeComponent();
         }
 
+        protected override void OnClosed(EventArgs e)
+        {
+            Application.Exit();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             if(rdbIngresarArticulo.Checked)
@@ -31,7 +36,8 @@ namespace Sistema_Empenos_Anderson
             }
             if (rdbRetirarArticulo.Checked)
             {
-
+                Retiro1 Retiro = new Retiro1();
+                Retiro.Show();
             }
             if(rdbVender.Checked)
             {
@@ -44,16 +50,18 @@ namespace Sistema_Empenos_Anderson
                 consulta.Show();
             }
 
+            this.Hide();
+
         }
 
         private void rdbRetirarArticulo_CheckedChanged(object sender, EventArgs e)
         {
-            if (rdbRetirarArticulo.Checked)
-            {
+           
+        }
 
-                Retiro1 Retiro = new Retiro1();
-                Retiro.Show();
-            }
+        private void Menu_Load(object sender, EventArgs e)
+        {
+            this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
         }
     }
 }

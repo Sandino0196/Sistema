@@ -245,9 +245,10 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "Pago_de_Cuotas";
             this.Text = "Pago de Cuotas";
+            this.Load += new System.EventHandler(this.Pago_de_Cuotas_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -280,6 +280,7 @@
             this.btnAvanzar.TabIndex = 30;
             this.btnAvanzar.Text = "Avanzar";
             this.btnAvanzar.UseVisualStyleBackColor = true;
+            this.btnAvanzar.Click += new System.EventHandler(this.btnAvanzar_Click);
             // 
             // btnAgregar
             // 
@@ -289,6 +290,7 @@
             this.btnAgregar.TabIndex = 31;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // Ingreso_de_Articulo
             // 
@@ -320,6 +322,7 @@
             this.Controls.Add(this.label6);
             this.Name = "Ingreso_de_Articulo";
             this.Text = "Ingreso de Articulo";
+            this.Load += new System.EventHandler(this.Ingreso_de_Articulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvArticulos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -224,6 +224,7 @@
             this.btnAvanzar.TabIndex = 5;
             this.btnAvanzar.Text = "Avanzar";
             this.btnAvanzar.UseVisualStyleBackColor = true;
+            this.btnAvanzar.Click += new System.EventHandler(this.btnAvanzar_Click);
             // 
             // btnVolver
             // 
@@ -271,6 +272,7 @@
             this.Controls.Add(this.lblBusqueda_ID);
             this.Name = "Ingreso_de_Cliente";
             this.Text = "Ingreso de Cliente";
+            this.Load += new System.EventHandler(this.Ingreso_de_Cliente_Load);
             this.grpInfo_Nuevo_Cliente.ResumeLayout(false);
             this.grpInfo_Nuevo_Cliente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_Info_Cliente)).EndInit();

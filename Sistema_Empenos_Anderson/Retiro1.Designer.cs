@@ -266,6 +266,7 @@
             this.Controls.Add(this.label6);
             this.Name = "Retiro1";
             this.Text = "Retiro1";
+            this.Load += new System.EventHandler(this.Retiro1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

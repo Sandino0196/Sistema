@@ -19,7 +19,7 @@ namespace Sistema_Empenos_Anderson
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -27,11 +27,13 @@ namespace Sistema_Empenos_Anderson
             if(BD.Login(txtUsuario.Text,txtPassword.Text) > 0)
             {
                 Menu menu = new Menu();
+                this.Hide();
                 menu.Show();
             } else
             {
                 MessageBox.Show("Error","Usuario no encontrado");
             }
+            
         }
     }
 }

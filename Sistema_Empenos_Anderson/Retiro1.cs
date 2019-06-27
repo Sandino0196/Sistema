@@ -17,6 +17,12 @@ namespace Sistema_Empenos_Anderson
             InitializeComponent();
         }
 
+        protected override void OnClosed(EventArgs e)
+        {
+            Menu men = new Menu();
+            men.Show();
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
 
@@ -25,6 +31,11 @@ namespace Sistema_Empenos_Anderson
         private void label7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Retiro1_Load(object sender, EventArgs e)
+        {
+            this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
         }
     }
 }
