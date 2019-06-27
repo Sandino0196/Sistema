@@ -91,14 +91,6 @@ namespace Sistema_Empenos_Anderson
 
             Verificador = Int32.Parse(command.Parameters["@Verificador"].Value.ToString());
 
-            if (Verificador == 1)
-            {
-                Cliente.Nombre_Cliente = command.Parameters["@Nombre"].Value.ToString();
-                Cliente.Apellido_Cliente = command.Parameters["@Apellido"].Value.ToString();
-                Cliente.Telefono_Cliente = command.Parameters["@Telefono"].Value.ToString();
-                Cliente.Correo_Cliente = command.Parameters["@Correo"].Value.ToString();
-            }
-
             return Verificador;
         }
 
