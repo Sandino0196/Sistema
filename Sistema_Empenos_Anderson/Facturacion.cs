@@ -73,7 +73,7 @@ namespace Sistema_Empenos_Anderson
 
         private void btnAvanzar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             Venta venta = new Venta();
             venta.Show();
         }
