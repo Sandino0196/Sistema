@@ -14,7 +14,7 @@ namespace Sistema_Empenos_Anderson
 
         public static void OpenConnection()
         {
-            connection.ConnectionString = @"Data Source=DESKTOP-H4LNV2M; Initial Catalog=Base_Empeños; Integrated Security=Yes";
+            connection.ConnectionString = @"Data Source=DESKTOP-D1B8U5J; Initial Catalog=Base_Empeños; Integrated Security=Yes";
             connection.Open();
             //Donde dice DATA SOURCE le ponen el nombre de su máquina; 
         }
@@ -106,6 +106,69 @@ namespace Sistema_Empenos_Anderson
             return Verificador;
         }
 
+        public static int Busqueda_Articulo(int recibo, string numeroSerie)
+        {
+            int existencia = 0;
+
+            OpenConnection();
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SP_BusquedaArticulo";
+            command.Connection = connection;
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.Add(new SqlParameter("@NumRecibo", recibo));
+            command.Parameters.Add(new SqlParameter("@NumSerie", numeroSerie));
+
+            SqlParameter descripcion = new SqlParameter("@Descripcion", " ");
+            descripcion.Direction = ParameterDirection.Output;
+            descripcion.Size = 100;
+            command.Parameters.Add(descripcion);
+
+            SqlParameter marca = new SqlParameter("@Marca", " ");
+            marca.Direction = ParameterDirection.Output;
+            marca.Size = 50;
+            command.Parameters.Add(marca);
+
+            SqlParameter modelo = new SqlParameter("@Modelo", " ");
+            modelo.Direction = ParameterDirection.Output;
+            modelo.Size = 50;
+            command.Parameters.Add(modelo);
+
+            SqlParameter estado = new SqlParameter("@Estado", " ");
+            estado.Direction = ParameterDirection.Output;
+            estado.Size = 50;
+            command.Parameters.Add(estado);
+
+            SqlParameter prestado = new SqlParameter("@Prestado",0);
+            prestado.Direction = ParameterDirection.Output;
+            command.Parameters.Add(prestado);
+
+            SqlParameter existe = new SqlParameter("@Existencia", 0);
+            existe.Direction = ParameterDirection.Output;
+            command.Parameters.Add(existe);
+
+            command.ExecuteNonQuery();
+
+            CloseConnection();
+
+            try
+            {
+                existencia = int.Parse(command.Parameters["@Existencia"].Value.ToString());
+            }
+            catch
+            {
+                existencia = 0;
+            }
+
+            Articulo.descripcion = command.Parameters["@Descripcion"].Value.ToString();
+            Articulo.marca = command.Parameters["@Marca"].Value.ToString();
+            Articulo.modelo = command.Parameters["@Modelo"].Value.ToString();
+            Articulo.estado = command.Parameters["@Estado"].Value.ToString();
+            Articulo.prestado = double.Parse(command.Parameters["@Prestado"].Value.ToString());
+
+            return existencia;
+        }
+
         public static void Ingreso_Recibo(int Codigo, string Identidad, int Codigo_user, string Fecha)
         {
             OpenConnection();
@@ -167,6 +230,43 @@ namespace Sistema_Empenos_Anderson
             CloseConnection();
         }
 
+        public static void Ingreso_Factura(int codigoFactura, string identidad, int codigoUsuario, string fecha)
+        {
+            OpenConnection();
+
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SP_Ingreso_Facturacion";
+            command.Connection = connection;
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.Add(new SqlParameter("@CodFact", codigoFactura));
+            command.Parameters.Add(new SqlParameter("@ID_Cliente", identidad));
+            command.Parameters.Add(new SqlParameter("@Cod_Us", codigoUsuario));
+            command.Parameters.Add(new SqlParameter("@Fecha", fecha));
+
+            command.ExecuteNonQuery();
+
+            CloseConnection();
+        }
+
+        public static void Ingreso_Articulo_Vendido(int codigoFactura, string numeroSerie, int recibo, double precio)
+        {
+            OpenConnection();
+
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SP_Ingreso_Fact_Detalle";
+            command.Connection = connection;
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.Add(new SqlParameter("@Cod_Fact", codigoFactura));
+            command.Parameters.Add(new SqlParameter("@Num_Serie", numeroSerie));
+            command.Parameters.Add(new SqlParameter("@Cod_Rec", recibo));
+            command.Parameters.Add(new SqlParameter("@Prec_Vent", precio));
+
+            command.ExecuteNonQuery();
+
+            CloseConnection();
+        }
 
     }
 }

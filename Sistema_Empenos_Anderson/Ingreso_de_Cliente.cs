@@ -69,5 +69,6 @@ namespace Sistema_Empenos_Anderson
             MessageBox.Show("Ingresado Correctamente", "Empeños Anderson");
             btnAvanzar.Enabled = true;
         }
+
     }
 }

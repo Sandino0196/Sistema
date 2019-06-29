@@ -29,6 +29,7 @@ namespace Sistema_Empenos_Anderson
                 Menu menu = new Menu();
                 this.Hide();
                 menu.Show();
+                Usuario.Nombre_Usuario = txtUsuario.Text;
             } else
             {
                 MessageBox.Show("Error","Usuario no encontrado");

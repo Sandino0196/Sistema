@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Retiro1));
             this.label6 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -61,15 +59,6 @@
             this.label6.Size = new System.Drawing.Size(451, 33);
             this.label6.TabIndex = 10;
             this.label6.Text = "Sistema de Empeños Anderson";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(-2, 251);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(772, 13);
-            this.label9.TabIndex = 34;
-            this.label9.Text = resources.GetString("label9.Text");
             // 
             // button1
             // 
@@ -257,7 +246,6 @@
             this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
@@ -276,7 +264,6 @@
 
         #endregion
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;

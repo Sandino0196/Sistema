@@ -36,6 +36,13 @@ namespace Sistema_Empenos_Anderson
             this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
         }
 
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Ingreso_de_Cliente ingreso = new Ingreso_de_Cliente();
+            ingreso.Show();
+        }
+
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             if(Ingreso == 0)

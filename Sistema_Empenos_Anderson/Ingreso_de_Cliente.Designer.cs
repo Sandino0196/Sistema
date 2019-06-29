@@ -48,7 +48,6 @@
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Correo_Electronico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAvanzar = new System.Windows.Forms.Button();
-            this.btnVolver = new System.Windows.Forms.Button();
             this.btnAñadir = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.grpInfo_Nuevo_Cliente.SuspendLayout();
@@ -226,15 +225,6 @@
             this.btnAvanzar.UseVisualStyleBackColor = true;
             this.btnAvanzar.Click += new System.EventHandler(this.btnAvanzar_Click);
             // 
-            // btnVolver
-            // 
-            this.btnVolver.Location = new System.Drawing.Point(12, 218);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(75, 23);
-            this.btnVolver.TabIndex = 6;
-            this.btnVolver.Text = "Volver";
-            this.btnVolver.UseVisualStyleBackColor = true;
-            // 
             // btnAñadir
             // 
             this.btnAñadir.Enabled = false;
@@ -264,7 +254,6 @@
             this.ClientSize = new System.Drawing.Size(711, 253);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnAñadir);
-            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnAvanzar);
             this.Controls.Add(this.dtgv_Info_Cliente);
             this.Controls.Add(this.grpInfo_Nuevo_Cliente);
@@ -304,7 +293,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn Correo_Electronico;
         private System.Windows.Forms.Button btnAvanzar;
-        private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnAñadir;
         private System.Windows.Forms.Label label6;
     }
