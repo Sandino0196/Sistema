@@ -44,7 +44,6 @@ namespace Sistema_Empenos_Anderson
                 MessageBox.Show("No se encontro el cliente en la Base de Datos\nDesea Agregarlo?","ALERTA", MessageBoxButtons.YesNo);
                 grpInfo_Nuevo_Cliente.Enabled = true;
                 btnAñadir.Enabled = true;
-
             }
         }
 
@@ -58,6 +57,17 @@ namespace Sistema_Empenos_Anderson
         private void Ingreso_de_Cliente_Load(object sender, EventArgs e)
         {
             this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
+        }
+
+        private void btnAñadir_Click(object sender, EventArgs e)
+        {
+            BD.Ingreso_Cliente(txtIdentidad.Text, txtNombre.Text, txtApellido.Text, txtTelefono.Text, txtCorreo.Text);
+            dtgv_Info_Cliente.Rows[0].Cells[0].Value = txtNombre.Text;
+            dtgv_Info_Cliente.Rows[0].Cells[1].Value = txtApellido.Text;
+            dtgv_Info_Cliente.Rows[0].Cells[2].Value = txtTelefono.Text;
+            dtgv_Info_Cliente.Rows[0].Cells[3].Value = txtCorreo.Text;
+            MessageBox.Show("Ingresado Correctamente", "Empeños Anderson");
+            btnAvanzar.Enabled = true;
         }
     }
 }

@@ -124,6 +124,25 @@ namespace Sistema_Empenos_Anderson
             CloseConnection();
         }
 
+        public static void Ingreso_Cliente(string identidad, string nombre, string apellido, string telefono, string correo)
+        {
+            OpenConnection();
+
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SP_Ingreso_Cliente";
+            command.Connection = connection;
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.Add(new SqlParameter("@identidad", identidad));
+            command.Parameters.Add(new SqlParameter("@nombre", nombre));
+            command.Parameters.Add(new SqlParameter("@apellido", apellido));
+            command.Parameters.Add(new SqlParameter("@telefono", telefono));
+            command.Parameters.Add(new SqlParameter("@correo", correo));
+
+            command.ExecuteNonQuery();
+            CloseConnection();
+        }
+
         public static void Ingreso_Articulo( int codigo, string Numero_Serie, int Tipo_Art, string Descripcion, string Marca, string Modelo, double Monto, double Tasa, int Estado)
         {
             OpenConnection();

@@ -32,7 +32,7 @@
             this.txtBusqueda_ID = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.grpInfo_Nuevo_Cliente = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -83,7 +83,7 @@
             // 
             // grpInfo_Nuevo_Cliente
             // 
-            this.grpInfo_Nuevo_Cliente.Controls.Add(this.textBox4);
+            this.grpInfo_Nuevo_Cliente.Controls.Add(this.txtCorreo);
             this.grpInfo_Nuevo_Cliente.Controls.Add(this.label5);
             this.grpInfo_Nuevo_Cliente.Controls.Add(this.txtTelefono);
             this.grpInfo_Nuevo_Cliente.Controls.Add(this.label4);
@@ -101,12 +101,12 @@
             this.grpInfo_Nuevo_Cliente.TabStop = false;
             this.grpInfo_Nuevo_Cliente.Text = "Añadir un Cliente:";
             // 
-            // textBox4
+            // txtCorreo
             // 
-            this.textBox4.Location = new System.Drawing.Point(100, 127);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 16;
+            this.txtCorreo.Location = new System.Drawing.Point(100, 127);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(100, 20);
+            this.txtCorreo.TabIndex = 16;
             // 
             // label5
             // 
@@ -244,6 +244,7 @@
             this.btnAñadir.TabIndex = 7;
             this.btnAñadir.Text = "Añadir";
             this.btnAñadir.UseVisualStyleBackColor = true;
+            this.btnAñadir.Click += new System.EventHandler(this.btnAñadir_Click);
             // 
             // label6
             // 
@@ -288,7 +289,7 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.GroupBox grpInfo_Nuevo_Cliente;
         private System.Windows.Forms.DataGridView dtgv_Info_Cliente;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label4;
