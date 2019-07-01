@@ -96,7 +96,6 @@ namespace Sistema_Empenos_Anderson
             Cliente.Telefono_Cliente = command.Parameters["@Telefono"].Value.ToString();
             Cliente.Correo_Cliente = command.Parameters["@Correo"].Value.ToString();
 
-
             return Verificador;
         }
 
