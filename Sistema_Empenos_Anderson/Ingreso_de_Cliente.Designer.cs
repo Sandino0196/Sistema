@@ -32,7 +32,7 @@
             this.txtBusqueda_ID = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.grpInfo_Nuevo_Cliente = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -48,7 +48,6 @@
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Correo_Electronico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAvanzar = new System.Windows.Forms.Button();
-            this.btnVolver = new System.Windows.Forms.Button();
             this.btnAñadir = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.grpInfo_Nuevo_Cliente.SuspendLayout();
@@ -83,7 +82,7 @@
             // 
             // grpInfo_Nuevo_Cliente
             // 
-            this.grpInfo_Nuevo_Cliente.Controls.Add(this.textBox4);
+            this.grpInfo_Nuevo_Cliente.Controls.Add(this.txtCorreo);
             this.grpInfo_Nuevo_Cliente.Controls.Add(this.label5);
             this.grpInfo_Nuevo_Cliente.Controls.Add(this.txtTelefono);
             this.grpInfo_Nuevo_Cliente.Controls.Add(this.label4);
@@ -101,12 +100,12 @@
             this.grpInfo_Nuevo_Cliente.TabStop = false;
             this.grpInfo_Nuevo_Cliente.Text = "Añadir un Cliente:";
             // 
-            // textBox4
+            // txtCorreo
             // 
-            this.textBox4.Location = new System.Drawing.Point(100, 127);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 16;
+            this.txtCorreo.Location = new System.Drawing.Point(100, 127);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(100, 20);
+            this.txtCorreo.TabIndex = 16;
             // 
             // label5
             // 
@@ -224,15 +223,7 @@
             this.btnAvanzar.TabIndex = 5;
             this.btnAvanzar.Text = "Avanzar";
             this.btnAvanzar.UseVisualStyleBackColor = true;
-            // 
-            // btnVolver
-            // 
-            this.btnVolver.Location = new System.Drawing.Point(12, 218);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(75, 23);
-            this.btnVolver.TabIndex = 6;
-            this.btnVolver.Text = "Volver";
-            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnAvanzar.Click += new System.EventHandler(this.btnAvanzar_Click);
             // 
             // btnAñadir
             // 
@@ -243,6 +234,7 @@
             this.btnAñadir.TabIndex = 7;
             this.btnAñadir.Text = "Añadir";
             this.btnAñadir.UseVisualStyleBackColor = true;
+            this.btnAñadir.Click += new System.EventHandler(this.btnAñadir_Click);
             // 
             // label6
             // 
@@ -262,7 +254,6 @@
             this.ClientSize = new System.Drawing.Size(711, 253);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnAñadir);
-            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnAvanzar);
             this.Controls.Add(this.dtgv_Info_Cliente);
             this.Controls.Add(this.grpInfo_Nuevo_Cliente);
@@ -271,6 +262,7 @@
             this.Controls.Add(this.lblBusqueda_ID);
             this.Name = "Ingreso_de_Cliente";
             this.Text = "Ingreso de Cliente";
+            this.Load += new System.EventHandler(this.Ingreso_de_Cliente_Load);
             this.grpInfo_Nuevo_Cliente.ResumeLayout(false);
             this.grpInfo_Nuevo_Cliente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_Info_Cliente)).EndInit();
@@ -286,7 +278,7 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.GroupBox grpInfo_Nuevo_Cliente;
         private System.Windows.Forms.DataGridView dtgv_Info_Cliente;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label4;
@@ -301,7 +293,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn Correo_Electronico;
         private System.Windows.Forms.Button btnAvanzar;
-        private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnAñadir;
         private System.Windows.Forms.Label label6;
     }

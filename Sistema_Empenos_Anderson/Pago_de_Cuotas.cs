@@ -17,9 +17,20 @@ namespace Sistema_Empenos_Anderson
             InitializeComponent();
         }
 
+        protected override void OnClosed(EventArgs e)
+        {
+            Menu men = new Sistema_Empenos_Anderson.Menu();
+            men.Show();
+        }
+
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Pago_de_Cuotas_Load(object sender, EventArgs e)
+        {
+            this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
         }
     }
 }

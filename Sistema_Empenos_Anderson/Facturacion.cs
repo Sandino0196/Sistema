@@ -17,9 +17,65 @@ namespace Sistema_Empenos_Anderson
             InitializeComponent();
         }
 
+        int row = 0;
+
+        protected override void OnClosed(EventArgs e)
+        {
+            Menu men = new Sistema_Empenos_Anderson.Menu();
+            men.Show();
+        }
+
         private void bttRegresar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void bttAceptar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Facturacion_Load(object sender, EventArgs e)
+        {
+            this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
+            
+        }
+
+        private void bttBuscar_Click(object sender, EventArgs e)
+        {
+            if(BD.Busqueda_Articulo(int.Parse(txtNumRecibo.Text),txtNumSerie.Text) > 0)
+            {
+                txtArticulo.Text = Articulo.descripcion;
+                txtEstado.Text = Articulo.estado;
+                txtMonto.Text = Articulo.prestado.ToString();
+            }
+        }
+
+        private void bttAgregar_Click(object sender, EventArgs e)
+        {
+            dtgvArticulos.Rows.Add();
+            dtgvArticulos.Rows[row].Cells[0].Value = Articulo.descripcion;
+            dtgvArticulos.Rows[row].Cells[1].Value = Articulo.marca;
+            dtgvArticulos.Rows[row].Cells[2].Value = Articulo.modelo;
+            dtgvArticulos.Rows[row].Cells[3].Value = txtPrecio.Text;
+
+            Articulo.precioPago += double.Parse(txtPrecio.Text);
+
+            txtNumRecibo.Text = "";
+            txtNumSerie.Text = "";
+            txtArticulo.Text = "";
+            txtEstado.Text = "";
+            txtMonto.Text = "";
+            txtPrecio.Text = "";
+
+            row++;
+        }
+
+        private void btnAvanzar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Venta venta = new Venta();
+            venta.Show();
         }
     }
 }

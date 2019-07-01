@@ -12,6 +12,13 @@ namespace Sistema_Empenos_Anderson
 {
     public partial class Consultas : Form
     {
+
+        protected override void OnClosed(EventArgs e)
+        {
+            Menu men = new Sistema_Empenos_Anderson.Menu();
+            men.Show();
+        }
+
         public Consultas()
         {
             InitializeComponent();
@@ -61,6 +68,11 @@ namespace Sistema_Empenos_Anderson
         private void btnregresar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Consultas_Load(object sender, EventArgs e)
+        {
+            this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
         }
     }
 }
