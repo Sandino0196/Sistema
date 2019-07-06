@@ -38,19 +38,19 @@
             this.bttAgregar = new System.Windows.Forms.Button();
             this.bttEliminar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtEstado = new System.Windows.Forms.TextBox();
-            this.txtMonto = new System.Windows.Forms.TextBox();
-            this.dtgvArticulos = new System.Windows.Forms.DataGridView();
-            this.btnAvanzar = new System.Windows.Forms.Button();
+            this.btnConsulta = new System.Windows.Forms.Button();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtMonto = new System.Windows.Forms.TextBox();
+            this.txtEstado = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dtgvArticulos = new System.Windows.Forms.DataGridView();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnConsulta = new System.Windows.Forms.Button();
+            this.btnAvanzar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvArticulos)).BeginInit();
             this.SuspendLayout();
@@ -157,63 +157,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Búsqueda por Número Serie y Número Recibo";
             // 
-            // label1
+            // btnConsulta
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 198);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 13);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "Monto Prestado:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Enabled = false;
-            this.label2.Location = new System.Drawing.Point(12, 157);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 13);
-            this.label2.TabIndex = 26;
-            this.label2.Text = "Estado:";
-            // 
-            // txtEstado
-            // 
-            this.txtEstado.Enabled = false;
-            this.txtEstado.Location = new System.Drawing.Point(107, 154);
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(100, 20);
-            this.txtEstado.TabIndex = 27;
-            // 
-            // txtMonto
-            // 
-            this.txtMonto.Enabled = false;
-            this.txtMonto.Location = new System.Drawing.Point(107, 195);
-            this.txtMonto.Name = "txtMonto";
-            this.txtMonto.Size = new System.Drawing.Size(100, 20);
-            this.txtMonto.TabIndex = 28;
-            // 
-            // dtgvArticulos
-            // 
-            this.dtgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvArticulos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Descripcion,
-            this.Marca,
-            this.Modelo,
-            this.Precio});
-            this.dtgvArticulos.Location = new System.Drawing.Point(12, 311);
-            this.dtgvArticulos.Name = "dtgvArticulos";
-            this.dtgvArticulos.Size = new System.Drawing.Size(449, 150);
-            this.dtgvArticulos.TabIndex = 27;
-            // 
-            // btnAvanzar
-            // 
-            this.btnAvanzar.Location = new System.Drawing.Point(333, 478);
-            this.btnAvanzar.Name = "btnAvanzar";
-            this.btnAvanzar.Size = new System.Drawing.Size(75, 23);
-            this.btnAvanzar.TabIndex = 28;
-            this.btnAvanzar.Text = "Avanzar";
-            this.btnAvanzar.UseVisualStyleBackColor = true;
-            this.btnAvanzar.Click += new System.EventHandler(this.btnAvanzar_Click);
+            this.btnConsulta.Location = new System.Drawing.Point(232, 118);
+            this.btnConsulta.Name = "btnConsulta";
+            this.btnConsulta.Size = new System.Drawing.Size(75, 23);
+            this.btnConsulta.TabIndex = 31;
+            this.btnConsulta.Text = "Consulta";
+            this.btnConsulta.UseVisualStyleBackColor = true;
+            this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
             // 
             // txtPrecio
             // 
@@ -230,6 +182,54 @@
             this.label3.Size = new System.Drawing.Size(71, 13);
             this.label3.TabIndex = 29;
             this.label3.Text = "Precio Venta:";
+            // 
+            // txtMonto
+            // 
+            this.txtMonto.Enabled = false;
+            this.txtMonto.Location = new System.Drawing.Point(107, 195);
+            this.txtMonto.Name = "txtMonto";
+            this.txtMonto.Size = new System.Drawing.Size(100, 20);
+            this.txtMonto.TabIndex = 28;
+            // 
+            // txtEstado
+            // 
+            this.txtEstado.Enabled = false;
+            this.txtEstado.Location = new System.Drawing.Point(107, 154);
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.Size = new System.Drawing.Size(100, 20);
+            this.txtEstado.TabIndex = 27;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Enabled = false;
+            this.label2.Location = new System.Drawing.Point(12, 157);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(43, 13);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "Estado:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 198);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 13);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Monto Prestado:";
+            // 
+            // dtgvArticulos
+            // 
+            this.dtgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvArticulos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Descripcion,
+            this.Marca,
+            this.Modelo,
+            this.Precio});
+            this.dtgvArticulos.Location = new System.Drawing.Point(12, 311);
+            this.dtgvArticulos.Name = "dtgvArticulos";
+            this.dtgvArticulos.Size = new System.Drawing.Size(449, 150);
+            this.dtgvArticulos.TabIndex = 27;
             // 
             // Descripcion
             // 
@@ -255,14 +255,15 @@
             this.Precio.Name = "Precio";
             this.Precio.ReadOnly = true;
             // 
-            // btnConsulta
+            // btnAvanzar
             // 
-            this.btnConsulta.Location = new System.Drawing.Point(232, 118);
-            this.btnConsulta.Name = "btnConsulta";
-            this.btnConsulta.Size = new System.Drawing.Size(75, 23);
-            this.btnConsulta.TabIndex = 31;
-            this.btnConsulta.Text = "Consulta";
-            this.btnConsulta.UseVisualStyleBackColor = true;
+            this.btnAvanzar.Location = new System.Drawing.Point(333, 478);
+            this.btnAvanzar.Name = "btnAvanzar";
+            this.btnAvanzar.Size = new System.Drawing.Size(75, 23);
+            this.btnAvanzar.TabIndex = 28;
+            this.btnAvanzar.Text = "Avanzar";
+            this.btnAvanzar.UseVisualStyleBackColor = true;
+            this.btnAvanzar.Click += new System.EventHandler(this.btnAvanzar_Click);
             // 
             // Facturacion
             // 
