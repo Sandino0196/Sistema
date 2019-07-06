@@ -45,5 +45,10 @@ namespace Sistema_Empenos_Anderson
                 consultas.Show();
             }
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
