@@ -77,5 +77,10 @@ namespace Sistema_Empenos_Anderson
             Venta venta = new Venta();
             venta.Show();
         }
+
+        private void btnConsulta_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
