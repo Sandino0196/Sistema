@@ -55,6 +55,18 @@
     <Compile Include="Consultas.Designer.cs">
       <DependentUpon>Consultas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Elim_Clien_Mantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Elim_Clien_Mantenimiento.Designer.cs">
+      <DependentUpon>Elim_Clien_Mantenimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estados_Mantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estados_Mantenimiento.Designer.cs">
+      <DependentUpon>Estados_Mantenimiento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Facturacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +111,18 @@
     <Compile Include="Retiro_Articulo.Designer.cs">
       <DependentUpon>Retiro_Articulo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tipo_Art_Mantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tipo_Art_Mantenimiento.Designer.cs">
+      <DependentUpon>Tipo_Art_Mantenimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_Mantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User_Mantenimiento.Designer.cs">
+      <DependentUpon>User_Mantenimiento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usuario.cs" />
     <Compile Include="Venta.cs">
       <SubType>Form</SubType>
@@ -108,6 +132,12 @@
     </Compile>
     <EmbeddedResource Include="Consultas.resx">
       <DependentUpon>Consultas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Elim_Clien_Mantenimiento.resx">
+      <DependentUpon>Elim_Clien_Mantenimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estados_Mantenimiento.resx">
+      <DependentUpon>Estados_Mantenimiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Facturacion.resx">
       <DependentUpon>Facturacion.cs</DependentUpon>
@@ -137,6 +167,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Tipo_Art_Mantenimiento.resx">
+      <DependentUpon>Tipo_Art_Mantenimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Mantenimiento.resx">
+      <DependentUpon>User_Mantenimiento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Venta.resx">
       <DependentUpon>Venta.cs</DependentUpon>
     </EmbeddedResource>
