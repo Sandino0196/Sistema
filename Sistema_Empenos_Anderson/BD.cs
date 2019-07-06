@@ -41,13 +41,23 @@ namespace Sistema_Empenos_Anderson
             pLogin.Direction = ParameterDirection.Output;
             command.Parameters.Add(pLogin);
 
+            SqlParameter pCodigo = new SqlParameter("@codigo", 0);
+            pCodigo.Direction = ParameterDirection.Output;
+            command.Parameters.Add(pCodigo);
+
             command.ExecuteNonQuery();
 
             CloseConnection();
-
-            login = int.Parse(command.Parameters["@login"].Value.ToString());
-
-            return login;
+            try
+            {
+                login = int.Parse(command.Parameters["@login"].Value.ToString());
+                Usuario.Codigo_Usuario = int.Parse(command.Parameters["@codigo"].Value.ToString());
+                return login;
+            }
+            catch
+            {
+                return 0;
+            }            
         }
 
         public static int Busqueda_Cliente(string Identidad)
@@ -188,7 +198,7 @@ namespace Sistema_Empenos_Anderson
             CloseConnection();
         }
 
-        public static void Ingreso_Cliente(string identidad, string nombre, string apellido, string telefono, string correo)
+        public static int Ingreso_Cliente(string identidad, string nombre, string apellido, string telefono, string correo)
         {
             OpenConnection();
 
@@ -203,8 +213,18 @@ namespace Sistema_Empenos_Anderson
             command.Parameters.Add(new SqlParameter("@telefono", telefono));
             command.Parameters.Add(new SqlParameter("@correo", correo));
 
-            command.ExecuteNonQuery();
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch
+            {
+                CloseConnection();
+                return 0;
+            }
             CloseConnection();
+
+            return 1;
         }
 
         public static void Ingreso_Articulo( int codigo, string Numero_Serie, int Tipo_Art, string Descripcion, string Marca, string Modelo, double Monto, double Tasa, int Estado)

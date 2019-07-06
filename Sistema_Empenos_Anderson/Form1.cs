@@ -32,7 +32,7 @@ namespace Sistema_Empenos_Anderson
                 Usuario.Nombre_Usuario = txtUsuario.Text;
             } else
             {
-                MessageBox.Show("Error","Usuario no encontrado");
+                MessageBox.Show("Usuario y/o contraseña incorrecta", "Error");
             }
             
         }

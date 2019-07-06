@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Sistema_Empenos_Anderson
@@ -61,13 +54,18 @@ namespace Sistema_Empenos_Anderson
 
         private void btnAñadir_Click(object sender, EventArgs e)
         {
-            BD.Ingreso_Cliente(txtIdentidad.Text, txtNombre.Text, txtApellido.Text, txtTelefono.Text, txtCorreo.Text);
-            dtgv_Info_Cliente.Rows[0].Cells[0].Value = txtNombre.Text;
-            dtgv_Info_Cliente.Rows[0].Cells[1].Value = txtApellido.Text;
-            dtgv_Info_Cliente.Rows[0].Cells[2].Value = txtTelefono.Text;
-            dtgv_Info_Cliente.Rows[0].Cells[3].Value = txtCorreo.Text;
-            MessageBox.Show("Ingresado Correctamente", "Empeños Anderson");
-            btnAvanzar.Enabled = true;
+            if(BD.Ingreso_Cliente(txtIdentidad.Text, txtNombre.Text, txtApellido.Text, txtTelefono.Text, txtCorreo.Text) == 0)
+            {
+                MessageBox.Show("Identidad encontrada en otro registro, utilice otra o el cliente ya está agregado", "Mensaje Importante");
+            } else
+            {
+                MessageBox.Show("Ingresado correctamente", "Mensaje Importante");
+                dtgv_Info_Cliente.Rows[0].Cells[0].Value = txtNombre.Text;
+                dtgv_Info_Cliente.Rows[0].Cells[1].Value = txtApellido.Text;
+                dtgv_Info_Cliente.Rows[0].Cells[2].Value = txtTelefono.Text;
+                dtgv_Info_Cliente.Rows[0].Cells[3].Value = txtCorreo.Text;
+                btnAvanzar.Enabled = true;
+            }
         }
 
     }
