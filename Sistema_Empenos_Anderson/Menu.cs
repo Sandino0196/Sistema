@@ -17,39 +17,33 @@ namespace Sistema_Empenos_Anderson
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnIngresar_Click(object sender, EventArgs e)
         {
-            if(rdbIngresarArticulo.Checked)
+            if (rdbIngreso.Checked)
             {
-                Ingreso_de_Cliente ingreso = new Ingreso_de_Cliente();
-                ingreso.Show();
+                Ingreso_de_Cliente cliente = new Ingreso_de_Cliente();
+                cliente.Show();
             }
-            if (rdbPagoIntereses.Checked)
+            if (rdbPago.Checked)
             {
                 Pago_de_Cuotas pago = new Pago_de_Cuotas();
                 pago.Show();
             }
-            /*if (rdbRetirarArticulo.Checked)
+            if (rdbRetiro.Checked)
             {
-                Retiro1 Retiro = new Retiro1();
-                Retiro.Show();
-            }*/
-            if(rdbVender.Checked)
-            {
-                Facturacion facturacion = new Facturacion();
-                facturacion.Show();
+                Retiro_Articulo retiro = new Retiro_Articulo();
+                retiro.Show();
             }
-            if(rdbConsulta.Checked)
+            if (rdbVenta.Checked)
             {
-                Consultas consulta = new Consultas();
-                consulta.Show();
+                Facturacion venta = new Facturacion();
+                venta.Show();
             }
-
-        }
-
-        private void rdbRetirarArticulo_CheckedChanged(object sender, EventArgs e)
-        {
-           
+            if (rdbConsulta.Checked)
+            {
+                Consultas consultas = new Consultas();
+                consultas.Show();
+            }
         }
     }
 }
