@@ -45,21 +45,21 @@ namespace Sistema_Empenos_Anderson
         {
             if(BD.Busqueda_Articulo(int.Parse(txtNumRecibo.Text),txtNumSerie.Text) > 0)
             {
-                txtArticulo.Text = Articulo.descripcion;
-                txtEstado.Text = Articulo.estado;
-                txtMonto.Text = Articulo.prestado.ToString();
+                txtArticulo.Text = Articulos.descripcion;
+                txtEstado.Text = Articulos.estado;
+                txtMonto.Text = Articulos.prestado.ToString();
             }
         }
 
         private void bttAgregar_Click(object sender, EventArgs e)
         {
             dtgvArticulos.Rows.Add();
-            dtgvArticulos.Rows[row].Cells[0].Value = Articulo.descripcion;
-            dtgvArticulos.Rows[row].Cells[1].Value = Articulo.marca;
-            dtgvArticulos.Rows[row].Cells[2].Value = Articulo.modelo;
+            dtgvArticulos.Rows[row].Cells[0].Value = Articulos.descripcion;
+            dtgvArticulos.Rows[row].Cells[1].Value = Articulos.marca;
+            dtgvArticulos.Rows[row].Cells[2].Value = Articulos.modelo;
             dtgvArticulos.Rows[row].Cells[3].Value = txtPrecio.Text;
 
-            Articulo.precioPago += double.Parse(txtPrecio.Text);
+            Articulos.precioPago += double.Parse(txtPrecio.Text);
 
             txtNumRecibo.Text = "";
             txtNumSerie.Text = "";

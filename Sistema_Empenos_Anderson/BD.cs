@@ -171,11 +171,11 @@ namespace Sistema_Empenos_Anderson
                 existencia = 0;
             }
 
-            Articulo.descripcion = command.Parameters["@Descripcion"].Value.ToString();
-            Articulo.marca = command.Parameters["@Marca"].Value.ToString();
-            Articulo.modelo = command.Parameters["@Modelo"].Value.ToString();
-            Articulo.estado = command.Parameters["@Estado"].Value.ToString();
-            Articulo.prestado = double.Parse(command.Parameters["@Prestado"].Value.ToString());
+            Articulos.descripcion = command.Parameters["@Descripcion"].Value.ToString();
+            Articulos.marca = command.Parameters["@Marca"].Value.ToString();
+            Articulos.modelo = command.Parameters["@Modelo"].Value.ToString();
+            Articulos.estado = command.Parameters["@Estado"].Value.ToString();
+            Articulos.prestado = double.Parse(command.Parameters["@Prestado"].Value.ToString());
 
             return existencia;
         }

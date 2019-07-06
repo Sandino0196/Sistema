@@ -26,9 +26,10 @@ namespace Sistema_Empenos_Anderson
 
         private void btnAvanzar_Click(object sender, EventArgs e)
         {
-            Menu men = new Sistema_Empenos_Anderson.Menu();
-            men.Show();
-            this.Close();
+
+            Informe_Recibo informe = new Informe_Recibo();
+            informe.Show();
+            Articulos.codigo = Int32.Parse(txtCod_Recibo.Text);
         }
 
         private void Ingreso_de_Articulo_Load(object sender, EventArgs e)

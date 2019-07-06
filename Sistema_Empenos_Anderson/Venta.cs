@@ -22,11 +22,11 @@ namespace Sistema_Empenos_Anderson
             this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
             txtVendedor.Text = Usuario.Nombre_Usuario;
             txtFechaVenta.Text = calendarVenta.SelectionStart.ToShortDateString();
-            isv = Articulo.precioPago * 0.15;
-            subtotal = Articulo.precioPago - isv;
+            isv = Articulos.precioPago * 0.15;
+            subtotal = Articulos.precioPago - isv;
             txtSubtotal.Text = subtotal.ToString();
             txtISV.Text = isv.ToString();
-            txtTotalPagar.Text = Articulo.precioPago.ToString();
+            txtTotalPagar.Text = Articulos.precioPago.ToString();
         }
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)
