@@ -34,11 +34,11 @@ namespace Sistema_Empenos_Anderson
                 Pago_de_Cuotas pago = new Pago_de_Cuotas();
                 pago.Show();
             }
-            if (rdbRetirarArticulo.Checked)
+            /*if (rdbRetirarArticulo.Checked)
             {
                 Retiro1 Retiro = new Retiro1();
                 Retiro.Show();
-            }
+            }*/
             if(rdbVender.Checked)
             {
                 Facturacion facturacion = new Facturacion();
