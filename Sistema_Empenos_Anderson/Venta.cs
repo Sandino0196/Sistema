@@ -63,5 +63,10 @@ namespace Sistema_Empenos_Anderson
             Facturacion facturacion = new Facturacion();
             facturacion.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            gbInfoComp.Enabled = true;
+        }
     }
 }
