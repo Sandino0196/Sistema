@@ -28,41 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.Data_Recibo = new Sistema_Empenos_Anderson.Data_Recibo();
-            this.SP_Informe_Recibo_DetalleBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.SP_Informe_Recibo_DetalleTableAdapter = new Sistema_Empenos_Anderson.Data_ReciboTableAdapters.SP_Informe_Recibo_DetalleTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.Data_Recibo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SP_Informe_Recibo_DetalleBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.SP_Informe_Recibo_DetalleBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Sistema_Empenos_Anderson.Report1.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(12, 22);
+            this.reportViewer1.Location = new System.Drawing.Point(12, 12);
             this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Remote;
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(776, 416);
+            this.reportViewer1.Size = new System.Drawing.Size(776, 426);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // Data_Recibo
-            // 
-            this.Data_Recibo.DataSetName = "Data_Recibo";
-            this.Data_Recibo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // SP_Informe_Recibo_DetalleBindingSource
-            // 
-            this.SP_Informe_Recibo_DetalleBindingSource.DataMember = "SP_Informe_Recibo_Detalle";
-            this.SP_Informe_Recibo_DetalleBindingSource.DataSource = this.Data_Recibo;
-            // 
-            // SP_Informe_Recibo_DetalleTableAdapter
-            // 
-            this.SP_Informe_Recibo_DetalleTableAdapter.ClearBeforeFill = true;
             // 
             // Informe_Recibo
             // 
@@ -73,8 +49,6 @@
             this.Name = "Informe_Recibo";
             this.Text = "Informe_Recibo";
             this.Load += new System.EventHandler(this.Informe_Recibo_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.Data_Recibo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SP_Informe_Recibo_DetalleBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -82,8 +56,5 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource SP_Informe_Recibo_DetalleBindingSource;
-        private Data_Recibo Data_Recibo;
-        private Data_ReciboTableAdapters.SP_Informe_Recibo_DetalleTableAdapter SP_Informe_Recibo_DetalleTableAdapter;
     }
 }
