@@ -14,7 +14,7 @@ namespace Sistema_Empenos_Anderson
 
         public static void OpenConnection()
         {
-            connection.ConnectionString = @"Data Source=DESKTOP-H4LNV2M; Initial Catalog=Base_Empeños; Integrated Security=Yes";
+            connection.ConnectionString = @"Data Source=DESKTOP-T785USI; Initial Catalog=Base_Empeños; Integrated Security=Yes";
             connection.Open();
             //Donde dice DATA SOURCE le ponen el nombre de su máquina; 
         }
@@ -283,6 +283,23 @@ namespace Sistema_Empenos_Anderson
             command.Parameters.Add(new SqlParameter("@Num_Serie", numeroSerie));
             command.Parameters.Add(new SqlParameter("@Cod_Rec", recibo));
             command.Parameters.Add(new SqlParameter("@Prec_Vent", precio));
+
+            command.ExecuteNonQuery();
+
+            CloseConnection();
+        }
+
+        public static void Retirar_Articulo(int Recibo, string Num_Serie)
+        {
+            OpenConnection();
+
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SP_RetirarArticulo";
+            command.Connection = connection;
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.Add(new SqlParameter ("@NumRecibo", Recibo));
+            command.Parameters.Add(new SqlParameter ("@NumSerie", Num_Serie));
 
             command.ExecuteNonQuery();
 

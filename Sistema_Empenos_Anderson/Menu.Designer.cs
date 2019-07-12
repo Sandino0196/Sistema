@@ -147,6 +147,7 @@
             this.Name = "Menu";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "Menu";
+            this.Load += new System.EventHandler(this.Menu_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
