@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Sistema_Empenos_Anderson
+﻿namespace Sistema_Empenos_Anderson
 {
     public class Usuario
     {
