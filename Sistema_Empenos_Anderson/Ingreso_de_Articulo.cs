@@ -40,7 +40,7 @@ namespace Sistema_Empenos_Anderson
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             Ingreso_de_Cliente ingreso = new Ingreso_de_Cliente();
             ingreso.Show();
         }

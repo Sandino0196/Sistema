@@ -59,7 +59,7 @@ namespace Sistema_Empenos_Anderson
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             Facturacion facturacion = new Facturacion();
             facturacion.Show();
         }

@@ -67,7 +67,7 @@ namespace Sistema_Empenos_Anderson
 
         private void btnregresar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
         }
 
         private void Consultas_Load(object sender, EventArgs e)
