@@ -60,7 +60,9 @@ namespace Sistema_Empenos_Anderson
         private void btnRetirar_Click(object sender, EventArgs e)
         {
             BD.Retirar_Articulo(int.Parse(txtCod_Recibo.Text), txtNumSerie.Text);
-            MessageBox.Show("Articulo retirado con exito","Informacion");
+            Retiro_Articulo_Info retiro = new Retiro_Articulo_Info();
+            retiro.Show();
+            this.Hide();
         }
     }
 }

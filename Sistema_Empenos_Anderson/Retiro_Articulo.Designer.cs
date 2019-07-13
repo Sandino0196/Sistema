@@ -30,6 +30,10 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dtgvInfo_Articulo = new System.Windows.Forms.DataGridView();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtCod_Recibo = new System.Windows.Forms.TextBox();
@@ -37,10 +41,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnRetirar = new System.Windows.Forms.Button();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvInfo_Articulo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,11 +66,35 @@
             this.dtgvInfo_Articulo.Size = new System.Drawing.Size(523, 43);
             this.dtgvInfo_Articulo.TabIndex = 2;
             // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.Width = 120;
+            // 
+            // Marca
+            // 
+            this.Marca.HeaderText = "Marca";
+            this.Marca.Name = "Marca";
+            this.Marca.Width = 120;
+            // 
+            // Modelo
+            // 
+            this.Modelo.HeaderText = "Modelo";
+            this.Modelo.Name = "Modelo";
+            this.Modelo.Width = 120;
+            // 
+            // Monto
+            // 
+            this.Monto.HeaderText = "Monto a Pagar";
+            this.Monto.Name = "Monto";
+            this.Monto.Width = 120;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(87, 9);
+            this.label6.Location = new System.Drawing.Point(199, 9);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(451, 33);
             this.label6.TabIndex = 9;
@@ -126,33 +150,9 @@
             this.btnRetirar.Name = "btnRetirar";
             this.btnRetirar.Size = new System.Drawing.Size(181, 42);
             this.btnRetirar.TabIndex = 16;
-            this.btnRetirar.Text = "Retirar Articulo";
+            this.btnRetirar.Text = "Avanzar";
             this.btnRetirar.UseVisualStyleBackColor = true;
             this.btnRetirar.Click += new System.EventHandler(this.btnRetirar_Click);
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.Width = 120;
-            // 
-            // Marca
-            // 
-            this.Marca.HeaderText = "Marca";
-            this.Marca.Name = "Marca";
-            this.Marca.Width = 120;
-            // 
-            // Modelo
-            // 
-            this.Modelo.HeaderText = "Modelo";
-            this.Modelo.Name = "Modelo";
-            this.Modelo.Width = 120;
-            // 
-            // Monto
-            // 
-            this.Monto.HeaderText = "Monto a Pagar";
-            this.Monto.Name = "Monto";
-            this.Monto.Width = 120;
             // 
             // Retiro_Articulo
             // 

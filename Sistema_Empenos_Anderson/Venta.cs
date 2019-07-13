@@ -54,7 +54,7 @@ namespace Sistema_Empenos_Anderson
 
         private void button2_Click(object sender, EventArgs e)
         {
-            BD.Ingreso_Factura(int.Parse(txtCodigo.Text),txtIDComp.Text,1,txtFechaVenta.Text);
+            BD.Ingreso_Factura(int.Parse(txtCodigo.Text),txtIDComp.Text,1,calendarVenta.TodayDate.ToString());
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
