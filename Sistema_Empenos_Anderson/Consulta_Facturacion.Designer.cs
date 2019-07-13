@@ -85,14 +85,14 @@
             // 
             // txtCod
             // 
-            this.txtCod.Location = new System.Drawing.Point(164, 111);
+            this.txtCod.Location = new System.Drawing.Point(184, 110);
             this.txtCod.Name = "txtCod";
             this.txtCod.Size = new System.Drawing.Size(100, 20);
             this.txtCod.TabIndex = 2;
             // 
             // bttBuscar
             // 
-            this.bttBuscar.Location = new System.Drawing.Point(301, 108);
+            this.bttBuscar.Location = new System.Drawing.Point(320, 108);
             this.bttBuscar.Name = "bttBuscar";
             this.bttBuscar.Size = new System.Drawing.Size(75, 23);
             this.bttBuscar.TabIndex = 3;

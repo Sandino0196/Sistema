@@ -154,9 +154,18 @@ namespace Sistema_Empenos_Anderson
             prestado.Direction = ParameterDirection.Output;
             command.Parameters.Add(prestado);
 
+            SqlParameter interes = new SqlParameter("@Interes", 0);
+            interes.Direction = ParameterDirection.Output;
+            command.Parameters.Add(interes);
+
             SqlParameter existe = new SqlParameter("@Existencia", 0);
             existe.Direction = ParameterDirection.Output;
             command.Parameters.Add(existe);
+
+            SqlParameter identidad = new SqlParameter("@Identidad", " ");
+            identidad.Direction = ParameterDirection.Output;
+            identidad.Size = 50;
+            command.Parameters.Add(identidad);
 
             command.ExecuteNonQuery();
 

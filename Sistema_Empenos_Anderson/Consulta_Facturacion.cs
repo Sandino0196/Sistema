@@ -49,6 +49,16 @@ namespace Sistema_Empenos_Anderson
                 dataGridView1.DataSource = dt;
                 BD.CloseConnection();
             }
+            if(rbCliente.Checked)
+            {
+                BD.OpenConnection();
+                SqlCommand cmd = new SqlCommand("Select  * from dbo.F_Buscar_Cliente("+txtCod.Text+") ", BD.connection);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+                BD.CloseConnection();
+            }
         }
     }
 }
