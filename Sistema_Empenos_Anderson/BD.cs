@@ -154,6 +154,10 @@ namespace Sistema_Empenos_Anderson
             prestado.Direction = ParameterDirection.Output;
             command.Parameters.Add(prestado);
 
+            SqlParameter interes = new SqlParameter("@Interes", 0);
+            interes.Direction = ParameterDirection.Output;
+            command.Parameters.Add(interes);
+
             SqlParameter existe = new SqlParameter("@Existencia", 0);
             existe.Direction = ParameterDirection.Output;
             command.Parameters.Add(existe);
@@ -164,18 +168,18 @@ namespace Sistema_Empenos_Anderson
 
             try
             {
+                Articulo.descripcion = command.Parameters["@Descripcion"].Value.ToString();
+                Articulo.marca = command.Parameters["@Marca"].Value.ToString();
+                Articulo.modelo = command.Parameters["@Modelo"].Value.ToString();
+                Articulo.estado = command.Parameters["@Estado"].Value.ToString();
+                Articulo.interes = double.Parse(command.Parameters["@Interes"].Value.ToString());
                 existencia = int.Parse(command.Parameters["@Existencia"].Value.ToString());
+                Articulo.prestado = double.Parse(command.Parameters["@Prestado"].Value.ToString());
             }
             catch
             {
                 existencia = 0;
             }
-
-            Articulo.descripcion = command.Parameters["@Descripcion"].Value.ToString();
-            Articulo.marca = command.Parameters["@Marca"].Value.ToString();
-            Articulo.modelo = command.Parameters["@Modelo"].Value.ToString();
-            Articulo.estado = command.Parameters["@Estado"].Value.ToString();
-            Articulo.prestado = double.Parse(command.Parameters["@Prestado"].Value.ToString());
 
             return existencia;
         }

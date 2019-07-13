@@ -60,6 +60,7 @@ namespace Sistema_Empenos_Anderson
             } else
             {
                 MessageBox.Show("Ingresado correctamente", "Mensaje Importante");
+                Cliente.Identidad_Cliente = txtIdentidad.Text;
                 dtgv_Info_Cliente.Rows[0].Cells[0].Value = txtNombre.Text;
                 dtgv_Info_Cliente.Rows[0].Cells[1].Value = txtApellido.Text;
                 dtgv_Info_Cliente.Rows[0].Cells[2].Value = txtTelefono.Text;
