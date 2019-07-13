@@ -21,7 +21,6 @@ namespace Sistema_Empenos_Anderson
             double subtotal = 0, isv = 0;
             this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
             txtVendedor.Text = Usuario.Nombre_Usuario;
-            txtFechaVenta.Text = calendarVenta.SelectionStart.ToShortDateString();
             isv = Articulo.precioPago * 0.15;
             subtotal = Articulo.precioPago - isv;
             txtSubtotal.Text = subtotal.ToString();
@@ -54,7 +53,7 @@ namespace Sistema_Empenos_Anderson
 
         private void button2_Click(object sender, EventArgs e)
         {
-            BD.Ingreso_Factura(int.Parse(txtCodigo.Text),txtIDComp.Text,1,txtFechaVenta.Text);
+            BD.Ingreso_Factura(int.Parse(txtCodigo.Text),txtIDComp.Text,Usuario.Codigo_Usuario, dateFechaVenta.ToString());
         }
 
         private void btnVolver_Click(object sender, EventArgs e)

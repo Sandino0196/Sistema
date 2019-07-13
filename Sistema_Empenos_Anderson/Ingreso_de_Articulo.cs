@@ -49,7 +49,7 @@ namespace Sistema_Empenos_Anderson
         {
             if(Ingreso == 0)
             {
-                BD.Ingreso_Recibo(int.Parse(txtCod_Recibo.Text), Cliente.Identidad_Cliente, 1, clndrFecha.TodayDate.ToString() );
+                BD.Ingreso_Recibo(int.Parse(txtCod_Recibo.Text), Cliente.Identidad_Cliente, Usuario.Codigo_Usuario, clndrFecha.TodayDate.ToString() );
                 Ingreso++;
             }
 

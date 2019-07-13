@@ -32,14 +32,14 @@
             this.txtTotalPagar = new System.Windows.Forms.TextBox();
             this.txtSubtotal = new System.Windows.Forms.TextBox();
             this.txtISV = new System.Windows.Forms.TextBox();
-            this.txtFechaVenta = new System.Windows.Forms.TextBox();
             this.lblMonto = new System.Windows.Forms.Label();
             this.lblTotalPagar = new System.Windows.Forms.Label();
             this.lblSubtotal = new System.Windows.Forms.Label();
             this.lblISV = new System.Windows.Forms.Label();
             this.lblFechaVenta = new System.Windows.Forms.Label();
-            this.calendarVenta = new System.Windows.Forms.MonthCalendar();
             this.gbInfoComp = new System.Windows.Forms.GroupBox();
+            this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
+            this.txtIDComp = new System.Windows.Forms.MaskedTextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
@@ -57,14 +57,13 @@
             this.btnIngresar = new System.Windows.Forms.Button();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtIDComp = new System.Windows.Forms.MaskedTextBox();
-            this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
+            this.dateFechaVenta = new System.Windows.Forms.DateTimePicker();
             this.gbInfoComp.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtMonto
             // 
-            this.txtMonto.Location = new System.Drawing.Point(118, 395);
+            this.txtMonto.Location = new System.Drawing.Point(118, 409);
             this.txtMonto.Name = "txtMonto";
             this.txtMonto.Size = new System.Drawing.Size(100, 20);
             this.txtMonto.TabIndex = 33;
@@ -72,7 +71,7 @@
             // txtTotalPagar
             // 
             this.txtTotalPagar.Enabled = false;
-            this.txtTotalPagar.Location = new System.Drawing.Point(118, 365);
+            this.txtTotalPagar.Location = new System.Drawing.Point(118, 379);
             this.txtTotalPagar.Name = "txtTotalPagar";
             this.txtTotalPagar.Size = new System.Drawing.Size(100, 20);
             this.txtTotalPagar.TabIndex = 32;
@@ -80,7 +79,7 @@
             // txtSubtotal
             // 
             this.txtSubtotal.Enabled = false;
-            this.txtSubtotal.Location = new System.Drawing.Point(118, 299);
+            this.txtSubtotal.Location = new System.Drawing.Point(118, 313);
             this.txtSubtotal.Name = "txtSubtotal";
             this.txtSubtotal.Size = new System.Drawing.Size(100, 20);
             this.txtSubtotal.TabIndex = 31;
@@ -88,23 +87,15 @@
             // txtISV
             // 
             this.txtISV.Enabled = false;
-            this.txtISV.Location = new System.Drawing.Point(118, 331);
+            this.txtISV.Location = new System.Drawing.Point(118, 345);
             this.txtISV.Name = "txtISV";
             this.txtISV.Size = new System.Drawing.Size(100, 20);
             this.txtISV.TabIndex = 30;
             // 
-            // txtFechaVenta
-            // 
-            this.txtFechaVenta.Enabled = false;
-            this.txtFechaVenta.Location = new System.Drawing.Point(118, 264);
-            this.txtFechaVenta.Name = "txtFechaVenta";
-            this.txtFechaVenta.Size = new System.Drawing.Size(100, 20);
-            this.txtFechaVenta.TabIndex = 29;
-            // 
             // lblMonto
             // 
             this.lblMonto.AutoSize = true;
-            this.lblMonto.Location = new System.Drawing.Point(57, 402);
+            this.lblMonto.Location = new System.Drawing.Point(57, 416);
             this.lblMonto.Name = "lblMonto";
             this.lblMonto.Size = new System.Drawing.Size(40, 13);
             this.lblMonto.TabIndex = 28;
@@ -113,7 +104,7 @@
             // lblTotalPagar
             // 
             this.lblTotalPagar.AutoSize = true;
-            this.lblTotalPagar.Location = new System.Drawing.Point(23, 368);
+            this.lblTotalPagar.Location = new System.Drawing.Point(23, 382);
             this.lblTotalPagar.Name = "lblTotalPagar";
             this.lblTotalPagar.Size = new System.Drawing.Size(74, 13);
             this.lblTotalPagar.TabIndex = 27;
@@ -122,7 +113,7 @@
             // lblSubtotal
             // 
             this.lblSubtotal.AutoSize = true;
-            this.lblSubtotal.Location = new System.Drawing.Point(48, 302);
+            this.lblSubtotal.Location = new System.Drawing.Point(48, 316);
             this.lblSubtotal.Name = "lblSubtotal";
             this.lblSubtotal.Size = new System.Drawing.Size(49, 13);
             this.lblSubtotal.TabIndex = 26;
@@ -131,7 +122,7 @@
             // lblISV
             // 
             this.lblISV.AutoSize = true;
-            this.lblISV.Location = new System.Drawing.Point(64, 334);
+            this.lblISV.Location = new System.Drawing.Point(64, 348);
             this.lblISV.Name = "lblISV";
             this.lblISV.Size = new System.Drawing.Size(33, 13);
             this.lblISV.TabIndex = 25;
@@ -140,17 +131,11 @@
             // lblFechaVenta
             // 
             this.lblFechaVenta.AutoSize = true;
-            this.lblFechaVenta.Location = new System.Drawing.Point(11, 271);
+            this.lblFechaVenta.Location = new System.Drawing.Point(11, 285);
             this.lblFechaVenta.Name = "lblFechaVenta";
             this.lblFechaVenta.Size = new System.Drawing.Size(86, 13);
             this.lblFechaVenta.TabIndex = 24;
             this.lblFechaVenta.Text = "Fecha de Venta:";
-            // 
-            // calendarVenta
-            // 
-            this.calendarVenta.Location = new System.Drawing.Point(18, 18);
-            this.calendarVenta.Name = "calendarVenta";
-            this.calendarVenta.TabIndex = 23;
             // 
             // gbInfoComp
             // 
@@ -167,12 +152,28 @@
             this.gbInfoComp.Controls.Add(this.label2);
             this.gbInfoComp.Controls.Add(this.txtNombre);
             this.gbInfoComp.Enabled = false;
-            this.gbInfoComp.Location = new System.Drawing.Point(278, 18);
+            this.gbInfoComp.Location = new System.Drawing.Point(26, 5);
             this.gbInfoComp.Name = "gbInfoComp";
             this.gbInfoComp.Size = new System.Drawing.Size(328, 187);
             this.gbInfoComp.TabIndex = 34;
             this.gbInfoComp.TabStop = false;
             this.gbInfoComp.Text = "Información Cliente";
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(121, 115);
+            this.txtTelefono.Mask = "0000-9999";
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(58, 20);
+            this.txtTelefono.TabIndex = 40;
+            // 
+            // txtIDComp
+            // 
+            this.txtIDComp.Location = new System.Drawing.Point(121, 26);
+            this.txtIDComp.Mask = "0000-9999-00000";
+            this.txtIDComp.Name = "txtIDComp";
+            this.txtIDComp.Size = new System.Drawing.Size(88, 20);
+            this.txtIDComp.TabIndex = 40;
             // 
             // btnAdd
             // 
@@ -266,7 +267,7 @@
             // txtVendedor
             // 
             this.txtVendedor.Enabled = false;
-            this.txtVendedor.Location = new System.Drawing.Point(118, 231);
+            this.txtVendedor.Location = new System.Drawing.Point(118, 245);
             this.txtVendedor.Name = "txtVendedor";
             this.txtVendedor.Size = new System.Drawing.Size(100, 20);
             this.txtVendedor.TabIndex = 7;
@@ -274,7 +275,7 @@
             // lblVendedor
             // 
             this.lblVendedor.AutoSize = true;
-            this.lblVendedor.Location = new System.Drawing.Point(48, 234);
+            this.lblVendedor.Location = new System.Drawing.Point(48, 248);
             this.lblVendedor.Name = "lblVendedor";
             this.lblVendedor.Size = new System.Drawing.Size(56, 13);
             this.lblVendedor.TabIndex = 3;
@@ -282,7 +283,7 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(468, 278);
+            this.btnVolver.Location = new System.Drawing.Point(335, 359);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(90, 58);
             this.btnVolver.TabIndex = 35;
@@ -292,7 +293,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(357, 278);
+            this.btnAceptar.Location = new System.Drawing.Point(335, 285);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(90, 58);
             this.btnAceptar.TabIndex = 36;
@@ -302,7 +303,7 @@
             // 
             // btnIngresar
             // 
-            this.btnIngresar.Location = new System.Drawing.Point(242, 278);
+            this.btnIngresar.Location = new System.Drawing.Point(335, 212);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(90, 58);
             this.btnIngresar.TabIndex = 37;
@@ -312,7 +313,7 @@
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(118, 192);
+            this.txtCodigo.Location = new System.Drawing.Point(118, 206);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(100, 20);
             this.txtCodigo.TabIndex = 39;
@@ -320,33 +321,27 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 195);
+            this.label1.Location = new System.Drawing.Point(23, 209);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 13);
             this.label1.TabIndex = 38;
             this.label1.Text = "Codigo Factura";
             // 
-            // txtIDComp
+            // dateFechaVenta
             // 
-            this.txtIDComp.Location = new System.Drawing.Point(121, 26);
-            this.txtIDComp.Mask = "0000-9999-00000";
-            this.txtIDComp.Name = "txtIDComp";
-            this.txtIDComp.Size = new System.Drawing.Size(88, 20);
-            this.txtIDComp.TabIndex = 40;
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Location = new System.Drawing.Point(121, 115);
-            this.txtTelefono.Mask = "0000-9999";
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(58, 20);
-            this.txtTelefono.TabIndex = 40;
+            this.dateFechaVenta.Enabled = false;
+            this.dateFechaVenta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateFechaVenta.Location = new System.Drawing.Point(118, 279);
+            this.dateFechaVenta.Name = "dateFechaVenta";
+            this.dateFechaVenta.Size = new System.Drawing.Size(200, 20);
+            this.dateFechaVenta.TabIndex = 40;
             // 
             // Venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(608, 429);
+            this.ClientSize = new System.Drawing.Size(437, 438);
+            this.Controls.Add(this.dateFechaVenta);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnIngresar);
@@ -359,13 +354,11 @@
             this.Controls.Add(this.txtTotalPagar);
             this.Controls.Add(this.txtSubtotal);
             this.Controls.Add(this.txtISV);
-            this.Controls.Add(this.txtFechaVenta);
             this.Controls.Add(this.lblMonto);
             this.Controls.Add(this.lblTotalPagar);
             this.Controls.Add(this.lblSubtotal);
             this.Controls.Add(this.lblISV);
             this.Controls.Add(this.lblFechaVenta);
-            this.Controls.Add(this.calendarVenta);
             this.Name = "Venta";
             this.Text = "Venta";
             this.Load += new System.EventHandler(this.Venta_Load);
@@ -382,13 +375,11 @@
         private System.Windows.Forms.TextBox txtTotalPagar;
         private System.Windows.Forms.TextBox txtSubtotal;
         private System.Windows.Forms.TextBox txtISV;
-        private System.Windows.Forms.TextBox txtFechaVenta;
         private System.Windows.Forms.Label lblMonto;
         private System.Windows.Forms.Label lblTotalPagar;
         private System.Windows.Forms.Label lblSubtotal;
         private System.Windows.Forms.Label lblISV;
         private System.Windows.Forms.Label lblFechaVenta;
-        private System.Windows.Forms.MonthCalendar calendarVenta;
         private System.Windows.Forms.GroupBox gbInfoComp;
         private System.Windows.Forms.Button btnBuscarCliente;
         private System.Windows.Forms.Label lbIDComp;
@@ -409,5 +400,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MaskedTextBox txtIDComp;
         private System.Windows.Forms.MaskedTextBox txtTelefono;
+        private System.Windows.Forms.DateTimePicker dateFechaVenta;
     }
 }
