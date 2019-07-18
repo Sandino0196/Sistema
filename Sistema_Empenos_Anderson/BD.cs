@@ -12,9 +12,11 @@ namespace Sistema_Empenos_Anderson
     {
         public static SqlConnection connection = new SqlConnection();
 
+        #region Conexion
+
         public static void OpenConnection()
         {
-            connection.ConnectionString = @"Data Source=DESKTOP-H4LNV2M\MSSQLSERVER01; Initial Catalog=Base_Empeños; Integrated Security=Yes";
+            connection.ConnectionString = @"Data Source=DESKTOP-D1B8U5J; Initial Catalog=Base_Empeños; Integrated Security=Yes";
             connection.Open();
             //Donde dice DATA SOURCE le ponen el nombre de su máquina; 
         }
@@ -24,6 +26,8 @@ namespace Sistema_Empenos_Anderson
             connection.Close();
         }
 
+        #endregion
+        
         public static int Login(string usuario, string password)
         {
             int login = 0;
@@ -52,6 +56,9 @@ namespace Sistema_Empenos_Anderson
             {
                 login = int.Parse(command.Parameters["@login"].Value.ToString());
                 Usuario.Codigo_Usuario = int.Parse(command.Parameters["@codigo"].Value.ToString());
+                Usuario.Nombre_Usuario = usuario;
+                Usuario.Password_Usuario = password;
+                //Usuario.Codigo_Tipo_Usuario
                 return login;
             }
             catch
@@ -59,6 +66,8 @@ namespace Sistema_Empenos_Anderson
                 return 0;
             }            
         }
+
+        #region Busqueda
 
         public static int Busqueda_Cliente(string Identidad)
         {
@@ -103,17 +112,15 @@ namespace Sistema_Empenos_Anderson
             try
             {
                 Verificador = int.Parse(command.Parameters["@Verificador"].Value.ToString());
+                Cliente.Nombre_Cliente = command.Parameters["@Nombre"].Value.ToString();
+                Cliente.Apellido_Cliente = command.Parameters["@Apellido"].Value.ToString();
+                Cliente.Telefono_Cliente = command.Parameters["@Telefono"].Value.ToString();
+                Cliente.Correo_Cliente = command.Parameters["@Correo"].Value.ToString();
             }
             catch
             {
                 Verificador = 0;
             }
-            Cliente.Nombre_Cliente = command.Parameters["@Nombre"].Value.ToString();
-            Cliente.Apellido_Cliente = command.Parameters["@Apellido"].Value.ToString();
-            Cliente.Telefono_Cliente = command.Parameters["@Telefono"].Value.ToString();
-            Cliente.Correo_Cliente = command.Parameters["@Correo"].Value.ToString();
-
-
             return Verificador;
         }
 
@@ -165,20 +172,29 @@ namespace Sistema_Empenos_Anderson
             try
             {
                 existencia = int.Parse(command.Parameters["@Existencia"].Value.ToString());
+                Articulo.descripcion = command.Parameters["@Descripcion"].Value.ToString();
+                Articulo.marca = command.Parameters["@Marca"].Value.ToString();
+                Articulo.modelo = command.Parameters["@Modelo"].Value.ToString();
+                Articulo.estado = command.Parameters["@Estado"].Value.ToString();
+                Articulo.prestado = double.Parse(command.Parameters["@Prestado"].Value.ToString());
             }
             catch
             {
                 existencia = 0;
             }
 
-            Articulo.descripcion = command.Parameters["@Descripcion"].Value.ToString();
-            Articulo.marca = command.Parameters["@Marca"].Value.ToString();
-            Articulo.modelo = command.Parameters["@Modelo"].Value.ToString();
-            Articulo.estado = command.Parameters["@Estado"].Value.ToString();
-            Articulo.prestado = double.Parse(command.Parameters["@Prestado"].Value.ToString());
-
             return existencia;
         }
+
+        public static int Busqueda_Usuario(string nombreUsuario)
+        {
+
+            return 0;
+        }
+
+        #endregion
+
+        #region Ingreso
 
         public static void Ingreso_Recibo(int Codigo, string Identidad, int Codigo_user, string Fecha)
         {
@@ -288,6 +304,6 @@ namespace Sistema_Empenos_Anderson
 
             CloseConnection();
         }
-
+        #endregion
     }
 }

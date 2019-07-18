@@ -34,14 +34,17 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnIngresar = new System.Windows.Forms.Button();
+            this.lblOlvidarPass = new System.Windows.Forms.Label();
+            this.btnNuevo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(100, 60);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(41, 45);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 13);
+            this.label1.Size = new System.Drawing.Size(278, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Sistema de Empeños Anderson";
             // 
@@ -80,7 +83,8 @@
             // 
             // btnIngresar
             // 
-            this.btnIngresar.Location = new System.Drawing.Point(134, 318);
+            this.btnIngresar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnIngresar.Location = new System.Drawing.Point(86, 332);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(75, 23);
             this.btnIngresar.TabIndex = 5;
@@ -88,11 +92,35 @@
             this.btnIngresar.UseVisualStyleBackColor = true;
             this.btnIngresar.Click += new System.EventHandler(this.button1_Click);
             // 
+            // lblOlvidarPass
+            // 
+            this.lblOlvidarPass.AutoSize = true;
+            this.lblOlvidarPass.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblOlvidarPass.Location = new System.Drawing.Point(104, 288);
+            this.lblOlvidarPass.Name = "lblOlvidarPass";
+            this.lblOlvidarPass.Size = new System.Drawing.Size(130, 13);
+            this.lblOlvidarPass.TabIndex = 6;
+            this.lblOlvidarPass.Text = "¿Olvidaste la contraseña?";
+            this.lblOlvidarPass.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevo.Location = new System.Drawing.Point(195, 332);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
+            this.btnNuevo.TabIndex = 7;
+            this.btnNuevo.Text = "NUEVO";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(350, 397);
+            this.Controls.Add(this.btnNuevo);
+            this.Controls.Add(this.lblOlvidarPass);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsuario);
@@ -115,6 +143,8 @@
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnIngresar;
+        private System.Windows.Forms.Label lblOlvidarPass;
+        private System.Windows.Forms.Button btnNuevo;
     }
 }
 

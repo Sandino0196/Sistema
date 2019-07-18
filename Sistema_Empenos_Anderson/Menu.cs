@@ -44,11 +44,38 @@ namespace Sistema_Empenos_Anderson
                 Consultas consultas = new Consultas();
                 consultas.Show();
             }
+            if (rdbMantenimiento.Checked)
+            {
+                Manteminiento manteminiento = new Manteminiento();
+                manteminiento.Show();
+            }
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+            if(Usuario.Codigo_Usuario != 1)
+            {
+                rdbMantenimiento.Visible = false;
+            } else
+            {
+                rdbMantenimiento.Visible = true;
+            }
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Form1 form1 = new Form1();            
+            form1.Show();
+            Usuario.Codigo_Usuario = 0;
+            Usuario.Codigo_Tipo_Usuario = 0;
+            Usuario.Nombre_Usuario = "";
+            Usuario.Password_Usuario = "";
         }
     }
 }

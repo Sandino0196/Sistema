@@ -97,6 +97,12 @@
     <Compile Include="Ingreso_de_Cliente.Designer.cs">
       <DependentUpon>Ingreso_de_Cliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manteminiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manteminiento.Designer.cs">
+      <DependentUpon>Manteminiento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ingreso_de_Cliente.resx">
       <DependentUpon>Ingreso_de_Cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manteminiento.resx">
+      <DependentUpon>Manteminiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>

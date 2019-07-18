@@ -37,6 +37,7 @@
             this.rdbIngreso = new System.Windows.Forms.RadioButton();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -118,9 +119,9 @@
             // 
             // btnIngresar
             // 
-            this.btnIngresar.Location = new System.Drawing.Point(151, 458);
+            this.btnIngresar.Location = new System.Drawing.Point(71, 444);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(75, 23);
+            this.btnIngresar.Size = new System.Drawing.Size(75, 37);
             this.btnIngresar.TabIndex = 1;
             this.btnIngresar.Text = "INGRESAR";
             this.btnIngresar.UseVisualStyleBackColor = true;
@@ -135,11 +136,22 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Bienvenido a Empeños Anderson";
             // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Location = new System.Drawing.Point(296, 444);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(75, 37);
+            this.btnCerrar.TabIndex = 3;
+            this.btnCerrar.Text = "CERRAR SESION";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(418, 493);
+            this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.groupBox1);
@@ -147,6 +159,7 @@
             this.Name = "Menu";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "Menu";
+            this.Load += new System.EventHandler(this.Menu_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -165,5 +178,6 @@
         private System.Windows.Forms.RadioButton rdbIngreso;
         private System.Windows.Forms.Button btnIngresar;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnCerrar;
     }
 }

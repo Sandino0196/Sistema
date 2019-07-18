@@ -16,5 +16,17 @@ namespace Sistema_Empenos_Anderson
         {
             InitializeComponent();
         }
+
+        private void bttBuscar_Click(object sender, EventArgs e)
+        {
+            if(BD.Busqueda_Cliente(txtID_Cliente.Text) > 0)
+            {
+                txtNombre.Text = Cliente.Nombre_Cliente + Cliente.Apellido_Cliente;
+            }
+            else
+            {
+                MessageBox.Show("Atención","El cliente no existe");
+            }
+        }
     }
 }
