@@ -80,9 +80,8 @@ namespace Sistema_Empenos_Anderson
 
         private void btnConsulta_Click(object sender, EventArgs e)
         {
-            Consulta_Facturacion cons = new Consulta_Facturacion();
-            cons.Show();
-            this.Hide();
+            Consulta_Articulos consulta = new Consulta_Articulos();
+            consulta.Show();
         }
     }
 }
