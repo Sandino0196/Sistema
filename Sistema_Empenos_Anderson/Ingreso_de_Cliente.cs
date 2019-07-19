@@ -40,6 +40,7 @@ namespace Sistema_Empenos_Anderson
                 }
                 else
                 {
+                    //Cambio chiquitito solo para poder dar push
                     DialogResult res = MessageBox.Show("No se encontro el cliente en la Base de Datos\nDesea Agregarlo?", "ALERTA", MessageBoxButtons.YesNo);
                     if(res.ToString()=="Yes")
                     {
