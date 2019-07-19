@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Threading.Tasks;
 
 namespace Sistema_Empenos_Anderson
 {
@@ -67,6 +62,10 @@ namespace Sistema_Empenos_Anderson
             }            
         }
 
+        #region Cargar Datos
+
+        #endregion
+
         #region Busqueda
 
         public static int Busqueda_Cliente(string Identidad)
@@ -105,12 +104,12 @@ namespace Sistema_Empenos_Anderson
             verificador.Direction = ParameterDirection.Output;
             command.Parameters.Add(verificador);
 
-            command.ExecuteNonQuery();
-
-            CloseConnection();
-
             try
             {
+                command.ExecuteNonQuery();
+
+                CloseConnection();
+
                 Verificador = int.Parse(command.Parameters["@Verificador"].Value.ToString());
                 Cliente.Nombre_Cliente = command.Parameters["@Nombre"].Value.ToString();
                 Cliente.Apellido_Cliente = command.Parameters["@Apellido"].Value.ToString();
@@ -165,12 +164,11 @@ namespace Sistema_Empenos_Anderson
             existe.Direction = ParameterDirection.Output;
             command.Parameters.Add(existe);
 
-            command.ExecuteNonQuery();
-
-            CloseConnection();
-
             try
             {
+                command.ExecuteNonQuery();
+                CloseConnection();
+
                 existencia = int.Parse(command.Parameters["@Existencia"].Value.ToString());
                 Articulo.descripcion = command.Parameters["@Descripcion"].Value.ToString();
                 Articulo.marca = command.Parameters["@Marca"].Value.ToString();
@@ -188,8 +186,31 @@ namespace Sistema_Empenos_Anderson
 
         public static int Busqueda_Usuario(string nombreUsuario)
         {
+            OpenConnection();
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SP_Busqueda_Usuario ";
+            command.Connection = connection;
+            command.CommandType = CommandType.StoredProcedure;
 
-            return 0;
+            command.Parameters.Add(new SqlParameter("@Nombre", nombreUsuario));
+
+            SqlParameter descripcion = new SqlParameter("@Tipo", " ");
+            descripcion.Direction = ParameterDirection.Output;
+            descripcion.Size = 50;
+            command.Parameters.Add(descripcion);
+
+            try
+            {
+                command.ExecuteNonQuery();
+                CloseConnection();
+                Usuario.Tipo_Usuario = command.Parameters["@Tipo"].Value.ToString();
+                return 1;
+            }
+            catch
+            {
+                return 0;
+            }
+
         }
 
         #endregion

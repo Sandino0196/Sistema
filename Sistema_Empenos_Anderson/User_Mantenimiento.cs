@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace Sistema_Empenos_Anderson
@@ -15,10 +10,7 @@ namespace Sistema_Empenos_Anderson
         public User_Mantenimiento(int tab)
         {
             InitializeComponent();
-            if (tab == 1)
-            {
-                tabCUsuario.SelectTab(tab);
-            }
+            tabCUsuario.SelectTab(tab);
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -31,6 +23,33 @@ namespace Sistema_Empenos_Anderson
                 this.Close();
                 manteminiento.Show();
             }
+        }
+
+        private void btnBuscarTipo_Click(object sender, EventArgs e)
+        {
+            if (BD.Busqueda_Usuario(txtNom_User_Tipo.Text) > 0)
+            {
+
+            }
+        }
+
+        private void User_Mantenimiento_Load(object sender, EventArgs e)
+        {
+            BD.OpenConnection();
+            SqlDataAdapter da = new SqlDataAdapter("SP_Tipos_Usuario", BD.connection);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            BD.CloseConnection();
+
+            cbxTp_User_Modificar.DataSource = dt;
+            cbxTp_User_Modificar.DisplayMember = "Descripcion";
+            cbxTp_User_Modificar.ValueMember = "Codigo_Tipo_Usuario";
+
+            cbxTp_User_New.DataSource = dt;
+            cbxTp_User_New.DisplayMember = "Descripcion";
+            cbxTp_User_New.ValueMember = "Codigo_Tipo_Usuario";
+            
         }
     }
 }

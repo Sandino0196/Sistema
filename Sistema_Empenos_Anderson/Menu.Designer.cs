@@ -119,6 +119,7 @@
             // 
             // btnIngresar
             // 
+            this.btnIngresar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIngresar.Location = new System.Drawing.Point(71, 444);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(75, 37);
@@ -138,6 +139,7 @@
             // 
             // btnCerrar
             // 
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Location = new System.Drawing.Point(296, 444);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 37);

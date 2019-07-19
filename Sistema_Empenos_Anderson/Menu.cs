@@ -23,31 +23,35 @@ namespace Sistema_Empenos_Anderson
             {
                 Ingreso_de_Cliente cliente = new Ingreso_de_Cliente();
                 cliente.Show();
-            }
-            if (rdbPago.Checked)
+                this.Hide();
+            } else if (rdbPago.Checked)
             {
                 Pago_de_Cuotas pago = new Pago_de_Cuotas();
                 pago.Show();
-            }
-            if (rdbRetiro.Checked)
+                this.Hide();
+            } else if (rdbRetiro.Checked)
             {
                 Retiro_Articulo retiro = new Retiro_Articulo();
                 retiro.Show();
-            }
-            if (rdbVenta.Checked)
+                this.Hide();
+            } else if (rdbVenta.Checked)
             {
                 Facturacion venta = new Facturacion();
                 venta.Show();
-            }
-            if (rdbConsulta.Checked)
+                this.Hide();
+            } else if (rdbConsulta.Checked)
             {
                 Consultas consultas = new Consultas();
                 consultas.Show();
-            }
-            if (rdbMantenimiento.Checked)
+                this.Hide();
+            } else if (rdbMantenimiento.Checked)
             {
                 Manteminiento manteminiento = new Manteminiento();
                 manteminiento.Show();
+                this.Hide();
+            } else
+            {
+                MessageBox.Show("Seleccione una opción, por favor", "Advertencia");
             }
         }
 

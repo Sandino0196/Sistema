@@ -33,29 +33,31 @@
             this.btnAceptarTipo = new System.Windows.Forms.Button();
             this.lblNom_User = new System.Windows.Forms.Label();
             this.lblTp_User = new System.Windows.Forms.Label();
-            this.cbxTp_User = new System.Windows.Forms.ComboBox();
-            this.txtNom_User = new System.Windows.Forms.TextBox();
+            this.cbxTp_User_Modificar = new System.Windows.Forms.ComboBox();
+            this.txtNom_User_Tipo = new System.Windows.Forms.TextBox();
             this.btnBuscarTipo = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtPassConfirmar_Change = new System.Windows.Forms.TextBox();
+            this.txtPassNuevo_Change = new System.Windows.Forms.TextBox();
+            this.txtPass_Change = new System.Windows.Forms.TextBox();
             this.btnAceptarPassword = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNom_User_Pass = new System.Windows.Forms.TextBox();
             this.btnBuscarPassword = new System.Windows.Forms.Button();
-            this.btnVolver = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cbxTp_User_New = new System.Windows.Forms.ComboBox();
+            this.txtPassConfirmar_New = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtPassNuevo_New = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtNom_User_Nuevo = new System.Windows.Forms.TextBox();
+            this.btnAceptarNew = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.tabCUsuario.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -78,8 +80,8 @@
             this.tabPage1.Controls.Add(this.btnAceptarTipo);
             this.tabPage1.Controls.Add(this.lblNom_User);
             this.tabPage1.Controls.Add(this.lblTp_User);
-            this.tabPage1.Controls.Add(this.cbxTp_User);
-            this.tabPage1.Controls.Add(this.txtNom_User);
+            this.tabPage1.Controls.Add(this.cbxTp_User_Modificar);
+            this.tabPage1.Controls.Add(this.txtNom_User_Tipo);
             this.tabPage1.Controls.Add(this.btnBuscarTipo);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -117,20 +119,21 @@
             this.lblTp_User.TabIndex = 3;
             this.lblTp_User.Text = "Tipo de Usuario";
             // 
-            // cbxTp_User
+            // cbxTp_User_Modificar
             // 
-            this.cbxTp_User.FormattingEnabled = true;
-            this.cbxTp_User.Location = new System.Drawing.Point(115, 90);
-            this.cbxTp_User.Name = "cbxTp_User";
-            this.cbxTp_User.Size = new System.Drawing.Size(121, 21);
-            this.cbxTp_User.TabIndex = 4;
+            this.cbxTp_User_Modificar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxTp_User_Modificar.FormattingEnabled = true;
+            this.cbxTp_User_Modificar.Location = new System.Drawing.Point(115, 90);
+            this.cbxTp_User_Modificar.Name = "cbxTp_User_Modificar";
+            this.cbxTp_User_Modificar.Size = new System.Drawing.Size(121, 21);
+            this.cbxTp_User_Modificar.TabIndex = 4;
             // 
-            // txtNom_User
+            // txtNom_User_Tipo
             // 
-            this.txtNom_User.Location = new System.Drawing.Point(115, 14);
-            this.txtNom_User.Name = "txtNom_User";
-            this.txtNom_User.Size = new System.Drawing.Size(100, 20);
-            this.txtNom_User.TabIndex = 1;
+            this.txtNom_User_Tipo.Location = new System.Drawing.Point(115, 14);
+            this.txtNom_User_Tipo.Name = "txtNom_User_Tipo";
+            this.txtNom_User_Tipo.Size = new System.Drawing.Size(100, 20);
+            this.txtNom_User_Tipo.TabIndex = 1;
             // 
             // btnBuscarTipo
             // 
@@ -141,18 +144,19 @@
             this.btnBuscarTipo.TabIndex = 2;
             this.btnBuscarTipo.Text = "Buscar";
             this.btnBuscarTipo.UseVisualStyleBackColor = true;
+            this.btnBuscarTipo.Click += new System.EventHandler(this.btnBuscarTipo_Click);
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.textBox4);
-            this.tabPage2.Controls.Add(this.textBox3);
-            this.tabPage2.Controls.Add(this.textBox2);
+            this.tabPage2.Controls.Add(this.txtPassConfirmar_Change);
+            this.tabPage2.Controls.Add(this.txtPassNuevo_Change);
+            this.tabPage2.Controls.Add(this.txtPass_Change);
             this.tabPage2.Controls.Add(this.btnAceptarPassword);
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.txtNom_User_Pass);
             this.tabPage2.Controls.Add(this.btnBuscarPassword);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -162,29 +166,29 @@
             this.tabPage2.Text = "Cambiar Password";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // txtPassConfirmar_Change
             // 
-            this.textBox4.Location = new System.Drawing.Point(164, 132);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.PasswordChar = '*';
-            this.textBox4.Size = new System.Drawing.Size(131, 20);
-            this.textBox4.TabIndex = 12;
+            this.txtPassConfirmar_Change.Location = new System.Drawing.Point(164, 132);
+            this.txtPassConfirmar_Change.Name = "txtPassConfirmar_Change";
+            this.txtPassConfirmar_Change.PasswordChar = '*';
+            this.txtPassConfirmar_Change.Size = new System.Drawing.Size(131, 20);
+            this.txtPassConfirmar_Change.TabIndex = 12;
             // 
-            // textBox3
+            // txtPassNuevo_Change
             // 
-            this.textBox3.Location = new System.Drawing.Point(115, 99);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PasswordChar = '*';
-            this.textBox3.Size = new System.Drawing.Size(131, 20);
-            this.textBox3.TabIndex = 11;
+            this.txtPassNuevo_Change.Location = new System.Drawing.Point(115, 99);
+            this.txtPassNuevo_Change.Name = "txtPassNuevo_Change";
+            this.txtPassNuevo_Change.PasswordChar = '*';
+            this.txtPassNuevo_Change.Size = new System.Drawing.Size(131, 20);
+            this.txtPassNuevo_Change.TabIndex = 11;
             // 
-            // textBox2
+            // txtPass_Change
             // 
-            this.textBox2.Location = new System.Drawing.Point(115, 65);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(131, 20);
-            this.textBox2.TabIndex = 10;
+            this.txtPass_Change.Location = new System.Drawing.Point(115, 65);
+            this.txtPass_Change.Name = "txtPass_Change";
+            this.txtPass_Change.PasswordChar = '*';
+            this.txtPass_Change.Size = new System.Drawing.Size(131, 20);
+            this.txtPass_Change.TabIndex = 10;
             // 
             // btnAceptarPassword
             // 
@@ -232,12 +236,12 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Nombre del Usuario:";
             // 
-            // textBox1
+            // txtNom_User_Pass
             // 
-            this.textBox1.Location = new System.Drawing.Point(115, 10);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(131, 20);
-            this.textBox1.TabIndex = 4;
+            this.txtNom_User_Pass.Location = new System.Drawing.Point(115, 10);
+            this.txtNom_User_Pass.Name = "txtNom_User_Pass";
+            this.txtNom_User_Pass.Size = new System.Drawing.Size(131, 20);
+            this.txtNom_User_Pass.TabIndex = 4;
             // 
             // btnBuscarPassword
             // 
@@ -248,6 +252,103 @@
             this.btnBuscarPassword.TabIndex = 5;
             this.btnBuscarPassword.Text = "Buscar";
             this.btnBuscarPassword.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.label8);
+            this.tabPage3.Controls.Add(this.cbxTp_User_New);
+            this.tabPage3.Controls.Add(this.txtPassConfirmar_New);
+            this.tabPage3.Controls.Add(this.label7);
+            this.tabPage3.Controls.Add(this.label6);
+            this.tabPage3.Controls.Add(this.txtPassNuevo_New);
+            this.tabPage3.Controls.Add(this.label5);
+            this.tabPage3.Controls.Add(this.txtNom_User_Nuevo);
+            this.tabPage3.Controls.Add(this.btnAceptarNew);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(320, 211);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Nuevo Usuario";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 131);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(82, 13);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Tipo de Usuario";
+            // 
+            // cbxTp_User_New
+            // 
+            this.cbxTp_User_New.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxTp_User_New.FormattingEnabled = true;
+            this.cbxTp_User_New.Location = new System.Drawing.Point(112, 128);
+            this.cbxTp_User_New.Name = "cbxTp_User_New";
+            this.cbxTp_User_New.Size = new System.Drawing.Size(131, 21);
+            this.cbxTp_User_New.TabIndex = 14;
+            // 
+            // txtPassConfirmar_New
+            // 
+            this.txtPassConfirmar_New.Location = new System.Drawing.Point(112, 88);
+            this.txtPassConfirmar_New.Name = "txtPassConfirmar_New";
+            this.txtPassConfirmar_New.PasswordChar = '*';
+            this.txtPassConfirmar_New.Size = new System.Drawing.Size(131, 20);
+            this.txtPassConfirmar_New.TabIndex = 12;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 91);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(100, 13);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Confirme Password:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(3, 57);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(56, 13);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Password:";
+            // 
+            // txtPassNuevo_New
+            // 
+            this.txtPassNuevo_New.Location = new System.Drawing.Point(112, 54);
+            this.txtPassNuevo_New.Name = "txtPassNuevo_New";
+            this.txtPassNuevo_New.PasswordChar = '*';
+            this.txtPassNuevo_New.Size = new System.Drawing.Size(131, 20);
+            this.txtPassNuevo_New.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 17);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(103, 13);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Nombre del Usuario:";
+            // 
+            // txtNom_User_Nuevo
+            // 
+            this.txtNom_User_Nuevo.Location = new System.Drawing.Point(112, 14);
+            this.txtNom_User_Nuevo.Name = "txtNom_User_Nuevo";
+            this.txtNom_User_Nuevo.Size = new System.Drawing.Size(131, 20);
+            this.txtNom_User_Nuevo.TabIndex = 7;
+            // 
+            // btnAceptarNew
+            // 
+            this.btnAceptarNew.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAceptarNew.Location = new System.Drawing.Point(127, 172);
+            this.btnAceptarNew.Name = "btnAceptarNew";
+            this.btnAceptarNew.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptarNew.TabIndex = 8;
+            this.btnAceptarNew.Text = "Aceptar";
+            this.btnAceptarNew.UseVisualStyleBackColor = true;
             // 
             // btnVolver
             // 
@@ -260,83 +361,6 @@
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.textBox7);
-            this.tabPage3.Controls.Add(this.label7);
-            this.tabPage3.Controls.Add(this.label6);
-            this.tabPage3.Controls.Add(this.textBox6);
-            this.tabPage3.Controls.Add(this.label5);
-            this.tabPage3.Controls.Add(this.textBox5);
-            this.tabPage3.Controls.Add(this.button1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(320, 211);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Nuevo Usuario";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 17);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(103, 13);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Nombre del Usuario:";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(112, 14);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(131, 20);
-            this.textBox5.TabIndex = 7;
-            // 
-            // button1
-            // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Location = new System.Drawing.Point(140, 148);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Agregar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 57);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 13);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Password:";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(112, 54);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.PasswordChar = '*';
-            this.textBox6.Size = new System.Drawing.Size(131, 20);
-            this.textBox6.TabIndex = 10;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 91);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(100, 13);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Confirme Password:";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(112, 88);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.PasswordChar = '*';
-            this.textBox7.Size = new System.Drawing.Size(131, 20);
-            this.textBox7.TabIndex = 12;
-            // 
             // User_Mantenimiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -346,6 +370,7 @@
             this.Controls.Add(this.tabCUsuario);
             this.Name = "User_Mantenimiento";
             this.Text = "User_Mantenimiento";
+            this.Load += new System.EventHandler(this.User_Mantenimiento_Load);
             this.tabCUsuario.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -364,28 +389,30 @@
         private System.Windows.Forms.Button btnAceptarTipo;
         private System.Windows.Forms.Label lblNom_User;
         private System.Windows.Forms.Label lblTp_User;
-        private System.Windows.Forms.ComboBox cbxTp_User;
-        private System.Windows.Forms.TextBox txtNom_User;
+        private System.Windows.Forms.ComboBox cbxTp_User_Modificar;
+        private System.Windows.Forms.TextBox txtNom_User_Tipo;
         private System.Windows.Forms.Button btnBuscarTipo;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtPassConfirmar_Change;
+        private System.Windows.Forms.TextBox txtPassNuevo_Change;
+        private System.Windows.Forms.TextBox txtPass_Change;
         private System.Windows.Forms.Button btnAceptarPassword;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNom_User_Pass;
         private System.Windows.Forms.Button btnBuscarPassword;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtNom_User_Nuevo;
+        private System.Windows.Forms.Button btnAceptarNew;
+        private System.Windows.Forms.TextBox txtPassConfirmar_New;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtPassNuevo_New;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cbxTp_User_New;
     }
 }
