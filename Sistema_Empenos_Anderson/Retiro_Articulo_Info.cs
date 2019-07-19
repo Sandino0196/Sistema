@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Sistema_Empenos_Anderson
 {
-    public partial class Estados_Mantenimiento : Form
+    public partial class Retiro_Articulo_Info : Form
     {
-        public Estados_Mantenimiento()
+        public Retiro_Articulo_Info()
         {
             InitializeComponent();
         }
