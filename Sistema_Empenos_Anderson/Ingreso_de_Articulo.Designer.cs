@@ -45,17 +45,17 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtMonto = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtTasa = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.dtgvArticulos = new System.Windows.Forms.DataGridView();
-            this.btnVolver = new System.Windows.Forms.Button();
-            this.btnAvanzar = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
             this.Numero_Serie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnVolver = new System.Windows.Forms.Button();
+            this.btnAvanzar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.txtTasa = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvArticulos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -203,13 +203,6 @@
             this.label9.TabIndex = 24;
             this.label9.Text = "Monto a Prestar:";
             // 
-            // txtTasa
-            // 
-            this.txtTasa.Location = new System.Drawing.Point(162, 336);
-            this.txtTasa.Name = "txtTasa";
-            this.txtTasa.Size = new System.Drawing.Size(100, 20);
-            this.txtTasa.TabIndex = 27;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -232,36 +225,6 @@
             this.dtgvArticulos.Name = "dtgvArticulos";
             this.dtgvArticulos.Size = new System.Drawing.Size(544, 134);
             this.dtgvArticulos.TabIndex = 28;
-            // 
-            // btnVolver
-            // 
-            this.btnVolver.Location = new System.Drawing.Point(12, 422);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(75, 23);
-            this.btnVolver.TabIndex = 29;
-            this.btnVolver.Text = "Volver";
-            this.btnVolver.UseVisualStyleBackColor = true;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
-            // 
-            // btnAvanzar
-            // 
-            this.btnAvanzar.Location = new System.Drawing.Point(741, 422);
-            this.btnAvanzar.Name = "btnAvanzar";
-            this.btnAvanzar.Size = new System.Drawing.Size(75, 23);
-            this.btnAvanzar.TabIndex = 30;
-            this.btnAvanzar.Text = "Avanzar";
-            this.btnAvanzar.UseVisualStyleBackColor = true;
-            this.btnAvanzar.Click += new System.EventHandler(this.btnAvanzar_Click);
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Location = new System.Drawing.Point(196, 382);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregar.TabIndex = 31;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // Numero_Serie
             // 
@@ -293,16 +256,54 @@
             this.Modelo.Name = "Modelo";
             this.Modelo.ReadOnly = true;
             // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(12, 422);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(75, 23);
+            this.btnVolver.TabIndex = 29;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
+            // btnAvanzar
+            // 
+            this.btnAvanzar.Location = new System.Drawing.Point(741, 422);
+            this.btnAvanzar.Name = "btnAvanzar";
+            this.btnAvanzar.Size = new System.Drawing.Size(75, 23);
+            this.btnAvanzar.TabIndex = 30;
+            this.btnAvanzar.Text = "Avanzar";
+            this.btnAvanzar.UseVisualStyleBackColor = true;
+            this.btnAvanzar.Click += new System.EventHandler(this.btnAvanzar_Click);
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(196, 382);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.TabIndex = 31;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // txtTasa
+            // 
+            this.txtTasa.Location = new System.Drawing.Point(196, 336);
+            this.txtTasa.Mask = "9.99";
+            this.txtTasa.Name = "txtTasa";
+            this.txtTasa.Size = new System.Drawing.Size(26, 20);
+            this.txtTasa.TabIndex = 32;
+            // 
             // Ingreso_de_Articulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(828, 457);
+            this.Controls.Add(this.txtTasa);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnAvanzar);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.dtgvArticulos);
-            this.Controls.Add(this.txtTasa);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtMonto);
             this.Controls.Add(this.label9);
@@ -349,7 +350,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtMonto;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtTasa;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView dtgvArticulos;
         private System.Windows.Forms.Button btnVolver;
@@ -360,5 +360,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
         private System.Windows.Forms.DataGridViewTextBoxColumn Modelo;
+        private System.Windows.Forms.MaskedTextBox txtTasa;
     }
 }
