@@ -23,21 +23,34 @@ namespace Sistema_Empenos_Anderson
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            
-            if (BD.Busqueda_Cliente(txtBusqueda_ID.Text) > 0)
+            if(txtBusqueda_ID.MaskCompleted == false)
             {
-                Cliente.Identidad_Cliente = txtBusqueda_ID.Text;
-                dtgv_Info_Cliente.Rows[0].Cells[0].Value = Cliente.Nombre_Cliente;
-                dtgv_Info_Cliente.Rows[0].Cells[1].Value = Cliente.Apellido_Cliente;
-                dtgv_Info_Cliente.Rows[0].Cells[2].Value = Cliente.Telefono_Cliente;
-                dtgv_Info_Cliente.Rows[0].Cells[3].Value = Cliente.Correo_Cliente;
-                btnAvanzar.Enabled = true;
-            }else
-            {
-                MessageBox.Show("No se encontro el cliente en la Base de Datos\nDesea Agregarlo?","ALERTA", MessageBoxButtons.YesNo);
-                grpInfo_Nuevo_Cliente.Enabled = true;
-                btnAñadir.Enabled = true;
+                MessageBox.Show("No ingreso una identidad completa o dejo el espacio vacio, Por favor ingresela","ERROR");
             }
+            else
+            {
+                if (BD.Busqueda_Cliente(txtBusqueda_ID.Text) > 0)
+                {
+                    Cliente.Identidad_Cliente = txtBusqueda_ID.Text;
+                    dtgv_Info_Cliente.Rows[0].Cells[0].Value = Cliente.Nombre_Cliente;
+                    dtgv_Info_Cliente.Rows[0].Cells[1].Value = Cliente.Apellido_Cliente;
+                    dtgv_Info_Cliente.Rows[0].Cells[2].Value = Cliente.Telefono_Cliente;
+                    dtgv_Info_Cliente.Rows[0].Cells[3].Value = Cliente.Correo_Cliente;
+                    btnAvanzar.Enabled = true;
+                }
+                else
+                {
+                    //Cambio chiquitito solo para poder dar push
+                    DialogResult res = MessageBox.Show("No se encontro el cliente en la Base de Datos\nDesea Agregarlo?", "ALERTA", MessageBoxButtons.YesNo);
+                    if(res.ToString()=="Yes")
+                    {
+                        grpInfo_Nuevo_Cliente.Enabled = true;
+                        btnAñadir.Enabled = true;
+                    }
+                    
+                }
+            }
+            
         }
 
         private void btnAvanzar_Click(object sender, EventArgs e)
@@ -54,18 +67,28 @@ namespace Sistema_Empenos_Anderson
 
         private void btnAñadir_Click(object sender, EventArgs e)
         {
-            if(BD.Ingreso_Cliente(txtIdentidad.Text, txtNombre.Text, txtApellido.Text, txtTelefono.Text, txtCorreo.Text) == 0)
+            if(txtIdentidad.MaskCompleted == false  || txtNombre.Text == "" || txtApellido.Text == "" || txtTelefono.MaskCompleted == false)
             {
-                MessageBox.Show("Identidad encontrada en otro registro, utilice otra o el cliente ya está agregado", "Mensaje Importante");
-            } else
+                MessageBox.Show("Existen Datos del cliente que no ha ingresado, Por favor ingreselos","ERROR");
+
+            }else
             {
-                MessageBox.Show("Ingresado correctamente", "Mensaje Importante");
-                dtgv_Info_Cliente.Rows[0].Cells[0].Value = txtNombre.Text;
-                dtgv_Info_Cliente.Rows[0].Cells[1].Value = txtApellido.Text;
-                dtgv_Info_Cliente.Rows[0].Cells[2].Value = txtTelefono.Text;
-                dtgv_Info_Cliente.Rows[0].Cells[3].Value = txtCorreo.Text;
-                btnAvanzar.Enabled = true;
+                if (BD.Ingreso_Cliente(txtIdentidad.Text, txtNombre.Text, txtApellido.Text, txtTelefono.Text, txtCorreo.Text) == 0)
+                {
+                    MessageBox.Show("Identidad encontrada en otro registro, utilice otra o el cliente ya está agregado", "Mensaje Importante");
+                }
+                else
+                {
+                    MessageBox.Show("Ingresado correctamente", "Mensaje Importante");
+                    Cliente.Identidad_Cliente = txtIdentidad.Text;
+                    dtgv_Info_Cliente.Rows[0].Cells[0].Value = txtNombre.Text;
+                    dtgv_Info_Cliente.Rows[0].Cells[1].Value = txtApellido.Text;
+                    dtgv_Info_Cliente.Rows[0].Cells[2].Value = txtTelefono.Text;
+                    dtgv_Info_Cliente.Rows[0].Cells[3].Value = txtCorreo.Text;
+                    btnAvanzar.Enabled = true;
+                }
             }
+            
         }
 
     }
