@@ -29,18 +29,15 @@
         private void InitializeComponent()
         {
             this.lblBusqueda_ID = new System.Windows.Forms.Label();
-            this.txtBusqueda_ID = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.grpInfo_Nuevo_Cliente = new System.Windows.Forms.GroupBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtIdentidad = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dtgv_Info_Cliente = new System.Windows.Forms.DataGridView();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +47,9 @@
             this.btnAvanzar = new System.Windows.Forms.Button();
             this.btnAñadir = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.txtBusqueda_ID = new System.Windows.Forms.MaskedTextBox();
+            this.txtIdentidad = new System.Windows.Forms.MaskedTextBox();
+            this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
             this.grpInfo_Nuevo_Cliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_Info_Cliente)).BeginInit();
             this.SuspendLayout();
@@ -63,13 +63,6 @@
             this.lblBusqueda_ID.TabIndex = 0;
             this.lblBusqueda_ID.Text = "Numero de Identidad del Cliente:";
             // 
-            // txtBusqueda_ID
-            // 
-            this.txtBusqueda_ID.Location = new System.Drawing.Point(238, 77);
-            this.txtBusqueda_ID.Name = "txtBusqueda_ID";
-            this.txtBusqueda_ID.Size = new System.Drawing.Size(100, 20);
-            this.txtBusqueda_ID.TabIndex = 1;
-            // 
             // btnBuscar
             // 
             this.btnBuscar.Location = new System.Drawing.Point(263, 103);
@@ -82,15 +75,15 @@
             // 
             // grpInfo_Nuevo_Cliente
             // 
+            this.grpInfo_Nuevo_Cliente.Controls.Add(this.txtTelefono);
+            this.grpInfo_Nuevo_Cliente.Controls.Add(this.txtIdentidad);
             this.grpInfo_Nuevo_Cliente.Controls.Add(this.txtCorreo);
             this.grpInfo_Nuevo_Cliente.Controls.Add(this.label5);
-            this.grpInfo_Nuevo_Cliente.Controls.Add(this.txtTelefono);
             this.grpInfo_Nuevo_Cliente.Controls.Add(this.label4);
             this.grpInfo_Nuevo_Cliente.Controls.Add(this.txtApellido);
             this.grpInfo_Nuevo_Cliente.Controls.Add(this.label3);
             this.grpInfo_Nuevo_Cliente.Controls.Add(this.txtNombre);
             this.grpInfo_Nuevo_Cliente.Controls.Add(this.label2);
-            this.grpInfo_Nuevo_Cliente.Controls.Add(this.txtIdentidad);
             this.grpInfo_Nuevo_Cliente.Controls.Add(this.label1);
             this.grpInfo_Nuevo_Cliente.Enabled = false;
             this.grpInfo_Nuevo_Cliente.Location = new System.Drawing.Point(463, 17);
@@ -115,13 +108,6 @@
             this.label5.Size = new System.Drawing.Size(97, 13);
             this.label5.TabIndex = 15;
             this.label5.Text = "Correo Electronico:";
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Location = new System.Drawing.Point(100, 100);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(100, 20);
-            this.txtTelefono.TabIndex = 14;
             // 
             // label4
             // 
@@ -164,13 +150,6 @@
             this.label2.TabIndex = 9;
             this.label2.Text = "Nombre:";
             // 
-            // txtIdentidad
-            // 
-            this.txtIdentidad.Location = new System.Drawing.Point(100, 22);
-            this.txtIdentidad.Name = "txtIdentidad";
-            this.txtIdentidad.Size = new System.Drawing.Size(100, 20);
-            this.txtIdentidad.TabIndex = 8;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -190,7 +169,7 @@
             this.Correo_Electronico});
             this.dtgv_Info_Cliente.Location = new System.Drawing.Point(12, 147);
             this.dtgv_Info_Cliente.Name = "dtgv_Info_Cliente";
-            this.dtgv_Info_Cliente.Size = new System.Drawing.Size(443, 47);
+            this.dtgv_Info_Cliente.Size = new System.Drawing.Size(443, 54);
             this.dtgv_Info_Cliente.TabIndex = 4;
             this.dtgv_Info_Cliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -246,19 +225,43 @@
             this.label6.TabIndex = 8;
             this.label6.Text = "Sistema de Empeños Anderson";
             // 
+            // txtBusqueda_ID
+            // 
+            this.txtBusqueda_ID.Location = new System.Drawing.Point(237, 74);
+            this.txtBusqueda_ID.Mask = "0000-9999-00000";
+            this.txtBusqueda_ID.Name = "txtBusqueda_ID";
+            this.txtBusqueda_ID.Size = new System.Drawing.Size(90, 20);
+            this.txtBusqueda_ID.TabIndex = 9;
+            // 
+            // txtIdentidad
+            // 
+            this.txtIdentidad.Location = new System.Drawing.Point(100, 18);
+            this.txtIdentidad.Mask = "0000-9999-00000";
+            this.txtIdentidad.Name = "txtIdentidad";
+            this.txtIdentidad.Size = new System.Drawing.Size(90, 20);
+            this.txtIdentidad.TabIndex = 10;
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(100, 101);
+            this.txtTelefono.Mask = "0000-9999";
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(58, 20);
+            this.txtTelefono.TabIndex = 10;
+            // 
             // Ingreso_de_Cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(711, 253);
+            this.Controls.Add(this.txtBusqueda_ID);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnAñadir);
             this.Controls.Add(this.btnAvanzar);
             this.Controls.Add(this.dtgv_Info_Cliente);
             this.Controls.Add(this.grpInfo_Nuevo_Cliente);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.txtBusqueda_ID);
             this.Controls.Add(this.lblBusqueda_ID);
             this.Name = "Ingreso_de_Cliente";
             this.Text = "Ingreso de Cliente";
@@ -274,19 +277,16 @@
         #endregion
 
         private System.Windows.Forms.Label lblBusqueda_ID;
-        private System.Windows.Forms.TextBox txtBusqueda_ID;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.GroupBox grpInfo_Nuevo_Cliente;
         private System.Windows.Forms.DataGridView dtgv_Info_Cliente;
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtIdentidad;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
@@ -295,5 +295,8 @@
         private System.Windows.Forms.Button btnAvanzar;
         private System.Windows.Forms.Button btnAñadir;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.MaskedTextBox txtBusqueda_ID;
+        private System.Windows.Forms.MaskedTextBox txtTelefono;
+        private System.Windows.Forms.MaskedTextBox txtIdentidad;
     }
 }

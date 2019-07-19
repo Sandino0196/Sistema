@@ -16,6 +16,10 @@ namespace Sistema_Empenos_Anderson
         {
             InitializeComponent();
         }
+        protected override void OnClosed(EventArgs e)
+        {
+            Application.Exit();
+        }
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
@@ -44,11 +48,25 @@ namespace Sistema_Empenos_Anderson
                 Consultas consultas = new Consultas();
                 consultas.Show();
             }
+            if(rdbConsulta.Checked==false && rdbIngreso.Checked==false && rdbMantenimiento.Checked==false && rdbPago.Checked==false && rdbRetiro.Checked==false && rdbVenta.Checked==false)
+            {
+                MessageBox.Show("Porfavor seleccione una opcion","ALERTA");
+            }
+            else
+            {
+                this.Hide();
+            }
+            
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+            this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
         }
     }
 }
