@@ -14,7 +14,7 @@ namespace Sistema_Empenos_Anderson
 
         public static void OpenConnection()
         {
-            connection.ConnectionString = @"Data Source=DESKTOP-D1B8U5J; Initial Catalog=Base_Empeños; Integrated Security=Yes";
+            connection.ConnectionString = @"Data Source=DESKTOP-H4LNV2M\MSSQLSERVER01; Initial Catalog=Base_Empeños; Integrated Security=Yes";
             connection.Open();
             //Donde dice DATA SOURCE le ponen el nombre de su máquina; 
         }
@@ -103,16 +103,17 @@ namespace Sistema_Empenos_Anderson
             try
             {
                 Verificador = int.Parse(command.Parameters["@Verificador"].Value.ToString());
-                Cliente.Nombre_Cliente = command.Parameters["@Nombre"].Value.ToString();
-                Cliente.Apellido_Cliente = command.Parameters["@Apellido"].Value.ToString();
-                Cliente.Telefono_Cliente = command.Parameters["@Telefono"].Value.ToString();
-                Cliente.Correo_Cliente = command.Parameters["@Correo"].Value.ToString();
             }
             catch
             {
                 Verificador = 0;
             }
-   
+            Cliente.Nombre_Cliente = command.Parameters["@Nombre"].Value.ToString();
+            Cliente.Apellido_Cliente = command.Parameters["@Apellido"].Value.ToString();
+            Cliente.Telefono_Cliente = command.Parameters["@Telefono"].Value.ToString();
+            Cliente.Correo_Cliente = command.Parameters["@Correo"].Value.ToString();
+
+
             return Verificador;
         }
 
@@ -153,15 +154,6 @@ namespace Sistema_Empenos_Anderson
             prestado.Direction = ParameterDirection.Output;
             command.Parameters.Add(prestado);
 
-            SqlParameter interes = new SqlParameter("@Interes", 0);
-            interes.Direction = ParameterDirection.Output;
-            command.Parameters.Add(interes);
-
-            SqlParameter identidad = new SqlParameter("@Identidad", " ");
-            identidad.Direction = ParameterDirection.Output;
-            estado.Size = 50;
-            command.Parameters.Add(identidad);
-
             SqlParameter existe = new SqlParameter("@Existencia", 0);
             existe.Direction = ParameterDirection.Output;
             command.Parameters.Add(existe);
@@ -172,19 +164,18 @@ namespace Sistema_Empenos_Anderson
 
             try
             {
-                Articulo.descripcion = command.Parameters["@Descripcion"].Value.ToString();
-                Articulo.marca = command.Parameters["@Marca"].Value.ToString();
-                Articulo.modelo = command.Parameters["@Modelo"].Value.ToString();
-                Articulo.estado = command.Parameters["@Estado"].Value.ToString();
-                Articulo.interes = double.Parse(command.Parameters["@Interes"].Value.ToString());
                 existencia = int.Parse(command.Parameters["@Existencia"].Value.ToString());
-                Articulo.prestado = double.Parse(command.Parameters["@Prestado"].Value.ToString());
-                Cliente.Identidad_Cliente = command.Parameters["@Identidad"].Value.ToString();
             }
             catch
             {
                 existencia = 0;
             }
+
+            Articulo.descripcion = command.Parameters["@Descripcion"].Value.ToString();
+            Articulo.marca = command.Parameters["@Marca"].Value.ToString();
+            Articulo.modelo = command.Parameters["@Modelo"].Value.ToString();
+            Articulo.estado = command.Parameters["@Estado"].Value.ToString();
+            Articulo.prestado = double.Parse(command.Parameters["@Prestado"].Value.ToString());
 
             return existencia;
         }
@@ -292,23 +283,6 @@ namespace Sistema_Empenos_Anderson
             command.Parameters.Add(new SqlParameter("@Num_Serie", numeroSerie));
             command.Parameters.Add(new SqlParameter("@Cod_Rec", recibo));
             command.Parameters.Add(new SqlParameter("@Prec_Vent", precio));
-
-            command.ExecuteNonQuery();
-
-            CloseConnection();
-        }
-
-        public static void Retirar_Articulo(int Recibo, string Num_Serie)
-        {
-            OpenConnection();
-
-            SqlCommand command = new SqlCommand();
-            command.CommandText = "SP_RetirarArticulo";
-            command.Connection = connection;
-            command.CommandType = CommandType.StoredProcedure;
-
-            command.Parameters.Add(new SqlParameter ("@NumRecibo", Recibo));
-            command.Parameters.Add(new SqlParameter ("@NumSerie", Num_Serie));
 
             command.ExecuteNonQuery();
 

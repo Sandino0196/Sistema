@@ -55,11 +55,23 @@
     <Compile Include="Consultas.Designer.cs">
       <DependentUpon>Consultas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Consulta_Articulos.cs">
+    <Compile Include="Consulta_Facturacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Consulta_Articulos.Designer.cs">
-      <DependentUpon>Consulta_Articulos.cs</DependentUpon>
+    <Compile Include="Consulta_Facturacion.Designer.cs">
+      <DependentUpon>Consulta_Facturacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Elim_Clien_Mantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Elim_Clien_Mantenimiento.Designer.cs">
+      <DependentUpon>Elim_Clien_Mantenimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estados_Mantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estados_Mantenimiento.Designer.cs">
+      <DependentUpon>Estados_Mantenimiento.cs</DependentUpon>
     </Compile>
     <Compile Include="Facturacion.cs">
       <SubType>Form</SubType>
@@ -99,18 +111,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Recibo_Informe.cs" />
     <Compile Include="Retiro_Articulo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Retiro_Articulo.Designer.cs">
       <DependentUpon>Retiro_Articulo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Retiro_Articulo_Info.cs">
+    <Compile Include="Tipo_Art_Mantenimiento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Retiro_Articulo_Info.Designer.cs">
-      <DependentUpon>Retiro_Articulo_Info.cs</DependentUpon>
+    <Compile Include="Tipo_Art_Mantenimiento.Designer.cs">
+      <DependentUpon>Tipo_Art_Mantenimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_Mantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User_Mantenimiento.Designer.cs">
+      <DependentUpon>User_Mantenimiento.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs" />
     <Compile Include="Venta.cs">
@@ -122,8 +139,14 @@
     <EmbeddedResource Include="Consultas.resx">
       <DependentUpon>Consultas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Consulta_Articulos.resx">
-      <DependentUpon>Consulta_Articulos.cs</DependentUpon>
+    <EmbeddedResource Include="Consulta_Facturacion.resx">
+      <DependentUpon>Consulta_Facturacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Elim_Clien_Mantenimiento.resx">
+      <DependentUpon>Elim_Clien_Mantenimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estados_Mantenimiento.resx">
+      <DependentUpon>Estados_Mantenimiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Facturacion.resx">
       <DependentUpon>Facturacion.cs</DependentUpon>
@@ -153,11 +176,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Retiro_Articulo.resx">
-      <DependentUpon>Retiro_Articulo.cs</DependentUpon>
+    <EmbeddedResource Include="Tipo_Art_Mantenimiento.resx">
+      <DependentUpon>Tipo_Art_Mantenimiento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Retiro_Articulo_Info.resx">
-      <DependentUpon>Retiro_Articulo_Info.cs</DependentUpon>
+    <EmbeddedResource Include="User_Mantenimiento.resx">
+      <DependentUpon>User_Mantenimiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Venta.resx">
       <DependentUpon>Venta.cs</DependentUpon>
