@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Sistema_Empenos_Anderson
 {
-    public partial class Retiro_Articulo : Form
+    public partial class Tipo_Art_Mantenimiento : Form
     {
-        public Retiro_Articulo()
+        public Tipo_Art_Mantenimiento()
         {
             InitializeComponent();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

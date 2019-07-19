@@ -32,10 +32,5 @@ namespace Sistema_Empenos_Anderson
         {
             this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
         }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-        }
     }
 }

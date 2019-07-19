@@ -16,10 +16,6 @@ namespace Sistema_Empenos_Anderson
         {
             InitializeComponent();
         }
-        protected override void OnClosed(EventArgs e)
-        {
-            Application.Exit();
-        }
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
@@ -27,36 +23,36 @@ namespace Sistema_Empenos_Anderson
             {
                 Ingreso_de_Cliente cliente = new Ingreso_de_Cliente();
                 cliente.Show();
-            }
-            if (rdbPago.Checked)
+                this.Hide();
+            } else if (rdbPago.Checked)
             {
                 Pago_de_Cuotas pago = new Pago_de_Cuotas();
                 pago.Show();
-            }
-            if (rdbRetiro.Checked)
+                this.Hide();
+            } else if (rdbRetiro.Checked)
             {
                 Retiro_Articulo retiro = new Retiro_Articulo();
                 retiro.Show();
-            }
-            if (rdbVenta.Checked)
+                this.Hide();
+            } else if (rdbVenta.Checked)
             {
                 Facturacion venta = new Facturacion();
                 venta.Show();
-            }
-            if (rdbConsulta.Checked)
+                this.Hide();
+            } else if (rdbConsulta.Checked)
             {
                 Consultas consultas = new Consultas();
                 consultas.Show();
-            }
-            if(rdbConsulta.Checked==false && rdbIngreso.Checked==false && rdbMantenimiento.Checked==false && rdbPago.Checked==false && rdbRetiro.Checked==false && rdbVenta.Checked==false)
-            {
-                MessageBox.Show("Porfavor seleccione una opcion","ALERTA");
-            }
-            else
-            {
                 this.Hide();
+            } else if (rdbMantenimiento.Checked)
+            {
+                Manteminiento manteminiento = new Manteminiento();
+                manteminiento.Show();
+                this.Hide();
+            } else
+            {
+                MessageBox.Show("Seleccione una opción, por favor", "Advertencia");
             }
-            
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -66,7 +62,24 @@ namespace Sistema_Empenos_Anderson
 
         private void Menu_Load(object sender, EventArgs e)
         {
-            this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
+            if(Usuario.Codigo_Usuario != 1)
+            {
+                rdbMantenimiento.Visible = false;
+            } else
+            {
+                rdbMantenimiento.Visible = true;
+            }
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Form1 form1 = new Form1();            
+            form1.Show();
+            Usuario.Codigo_Usuario = 0;
+            Usuario.Codigo_Tipo_Usuario = 0;
+            Usuario.Nombre_Usuario = "";
+            Usuario.Password_Usuario = "";
         }
     }
 }

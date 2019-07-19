@@ -40,23 +40,23 @@
             this.lblFechaVenta = new System.Windows.Forms.Label();
             this.calendarVenta = new System.Windows.Forms.MonthCalendar();
             this.gbInfoComp = new System.Windows.Forms.GroupBox();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
+            this.txtVendedor = new System.Windows.Forms.TextBox();
             this.txtIDComp = new System.Windows.Forms.TextBox();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.lblVendedor = new System.Windows.Forms.Label();
             this.lbIDComp = new System.Windows.Forms.Label();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtVendedor = new System.Windows.Forms.TextBox();
-            this.lblVendedor = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.gbInfoComp.SuspendLayout();
@@ -174,24 +174,6 @@
             this.gbInfoComp.TabStop = false;
             this.gbInfoComp.Text = "Información Cliente";
             // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(232, 66);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 24);
-            this.btnAdd.TabIndex = 45;
-            this.btnAdd.Text = "Añadir";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // txtCorreo
-            // 
-            this.txtCorreo.Enabled = false;
-            this.txtCorreo.Location = new System.Drawing.Point(121, 142);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(100, 20);
-            this.txtCorreo.TabIndex = 44;
-            // 
             // btnBuscarCliente
             // 
             this.btnBuscarCliente.Location = new System.Drawing.Point(232, 23);
@@ -202,14 +184,13 @@
             this.btnBuscarCliente.UseVisualStyleBackColor = true;
             this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
             // 
-            // label5
+            // txtVendedor
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(27, 145);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 13);
-            this.label5.TabIndex = 43;
-            this.label5.Text = "Correo Electronico:";
+            this.txtVendedor.Enabled = false;
+            this.txtVendedor.Location = new System.Drawing.Point(118, 231);
+            this.txtVendedor.Name = "txtVendedor";
+            this.txtVendedor.Size = new System.Drawing.Size(100, 20);
+            this.txtVendedor.TabIndex = 7;
             // 
             // txtIDComp
             // 
@@ -218,13 +199,14 @@
             this.txtIDComp.Size = new System.Drawing.Size(100, 20);
             this.txtIDComp.TabIndex = 6;
             // 
-            // txtTelefono
+            // lblVendedor
             // 
-            this.txtTelefono.Enabled = false;
-            this.txtTelefono.Location = new System.Drawing.Point(121, 115);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(100, 20);
-            this.txtTelefono.TabIndex = 42;
+            this.lblVendedor.AutoSize = true;
+            this.lblVendedor.Location = new System.Drawing.Point(48, 234);
+            this.lblVendedor.Name = "lblVendedor";
+            this.lblVendedor.Size = new System.Drawing.Size(56, 13);
+            this.lblVendedor.TabIndex = 3;
+            this.lblVendedor.Text = "Vendedor:";
             // 
             // lbIDComp
             // 
@@ -234,6 +216,31 @@
             this.lbIDComp.Size = new System.Drawing.Size(103, 13);
             this.lbIDComp.TabIndex = 2;
             this.lbIDComp.Text = "Identidad del Cliente";
+            // 
+            // txtCorreo
+            // 
+            this.txtCorreo.Enabled = false;
+            this.txtCorreo.Location = new System.Drawing.Point(121, 142);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(100, 20);
+            this.txtCorreo.TabIndex = 44;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(27, 145);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(97, 13);
+            this.label5.TabIndex = 43;
+            this.label5.Text = "Correo Electronico:";
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Enabled = false;
+            this.txtTelefono.Location = new System.Drawing.Point(121, 115);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefono.TabIndex = 42;
             // 
             // label4
             // 
@@ -261,15 +268,6 @@
             this.label3.TabIndex = 39;
             this.label3.Text = "Apellido:";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(49, 66);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 13);
-            this.label2.TabIndex = 37;
-            this.label2.Text = "Nombre:";
-            // 
             // txtNombre
             // 
             this.txtNombre.Enabled = false;
@@ -278,22 +276,14 @@
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNombre.TabIndex = 38;
             // 
-            // txtVendedor
+            // label2
             // 
-            this.txtVendedor.Enabled = false;
-            this.txtVendedor.Location = new System.Drawing.Point(118, 231);
-            this.txtVendedor.Name = "txtVendedor";
-            this.txtVendedor.Size = new System.Drawing.Size(100, 20);
-            this.txtVendedor.TabIndex = 7;
-            // 
-            // lblVendedor
-            // 
-            this.lblVendedor.AutoSize = true;
-            this.lblVendedor.Location = new System.Drawing.Point(48, 234);
-            this.lblVendedor.Name = "lblVendedor";
-            this.lblVendedor.Size = new System.Drawing.Size(56, 13);
-            this.lblVendedor.TabIndex = 3;
-            this.lblVendedor.Text = "Vendedor:";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(49, 66);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.TabIndex = 37;
+            this.label2.Text = "Nombre:";
             // 
             // btnVolver
             // 
@@ -323,7 +313,16 @@
             this.button3.TabIndex = 37;
             this.button3.Text = "Ingresar Cliente";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(232, 66);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 24);
+            this.btnAdd.TabIndex = 45;
+            this.btnAdd.Text = "Añadir";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtCodigo
             // 

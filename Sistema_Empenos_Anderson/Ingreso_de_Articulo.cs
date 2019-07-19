@@ -16,14 +16,40 @@ namespace Sistema_Empenos_Anderson
         {
             InitializeComponent();
         }
-        public static int Ingreso = 0, row = 0;
+        public static int Ingreso = 0, row=0;
 
-        public void Agregar_Recibo()
+        protected override void OnClosed(EventArgs e)
         {
+            Menu men = new Sistema_Empenos_Anderson.Menu();
+            men.Show();
+        }
 
-            if (Ingreso == 0)
+        private void btnAvanzar_Click(object sender, EventArgs e)
+        {
+            Menu men = new Sistema_Empenos_Anderson.Menu();
+            men.Show();
+            this.Close();
+        }
+
+        private void Ingreso_de_Articulo_Load(object sender, EventArgs e)
+        {
+            Ingreso = 0;
+            row = 0;
+            this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Ingreso_de_Cliente ingreso = new Ingreso_de_Cliente();
+            ingreso.Show();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            if(Ingreso == 0)
             {
-                BD.Ingreso_Recibo(int.Parse(txtCod_Recibo.Text), Cliente.Identidad_Cliente, 1, clndrFecha.TodayDate.ToString());
+                BD.Ingreso_Recibo(int.Parse(txtCod_Recibo.Text), Cliente.Identidad_Cliente, 1, clndrFecha.TodayDate.ToString() );
                 Ingreso++;
             }
 
@@ -37,11 +63,10 @@ namespace Sistema_Empenos_Anderson
             if (cmbTipo_Articulo.SelectedItem.ToString() == "Vehiculo")
                 Tipo = 4;
 
+            MessageBox.Show(Tipo.ToString(), "Titulo");
 
 
             BD.Ingreso_Articulo(int.Parse(txtCod_Recibo.Text), txtNumero_Serie.Text, Tipo, txtDescripcion.Text, txtMarca.Text, txtModelo.Text, double.Parse(txtMonto.Text), double.Parse(txtTasa.Text), 1);
-
-
             dtgvArticulos.Rows.Add();
             dtgvArticulos.Rows[row].Cells[0].Value = txtNumero_Serie.Text;
             dtgvArticulos.Rows[row].Cells[1].Value = txtDescripcion.Text;
@@ -49,80 +74,6 @@ namespace Sistema_Empenos_Anderson
             dtgvArticulos.Rows[row].Cells[3].Value = txtMarca.Text;
             dtgvArticulos.Rows[row].Cells[4].Value = txtModelo.Text;
             row++;
-
-        }
-    
-        protected override void OnClosed(EventArgs e)
-        {
-            Menu men = new Sistema_Empenos_Anderson.Menu();
-            men.Show();
-        }
-
-        public void Limpiar()
-        {
-
-            txtCod_Recibo.Enabled = false;
-            txtNumero_Serie.Text = null;
-            txtDescripcion.Text = null;
-            txtMarca.Text = null;
-            txtModelo.Text = null;
-            txtMonto.Text = null;
-            txtTasa.Text = null;
-
-        }
-
-        private void btnAvanzar_Click(object sender, EventArgs e)
-        {
-            Menu men = new Sistema_Empenos_Anderson.Menu();
-            men.Show();
-            this.Hide();
-        }
-
-        private void Ingreso_de_Articulo_Load(object sender, EventArgs e)
-        {
-            Ingreso = 0;
-            row = 0;
-            this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
-        }
-
-        private void btnVolver_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Ingreso_de_Cliente ingreso = new Ingreso_de_Cliente();
-            ingreso.Show();
-        }
-
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            int contador;
-            if (Articulo.Numeros_Serie.Count == 0) { 
-                Articulo.Ingresar_Numero(txtNumero_Serie.Text);
-                Agregar_Recibo();
-                Limpiar();
-            }
-            else
-            {
-                contador = 0;
-                for (int x = 0; x < Articulo.Numeros_Serie.Count; x++)
-                {
-                    if (txtNumero_Serie.Text == Articulo.Numeros_Serie[x].ToString())
-                    {
-                        contador = 1;
-                    }
-                }
-                if (contador == 0)
-                {
-                    Articulo.Ingresar_Numero(txtNumero_Serie.Text);
-                    Agregar_Recibo();
-                    Limpiar();
-                }
-                else
-                {
-                    MessageBox.Show("El Numero de Serie del Articulo ya fue ingresado","ALERTA");
-                    Limpiar();
-                }
-            }
-
         }
     }
 }

@@ -54,19 +54,14 @@ namespace Sistema_Empenos_Anderson
 
         private void button2_Click(object sender, EventArgs e)
         {
-            BD.Ingreso_Factura(int.Parse(txtCodigo.Text),txtIDComp.Text,1,calendarVenta.TodayDate.ToString());
+            BD.Ingreso_Factura(int.Parse(txtCodigo.Text),txtIDComp.Text,1,txtFechaVenta.Text);
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             Facturacion facturacion = new Facturacion();
             facturacion.Show();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            gbInfoComp.Enabled = true;
         }
     }
 }
