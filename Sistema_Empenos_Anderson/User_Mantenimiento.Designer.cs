@@ -94,12 +94,14 @@
             // btnAceptarTipo
             // 
             this.btnAceptarTipo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAceptarTipo.Enabled = false;
             this.btnAceptarTipo.Location = new System.Drawing.Point(115, 131);
             this.btnAceptarTipo.Name = "btnAceptarTipo";
             this.btnAceptarTipo.Size = new System.Drawing.Size(75, 23);
             this.btnAceptarTipo.TabIndex = 5;
             this.btnAceptarTipo.Text = "Aceptar";
             this.btnAceptarTipo.UseVisualStyleBackColor = true;
+            this.btnAceptarTipo.Click += new System.EventHandler(this.btnAceptarTipo_Click);
             // 
             // lblNom_User
             // 
@@ -122,6 +124,7 @@
             // cbxTp_User_Modificar
             // 
             this.cbxTp_User_Modificar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxTp_User_Modificar.Enabled = false;
             this.cbxTp_User_Modificar.FormattingEnabled = true;
             this.cbxTp_User_Modificar.Location = new System.Drawing.Point(115, 90);
             this.cbxTp_User_Modificar.Name = "cbxTp_User_Modificar";
@@ -168,6 +171,7 @@
             // 
             // txtPassConfirmar_Change
             // 
+            this.txtPassConfirmar_Change.Enabled = false;
             this.txtPassConfirmar_Change.Location = new System.Drawing.Point(164, 132);
             this.txtPassConfirmar_Change.Name = "txtPassConfirmar_Change";
             this.txtPassConfirmar_Change.PasswordChar = '*';
@@ -176,6 +180,7 @@
             // 
             // txtPassNuevo_Change
             // 
+            this.txtPassNuevo_Change.Enabled = false;
             this.txtPassNuevo_Change.Location = new System.Drawing.Point(115, 99);
             this.txtPassNuevo_Change.Name = "txtPassNuevo_Change";
             this.txtPassNuevo_Change.PasswordChar = '*';
@@ -184,6 +189,7 @@
             // 
             // txtPass_Change
             // 
+            this.txtPass_Change.Enabled = false;
             this.txtPass_Change.Location = new System.Drawing.Point(115, 65);
             this.txtPass_Change.Name = "txtPass_Change";
             this.txtPass_Change.PasswordChar = '*';
@@ -193,12 +199,14 @@
             // btnAceptarPassword
             // 
             this.btnAceptarPassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAceptarPassword.Enabled = false;
             this.btnAceptarPassword.Location = new System.Drawing.Point(128, 167);
             this.btnAceptarPassword.Name = "btnAceptarPassword";
             this.btnAceptarPassword.Size = new System.Drawing.Size(75, 23);
             this.btnAceptarPassword.TabIndex = 9;
             this.btnAceptarPassword.Text = "Aceptar";
             this.btnAceptarPassword.UseVisualStyleBackColor = true;
+            this.btnAceptarPassword.Click += new System.EventHandler(this.btnAceptarPassword_Click);
             // 
             // label4
             // 
@@ -349,6 +357,7 @@
             this.btnAceptarNew.TabIndex = 8;
             this.btnAceptarNew.Text = "Aceptar";
             this.btnAceptarNew.UseVisualStyleBackColor = true;
+            this.btnAceptarNew.Click += new System.EventHandler(this.btnAceptarNew_Click);
             // 
             // btnVolver
             // 

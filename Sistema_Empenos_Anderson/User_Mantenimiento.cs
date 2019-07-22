@@ -29,7 +29,11 @@ namespace Sistema_Empenos_Anderson
         {
             if (BD.Busqueda_Usuario(txtNom_User_Tipo.Text) > 0)
             {
-
+                cbxTp_User_Modificar.Enabled = true;
+                btnAceptarTipo.Enabled = true;
+            } else
+            {
+                MessageBox.Show("No se ha encontrado al usuario", "Advertencia");
             }
         }
 
@@ -50,6 +54,24 @@ namespace Sistema_Empenos_Anderson
             cbxTp_User_New.DisplayMember = "Descripcion";
             cbxTp_User_New.ValueMember = "Codigo_Tipo_Usuario";
             
+        }
+
+        private void btnAceptarNew_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAceptarPassword_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAceptarTipo_Click(object sender, EventArgs e)
+        {
+            if (cbxTp_User_Modificar.SelectedItem.ToString().Equals("Administrador"))
+            {
+                if()
+            }
         }
     }
 }
