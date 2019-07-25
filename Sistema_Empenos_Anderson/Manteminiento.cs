@@ -16,5 +16,12 @@ namespace Sistema_Empenos_Anderson
         {
             InitializeComponent();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            User_Mantenimiento user = new User_Mantenimiento(0);
+            user.Show();
+            this.Hide();
+        }
     }
 }

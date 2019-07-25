@@ -22,11 +22,14 @@ namespace Sistema_Empenos_Anderson
             if (rdbIngreso.Checked)
             {
                 Ingreso_de_Cliente cliente = new Ingreso_de_Cliente();
+                Objetos_Globales.articulos = new System.Collections.ArrayList();
+                Objetos_Globales.cliente = new Cliente();
                 cliente.Show();
                 this.Hide();
             } else if (rdbPago.Checked)
             {
                 Pago_de_Cuotas pago = new Pago_de_Cuotas();
+                Objetos_Globales.articulo = new Articulo();
                 pago.Show();
                 this.Hide();
             } else if (rdbRetiro.Checked)

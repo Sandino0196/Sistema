@@ -10,15 +10,16 @@ using System.Windows.Forms;
 
 namespace Sistema_Empenos_Anderson
 {
-    public partial class Tipo_Art_Mantenimiento : Form
+    public partial class Pago_de_Cuotas_Detalle : Form
     {
-        public Tipo_Art_Mantenimiento()
+        public Pago_de_Cuotas_Detalle()
         {
             InitializeComponent();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
+            this.Hide();
 
         }
     }

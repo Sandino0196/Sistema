@@ -14,11 +14,8 @@ namespace Sistema_Empenos_Anderson
     {
         public Form1()
         {
-            InitializeComponent();            
-            Usuario.Codigo_Usuario = 0;
-            Usuario.Codigo_Tipo_Usuario = 0;
-            Usuario.Nombre_Usuario = "";
-            Usuario.Password_Usuario = "";
+            InitializeComponent();
+            Objetos_Globales.usuario = new Usuario();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -33,7 +30,6 @@ namespace Sistema_Empenos_Anderson
                 Menu menu = new Menu();
                 this.Hide();
                 menu.Show();
-                Usuario.Nombre_Usuario = txtUsuario.Text;
             } else
             {
                 MessageBox.Show("Usuario y/o contraseña incorrecta", "Error");

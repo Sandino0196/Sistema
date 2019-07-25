@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Sistema_Empenos_Anderson
@@ -16,6 +9,9 @@ namespace Sistema_Empenos_Anderson
         {
             InitializeComponent();
         }
+
+        public void llenarDataGrid() { 
+}
         public static int Ingreso = 0, row=0;
 
         protected override void OnClosed(EventArgs e)
@@ -36,6 +32,22 @@ namespace Sistema_Empenos_Anderson
             Ingreso = 0;
             row = 0;
             this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
+            cmbTipo_Articulo.DataSource = BD.CargarTipoArticulos();
+            cmbTipo_Articulo.DisplayMember = "Descripcion";
+            cmbTipo_Articulo.ValueMember = "Codigo_Tipo_Articulo";
+
+            if (Objetos_Globales.articulos.Count != 0)
+            {
+                for (int i = 0; i < Objetos_Globales.articulos.Count; i++)
+                {
+                    dtgvArticulos.Rows.Add();
+                    dtgvArticulos.Rows[i].Cells[0].Value = ((Articulo)Objetos_Globales.articulos[i]).NumeroSerie;
+                    dtgvArticulos.Rows[i].Cells[1].Value = ((Articulo)Objetos_Globales.articulos[i]).Descripcion;
+                    dtgvArticulos.Rows[i].Cells[2].Value = ((Articulo)Objetos_Globales.articulos[i]).Tipo;
+                    dtgvArticulos.Rows[i].Cells[3].Value = ((Articulo)Objetos_Globales.articulos[i]).Marca;
+                    dtgvArticulos.Rows[i].Cells[4].Value = ((Articulo)Objetos_Globales.articulos[i]).Modelo;
+                }
+            }
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -49,24 +61,13 @@ namespace Sistema_Empenos_Anderson
         {
             if(Ingreso == 0)
             {
-                BD.Ingreso_Recibo(int.Parse(txtCod_Recibo.Text), Cliente.Identidad_Cliente, 1, clndrFecha.TodayDate.ToString() );
+                BD.Ingreso_Recibo(int.Parse(txtCod_Recibo.Text), Objetos_Globales.cliente.identidad_Cliente, Objetos_Globales.usuario.codigo_Usuario, clndrFecha.TodayDate.ToString() );
                 Ingreso++;
             }
 
-            int Tipo = 0;
-            if (cmbTipo_Articulo.SelectedItem.ToString() == "Electrodomestico")
-                Tipo = 1;
-            if (cmbTipo_Articulo.SelectedItem.ToString() == "Entretenimiento")
-                Tipo = 2;
-            if (cmbTipo_Articulo.SelectedItem.ToString() == "Joyeria")
-                Tipo = 3;
-            if (cmbTipo_Articulo.SelectedItem.ToString() == "Vehiculo")
-                Tipo = 4;
-
             MessageBox.Show(Tipo.ToString(), "Titulo");
-
-
-            BD.Ingreso_Articulo(int.Parse(txtCod_Recibo.Text), txtNumero_Serie.Text, Tipo, txtDescripcion.Text, txtMarca.Text, txtModelo.Text, double.Parse(txtMonto.Text), double.Parse(txtTasa.Text), 1);
+            BD.Ingreso_Articulo(int.Parse(txtCod_Recibo.Text), txtNumero_Serie.Text, cmbTipo_Articulo.SelectedIndex + 1, txtDescripcion.Text, txtMarca.Text, txtModelo.Text, double.Parse(txtMonto.Text), double.Parse(txtTasa.Text), 1);
+            Objetos_Globales.articulos.Add(new Articulo(1, double.Parse(txtMonto.Text) + (double.Parse(txtMonto.Text)* double.Parse(txtTasa.Text)), double.Parse(txtMonto.Text), double.Parse(txtTasa.Text), txtDescripcion.Text, txtMarca.Text, txtModelo.Text,"En Prenda", txtNumero_Serie.Text, cmbTipo_Articulo.SelectedItem.ToString()));
             dtgvArticulos.Rows.Add();
             dtgvArticulos.Rows[row].Cells[0].Value = txtNumero_Serie.Text;
             dtgvArticulos.Rows[row].Cells[1].Value = txtDescripcion.Text;

@@ -260,6 +260,7 @@
             this.btnBuscarPassword.TabIndex = 5;
             this.btnBuscarPassword.Text = "Buscar";
             this.btnBuscarPassword.UseVisualStyleBackColor = true;
+            this.btnBuscarPassword.Click += new System.EventHandler(this.btnBuscarPassword_Click);
             // 
             // tabPage3
             // 

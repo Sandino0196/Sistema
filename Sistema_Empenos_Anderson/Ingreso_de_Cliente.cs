@@ -26,11 +26,11 @@ namespace Sistema_Empenos_Anderson
             
             if (BD.Busqueda_Cliente(txtBusqueda_ID.Text) > 0)
             {
-                Cliente.Identidad_Cliente = txtBusqueda_ID.Text;
-                dtgv_Info_Cliente.Rows[0].Cells[0].Value = Cliente.Nombre_Cliente;
-                dtgv_Info_Cliente.Rows[0].Cells[1].Value = Cliente.Apellido_Cliente;
-                dtgv_Info_Cliente.Rows[0].Cells[2].Value = Cliente.Telefono_Cliente;
-                dtgv_Info_Cliente.Rows[0].Cells[3].Value = Cliente.Correo_Cliente;
+                Objetos_Globales.cliente.identidad_Cliente = txtBusqueda_ID.Text;
+                dtgv_Info_Cliente.Rows[0].Cells[0].Value = Objetos_Globales.cliente.nombre_Cliente;
+                dtgv_Info_Cliente.Rows[0].Cells[1].Value = Objetos_Globales.cliente.apellido_Cliente;
+                dtgv_Info_Cliente.Rows[0].Cells[2].Value = Objetos_Globales.cliente.telefono_Cliente;
+                dtgv_Info_Cliente.Rows[0].Cells[3].Value = Objetos_Globales.cliente.correo_Cliente;
                 btnAvanzar.Enabled = true;
             }else
             {

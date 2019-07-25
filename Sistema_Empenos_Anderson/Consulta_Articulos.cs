@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Sistema_Empenos_Anderson
 {
-    public partial class Consulta_Facturacion : Form
+    public partial class Consulta_Articulos : Form
     {
-        public Consulta_Facturacion()
+        public Consulta_Articulos()
         {
             InitializeComponent();
         }
@@ -21,8 +21,6 @@ namespace Sistema_Empenos_Anderson
         private void Consulta_Facturacion_Load(object sender, EventArgs e)
         {
            
-
-            
         }
 
         private void rbRecibo_CheckedChanged(object sender, EventArgs e)
