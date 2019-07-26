@@ -67,12 +67,6 @@
     <Compile Include="Elim_Clien_Mantenimiento.Designer.cs">
       <DependentUpon>Elim_Clien_Mantenimiento.cs</DependentUpon>
     </Compile>
-    <Compile Include="Estados_Mantenimiento.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Estados_Mantenimiento.Designer.cs">
-      <DependentUpon>Estados_Mantenimiento.cs</DependentUpon>
-    </Compile>
     <Compile Include="Facturacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,9 +152,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Elim_Clien_Mantenimiento.resx">
       <DependentUpon>Elim_Clien_Mantenimiento.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Estados_Mantenimiento.resx">
-      <DependentUpon>Estados_Mantenimiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Facturacion.resx">
       <DependentUpon>Facturacion.cs</DependentUpon>
