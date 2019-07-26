@@ -72,17 +72,17 @@ namespace Sistema_Empenos_Anderson
         {
             if (txtTelefono.MaskFull)
             {
-                if (BD.Ingreso_Cliente(txtIdentidad.Text, txtNombre.Text, txtApellido.Text, txtTelefono.Text, txtCorreo.Text) == 0)
+                if (BD.Ingreso_Cliente(txtIdentidad.Text, txtNombre.Text, txtApellido.Text, txtTelefono.Text, txtCorreo.Text, 1, "Cliente") == 0)
                 {
                     MessageBoxTemporal.Show("Identidad encontrada en otro registro, utilice otra o el cliente ya está agregado", "Mensaje Importante",2,false);
                 }
                 else
                 {
                     MessageBoxTemporal.Show("Ingresado correctamente", "Mensaje Importante",1,false);
-                    dtgv_Info_Cliente.Rows[0].Cells[0].Value = txtNombre.Text;
-                    dtgv_Info_Cliente.Rows[0].Cells[1].Value = txtApellido.Text;
-                    dtgv_Info_Cliente.Rows[0].Cells[2].Value = txtTelefono.Text;
-                    dtgv_Info_Cliente.Rows[0].Cells[3].Value = txtCorreo.Text;
+                    Objetos_Globales.cliente.nombre_Cliente = txtNombre.Text;
+                    Objetos_Globales.cliente.apellido_Cliente = txtApellido.Text;
+                    Objetos_Globales.cliente.telefono_Cliente = txtTelefono.Text;
+                    Objetos_Globales.cliente.correo_Cliente = txtCorreo.Text;
                     Objetos_Globales.cliente.identidad_Cliente = txtBusqueda_ID.Text;
                     dtgv_Info_Cliente.Rows[0].Cells[0].Value = Objetos_Globales.cliente.nombre_Cliente;
                     dtgv_Info_Cliente.Rows[0].Cells[1].Value = Objetos_Globales.cliente.apellido_Cliente;

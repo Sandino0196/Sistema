@@ -17,6 +17,11 @@ namespace Sistema_Empenos_Anderson
             InitializeComponent();
         }
 
+        protected override void OnClosed(EventArgs e)
+        {
+            Application.Exit();
+        }
+
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             if (rdbIngreso.Checked)
@@ -72,6 +77,7 @@ namespace Sistema_Empenos_Anderson
             {
                 rdbMantenimiento.Visible = true;
             }
+            this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)

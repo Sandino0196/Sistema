@@ -28,7 +28,7 @@ namespace Sistema_Empenos_Anderson
                     ((Articulo)Objetos_Globales.articulos[i]).CodigoTipo, ((Articulo)Objetos_Globales.articulos[i]).Descripcion,
                     ((Articulo)Objetos_Globales.articulos[i]).Marca, ((Articulo)Objetos_Globales.articulos[i]).Modelo, 
                     ((Articulo)Objetos_Globales.articulos[i]).Prestado, ((Articulo)Objetos_Globales.articulos[i]).Interes, 1,
-                    ((Articulo)Objetos_Globales.articulos[i]).Meses);
+                    ((Articulo)Objetos_Globales.articulos[i]).Meses, "Articulo");
             MessageBox.Show("Listo","Listo");
             Menu men = new Sistema_Empenos_Anderson.Menu();
             men.Show();

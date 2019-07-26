@@ -48,7 +48,7 @@ namespace Sistema_Empenos_Anderson
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            BD.Ingreso_Cliente(txtIDComp.Text, txtNombre.Text, txtApellido.Text, txtTelefono.Text, txtCorreo.Text);
+            BD.Ingreso_Cliente(txtIDComp.Text, txtNombre.Text, txtApellido.Text, txtTelefono.Text, txtCorreo.Text,1, "Cliente");
             MessageBox.Show("Ingresado Correctamente", "Empeños Anderson");
         }
 

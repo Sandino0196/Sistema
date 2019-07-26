@@ -11,7 +11,7 @@ namespace Sistema_Empenos_Anderson
 
         public static void OpenConnection()
         {
-            connection.ConnectionString = @"Data Source=DESKTOP-D1B8U5J; Initial Catalog=Base_Empeños; Integrated Security=Yes";
+            connection.ConnectionString = @"Data Source=DESKTOP-T785USI; Initial Catalog=Base_Empeños; Integrated Security=Yes";
             connection.Open();
             //Donde dice DATA SOURCE le ponen el nombre de su máquina; 
         }
@@ -318,7 +318,7 @@ namespace Sistema_Empenos_Anderson
             CloseConnection();
         }
 
-        public static int Ingreso_Cliente(string identidad, string nombre, string apellido, string telefono, string correo)
+        public static int Ingreso_Cliente(string identidad, string nombre, string apellido, string telefono, string correo, int cod_estado, string estado)
         {
             OpenConnection();
 
@@ -332,6 +332,8 @@ namespace Sistema_Empenos_Anderson
             command.Parameters.Add(new SqlParameter("@apellido", apellido));
             command.Parameters.Add(new SqlParameter("@telefono", telefono));
             command.Parameters.Add(new SqlParameter("@correo", correo));
+            command.Parameters.Add(new SqlParameter("@Cod_Estado", cod_estado));
+            command.Parameters.Add(new SqlParameter("@Estado", estado));
 
             try
             {
@@ -346,7 +348,7 @@ namespace Sistema_Empenos_Anderson
             }
         }
 
-        public static int Ingreso_Usuario(int codigo, string usuario, string password, int tipo)
+        public static int Ingreso_Usuario(int codigo, string usuario, string password, int tipo, int cod_estado, string estado)
         {
             OpenConnection();
 
@@ -359,6 +361,8 @@ namespace Sistema_Empenos_Anderson
             command.Parameters.Add(new SqlParameter("@Usuario", usuario));
             command.Parameters.Add(new SqlParameter("@Password", password));
             command.Parameters.Add(new SqlParameter("@Tipo", tipo));
+            command.Parameters.Add(new SqlParameter("@Cod_Estado", cod_estado));
+            command.Parameters.Add(new SqlParameter("@Estado", estado));
 
             try
             {
@@ -373,7 +377,7 @@ namespace Sistema_Empenos_Anderson
             }
         }
 
-        public static void Ingreso_Articulo(int codigo, string Numero_Serie, int Tipo_Art, string Descripcion, string Marca, string Modelo, double Monto, double Tasa, int Estado, int meses)
+        public static void Ingreso_Articulo(int codigo, string Numero_Serie, int Tipo_Art, string Descripcion, string Marca, string Modelo, double Monto, double Tasa, int Estado, int meses, string tipo_estado)
         {
             OpenConnection();
 
@@ -392,6 +396,7 @@ namespace Sistema_Empenos_Anderson
             command.Parameters.Add(new SqlParameter("@Tasa", Tasa));
             command.Parameters.Add(new SqlParameter("@Estado", Estado));
             command.Parameters.Add(new SqlParameter("@Meses", meses));
+            command.Parameters.Add(new SqlParameter("@Tipo_Estado", tipo_estado));
 
             command.ExecuteNonQuery();
 
