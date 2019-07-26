@@ -40,9 +40,13 @@ namespace Sistema_Empenos_Anderson
             pLogin.Direction = ParameterDirection.Output;
             command.Parameters.Add(pLogin);
 
-            SqlParameter pCodigo = new SqlParameter("@codigo", 0);
+            SqlParameter pCodigo = new SqlParameter("@codigoUsuario", 0);
             pCodigo.Direction = ParameterDirection.Output;
             command.Parameters.Add(pCodigo);
+
+            SqlParameter pCodigoTipo = new SqlParameter("@codigoTipo", 0);
+            pCodigoTipo.Direction = ParameterDirection.Output;
+            command.Parameters.Add(pCodigoTipo);
 
             try
             {
