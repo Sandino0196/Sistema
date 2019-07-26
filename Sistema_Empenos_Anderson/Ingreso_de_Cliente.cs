@@ -50,6 +50,7 @@ namespace Sistema_Empenos_Anderson
         private void Ingreso_de_Cliente_Load(object sender, EventArgs e)
         {
             this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
+            txtBusqueda_ID.Select();
         }
 
         private void btnAñadir_Click(object sender, EventArgs e)

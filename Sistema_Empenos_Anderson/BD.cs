@@ -1,5 +1,10 @@
-﻿using System.Data;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Data;
 using System.Data.SqlClient;
+using System.Threading.Tasks;
 
 namespace Sistema_Empenos_Anderson
 {
@@ -7,11 +12,9 @@ namespace Sistema_Empenos_Anderson
     {
         public static SqlConnection connection = new SqlConnection();
 
-        #region Conexion
-
         public static void OpenConnection()
         {
-            connection.ConnectionString = @"Data Source=DESKTOP-D1B8U5J; Initial Catalog=Base_Empeños; Integrated Security=Yes";
+            connection.ConnectionString = @"Data Source=DESKTOP-T785USI; Initial Catalog=Base_Empeños; Integrated Security=Yes";
             connection.Open();
             //Donde dice DATA SOURCE le ponen el nombre de su máquina; 
         }
@@ -21,8 +24,6 @@ namespace Sistema_Empenos_Anderson
             connection.Close();
         }
 
-        #endregion
-        
         public static int Login(string usuario, string password)
         {
             int login = 0;
@@ -44,17 +45,13 @@ namespace Sistema_Empenos_Anderson
             pCodigo.Direction = ParameterDirection.Output;
             command.Parameters.Add(pCodigo);
 
+            command.ExecuteNonQuery();
+
+            CloseConnection();
             try
             {
-                command.ExecuteNonQuery();
-
-                CloseConnection();
-
                 login = int.Parse(command.Parameters["@login"].Value.ToString());
-                Objetos_Globales.usuario.codigo_Usuario = int.Parse(command.Parameters["@codigoUsuario"].Value.ToString());
-                Objetos_Globales.usuario.nombre_Usuario = usuario;
-                Objetos_Globales.usuario.password_Usuario = password;
-                Objetos_Globales.usuario.codigo_Tipo_Usuario = int.Parse(command.Parameters["@codigoTipo"].Value.ToString());
+                Usuario.Codigo_Usuario = int.Parse(command.Parameters["@codigo"].Value.ToString());
                 return login;
             }
             catch
@@ -62,48 +59,6 @@ namespace Sistema_Empenos_Anderson
                 return 0;
             }            
         }
-
-        #region Cargar Datos
-
-        public static DataTable CargarTipoArticulos()
-        {
-            DataTable dt = new DataTable();
-            try
-            {
-                BD.OpenConnection();
-                SqlDataAdapter da = new SqlDataAdapter("SP_Tipos_Articulo", BD.connection);
-                da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                da.Fill(dt);
-                BD.CloseConnection();
-                return dt;
-            }
-            catch
-            {
-                return dt;
-            }
-        }
-
-        public static DataTable CargarEstadosArticulo()
-        {
-            DataTable dt = new DataTable();
-            try
-            {
-                BD.OpenConnection();
-                SqlDataAdapter da = new SqlDataAdapter("SP_Estados", BD.connection);
-                da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                da.Fill(dt);
-                BD.CloseConnection();
-                return dt;
-            }
-            catch
-            {
-                return dt;
-            }
-        }
-
-        #endregion
-
-        #region Busqueda
 
         public static int Busqueda_Cliente(string Identidad)
         {
@@ -141,23 +96,23 @@ namespace Sistema_Empenos_Anderson
             verificador.Direction = ParameterDirection.Output;
             command.Parameters.Add(verificador);
 
+            command.ExecuteNonQuery();
+
+            CloseConnection();
+
             try
             {
-                command.ExecuteNonQuery();
-
-                CloseConnection();
-
                 Verificador = int.Parse(command.Parameters["@Verificador"].Value.ToString());
-                Objetos_Mantenimiento.clienteMantenimiento.identidad_Cliente = Identidad;
-                Objetos_Mantenimiento.clienteMantenimiento.nombre_Cliente = command.Parameters["@Nombre"].Value.ToString();
-                Objetos_Mantenimiento.clienteMantenimiento.apellido_Cliente = command.Parameters["@Apellido"].Value.ToString();
-                Objetos_Mantenimiento.clienteMantenimiento.telefono_Cliente = command.Parameters["@Telefono"].Value.ToString();
-                Objetos_Mantenimiento.clienteMantenimiento.correo_Cliente = command.Parameters["@Correo"].Value.ToString();
+                Cliente.Nombre_Cliente = command.Parameters["@Nombre"].Value.ToString();
+                Cliente.Apellido_Cliente = command.Parameters["@Apellido"].Value.ToString();
+                Cliente.Telefono_Cliente = command.Parameters["@Telefono"].Value.ToString();
+                Cliente.Correo_Cliente = command.Parameters["@Correo"].Value.ToString();
             }
             catch
             {
                 Verificador = 0;
             }
+   
             return Verificador;
         }
 
@@ -204,30 +159,27 @@ namespace Sistema_Empenos_Anderson
 
             SqlParameter identidad = new SqlParameter("@Identidad", " ");
             identidad.Direction = ParameterDirection.Output;
-            identidad.Size = 50;
+            estado.Size = 50;
             command.Parameters.Add(identidad);
-
-            SqlParameter meses = new SqlParameter("@Meses", 0);
-            meses.Direction = ParameterDirection.Output;
-            command.Parameters.Add(meses);
 
             SqlParameter existe = new SqlParameter("@Existencia", 0);
             existe.Direction = ParameterDirection.Output;
             command.Parameters.Add(existe);
 
+            command.ExecuteNonQuery();
+
+            CloseConnection();
+
             try
             {
-                command.ExecuteNonQuery();
-                CloseConnection();
-
+                Articulo.descripcion = command.Parameters["@Descripcion"].Value.ToString();
+                Articulo.marca = command.Parameters["@Marca"].Value.ToString();
+                Articulo.modelo = command.Parameters["@Modelo"].Value.ToString();
+                Articulo.estado = command.Parameters["@Estado"].Value.ToString();
+                Articulo.interes = double.Parse(command.Parameters["@Interes"].Value.ToString());
                 existencia = int.Parse(command.Parameters["@Existencia"].Value.ToString());
-                Objetos_Mantenimiento.articuloMantenimiento.Descripcion = command.Parameters["@Descripcion"].Value.ToString();
-                Objetos_Mantenimiento.articuloMantenimiento.Marca = command.Parameters["@Marca"].Value.ToString();
-                Objetos_Mantenimiento.articuloMantenimiento.Modelo = command.Parameters["@Modelo"].Value.ToString();
-                Objetos_Mantenimiento.articuloMantenimiento.Estado = command.Parameters["@Estado"].Value.ToString();
-                Objetos_Mantenimiento.articuloMantenimiento.Prestado = double.Parse(command.Parameters["@Prestado"].Value.ToString());
-                Objetos_Mantenimiento.articuloMantenimiento.Interes = double.Parse(command.Parameters["@Interes"].Value.ToString());
-                Objetos_Mantenimiento.articuloMantenimiento.Meses = int.Parse(command.Parameters["@Meses"].Value.ToString());
+                Articulo.prestado = double.Parse(command.Parameters["@Prestado"].Value.ToString());
+                Cliente.Identidad_Cliente = command.Parameters["@Identidad"].Value.ToString();
             }
             catch
             {
@@ -237,47 +189,7 @@ namespace Sistema_Empenos_Anderson
             return existencia;
         }
 
-        public static int Busqueda_Usuario(string nombreUsuario)
-        {
-            OpenConnection();
-            SqlCommand command = new SqlCommand();
-            command.CommandText = "SP_Busqueda_Usuario ";
-            command.Connection = connection;
-            command.CommandType = CommandType.StoredProcedure;
-
-            command.Parameters.Add(new SqlParameter("@Nombre", nombreUsuario));
-
-            SqlParameter descripcion = new SqlParameter("@Tipo", " ");
-            descripcion.Direction = ParameterDirection.Output;
-            descripcion.Size = 50;
-            command.Parameters.Add(descripcion);
-
-            SqlParameter pass = new SqlParameter("@Password", " ");
-            pass.Direction = ParameterDirection.Output;
-            pass.Size = 50;
-            command.Parameters.Add(pass);
-
-            try
-            {
-                command.ExecuteNonQuery();
-                CloseConnection();
-                Objetos_Mantenimiento.usuarioMantenimiento.nombre_Usuario = nombreUsuario;
-                Objetos_Mantenimiento.usuarioMantenimiento.tipo_Usuario = command.Parameters["@Tipo"].Value.ToString();
-                Objetos_Mantenimiento.usuarioMantenimiento.password_Usuario = command.Parameters["@Password"].Value.ToString();
-                return 1;
-            }
-            catch
-            {
-                return 0;
-            }
-
-        }
-
-        #endregion
-
-        #region Ingreso
-
-        public static void Ingreso_Recibo(int Codigo, string Identidad, int Codigo_user, string Fecha)
+        public static int Ingreso_Recibo(int Codigo, string Identidad, int Codigo_user, string Fecha)
         {
             OpenConnection();
 
@@ -290,9 +202,19 @@ namespace Sistema_Empenos_Anderson
             command.Parameters.Add(new SqlParameter("@Id_Cliente", Identidad));
             command.Parameters.Add(new SqlParameter("@Cod_Usuario", Codigo_user));
             command.Parameters.Add(new SqlParameter("@Fecha_Recibo", Fecha));
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch
+            {
+                CloseConnection();
+                return 0;
+            }
 
-            command.ExecuteNonQuery();
             CloseConnection();
+            return 1;
+            
         }
 
         public static int Ingreso_Cliente(string identidad, string nombre, string apellido, string telefono, string correo)
@@ -313,41 +235,15 @@ namespace Sistema_Empenos_Anderson
             try
             {
                 command.ExecuteNonQuery();
-                CloseConnection();
-                return 1;
             }
             catch
             {
                 CloseConnection();
                 return 0;
             }
-        }
+            CloseConnection();
 
-        public static int Ingreso_Usuario(int codigo, string usuario, string password, int tipo)
-        {
-            OpenConnection();
-
-            SqlCommand command = new SqlCommand();
-            command.CommandText = "SP_Ingreso_Usuario";
-            command.Connection = connection;
-            command.CommandType = CommandType.StoredProcedure;
-
-            command.Parameters.Add(new SqlParameter("@Codigo", codigo));
-            command.Parameters.Add(new SqlParameter("@Usuario", usuario));
-            command.Parameters.Add(new SqlParameter("@Password", password));
-            command.Parameters.Add(new SqlParameter("@Tipo", tipo));
-
-            try
-            {
-                command.ExecuteNonQuery();
-                CloseConnection();
-                return 1;
-            }
-            catch
-            {
-                CloseConnection();
-                return 0;
-            }
+            return 1;
         }
 
         public static void Ingreso_Articulo( int codigo, string Numero_Serie, int Tipo_Art, string Descripcion, string Marca, string Modelo, double Monto, double Tasa, int Estado)
@@ -411,60 +307,23 @@ namespace Sistema_Empenos_Anderson
 
             CloseConnection();
         }
-        #endregion
 
-        #region Cambio de datos
-
-        public static int Cambio_Password(string usuario, string password)
+        public static void Retirar_Articulo(int Recibo, string Num_Serie)
         {
             OpenConnection();
 
             SqlCommand command = new SqlCommand();
-            command.CommandText = "SP_Cambiar_Password";
+            command.CommandText = "SP_RetirarArticulo";
             command.Connection = connection;
             command.CommandType = CommandType.StoredProcedure;
 
-            command.Parameters.Add(new SqlParameter("@Usuario", usuario));
-            command.Parameters.Add(new SqlParameter("@Password", password));
+            command.Parameters.Add(new SqlParameter ("@NumRecibo", Recibo));
+            command.Parameters.Add(new SqlParameter ("@NumSerie", Num_Serie));
 
-            try
-            {
-                command.ExecuteNonQuery();
-                CloseConnection();
-                return 1;
-            }
-            catch
-            {
-                CloseConnection();
-                return 0;
-            }
+            command.ExecuteNonQuery();
+
+            CloseConnection();
         }
 
-        public static int Cambio_Tipo_Usuario(string usuario, int tipo)
-        {
-            OpenConnection();
-
-            SqlCommand command = new SqlCommand();
-            command.CommandText = "SP_Cambiar_Tipo_Usuario";
-            command.Connection = connection;
-            command.CommandType = CommandType.StoredProcedure;
-
-            command.Parameters.Add(new SqlParameter("@Usuario", usuario));
-            command.Parameters.Add(new SqlParameter("@Tipo", tipo));
-
-            try
-            {
-                command.ExecuteNonQuery();
-                CloseConnection();
-                return 1;
-            }
-            catch
-            {
-                CloseConnection();
-                return 0;
-            }
-        }
-
-        #endregion
     }
 }
