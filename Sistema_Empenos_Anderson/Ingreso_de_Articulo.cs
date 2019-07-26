@@ -22,6 +22,14 @@ namespace Sistema_Empenos_Anderson
 
         private void btnAvanzar_Click(object sender, EventArgs e)
         {
+            BD.Ingreso_Recibo(int.Parse(txtCod_Recibo.Text), Objetos_Globales.cliente.identidad_Cliente, Objetos_Globales.usuario.codigo_Usuario, clndrFecha.TodayDate.ToString());
+            for(int i = 0; i < Objetos_Globales.articulos.Count ; i++)
+                BD.Ingreso_Articulo(int.Parse(txtCod_Recibo.Text), ((Articulo)Objetos_Globales.articulos[i]).NumeroSerie,
+                    ((Articulo)Objetos_Globales.articulos[i]).CodigoTipo, ((Articulo)Objetos_Globales.articulos[i]).Descripcion,
+                    ((Articulo)Objetos_Globales.articulos[i]).Marca, ((Articulo)Objetos_Globales.articulos[i]).Modelo, 
+                    ((Articulo)Objetos_Globales.articulos[i]).Prestado, ((Articulo)Objetos_Globales.articulos[i]).Interes, 1,
+                    ((Articulo)Objetos_Globales.articulos[i]).Meses);
+            MessageBox.Show("Listo","Listo");
             Menu men = new Sistema_Empenos_Anderson.Menu();
             men.Show();
             this.Close();
@@ -59,15 +67,11 @@ namespace Sistema_Empenos_Anderson
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if(Ingreso == 0)
-            {
-                BD.Ingreso_Recibo(int.Parse(txtCod_Recibo.Text), Objetos_Globales.cliente.identidad_Cliente, Objetos_Globales.usuario.codigo_Usuario, clndrFecha.TodayDate.ToString() );
-                Ingreso++;
-            }
-
-            MessageBox.Show(Tipo.ToString(), "Titulo");
-            BD.Ingreso_Articulo(int.Parse(txtCod_Recibo.Text), txtNumero_Serie.Text, cmbTipo_Articulo.SelectedIndex + 1, txtDescripcion.Text, txtMarca.Text, txtModelo.Text, double.Parse(txtMonto.Text), double.Parse(txtTasa.Text), 1);
-            Objetos_Globales.articulos.Add(new Articulo(1, double.Parse(txtMonto.Text) + (double.Parse(txtMonto.Text)* double.Parse(txtTasa.Text)), double.Parse(txtMonto.Text), double.Parse(txtTasa.Text), txtDescripcion.Text, txtMarca.Text, txtModelo.Text,"En Prenda", txtNumero_Serie.Text, cmbTipo_Articulo.SelectedItem.ToString()));
+            Objetos_Globales.articulos.Add(new Articulo(1, double.Parse(txtMonto.Text) + 
+                (double.Parse(txtMonto.Text) * double.Parse(txtTasa.Text)), double.Parse(txtMonto.Text), 
+                double.Parse(txtTasa.Text), txtDescripcion.Text, txtMarca.Text, txtModelo.Text,
+                "En Prenda", txtNumero_Serie.Text, cmbTipo_Articulo.SelectedItem.ToString(), 
+                cmbTipo_Articulo.SelectedIndex + 1));
             dtgvArticulos.Rows.Add();
             dtgvArticulos.Rows[row].Cells[0].Value = txtNumero_Serie.Text;
             dtgvArticulos.Rows[row].Cells[1].Value = txtDescripcion.Text;

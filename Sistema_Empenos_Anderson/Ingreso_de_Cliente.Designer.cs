@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.lblBusqueda_ID = new System.Windows.Forms.Label();
-            this.txtBusqueda_ID = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.grpInfo_Nuevo_Cliente = new System.Windows.Forms.GroupBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
@@ -40,7 +39,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtIdentidad = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dtgv_Info_Cliente = new System.Windows.Forms.DataGridView();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +48,8 @@
             this.btnAvanzar = new System.Windows.Forms.Button();
             this.btnAñadir = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.txtIdentidad = new System.Windows.Forms.TextBox();
+            this.txtBusqueda_ID = new System.Windows.Forms.MaskedTextBox();
             this.grpInfo_Nuevo_Cliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_Info_Cliente)).BeginInit();
             this.SuspendLayout();
@@ -62,13 +62,6 @@
             this.lblBusqueda_ID.Size = new System.Drawing.Size(161, 13);
             this.lblBusqueda_ID.TabIndex = 0;
             this.lblBusqueda_ID.Text = "Numero de Identidad del Cliente:";
-            // 
-            // txtBusqueda_ID
-            // 
-            this.txtBusqueda_ID.Location = new System.Drawing.Point(238, 77);
-            this.txtBusqueda_ID.Name = "txtBusqueda_ID";
-            this.txtBusqueda_ID.Size = new System.Drawing.Size(100, 20);
-            this.txtBusqueda_ID.TabIndex = 1;
             // 
             // btnBuscar
             // 
@@ -164,13 +157,6 @@
             this.label2.TabIndex = 9;
             this.label2.Text = "Nombre:";
             // 
-            // txtIdentidad
-            // 
-            this.txtIdentidad.Location = new System.Drawing.Point(100, 22);
-            this.txtIdentidad.Name = "txtIdentidad";
-            this.txtIdentidad.Size = new System.Drawing.Size(100, 20);
-            this.txtIdentidad.TabIndex = 8;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -246,19 +232,34 @@
             this.label6.TabIndex = 8;
             this.label6.Text = "Sistema de Empeños Anderson";
             // 
+            // txtIdentidad
+            // 
+            this.txtIdentidad.Location = new System.Drawing.Point(100, 22);
+            this.txtIdentidad.Name = "txtIdentidad";
+            this.txtIdentidad.Size = new System.Drawing.Size(100, 20);
+            this.txtIdentidad.TabIndex = 8;
+            // 
+            // txtBusqueda_ID
+            // 
+            this.txtBusqueda_ID.Location = new System.Drawing.Point(263, 74);
+            this.txtBusqueda_ID.Mask = "0000-0000-00000";
+            this.txtBusqueda_ID.Name = "txtBusqueda_ID";
+            this.txtBusqueda_ID.Size = new System.Drawing.Size(100, 20);
+            this.txtBusqueda_ID.TabIndex = 9;
+            // 
             // Ingreso_de_Cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(711, 253);
+            this.Controls.Add(this.txtBusqueda_ID);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnAñadir);
             this.Controls.Add(this.btnAvanzar);
             this.Controls.Add(this.dtgv_Info_Cliente);
             this.Controls.Add(this.grpInfo_Nuevo_Cliente);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.txtBusqueda_ID);
             this.Controls.Add(this.lblBusqueda_ID);
             this.Name = "Ingreso_de_Cliente";
             this.Text = "Ingreso de Cliente";
@@ -274,7 +275,6 @@
         #endregion
 
         private System.Windows.Forms.Label lblBusqueda_ID;
-        private System.Windows.Forms.TextBox txtBusqueda_ID;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.GroupBox grpInfo_Nuevo_Cliente;
         private System.Windows.Forms.DataGridView dtgv_Info_Cliente;
@@ -286,7 +286,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtIdentidad;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
@@ -295,5 +294,7 @@
         private System.Windows.Forms.Button btnAvanzar;
         private System.Windows.Forms.Button btnAñadir;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtIdentidad;
+        private System.Windows.Forms.MaskedTextBox txtBusqueda_ID;
     }
 }

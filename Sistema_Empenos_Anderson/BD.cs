@@ -171,11 +171,11 @@ namespace Sistema_Empenos_Anderson
                 CloseConnection();
 
                 Verificador = int.Parse(command.Parameters["@Verificador"].Value.ToString());
-                Objetos_Mantenimiento.clienteMantenimiento.identidad_Cliente = Identidad;
-                Objetos_Mantenimiento.clienteMantenimiento.nombre_Cliente = command.Parameters["@Nombre"].Value.ToString();
-                Objetos_Mantenimiento.clienteMantenimiento.apellido_Cliente = command.Parameters["@Apellido"].Value.ToString();
-                Objetos_Mantenimiento.clienteMantenimiento.telefono_Cliente = command.Parameters["@Telefono"].Value.ToString();
-                Objetos_Mantenimiento.clienteMantenimiento.correo_Cliente = command.Parameters["@Correo"].Value.ToString();
+                Objetos_Globales.cliente.identidad_Cliente = Identidad;
+                Objetos_Globales.cliente.nombre_Cliente = command.Parameters["@Nombre"].Value.ToString();
+                Objetos_Globales.cliente.apellido_Cliente = command.Parameters["@Apellido"].Value.ToString();
+                Objetos_Globales.cliente.telefono_Cliente = command.Parameters["@Telefono"].Value.ToString();
+                Objetos_Globales.cliente.correo_Cliente = command.Parameters["@Correo"].Value.ToString();
             }
             catch
             {
@@ -373,7 +373,7 @@ namespace Sistema_Empenos_Anderson
             }
         }
 
-        public static void Ingreso_Articulo(int codigo, string Numero_Serie, int Tipo_Art, string Descripcion, string Marca, string Modelo, double Monto, double Tasa, int Estado)
+        public static void Ingreso_Articulo(int codigo, string Numero_Serie, int Tipo_Art, string Descripcion, string Marca, string Modelo, double Monto, double Tasa, int Estado, int meses)
         {
             OpenConnection();
 
@@ -391,6 +391,7 @@ namespace Sistema_Empenos_Anderson
             command.Parameters.Add(new SqlParameter("@Monto", Monto));
             command.Parameters.Add(new SqlParameter("@Tasa", Tasa));
             command.Parameters.Add(new SqlParameter("@Estado", Estado));
+            command.Parameters.Add(new SqlParameter("@Meses", meses));
 
             command.ExecuteNonQuery();
 

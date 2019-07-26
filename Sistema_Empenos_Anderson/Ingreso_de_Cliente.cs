@@ -23,20 +23,26 @@ namespace Sistema_Empenos_Anderson
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            
-            if (BD.Busqueda_Cliente(txtBusqueda_ID.Text) > 0)
+            if (txtBusqueda_ID.MaskFull)
             {
-                Objetos_Globales.cliente.identidad_Cliente = txtBusqueda_ID.Text;
-                dtgv_Info_Cliente.Rows[0].Cells[0].Value = Objetos_Globales.cliente.nombre_Cliente;
-                dtgv_Info_Cliente.Rows[0].Cells[1].Value = Objetos_Globales.cliente.apellido_Cliente;
-                dtgv_Info_Cliente.Rows[0].Cells[2].Value = Objetos_Globales.cliente.telefono_Cliente;
-                dtgv_Info_Cliente.Rows[0].Cells[3].Value = Objetos_Globales.cliente.correo_Cliente;
-                btnAvanzar.Enabled = true;
-            }else
+                if (BD.Busqueda_Cliente(txtBusqueda_ID.Text) > 0)
+                {
+                    Objetos_Globales.cliente.identidad_Cliente = txtBusqueda_ID.Text;
+                    dtgv_Info_Cliente.Rows[0].Cells[0].Value = Objetos_Globales.cliente.nombre_Cliente;
+                    dtgv_Info_Cliente.Rows[0].Cells[1].Value = Objetos_Globales.cliente.apellido_Cliente;
+                    dtgv_Info_Cliente.Rows[0].Cells[2].Value = Objetos_Globales.cliente.telefono_Cliente;
+                    dtgv_Info_Cliente.Rows[0].Cells[3].Value = Objetos_Globales.cliente.correo_Cliente;
+                    btnAvanzar.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("No se encontro el cliente en la Base de Datos\nDesea Agregarlo?", "ALERTA", MessageBoxButtons.YesNo);
+                    grpInfo_Nuevo_Cliente.Enabled = true;
+                    btnAñadir.Enabled = true;
+                }
+            } else
             {
-                MessageBox.Show("No se encontro el cliente en la Base de Datos\nDesea Agregarlo?","ALERTA", MessageBoxButtons.YesNo);
-                grpInfo_Nuevo_Cliente.Enabled = true;
-                btnAñadir.Enabled = true;
+                MessageBox.Show("Ingrese bien la identidad", "Error");
             }
         }
 

@@ -2,7 +2,7 @@
 {
     public class Articulo
     {
-        private int meses;
+        private int meses, codigoTipo;
         private double precioPago, prestado, interes;
         private string descripcion, marca, modelo, estado, numeroSerie, tipo;
 
@@ -10,7 +10,7 @@
         {
         }
 
-        public Articulo(int meses, double precioPago, double prestado, double interes, string descripcion, string marca, string modelo, string estado, string numeroSerie, string tipo)
+        public Articulo(int meses, double precioPago, double prestado, double interes, string descripcion, string marca, string modelo, string estado, string numeroSerie, string tipo, int codigoTipo)
         {
             this.meses = meses;
             this.precioPago = precioPago;
@@ -22,6 +22,7 @@
             this.estado = estado;
             this.numeroSerie = numeroSerie;
             this.tipo = tipo;
+            this.codigoTipo = codigoTipo;
         }
 
         public string Descripcion
@@ -82,6 +83,12 @@
         {
             get { return tipo; }
             set { this.tipo = value; }
+        }
+
+        public int CodigoTipo
+        {
+            get { return codigoTipo; }
+            set { this.codigoTipo = value; }
         }
     }
 }

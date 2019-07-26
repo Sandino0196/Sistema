@@ -48,5 +48,27 @@ namespace Sistema_Empenos_Anderson
             User_Mantenimiento user = new User_Mantenimiento(2);
             user.Show();
         }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                if (BD.Login(txtUsuario.Text, txtPassword.Text) > 0)
+                {
+                    Menu menu = new Menu();
+                    this.Hide();
+                    menu.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Usuario y/o contraseña incorrecta", "Error");
+                }
+            }
+        }
     }
 }
