@@ -33,7 +33,6 @@
             this.grpInfo_Nuevo_Cliente = new System.Windows.Forms.GroupBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,8 +47,9 @@
             this.btnAvanzar = new System.Windows.Forms.Button();
             this.btnAñadir = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtIdentidad = new System.Windows.Forms.TextBox();
             this.txtBusqueda_ID = new System.Windows.Forms.MaskedTextBox();
+            this.txtIdentidad = new System.Windows.Forms.MaskedTextBox();
+            this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
             this.grpInfo_Nuevo_Cliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_Info_Cliente)).BeginInit();
             this.SuspendLayout();
@@ -75,15 +75,15 @@
             // 
             // grpInfo_Nuevo_Cliente
             // 
+            this.grpInfo_Nuevo_Cliente.Controls.Add(this.txtTelefono);
+            this.grpInfo_Nuevo_Cliente.Controls.Add(this.txtIdentidad);
             this.grpInfo_Nuevo_Cliente.Controls.Add(this.txtCorreo);
             this.grpInfo_Nuevo_Cliente.Controls.Add(this.label5);
-            this.grpInfo_Nuevo_Cliente.Controls.Add(this.txtTelefono);
             this.grpInfo_Nuevo_Cliente.Controls.Add(this.label4);
             this.grpInfo_Nuevo_Cliente.Controls.Add(this.txtApellido);
             this.grpInfo_Nuevo_Cliente.Controls.Add(this.label3);
             this.grpInfo_Nuevo_Cliente.Controls.Add(this.txtNombre);
             this.grpInfo_Nuevo_Cliente.Controls.Add(this.label2);
-            this.grpInfo_Nuevo_Cliente.Controls.Add(this.txtIdentidad);
             this.grpInfo_Nuevo_Cliente.Controls.Add(this.label1);
             this.grpInfo_Nuevo_Cliente.Enabled = false;
             this.grpInfo_Nuevo_Cliente.Location = new System.Drawing.Point(463, 17);
@@ -108,13 +108,6 @@
             this.label5.Size = new System.Drawing.Size(97, 13);
             this.label5.TabIndex = 15;
             this.label5.Text = "Correo Electronico:";
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Location = new System.Drawing.Point(100, 100);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(100, 20);
-            this.txtTelefono.TabIndex = 14;
             // 
             // label4
             // 
@@ -232,13 +225,6 @@
             this.label6.TabIndex = 8;
             this.label6.Text = "Sistema de Empeños Anderson";
             // 
-            // txtIdentidad
-            // 
-            this.txtIdentidad.Location = new System.Drawing.Point(100, 22);
-            this.txtIdentidad.Name = "txtIdentidad";
-            this.txtIdentidad.Size = new System.Drawing.Size(100, 20);
-            this.txtIdentidad.TabIndex = 8;
-            // 
             // txtBusqueda_ID
             // 
             this.txtBusqueda_ID.Location = new System.Drawing.Point(263, 74);
@@ -246,6 +232,23 @@
             this.txtBusqueda_ID.Name = "txtBusqueda_ID";
             this.txtBusqueda_ID.Size = new System.Drawing.Size(100, 20);
             this.txtBusqueda_ID.TabIndex = 9;
+            // 
+            // txtIdentidad
+            // 
+            this.txtIdentidad.Enabled = false;
+            this.txtIdentidad.Location = new System.Drawing.Point(100, 19);
+            this.txtIdentidad.Mask = "0000-0000-00000";
+            this.txtIdentidad.Name = "txtIdentidad";
+            this.txtIdentidad.Size = new System.Drawing.Size(100, 20);
+            this.txtIdentidad.TabIndex = 10;
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(100, 100);
+            this.txtTelefono.Mask = "0000-0000";
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefono.TabIndex = 10;
             // 
             // Ingreso_de_Cliente
             // 
@@ -280,7 +283,6 @@
         private System.Windows.Forms.DataGridView dtgv_Info_Cliente;
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.Label label3;
@@ -294,7 +296,8 @@
         private System.Windows.Forms.Button btnAvanzar;
         private System.Windows.Forms.Button btnAñadir;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtIdentidad;
         private System.Windows.Forms.MaskedTextBox txtBusqueda_ID;
+        private System.Windows.Forms.MaskedTextBox txtTelefono;
+        private System.Windows.Forms.MaskedTextBox txtIdentidad;
     }
 }

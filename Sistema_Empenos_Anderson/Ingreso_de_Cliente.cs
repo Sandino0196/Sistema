@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace Sistema_Empenos_Anderson
 {
@@ -36,14 +37,22 @@ namespace Sistema_Empenos_Anderson
                 }
                 else
                 {
-                    MessageBox.Show("No se encontro el cliente en la Base de Datos\nDesea Agregarlo?", "ALERTA", MessageBoxButtons.YesNo);
-                    grpInfo_Nuevo_Cliente.Enabled = true;
-                    btnAñadir.Enabled = true;
+                    DialogResult res = MessageBox.Show("No se encontro el cliente en la Base de Datos\nDesea Agregarlo?", "ALERTA", MessageBoxButtons.YesNo);
+                    if (res.ToString() == "Yes")
+                    {
+                        grpInfo_Nuevo_Cliente.Enabled = true;
+                        btnAñadir.Enabled = true;
+                        txtIdentidad.Text = txtBusqueda_ID.Text;
+                        txtNombre.Focus();
+                    } else
+                    {
+                        grpInfo_Nuevo_Cliente.Enabled = false;
+                        btnAñadir.Enabled = false;
+
+                    }
                 }
-            } else
-            {
-                MessageBox.Show("Ingrese bien la identidad", "Error");
-            }
+            } else    
+                MessageBoxTemporal.Show("Ingrese bien la identidad", "Error",1,false);
         }
 
         private void btnAvanzar_Click(object sender, EventArgs e)
@@ -61,22 +70,29 @@ namespace Sistema_Empenos_Anderson
 
         private void btnAñadir_Click(object sender, EventArgs e)
         {
-            if(BD.Ingreso_Cliente(txtIdentidad.Text, txtNombre.Text, txtApellido.Text, txtTelefono.Text, txtCorreo.Text) == 0)
+            if (txtTelefono.MaskFull)
             {
-                MessageBox.Show("Identidad encontrada en otro registro, utilice otra o el cliente ya está agregado", "Mensaje Importante");
+                if (BD.Ingreso_Cliente(txtIdentidad.Text, txtNombre.Text, txtApellido.Text, txtTelefono.Text, txtCorreo.Text) == 0)
+                {
+                    MessageBoxTemporal.Show("Identidad encontrada en otro registro, utilice otra o el cliente ya está agregado", "Mensaje Importante",2,false);
+                }
+                else
+                {
+                    MessageBoxTemporal.Show("Ingresado correctamente", "Mensaje Importante",1,false);
+                    dtgv_Info_Cliente.Rows[0].Cells[0].Value = txtNombre.Text;
+                    dtgv_Info_Cliente.Rows[0].Cells[1].Value = txtApellido.Text;
+                    dtgv_Info_Cliente.Rows[0].Cells[2].Value = txtTelefono.Text;
+                    dtgv_Info_Cliente.Rows[0].Cells[3].Value = txtCorreo.Text;
+                    Objetos_Globales.cliente.identidad_Cliente = txtBusqueda_ID.Text;
+                    dtgv_Info_Cliente.Rows[0].Cells[0].Value = Objetos_Globales.cliente.nombre_Cliente;
+                    dtgv_Info_Cliente.Rows[0].Cells[1].Value = Objetos_Globales.cliente.apellido_Cliente;
+                    dtgv_Info_Cliente.Rows[0].Cells[2].Value = Objetos_Globales.cliente.telefono_Cliente;
+                    dtgv_Info_Cliente.Rows[0].Cells[3].Value = Objetos_Globales.cliente.correo_Cliente;
+                    btnAvanzar.Enabled = true;
+                }
             } else
             {
-                MessageBox.Show("Ingresado correctamente", "Mensaje Importante");
-                dtgv_Info_Cliente.Rows[0].Cells[0].Value = txtNombre.Text;
-                dtgv_Info_Cliente.Rows[0].Cells[1].Value = txtApellido.Text;
-                dtgv_Info_Cliente.Rows[0].Cells[2].Value = txtTelefono.Text;
-                dtgv_Info_Cliente.Rows[0].Cells[3].Value = txtCorreo.Text;
-                Objetos_Globales.cliente.identidad_Cliente = txtBusqueda_ID.Text;
-                dtgv_Info_Cliente.Rows[0].Cells[0].Value = Objetos_Globales.cliente.nombre_Cliente;
-                dtgv_Info_Cliente.Rows[0].Cells[1].Value = Objetos_Globales.cliente.apellido_Cliente;
-                dtgv_Info_Cliente.Rows[0].Cells[2].Value = Objetos_Globales.cliente.telefono_Cliente;
-                dtgv_Info_Cliente.Rows[0].Cells[3].Value = Objetos_Globales.cliente.correo_Cliente;
-                btnAvanzar.Enabled = true;
+                MessageBoxTemporal.Show("Ingrese correctamente el telefono", "Mensaje Importante", 2, false);
             }
         }
 
