@@ -38,15 +38,7 @@ namespace Sistema_Empenos_Anderson
         private void bttBuscar_Click(object sender, EventArgs e)
         {
             if (rbRecibo.Checked)
-            {
-                BD.OpenConnection();
-                SqlCommand cmd = new SqlCommand("Select  * from[dbo].[F_Buscar_Recibo]("+ int.Parse(txtCod.Text) + ") ", BD.connection);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                dataGridView1.DataSource = dt;
-                BD.CloseConnection();
-            }
+                dataGridView1.DataSource = BD.CargarArticulo(int.Parse(txtCod.Text));
         }
     }
 }

@@ -7,10 +7,45 @@ namespace Sistema_Empenos_Anderson
 {
     public partial class User_Mantenimiento : Form
     {
+        public User_Mantenimiento()
+        {
+            InitializeComponent();
+            txtNom_User_Tipo.Enabled = true;
+            btnBuscarTipo.Enabled = true;
+            txtNom_User_Pass.Enabled = true;
+            btnBuscarPassword.Enabled = true;
+            txtNom_User_Pass.Enabled = false;
+            btnBuscarPassword.Enabled = false;
+            txtNom_User_Nuevo.Enabled = true;
+            txtPassNuevo_New.Enabled = true;
+            txtPassConfirmar_New.Enabled = true;           
+        }
+
         public User_Mantenimiento(int tab)
         {
             InitializeComponent();
             tabCUsuario.SelectTab(tab);
+            txtNom_User_Tipo.Enabled = false;
+            btnBuscarTipo.Enabled = false;
+            if (tab == 1)
+            {
+                txtNom_User_Pass.Enabled = true;
+                btnBuscarPassword.Enabled = true;
+                txtNom_User_Nuevo.Enabled = false;
+                txtPassNuevo_New.Enabled = false;
+                txtPassConfirmar_New.Enabled = false;
+                cbxTp_User_New.Enabled = false;
+                btnAceptarNew.Enabled = false;
+            } else
+            {
+                txtNom_User_Pass.Enabled = false;
+                btnBuscarPassword.Enabled = false;
+                txtNom_User_Nuevo.Enabled = true;
+                txtPassNuevo_New.Enabled = true;
+                txtPassConfirmar_New.Enabled = true;
+                cbxTp_User_New.Enabled = true;
+                btnAceptarNew.Enabled = true;
+            }
         }
 
         private void btnVolver_Click(object sender, EventArgs e)

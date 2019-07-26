@@ -65,6 +65,11 @@ namespace Sistema_Empenos_Anderson
                 dtgv_Info_Cliente.Rows[0].Cells[1].Value = txtApellido.Text;
                 dtgv_Info_Cliente.Rows[0].Cells[2].Value = txtTelefono.Text;
                 dtgv_Info_Cliente.Rows[0].Cells[3].Value = txtCorreo.Text;
+                Objetos_Globales.cliente.identidad_Cliente = txtBusqueda_ID.Text;
+                dtgv_Info_Cliente.Rows[0].Cells[0].Value = Objetos_Globales.cliente.nombre_Cliente;
+                dtgv_Info_Cliente.Rows[0].Cells[1].Value = Objetos_Globales.cliente.apellido_Cliente;
+                dtgv_Info_Cliente.Rows[0].Cells[2].Value = Objetos_Globales.cliente.telefono_Cliente;
+                dtgv_Info_Cliente.Rows[0].Cells[3].Value = Objetos_Globales.cliente.correo_Cliente;
                 btnAvanzar.Enabled = true;
             }
         }

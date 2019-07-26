@@ -69,6 +69,25 @@ namespace Sistema_Empenos_Anderson
 
         #region Cargar Datos
 
+        public static DataTable CargarArticulo(int codigo)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                OpenConnection();
+                SqlCommand cmd = new SqlCommand("Select  * from[dbo].[F_Buscar_Recibo](" + codigo + ") ", BD.connection);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
+                CloseConnection();
+                return dt;
+            }
+            catch
+            {
+                return dt;
+            }
+        }
+
         public static DataTable CargarTipoArticulos()
         {
             DataTable dt = new DataTable();
