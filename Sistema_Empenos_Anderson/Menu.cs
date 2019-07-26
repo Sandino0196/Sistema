@@ -65,7 +65,7 @@ namespace Sistema_Empenos_Anderson
 
         private void Menu_Load(object sender, EventArgs e)
         {
-            if(Usuario.Codigo_Usuario != 1)
+            if(Objetos_Globales.usuario.codigo_Usuario != 1)
             {
                 rdbMantenimiento.Visible = false;
             } else
@@ -79,10 +79,10 @@ namespace Sistema_Empenos_Anderson
             this.Close();
             Form1 form1 = new Form1();            
             form1.Show();
-            Usuario.Codigo_Usuario = 0;
-            Usuario.Codigo_Tipo_Usuario = 0;
-            Usuario.Nombre_Usuario = "";
-            Usuario.Password_Usuario = "";
+            Objetos_Globales.usuario.codigo_Usuario = 0;
+            Objetos_Globales.usuario.codigo_Tipo_Usuario = 0;
+            Objetos_Globales.usuario.nombre_Usuario = "";
+            Objetos_Globales.usuario.password_Usuario = "";
         }
     }
 }

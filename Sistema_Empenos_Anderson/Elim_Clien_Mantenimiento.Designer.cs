@@ -78,6 +78,7 @@
             this.bttElim.TabIndex = 5;
             this.bttElim.Text = "Eliminar";
             this.bttElim.UseVisualStyleBackColor = true;
+            this.bttElim.Click += new System.EventHandler(this.bttElim_Click);
             // 
             // bttLimpiar
             // 

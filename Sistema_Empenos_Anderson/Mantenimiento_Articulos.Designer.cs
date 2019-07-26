@@ -43,10 +43,14 @@
             this.lblNom_TpArt = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.btnConsultaTipo = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btnVolver = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnConsultaEstado = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.lblTipo_Estado = new System.Windows.Forms.Label();
             this.cmbEstados = new System.Windows.Forms.ComboBox();
@@ -57,11 +61,7 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnConsultaEstado = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -76,6 +76,7 @@
             this.bttActualizar.TabIndex = 9;
             this.bttActualizar.Text = "Actualizar";
             this.bttActualizar.UseVisualStyleBackColor = true;
+            this.bttActualizar.Click += new System.EventHandler(this.bttActualizar_Click);
             // 
             // lblTipo
             // 
@@ -218,6 +219,23 @@
             this.tabPage1.Text = "Cambio de Tipo";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(78, 157);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(147, 20);
+            this.textBox5.TabIndex = 34;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 160);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(31, 13);
+            this.label5.TabIndex = 33;
+            this.label5.Text = "Tipo:";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // btnConsultaTipo
             // 
             this.btnConsultaTipo.Location = new System.Drawing.Point(125, 94);
@@ -241,16 +259,6 @@
             this.tabPage2.Text = "Añadir Tipo de Articulo";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // btnVolver
-            // 
-            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVolver.Location = new System.Drawing.Point(141, 315);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(100, 49);
-            this.btnVolver.TabIndex = 7;
-            this.btnVolver.Text = "Volver";
-            this.btnVolver.UseVisualStyleBackColor = true;
-            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.textBox4);
@@ -273,6 +281,33 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Cambiar Estado";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(79, 159);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(152, 20);
+            this.textBox4.TabIndex = 34;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 162);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(43, 13);
+            this.label4.TabIndex = 33;
+            this.label4.Text = "Estado:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // btnConsultaEstado
+            // 
+            this.btnConsultaEstado.Location = new System.Drawing.Point(191, 87);
+            this.btnConsultaEstado.Name = "btnConsultaEstado";
+            this.btnConsultaEstado.Size = new System.Drawing.Size(75, 23);
+            this.btnConsultaEstado.TabIndex = 32;
+            this.btnConsultaEstado.Text = "Consulta";
+            this.btnConsultaEstado.UseVisualStyleBackColor = true;
+            this.btnConsultaEstado.Click += new System.EventHandler(this.btnConsultaEstado_Click);
             // 
             // button1
             // 
@@ -363,49 +398,15 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "Número de Serie:";
             // 
-            // btnConsultaEstado
+            // btnVolver
             // 
-            this.btnConsultaEstado.Location = new System.Drawing.Point(191, 87);
-            this.btnConsultaEstado.Name = "btnConsultaEstado";
-            this.btnConsultaEstado.Size = new System.Drawing.Size(75, 23);
-            this.btnConsultaEstado.TabIndex = 32;
-            this.btnConsultaEstado.Text = "Consulta";
-            this.btnConsultaEstado.UseVisualStyleBackColor = true;
-            this.btnConsultaEstado.Click += new System.EventHandler(this.btnConsultaEstado_Click);
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(79, 159);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(152, 20);
-            this.textBox4.TabIndex = 34;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 162);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 13);
-            this.label4.TabIndex = 33;
-            this.label4.Text = "Estado:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(78, 157);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(147, 20);
-            this.textBox5.TabIndex = 34;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 160);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(31, 13);
-            this.label5.TabIndex = 33;
-            this.label5.Text = "Tipo:";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVolver.Location = new System.Drawing.Point(141, 315);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(100, 49);
+            this.btnVolver.TabIndex = 7;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
             // 
             // Mantenimiento_Articulos
             // 

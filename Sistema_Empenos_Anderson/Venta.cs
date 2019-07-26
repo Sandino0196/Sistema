@@ -20,24 +20,24 @@ namespace Sistema_Empenos_Anderson
         {
             double subtotal = 0, isv = 0;
             this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
-            txtVendedor.Text = Usuario.Nombre_Usuario;
+            txtVendedor.Text = Objetos_Globales.usuario.nombre_Usuario;
             txtFechaVenta.Text = calendarVenta.SelectionStart.ToShortDateString();
-            isv = Articulo.precioPago * 0.15;
-            subtotal = Articulo.precioPago - isv;
+            isv = Objetos_Globales.articulo.PrecioPago * 0.15;
+            subtotal = Objetos_Globales.articulo.PrecioPago - isv;
             txtSubtotal.Text = subtotal.ToString();
             txtISV.Text = isv.ToString();
-            txtTotalPagar.Text = Articulo.precioPago.ToString();
+            txtTotalPagar.Text = Objetos_Globales.articulo.PrecioPago.ToString();
         }
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
             if (BD.Busqueda_Cliente(txtIDComp.Text) > 0)
             {
-                Cliente.Identidad_Cliente = txtIDComp.Text;
-                txtNombre.Text = Cliente.Nombre_Cliente;
-                txtApellido.Text = Cliente.Apellido_Cliente;
-                txtTelefono.Text = Cliente.Telefono_Cliente;
-                txtCorreo.Text = Cliente.Correo_Cliente;                
+                Objetos_Globales.cliente.identidad_Cliente = txtIDComp.Text;
+                txtNombre.Text = Objetos_Globales.cliente.nombre_Cliente;
+                txtApellido.Text = Objetos_Globales.cliente.apellido_Cliente;
+                txtTelefono.Text = Objetos_Globales.cliente.telefono_Cliente;
+                txtCorreo.Text = Objetos_Globales.cliente.correo_Cliente;                
             }
             else
             {
@@ -62,6 +62,11 @@ namespace Sistema_Empenos_Anderson
             this.Close();
             Facturacion facturacion = new Facturacion();
             facturacion.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -45,5 +45,10 @@ namespace Sistema_Empenos_Anderson
             Consulta_Articulos cons = new Consulta_Articulos();
             cons.Show();
         }
+
+        private void bttActualizar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

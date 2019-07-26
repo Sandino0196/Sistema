@@ -51,7 +51,7 @@ namespace Sistema_Empenos_Anderson
             try
             {
                 login = int.Parse(command.Parameters["@login"].Value.ToString());
-                Usuario.Codigo_Usuario = int.Parse(command.Parameters["@codigo"].Value.ToString());
+                Objetos_Globales.usuario.codigo_Usuario = int.Parse(command.Parameters["@codigo"].Value.ToString());
                 return login;
             }
             catch
@@ -103,10 +103,10 @@ namespace Sistema_Empenos_Anderson
             try
             {
                 Verificador = int.Parse(command.Parameters["@Verificador"].Value.ToString());
-                Cliente.Nombre_Cliente = command.Parameters["@Nombre"].Value.ToString();
-                Cliente.Apellido_Cliente = command.Parameters["@Apellido"].Value.ToString();
-                Cliente.Telefono_Cliente = command.Parameters["@Telefono"].Value.ToString();
-                Cliente.Correo_Cliente = command.Parameters["@Correo"].Value.ToString();
+                Objetos_Globales.cliente.nombre_Cliente = command.Parameters["@Nombre"].Value.ToString();
+                Objetos_Globales.cliente.apellido_Cliente = command.Parameters["@Apellido"].Value.ToString();
+                Objetos_Globales.cliente.telefono_Cliente = command.Parameters["@Telefono"].Value.ToString();
+                Objetos_Globales.cliente.correo_Cliente = command.Parameters["@Correo"].Value.ToString();
             }
             catch
             {
@@ -172,14 +172,14 @@ namespace Sistema_Empenos_Anderson
 
             try
             {
-                Articulo.descripcion = command.Parameters["@Descripcion"].Value.ToString();
-                Articulo.marca = command.Parameters["@Marca"].Value.ToString();
-                Articulo.modelo = command.Parameters["@Modelo"].Value.ToString();
-                Articulo.estado = command.Parameters["@Estado"].Value.ToString();
-                Articulo.interes = double.Parse(command.Parameters["@Interes"].Value.ToString());
+                Objetos_Globales.articulo.Descripcion = command.Parameters["@Descripcion"].Value.ToString();
+                Objetos_Globales.articulo.Marca = command.Parameters["@Marca"].Value.ToString();
+                Objetos_Globales.articulo.Modelo = command.Parameters["@Modelo"].Value.ToString();
+                Objetos_Globales.articulo.Estado = command.Parameters["@Estado"].Value.ToString();
+                Objetos_Globales.articulo.Interes = double.Parse(command.Parameters["@Interes"].Value.ToString());
                 existencia = int.Parse(command.Parameters["@Existencia"].Value.ToString());
-                Articulo.prestado = double.Parse(command.Parameters["@Prestado"].Value.ToString());
-                Cliente.Identidad_Cliente = command.Parameters["@Identidad"].Value.ToString();
+                Objetos_Globales.articulo.Prestado = double.Parse(command.Parameters["@Prestado"].Value.ToString());
+                Objetos_Globales.cliente.identidad_Cliente = command.Parameters["@Identidad"].Value.ToString();
             }
             catch
             {
