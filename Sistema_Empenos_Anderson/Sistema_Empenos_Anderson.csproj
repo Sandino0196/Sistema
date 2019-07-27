@@ -191,6 +191,9 @@
     <EmbeddedResource Include="Mantenimiento_Articulos.resx">
       <DependentUpon>Mantenimiento_Articulos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Retiro_Articulo.resx">
+      <DependentUpon>Retiro_Articulo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User_Mantenimiento.resx">
       <DependentUpon>User_Mantenimiento.cs</DependentUpon>
     </EmbeddedResource>
