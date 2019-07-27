@@ -1,21 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Sistema_Empenos_Anderson
 {
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             InitializeComponent();
             Objetos_Globales.usuario = new Usuario();
+            Objetos_Globales.fechaHoy = Objetos_Globales.fecha.Year + "-" + Objetos_Globales.fecha.Month + 
+                "-" + Objetos_Globales.fecha.Day + " " + Objetos_Globales.fecha.Hour + ":"
+                + Objetos_Globales.fecha.Minute + ":" + Objetos_Globales.fecha.Second + ":" 
+                + Objetos_Globales.fecha.Millisecond;
         }
 
         protected override void OnClosed(EventArgs e)

@@ -47,9 +47,13 @@ namespace Sistema_Empenos_Anderson
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Pago_de_Cuotas_Detalle cuotas_Detalle = new Pago_de_Cuotas_Detalle();
-            cuotas_Detalle.Show();
-            this.Hide();
+            if(txtEstado.Text.Equals("En Prenda"))
+            {
+                Pago_de_Cuotas_Detalle cuotas_Detalle = new Pago_de_Cuotas_Detalle();
+                cuotas_Detalle.Show();
+                this.Hide();
+            } else
+                MessageBoxTemporal.Show("Este articulo ya esta " + txtEstado.Text, "Mensaje Importante",2,false);
         }
 
         private void bttBuscar_Click_1(object sender, EventArgs e)

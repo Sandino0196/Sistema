@@ -34,11 +34,12 @@
             this.lbl = new System.Windows.Forms.Label();
             this.txtCod = new System.Windows.Forms.TextBox();
             this.bttBuscar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgConsultaArticulo = new System.Windows.Forms.DataGridView();
             this.lbl1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnVolverConsulta = new System.Windows.Forms.Button();
             this.gbConsArti.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgConsultaArticulo)).BeginInit();
             this.SuspendLayout();
             // 
             // gbConsArti
@@ -86,14 +87,14 @@
             // 
             // txtCod
             // 
-            this.txtCod.Location = new System.Drawing.Point(158, 128);
+            this.txtCod.Location = new System.Drawing.Point(158, 106);
             this.txtCod.Name = "txtCod";
             this.txtCod.Size = new System.Drawing.Size(100, 20);
             this.txtCod.TabIndex = 2;
             // 
             // bttBuscar
             // 
-            this.bttBuscar.Location = new System.Drawing.Point(301, 103);
+            this.bttBuscar.Location = new System.Drawing.Point(303, 108);
             this.bttBuscar.Name = "bttBuscar";
             this.bttBuscar.Size = new System.Drawing.Size(75, 23);
             this.bttBuscar.TabIndex = 3;
@@ -101,18 +102,20 @@
             this.bttBuscar.UseVisualStyleBackColor = true;
             this.bttBuscar.Click += new System.EventHandler(this.bttBuscar_Click);
             // 
-            // dataGridView1
+            // dtgConsultaArticulo
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 196);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(383, 148);
-            this.dataGridView1.TabIndex = 4;
+            this.dtgConsultaArticulo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgConsultaArticulo.Location = new System.Drawing.Point(12, 147);
+            this.dtgConsultaArticulo.Name = "dtgConsultaArticulo";
+            this.dtgConsultaArticulo.ReadOnly = true;
+            this.dtgConsultaArticulo.Size = new System.Drawing.Size(383, 148);
+            this.dtgConsultaArticulo.TabIndex = 4;
+            this.dtgConsultaArticulo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgConsultaArticulo_CellClick);
             // 
             // lbl1
             // 
             this.lbl1.AutoSize = true;
-            this.lbl1.Location = new System.Drawing.Point(15, 135);
+            this.lbl1.Location = new System.Drawing.Point(15, 113);
             this.lbl1.Name = "lbl1";
             this.lbl1.Size = new System.Drawing.Size(35, 13);
             this.lbl1.TabIndex = 5;
@@ -120,21 +123,32 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(303, 153);
+            this.button1.Location = new System.Drawing.Point(242, 316);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 6;
             this.button1.Text = "Agregar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnVolverConsulta
+            // 
+            this.btnVolverConsulta.Location = new System.Drawing.Point(92, 316);
+            this.btnVolverConsulta.Name = "btnVolverConsulta";
+            this.btnVolverConsulta.Size = new System.Drawing.Size(75, 23);
+            this.btnVolverConsulta.TabIndex = 7;
+            this.btnVolverConsulta.Text = "Volver";
+            this.btnVolverConsulta.UseVisualStyleBackColor = true;
             // 
             // Consulta_Articulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(407, 356);
+            this.ClientSize = new System.Drawing.Size(407, 357);
+            this.Controls.Add(this.btnVolverConsulta);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lbl1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtgConsultaArticulo);
             this.Controls.Add(this.bttBuscar);
             this.Controls.Add(this.txtCod);
             this.Controls.Add(this.lbl);
@@ -144,7 +158,7 @@
             this.Load += new System.EventHandler(this.Consulta_Facturacion_Load);
             this.gbConsArti.ResumeLayout(false);
             this.gbConsArti.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgConsultaArticulo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,8 +172,9 @@
         private System.Windows.Forms.Label lbl;
         private System.Windows.Forms.TextBox txtCod;
         private System.Windows.Forms.Button bttBuscar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtgConsultaArticulo;
         private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnVolverConsulta;
     }
 }

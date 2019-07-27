@@ -1,18 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Sistema_Empenos_Anderson
 {
     public partial class Consulta_Articulos : Form
     {
+        Articulo consulta = new Articulo();
+
         public Consulta_Articulos()
         {
             InitializeComponent();
@@ -38,7 +32,28 @@ namespace Sistema_Empenos_Anderson
         private void bttBuscar_Click(object sender, EventArgs e)
         {
             if (rbRecibo.Checked)
-                dataGridView1.DataSource = BD.CargarArticulo(int.Parse(txtCod.Text));
+                dtgConsultaArticulo.DataSource = BD.CargarArticulo(int.Parse(txtCod.Text));
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        Articulo articulo = Objetos_Globales.articulo;
+
+        private void dtgConsultaArticulo_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            articulo.NumeroSerie = dtgConsultaArticulo.Rows[e.RowIndex].Cells["Numero_Serie_Articulo"].Value.ToString();
+            articulo.Tipo = dtgConsultaArticulo.Rows[e.RowIndex].Cells["Tipo Articulo"].Value.ToString();
+            articulo.Marca = dtgConsultaArticulo.Rows[e.RowIndex].Cells["Marca"].Value.ToString();
+            articulo.Modelo = dtgConsultaArticulo.Rows[e.RowIndex].Cells["Modelo"].Value.ToString();
+            articulo.Prestado = double.Parse(dtgConsultaArticulo.Rows[e.RowIndex].Cells["Valor_Prestado"].Value.ToString());
+            articulo.Interes = double.Parse(dtgConsultaArticulo.Rows[e.RowIndex].Cells["Tasa_Interes"].Value.ToString());
+            articulo.Estado = dtgConsultaArticulo.Rows[e.RowIndex].Cells["Estado"].Value.ToString();
+            articulo.Descripcion = dtgConsultaArticulo.Rows[e.RowIndex].Cells["Descripcion_Articulo"].Value.ToString();
+            articulo.Meses = int.Parse(dtgConsultaArticulo.Rows[e.RowIndex].Cells["Cuotas_Meses"].Value.ToString());
+            Objetos_Globales.articulo = articulo;
         }
     }
 }

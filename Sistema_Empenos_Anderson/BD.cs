@@ -11,7 +11,7 @@ namespace Sistema_Empenos_Anderson
 
         public static void OpenConnection()
         {
-            connection.ConnectionString = @"Data Source=DESKTOP-T785USI; Initial Catalog=Base_Empeños; Integrated Security=Yes";
+            connection.ConnectionString = @"Data Source=DESKTOP-D1B8U5J; Initial Catalog=Base_Empeños; Integrated Security=Yes";
             connection.Open();
             //Donde dice DATA SOURCE le ponen el nombre de su máquina; 
         }
@@ -348,7 +348,7 @@ namespace Sistema_Empenos_Anderson
             }
         }
 
-        public static int Ingreso_Usuario(int codigo, string usuario, string password, int tipo, int cod_estado, string estado)
+        public static int Ingreso_Usuario(int codigo, string usuario, string password, int tipo, int cod_estado, string estado, string fecha)
         {
             OpenConnection();
 
@@ -363,6 +363,7 @@ namespace Sistema_Empenos_Anderson
             command.Parameters.Add(new SqlParameter("@Tipo", tipo));
             command.Parameters.Add(new SqlParameter("@Cod_Estado", cod_estado));
             command.Parameters.Add(new SqlParameter("@Estado", estado));
+            command.Parameters.Add(new SqlParameter("@Fecha_Creado", fecha));
 
             try
             {
