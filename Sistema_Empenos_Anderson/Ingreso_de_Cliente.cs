@@ -13,7 +13,7 @@ namespace Sistema_Empenos_Anderson
 
         protected override void OnClosed(EventArgs e)
         {
-            Menu men = new Menu();
+            Menu men = new Menu(Objetos_Globales.usuario.codigo_Usuario);
             men.Show();
         }
 

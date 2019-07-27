@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtCodigoPago = new System.Windows.Forms.TextBox();
+            this.txtCliente = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numMeses = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.btnVolver = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.txtMonto = new System.Windows.Forms.MaskedTextBox();
+            this.txtIngresado = new System.Windows.Forms.MaskedTextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.numMeses)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -56,20 +56,20 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Codigo de Pago";
             // 
-            // textBox1
+            // txtCodigoPago
             // 
-            this.textBox1.Location = new System.Drawing.Point(104, 55);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(158, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtCodigoPago.Location = new System.Drawing.Point(104, 55);
+            this.txtCodigoPago.Name = "txtCodigoPago";
+            this.txtCodigoPago.Size = new System.Drawing.Size(158, 20);
+            this.txtCodigoPago.TabIndex = 1;
             // 
-            // textBox2
+            // txtCliente
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(104, 95);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(158, 20);
-            this.textBox2.TabIndex = 3;
+            this.txtCliente.Enabled = false;
+            this.txtCliente.Location = new System.Drawing.Point(104, 95);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.Size = new System.Drawing.Size(158, 20);
+            this.txtCliente.TabIndex = 3;
             // 
             // label2
             // 
@@ -114,12 +114,12 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Meses a Pagar";
             // 
-            // numericUpDown1
+            // numMeses
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(104, 324);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(33, 20);
-            this.numericUpDown1.TabIndex = 9;
+            this.numMeses.Location = new System.Drawing.Point(104, 324);
+            this.numMeses.Name = "numMeses";
+            this.numMeses.Size = new System.Drawing.Size(33, 20);
+            this.numMeses.TabIndex = 9;
             // 
             // label6
             // 
@@ -140,74 +140,74 @@
             this.label7.TabIndex = 11;
             this.label7.Text = "Monto Ingresado";
             // 
-            // button1
+            // btnVolver
             // 
-            this.button1.Location = new System.Drawing.Point(15, 436);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Volver";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnVolver.Location = new System.Drawing.Point(15, 436);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(75, 23);
+            this.btnVolver.TabIndex = 13;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnAceptar
             // 
-            this.button2.Location = new System.Drawing.Point(140, 436);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "Aceptar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAceptar.Location = new System.Drawing.Point(140, 436);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptar.TabIndex = 14;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnSalir
             // 
-            this.button3.Location = new System.Drawing.Point(263, 436);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Salir";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnSalir.Location = new System.Drawing.Point(263, 436);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 15;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
             // 
-            // maskedTextBox1
+            // txtMonto
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(104, 359);
-            this.maskedTextBox1.Mask = "00000.00";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(54, 20);
-            this.maskedTextBox1.TabIndex = 16;
+            this.txtMonto.Location = new System.Drawing.Point(104, 359);
+            this.txtMonto.Mask = "00000.00";
+            this.txtMonto.Name = "txtMonto";
+            this.txtMonto.Size = new System.Drawing.Size(54, 20);
+            this.txtMonto.TabIndex = 16;
             // 
-            // maskedTextBox2
+            // txtIngresado
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(104, 398);
-            this.maskedTextBox2.Mask = "00000.00";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(54, 20);
-            this.maskedTextBox2.TabIndex = 17;
+            this.txtIngresado.Location = new System.Drawing.Point(104, 398);
+            this.txtIngresado.Mask = "00000.00";
+            this.txtIngresado.Name = "txtIngresado";
+            this.txtIngresado.Size = new System.Drawing.Size(54, 20);
+            this.txtIngresado.TabIndex = 17;
             // 
             // Pago_de_Cuotas_Detalle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(350, 471);
-            this.Controls.Add(this.maskedTextBox2);
-            this.Controls.Add(this.maskedTextBox1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.txtIngresado);
+            this.Controls.Add(this.txtMonto);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.btnAceptar);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.numMeses);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtCliente);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtCodigoPago);
             this.Controls.Add(this.label1);
             this.Name = "Pago_de_Cuotas_Detalle";
             this.Text = "Pago_de_Cuotas_Detalle";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMeses)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,20 +216,20 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtCodigoPago;
+        private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numMeses;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.MaskedTextBox txtMonto;
+        private System.Windows.Forms.MaskedTextBox txtIngresado;
     }
 }

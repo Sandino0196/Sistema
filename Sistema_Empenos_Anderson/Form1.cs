@@ -30,7 +30,7 @@ namespace Sistema_Empenos_Anderson
         {
             if(BD.Login(txtUsuario.Text,txtPassword.Text) > 0)
             {
-                Menu menu = new Menu();
+                Menu menu = new Menu(Objetos_Globales.usuario.codigo_Usuario);
                 this.Hide();
                 menu.Show();
             } else
@@ -63,7 +63,7 @@ namespace Sistema_Empenos_Anderson
             {
                 if (BD.Login(txtUsuario.Text, txtPassword.Text) > 0)
                 {
-                    Menu menu = new Menu();
+                    Menu menu = new Menu(Objetos_Globales.usuario.codigo_Usuario);
                     this.Hide();
                     menu.Show();
                 }

@@ -37,7 +37,7 @@
             this.dtgConsultaArticulo = new System.Windows.Forms.DataGridView();
             this.lbl1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnVolverConsulta = new System.Windows.Forms.Button();
+            this.btnCerrarConsulta = new System.Windows.Forms.Button();
             this.gbConsArti.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgConsultaArticulo)).BeginInit();
             this.SuspendLayout();
@@ -87,14 +87,14 @@
             // 
             // txtCod
             // 
-            this.txtCod.Location = new System.Drawing.Point(158, 106);
+            this.txtCod.Location = new System.Drawing.Point(184, 106);
             this.txtCod.Name = "txtCod";
             this.txtCod.Size = new System.Drawing.Size(100, 20);
             this.txtCod.TabIndex = 2;
             // 
             // bttBuscar
             // 
-            this.bttBuscar.Location = new System.Drawing.Point(303, 108);
+            this.bttBuscar.Location = new System.Drawing.Point(290, 104);
             this.bttBuscar.Name = "bttBuscar";
             this.bttBuscar.Size = new System.Drawing.Size(75, 23);
             this.bttBuscar.TabIndex = 3;
@@ -108,14 +108,14 @@
             this.dtgConsultaArticulo.Location = new System.Drawing.Point(12, 147);
             this.dtgConsultaArticulo.Name = "dtgConsultaArticulo";
             this.dtgConsultaArticulo.ReadOnly = true;
-            this.dtgConsultaArticulo.Size = new System.Drawing.Size(383, 148);
+            this.dtgConsultaArticulo.Size = new System.Drawing.Size(464, 148);
             this.dtgConsultaArticulo.TabIndex = 4;
             this.dtgConsultaArticulo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgConsultaArticulo_CellClick);
             // 
             // lbl1
             // 
             this.lbl1.AutoSize = true;
-            this.lbl1.Location = new System.Drawing.Point(15, 113);
+            this.lbl1.Location = new System.Drawing.Point(15, 109);
             this.lbl1.Name = "lbl1";
             this.lbl1.Size = new System.Drawing.Size(35, 13);
             this.lbl1.TabIndex = 5;
@@ -131,21 +131,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btnVolverConsulta
+            // btnCerrarConsulta
             // 
-            this.btnVolverConsulta.Location = new System.Drawing.Point(92, 316);
-            this.btnVolverConsulta.Name = "btnVolverConsulta";
-            this.btnVolverConsulta.Size = new System.Drawing.Size(75, 23);
-            this.btnVolverConsulta.TabIndex = 7;
-            this.btnVolverConsulta.Text = "Volver";
-            this.btnVolverConsulta.UseVisualStyleBackColor = true;
+            this.btnCerrarConsulta.Location = new System.Drawing.Point(92, 316);
+            this.btnCerrarConsulta.Name = "btnCerrarConsulta";
+            this.btnCerrarConsulta.Size = new System.Drawing.Size(75, 23);
+            this.btnCerrarConsulta.TabIndex = 7;
+            this.btnCerrarConsulta.Text = "Cerrar";
+            this.btnCerrarConsulta.UseVisualStyleBackColor = true;
+            this.btnCerrarConsulta.Click += new System.EventHandler(this.btnCerrarConsulta_Click);
             // 
             // Consulta_Articulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(407, 357);
-            this.Controls.Add(this.btnVolverConsulta);
+            this.ClientSize = new System.Drawing.Size(488, 357);
+            this.Controls.Add(this.btnCerrarConsulta);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lbl1);
             this.Controls.Add(this.dtgConsultaArticulo);
@@ -175,6 +176,6 @@
         private System.Windows.Forms.DataGridView dtgConsultaArticulo;
         private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnVolverConsulta;
+        private System.Windows.Forms.Button btnCerrarConsulta;
     }
 }

@@ -40,7 +40,7 @@ namespace Sistema_Empenos_Anderson
             
         }
 
-        Articulo articulo = Objetos_Globales.articulo;
+        Articulo articulo = new Articulo();
 
         private void dtgConsultaArticulo_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -54,6 +54,11 @@ namespace Sistema_Empenos_Anderson
             articulo.Descripcion = dtgConsultaArticulo.Rows[e.RowIndex].Cells["Descripcion_Articulo"].Value.ToString();
             articulo.Meses = int.Parse(dtgConsultaArticulo.Rows[e.RowIndex].Cells["Cuotas_Meses"].Value.ToString());
             Objetos_Globales.articulo = articulo;
+        }
+
+        private void btnCerrarConsulta_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

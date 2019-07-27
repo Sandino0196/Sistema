@@ -16,7 +16,7 @@ namespace Sistema_Empenos_Anderson
 
         protected override void OnClosed(EventArgs e)
         {
-            Menu men = new Sistema_Empenos_Anderson.Menu();
+            Menu men = new Sistema_Empenos_Anderson.Menu(Objetos_Globales.usuario.codigo_Usuario);
             men.Show();
         }
 
@@ -30,7 +30,7 @@ namespace Sistema_Empenos_Anderson
                     ((Articulo)Objetos_Globales.articulos[i]).Prestado, ((Articulo)Objetos_Globales.articulos[i]).Interes, 1,
                     ((Articulo)Objetos_Globales.articulos[i]).Meses, "Articulo");
             MessageBox.Show("Listo","Listo");
-            Menu men = new Sistema_Empenos_Anderson.Menu();
+            Menu men = new Sistema_Empenos_Anderson.Menu(Objetos_Globales.usuario.codigo_Usuario);
             men.Show();
             this.Close();
         }
