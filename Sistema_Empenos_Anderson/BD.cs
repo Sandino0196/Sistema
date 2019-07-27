@@ -527,7 +527,7 @@ namespace Sistema_Empenos_Anderson
 
         #region Mantenimiento
 
-        public static void Actualizar_Tipo_Articulo(string Num_Serie, int Num_Recibo, int Cod_Tipo)
+        public static int Actualizar_Tipo_Articulo(string Num_Serie, int Num_Recibo, int Cod_Tipo)
         {
             OpenConnection();
 
@@ -543,10 +543,11 @@ namespace Sistema_Empenos_Anderson
             {
                 command.ExecuteNonQuery();
                 CloseConnection();
+                return 1;
             }
             catch
             {
-                MessageBoxTemporal.Show("No se encontro el articulo","Error", 2, false);
+                return 0;
             }
             
         }
