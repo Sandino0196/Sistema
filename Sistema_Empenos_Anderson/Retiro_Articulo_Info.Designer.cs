@@ -41,6 +41,7 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.btnPagar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label6
@@ -156,11 +157,21 @@
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(150, 237);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(106, 13);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "Solo es prueba, ojala";
+            // 
             // Retiro_Articulo_Info
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(402, 342);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnPagar);
             this.Controls.Add(this.textBox4);
@@ -196,5 +207,6 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button btnPagar;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Label label7;
     }
 }
