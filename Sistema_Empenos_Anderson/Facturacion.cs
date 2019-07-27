@@ -43,12 +43,20 @@ namespace Sistema_Empenos_Anderson
 
         private void bttBuscar_Click(object sender, EventArgs e)
         {
-            if(BD.Busqueda_Articulo(int.Parse(txtNumRecibo.Text),txtNumSerie.Text) > 0)
+            if(txtNumRecibo.Text=="")
             {
-                txtArticulo.Text = Objetos_Globales.articulo.Descripcion;
-                txtEstado.Text = Objetos_Globales.articulo.Estado;
-                txtMonto.Text = Objetos_Globales.articulo.Prestado.ToString();
+
             }
+            else
+            {
+                if (BD.Busqueda_Articulo(int.Parse(txtNumRecibo.Text), txtNumSerie.Text) > 0)
+                {
+                    txtArticulo.Text = Objetos_Globales.articulo.Descripcion;
+                    txtEstado.Text = Objetos_Globales.articulo.Estado;
+                    txtMonto.Text = Objetos_Globales.articulo.Prestado.ToString();
+                }
+            }
+            
         }
 
         private void bttAgregar_Click(object sender, EventArgs e)

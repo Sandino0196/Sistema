@@ -19,7 +19,7 @@ namespace Sistema_Empenos_Anderson
 
         protected override void OnClosed(EventArgs e)
         {
-            Application.Exit();
+            Application.ExitThread();
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
@@ -82,7 +82,7 @@ namespace Sistema_Empenos_Anderson
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             Form1 form1 = new Form1();            
             form1.Show();
             Objetos_Globales.usuario.codigo_Usuario = 0;

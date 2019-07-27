@@ -22,6 +22,20 @@ namespace Sistema_Empenos_Anderson
 
         }
 
+        private int Validar_Correo()
+        {
+            string Correo;
+            Correo = txtCorreo.Text;
+            int verificador=0;
+            for(int x=0; x<Correo.Length; x++)
+            {
+                if (Correo[x].ToString() == "@" || Correo[x].ToString() == ".")
+                    verificador++;
+            }
+
+            return verificador;
+        }
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             if (txtBusqueda_ID.MaskFull)
@@ -70,7 +84,7 @@ namespace Sistema_Empenos_Anderson
 
         private void btnAñadir_Click(object sender, EventArgs e)
         {
-            if (txtTelefono.MaskFull)
+            if (txtTelefono.MaskFull && txtNombre.Text!="" && txtApellido.Text!="" && Validar_Correo()==2)
             {
                 if (BD.Ingreso_Cliente(txtIdentidad.Text, txtNombre.Text, txtApellido.Text, txtTelefono.Text, txtCorreo.Text, 1, "Cliente") == 0)
                 {
@@ -92,7 +106,7 @@ namespace Sistema_Empenos_Anderson
                 }
             } else
             {
-                MessageBoxTemporal.Show("Ingrese correctamente el telefono", "Mensaje Importante", 2, false);
+                MessageBoxTemporal.Show("Ha ingresado incorrectamente algunos datos!\nPorfavor Reviselos.", "Mensaje Importante", 2, false);
             }
         }
 

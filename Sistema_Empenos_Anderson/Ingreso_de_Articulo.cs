@@ -10,6 +10,23 @@ namespace Sistema_Empenos_Anderson
             InitializeComponent();
         }
 
+        private int Validar_Monto(string campo)
+        {
+            string Monto;
+            int y;
+            double  x;
+            bool verificador;
+            Monto = campo;
+
+            if(verificador = Double.TryParse(Monto.ToString(), out x) == true)
+                return y = 1;
+            else{
+                return y = 0;
+            }
+
+            
+        }
+
         public void llenarDataGrid() { 
 }
         public static int Ingreso = 0, row=0;
@@ -60,25 +77,33 @@ namespace Sistema_Empenos_Anderson
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             Ingreso_de_Cliente ingreso = new Ingreso_de_Cliente();
             ingreso.Show();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Objetos_Globales.articulos.Add(new Articulo(1, double.Parse(txtMonto.Text) + 
-                (double.Parse(txtMonto.Text) * double.Parse(txtTasa.Text)), double.Parse(txtMonto.Text), 
+            if(txtCod_Recibo.Text=="" || Validar_Monto(txtCod_Recibo.Text)==0 || txtNumero_Serie.Text=="" || txtDescripcion.Text=="" || txtMarca.Text=="" || txtModelo.Text=="" || Validar_Monto(txtMonto.Text)==0 || txtMonto.Text=="" || Validar_Monto(txtTasa.Text)==0)
+            {
+                MessageBoxTemporal.Show("Ha ingresado incorrectamente algunos datos!\nPorfavor Reviselos.", "Alerta",2,false);
+            }
+            else
+            {
+                Objetos_Globales.articulos.Add(new Articulo(1, double.Parse(txtMonto.Text) +
+                (double.Parse(txtMonto.Text) * double.Parse(txtTasa.Text)), double.Parse(txtMonto.Text),
                 double.Parse(txtTasa.Text), txtDescripcion.Text, txtMarca.Text, txtModelo.Text,
-                "En Prenda", txtNumero_Serie.Text, cmbTipo_Articulo.SelectedItem.ToString(), 
+                "En Prenda", txtNumero_Serie.Text, cmbTipo_Articulo.SelectedItem.ToString(),
                 cmbTipo_Articulo.SelectedIndex + 1));
-            dtgvArticulos.Rows.Add();
-            dtgvArticulos.Rows[row].Cells[0].Value = txtNumero_Serie.Text;
-            dtgvArticulos.Rows[row].Cells[1].Value = txtDescripcion.Text;
-            dtgvArticulos.Rows[row].Cells[2].Value = cmbTipo_Articulo.SelectedItem.ToString();
-            dtgvArticulos.Rows[row].Cells[3].Value = txtMarca.Text;
-            dtgvArticulos.Rows[row].Cells[4].Value = txtModelo.Text;
-            row++;
+                dtgvArticulos.Rows.Add();
+                dtgvArticulos.Rows[row].Cells[0].Value = txtNumero_Serie.Text;
+                dtgvArticulos.Rows[row].Cells[1].Value = txtDescripcion.Text;
+                dtgvArticulos.Rows[row].Cells[2].Value = cmbTipo_Articulo.SelectedItem.ToString();
+                dtgvArticulos.Rows[row].Cells[3].Value = txtMarca.Text;
+                dtgvArticulos.Rows[row].Cells[4].Value = txtModelo.Text;
+                row++;
+            }
+            
         }
     }
 }
