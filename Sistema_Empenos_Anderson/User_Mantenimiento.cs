@@ -101,7 +101,7 @@ namespace Sistema_Empenos_Anderson
 
             if (txtPassNuevo_New.Text.Equals(txtPassConfirmar_New.Text))
             {
-                if (BD.Ingreso_Usuario(2, txtNom_User_Nuevo.Text, txtPassNuevo_New.Text, tipo, 1, "Usuario") > 0)
+                if (BD.Ingreso_Usuario(BD.Obtener_Cantidad()+1, txtNom_User_Nuevo.Text, txtPassNuevo_New.Text, tipo, 1, "Usuario") > 0)
                 {
                     MessageBox.Show("El usuario se ha ingresado correctamente", "Mensaje");
                     txtNom_User_Tipo.Text = "";

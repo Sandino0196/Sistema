@@ -67,6 +67,29 @@ namespace Sistema_Empenos_Anderson
             }
         }
 
+        public static int Obtener_Cantidad()
+        {
+            int Cantidad;
+            OpenConnection();
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SP_ObtenerCantidad";
+            command.Connection = connection;
+            command.CommandType = CommandType.StoredProcedure;
+
+
+            SqlParameter descripcion = new SqlParameter("@Cantidad", 0);
+            descripcion.Direction = ParameterDirection.Output;
+            command.Parameters.Add(descripcion);
+
+
+                command.ExecuteNonQuery();
+                CloseConnection();
+                Cantidad = int.Parse(command.Parameters["@Cantidad"].Value.ToString());
+            return Cantidad;
+
+
+        }
+
         #region Cargar Datos
 
         public static DataTable CargarArticulo(int codigo)
@@ -212,6 +235,11 @@ namespace Sistema_Empenos_Anderson
             modelo.Size = 50;
             command.Parameters.Add(modelo);
 
+            SqlParameter tipo = new SqlParameter("@Tipo", " ");
+            tipo.Direction = ParameterDirection.Output;
+            tipo.Size = 50;
+            command.Parameters.Add(tipo);
+
             SqlParameter estado = new SqlParameter("@Estado", " ");
             estado.Direction = ParameterDirection.Output;
             estado.Size = 50;
@@ -248,6 +276,7 @@ namespace Sistema_Empenos_Anderson
                 Objetos_Mantenimiento.articuloMantenimiento.Marca = command.Parameters["@Marca"].Value.ToString();
                 Objetos_Mantenimiento.articuloMantenimiento.Modelo = command.Parameters["@Modelo"].Value.ToString();
                 Objetos_Mantenimiento.articuloMantenimiento.Estado = command.Parameters["@Estado"].Value.ToString();
+                Objetos_Mantenimiento.articuloMantenimiento.Tipo = command.Parameters["@Tipo"].Value.ToString();
                 Objetos_Mantenimiento.articuloMantenimiento.Prestado = double.Parse(command.Parameters["@Prestado"].Value.ToString());
                 Objetos_Mantenimiento.articuloMantenimiento.Interes = double.Parse(command.Parameters["@Interes"].Value.ToString());
                 Objetos_Mantenimiento.articuloMantenimiento.Meses = int.Parse(command.Parameters["@Meses"].Value.ToString());
@@ -493,6 +522,60 @@ namespace Sistema_Empenos_Anderson
                 return 0;
             }
         }
+
+        #endregion
+
+        #region Mantenimiento
+
+        public static void Actualizar_Tipo_Articulo(string Num_Serie, int Num_Recibo, int Cod_Tipo)
+        {
+            OpenConnection();
+
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SP_Actualizar_Tipo_Articulo";
+            command.Connection = connection;
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.Add(new SqlParameter("@Num_Serie", Num_Serie));
+            command.Parameters.Add(new SqlParameter("@Num_Recibo", Num_Recibo));
+            command.Parameters.Add(new SqlParameter("@Cod_Tipo", Cod_Tipo));
+            try
+            {
+                command.ExecuteNonQuery();
+                CloseConnection();
+            }
+            catch
+            {
+                MessageBoxTemporal.Show("No se encontro el articulo","Error", 2, false);
+            }
+            
+        }
+
+        public static void Actualizar_Estado_Articulo(string Num_Serie, int Num_Recibo, int Cod_Estado)
+        {
+            OpenConnection();
+
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SP_Actualizar_Estado_Articulo";
+            command.Connection = connection;
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.Add(new SqlParameter("@Num_Serie", Num_Serie));
+            command.Parameters.Add(new SqlParameter("@Recibo", Num_Recibo));
+            command.Parameters.Add(new SqlParameter("@Estado", Cod_Estado));
+
+            try
+            {
+                command.ExecuteNonQuery();
+                CloseConnection();
+            }
+            catch
+            {
+                MessageBoxTemporal.Show("No se encontro el articulo", "Error", 2, false);
+            }
+            
+        }
+
 
         #endregion
     }

@@ -43,25 +43,33 @@
             this.lblNom_TpArt = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtType = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnConsultaTipo = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtEstado = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnConsultaEstado = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.lblTipo_Estado = new System.Windows.Forms.Label();
             this.cmbEstados = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtNum_Recibo = new System.Windows.Forms.TextBox();
+            this.txtNum_Serie = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtMarca = new System.Windows.Forms.TextBox();
+            this.txtModelo = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtModelo2 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtMarca2 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -104,9 +112,10 @@
             // 
             // txtArticulo
             // 
-            this.txtArticulo.Location = new System.Drawing.Point(78, 131);
+            this.txtArticulo.Enabled = false;
+            this.txtArticulo.Location = new System.Drawing.Point(59, 131);
             this.txtArticulo.Name = "txtArticulo";
-            this.txtArticulo.Size = new System.Drawing.Size(147, 20);
+            this.txtArticulo.Size = new System.Drawing.Size(122, 20);
             this.txtArticulo.TabIndex = 6;
             // 
             // lblArt
@@ -126,6 +135,7 @@
             this.bttBuscar.TabIndex = 4;
             this.bttBuscar.Text = "Buscar";
             this.bttBuscar.UseVisualStyleBackColor = true;
+            this.bttBuscar.Click += new System.EventHandler(this.bttBuscar_Click);
             // 
             // Recibotxt
             // 
@@ -198,7 +208,11 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.textBox5);
+            this.tabPage1.Controls.Add(this.txtModelo);
+            this.tabPage1.Controls.Add(this.label7);
+            this.tabPage1.Controls.Add(this.txtMarca);
+            this.tabPage1.Controls.Add(this.label6);
+            this.tabPage1.Controls.Add(this.txtType);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.btnConsultaTipo);
             this.tabPage1.Controls.Add(this.bttActualizar);
@@ -219,12 +233,13 @@
             this.tabPage1.Text = "Cambio de Tipo";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // textBox5
+            // txtType
             // 
-            this.textBox5.Location = new System.Drawing.Point(78, 157);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(147, 20);
-            this.textBox5.TabIndex = 34;
+            this.txtType.Enabled = false;
+            this.txtType.Location = new System.Drawing.Point(59, 157);
+            this.txtType.Name = "txtType";
+            this.txtType.Size = new System.Drawing.Size(122, 20);
+            this.txtType.TabIndex = 34;
             // 
             // label5
             // 
@@ -261,17 +276,21 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.textBox4);
+            this.tabPage3.Controls.Add(this.txtModelo2);
+            this.tabPage3.Controls.Add(this.label8);
+            this.tabPage3.Controls.Add(this.txtMarca2);
+            this.tabPage3.Controls.Add(this.label9);
+            this.tabPage3.Controls.Add(this.txtEstado);
             this.tabPage3.Controls.Add(this.label4);
             this.tabPage3.Controls.Add(this.btnConsultaEstado);
-            this.tabPage3.Controls.Add(this.button1);
+            this.tabPage3.Controls.Add(this.btnUpdate);
             this.tabPage3.Controls.Add(this.lblTipo_Estado);
             this.tabPage3.Controls.Add(this.cmbEstados);
-            this.tabPage3.Controls.Add(this.textBox1);
+            this.tabPage3.Controls.Add(this.txtDescripcion);
             this.tabPage3.Controls.Add(this.label1);
             this.tabPage3.Controls.Add(this.btnBuscar);
-            this.tabPage3.Controls.Add(this.textBox2);
-            this.tabPage3.Controls.Add(this.textBox3);
+            this.tabPage3.Controls.Add(this.txtNum_Recibo);
+            this.tabPage3.Controls.Add(this.txtNum_Serie);
             this.tabPage3.Controls.Add(this.label2);
             this.tabPage3.Controls.Add(this.label3);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
@@ -282,12 +301,13 @@
             this.tabPage3.Text = "Cambiar Estado";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // txtEstado
             // 
-            this.textBox4.Location = new System.Drawing.Point(79, 159);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(152, 20);
-            this.textBox4.TabIndex = 34;
+            this.txtEstado.Enabled = false;
+            this.txtEstado.Location = new System.Drawing.Point(61, 159);
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.Size = new System.Drawing.Size(106, 20);
+            this.txtEstado.TabIndex = 34;
             // 
             // label4
             // 
@@ -309,14 +329,15 @@
             this.btnConsultaEstado.UseVisualStyleBackColor = true;
             this.btnConsultaEstado.Click += new System.EventHandler(this.btnConsultaEstado_Click);
             // 
-            // button1
+            // btnUpdate
             // 
-            this.button1.Location = new System.Drawing.Point(125, 229);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Actualizar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnUpdate.Location = new System.Drawing.Point(125, 229);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.TabIndex = 19;
+            this.btnUpdate.Text = "Actualizar";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // lblTipo_Estado
             // 
@@ -341,12 +362,13 @@
             this.cmbEstados.Size = new System.Drawing.Size(121, 21);
             this.cmbEstados.TabIndex = 17;
             // 
-            // textBox1
+            // txtDescripcion
             // 
-            this.textBox1.Location = new System.Drawing.Point(79, 127);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(152, 20);
-            this.textBox1.TabIndex = 16;
+            this.txtDescripcion.Enabled = false;
+            this.txtDescripcion.Location = new System.Drawing.Point(61, 127);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(106, 20);
+            this.txtDescripcion.TabIndex = 16;
             // 
             // label1
             // 
@@ -365,20 +387,21 @@
             this.btnBuscar.TabIndex = 14;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // textBox2
+            // txtNum_Recibo
             // 
-            this.textBox2.Location = new System.Drawing.Point(145, 58);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 20);
-            this.textBox2.TabIndex = 13;
+            this.txtNum_Recibo.Location = new System.Drawing.Point(145, 58);
+            this.txtNum_Recibo.Name = "txtNum_Recibo";
+            this.txtNum_Recibo.Size = new System.Drawing.Size(121, 20);
+            this.txtNum_Recibo.TabIndex = 13;
             // 
-            // textBox3
+            // txtNum_Serie
             // 
-            this.textBox3.Location = new System.Drawing.Point(145, 20);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 20);
-            this.textBox3.TabIndex = 12;
+            this.txtNum_Serie.Location = new System.Drawing.Point(145, 20);
+            this.txtNum_Serie.Name = "txtNum_Serie";
+            this.txtNum_Serie.Size = new System.Drawing.Size(121, 20);
+            this.txtNum_Serie.TabIndex = 12;
             // 
             // label2
             // 
@@ -401,12 +424,82 @@
             // btnVolver
             // 
             this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVolver.Location = new System.Drawing.Point(141, 315);
+            this.btnVolver.Location = new System.Drawing.Point(141, 330);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(100, 49);
             this.btnVolver.TabIndex = 7;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(193, 134);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(40, 13);
+            this.label6.TabIndex = 35;
+            this.label6.Text = "Marca:";
+            // 
+            // txtMarca
+            // 
+            this.txtMarca.Enabled = false;
+            this.txtMarca.Location = new System.Drawing.Point(239, 131);
+            this.txtMarca.Name = "txtMarca";
+            this.txtMarca.Size = new System.Drawing.Size(96, 20);
+            this.txtMarca.TabIndex = 36;
+            // 
+            // txtModelo
+            // 
+            this.txtModelo.Enabled = false;
+            this.txtModelo.Location = new System.Drawing.Point(239, 157);
+            this.txtModelo.Name = "txtModelo";
+            this.txtModelo.Size = new System.Drawing.Size(96, 20);
+            this.txtModelo.TabIndex = 38;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(193, 160);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(45, 13);
+            this.label7.TabIndex = 37;
+            this.label7.Text = "Modelo:";
+            // 
+            // txtModelo2
+            // 
+            this.txtModelo2.Enabled = false;
+            this.txtModelo2.Location = new System.Drawing.Point(229, 159);
+            this.txtModelo2.Name = "txtModelo2";
+            this.txtModelo2.Size = new System.Drawing.Size(106, 20);
+            this.txtModelo2.TabIndex = 38;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(174, 162);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(45, 13);
+            this.label8.TabIndex = 37;
+            this.label8.Text = "Modelo:";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // txtMarca2
+            // 
+            this.txtMarca2.Enabled = false;
+            this.txtMarca2.Location = new System.Drawing.Point(229, 127);
+            this.txtMarca2.Name = "txtMarca2";
+            this.txtMarca2.Size = new System.Drawing.Size(106, 20);
+            this.txtMarca2.TabIndex = 36;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(174, 130);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(40, 13);
+            this.label9.TabIndex = 35;
+            this.label9.Text = "Marca:";
             // 
             // Mantenimiento_Articulos
             // 
@@ -449,20 +542,28 @@
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnConsultaTipo;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Label lblTipo_Estado;
         private System.Windows.Forms.ComboBox cmbEstados;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtNum_Recibo;
+        private System.Windows.Forms.TextBox txtNum_Serie;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnConsultaEstado;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtType;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtModelo;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtMarca;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtModelo2;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtMarca2;
+        private System.Windows.Forms.Label label9;
     }
 }

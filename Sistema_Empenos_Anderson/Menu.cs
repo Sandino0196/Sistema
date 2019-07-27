@@ -39,9 +39,9 @@ namespace Sistema_Empenos_Anderson
                 this.Hide();
             } else if (rdbRetiro.Checked)
             {
-                Retiro_Articulo retiro = new Retiro_Articulo();
+                /*Retiro_Articulo retiro = new Retiro_Articulo();
                 retiro.Show();
-                this.Hide();
+                this.Hide();*/
             } else if (rdbVenta.Checked)
             {
                 Facturacion venta = new Facturacion();
@@ -70,13 +70,14 @@ namespace Sistema_Empenos_Anderson
 
         private void Menu_Load(object sender, EventArgs e)
         {
-            if(Objetos_Globales.usuario.codigo_Usuario != 1)
+            if(Objetos_Globales.usuario.codigo_Tipo_Usuario != 1)
             {
                 rdbMantenimiento.Visible = false;
             } else
             {
                 rdbMantenimiento.Visible = true;
             }
+
             this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
         }
 
