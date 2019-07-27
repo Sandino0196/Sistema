@@ -22,6 +22,19 @@ namespace Sistema_Empenos_Anderson
 
         }
 
+        private int Validar_Correo()
+        {
+            string Campo;
+            int Verificador=0;
+            Campo = txtCorreo.Text;
+            for(int x=0; x<Campo.Length; x++)
+            {
+                if (Campo[x].ToString() == "@" || Campo[x].ToString() == ".")
+                    Verificador++;
+            }
+            return Verificador;
+        }
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             if (txtBusqueda_ID.MaskFull)
@@ -70,7 +83,7 @@ namespace Sistema_Empenos_Anderson
 
         private void btnAñadir_Click(object sender, EventArgs e)
         {
-            if (txtTelefono.MaskFull)
+            if (txtTelefono.MaskFull && txtNombre!=null && txtApellido!=null && Validar_Correo()==2)
             {
                 if (BD.Ingreso_Cliente(txtIdentidad.Text, txtNombre.Text, txtApellido.Text, txtTelefono.Text, txtCorreo.Text, 1, "Cliente") == 0)
                 {

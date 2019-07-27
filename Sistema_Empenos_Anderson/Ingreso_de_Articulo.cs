@@ -20,6 +20,17 @@ namespace Sistema_Empenos_Anderson
             men.Show();
         }
 
+        public void Limpiar()
+        {
+            txtNumero_Serie.Clear();
+            txtDescripcion.Clear();
+            txtMarca.Clear();
+            txtModelo.Clear();
+            txtMonto.Clear();
+            txtTasa.Clear();
+            txtNumero_Serie.Focus();
+        }
+
         private void btnAvanzar_Click(object sender, EventArgs e)
         {
             BD.Ingreso_Recibo(int.Parse(txtCod_Recibo.Text), Objetos_Globales.cliente.identidad_Cliente, Objetos_Globales.usuario.codigo_Usuario, clndrFecha.TodayDate.ToString());
@@ -60,13 +71,16 @@ namespace Sistema_Empenos_Anderson
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             Ingreso_de_Cliente ingreso = new Ingreso_de_Cliente();
             ingreso.Show();
         }
 
+
+
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            txtCod_Recibo.Enabled = false;
             Objetos_Globales.articulos.Add(new Articulo(1, double.Parse(txtMonto.Text) + 
                 (double.Parse(txtMonto.Text) * double.Parse(txtTasa.Text)), double.Parse(txtMonto.Text), 
                 double.Parse(txtTasa.Text), txtDescripcion.Text, txtMarca.Text, txtModelo.Text,
@@ -79,6 +93,7 @@ namespace Sistema_Empenos_Anderson
             dtgvArticulos.Rows[row].Cells[3].Value = txtMarca.Text;
             dtgvArticulos.Rows[row].Cells[4].Value = txtModelo.Text;
             row++;
+            Limpiar();
         }
     }
 }
