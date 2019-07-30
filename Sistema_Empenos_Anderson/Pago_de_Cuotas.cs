@@ -24,6 +24,7 @@ namespace Sistema_Empenos_Anderson
         private void Pago_de_Cuotas_Load(object sender, EventArgs e)
         {
             this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
+            txtNumRecibo.Focus();
             txtArticulo.Text = Objetos_Mantenimiento.articuloMantenimiento.Descripcion;
             txtEstado.Text = Objetos_Mantenimiento.articuloMantenimiento.Estado;
             txtIntereses.Text = Objetos_Mantenimiento.articuloMantenimiento.Interes.ToString();
@@ -44,7 +45,7 @@ namespace Sistema_Empenos_Anderson
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if(Objetos_Mantenimiento.articuloMantenimiento.Estado.Equals("En Prenda"))
+            if (Objetos_Mantenimiento.articuloMantenimiento.Estado.Equals("En Prenda"))
             {
                 Pago_de_Cuotas_Detalle cuotas_Detalle = new Pago_de_Cuotas_Detalle();
                 cuotas_Detalle.Show();
@@ -63,6 +64,10 @@ namespace Sistema_Empenos_Anderson
                 txtMonto.Text = Objetos_Mantenimiento.articuloMantenimiento.Prestado.ToString();
                 txtMeses.Text = Objetos_Mantenimiento.articuloMantenimiento.Meses.ToString();
             }
+            if (BD.Busqueda_Cliente(Objetos_Globales.identidadTemporal) > 0)
+                MessageBoxTemporal.Show(Objetos_Globales.identidadTemporal, "Holis", 2, false);
+            else
+                MessageBoxTemporal.Show("No se encuentra", "Holis", 2, false);
         }
     }
 }

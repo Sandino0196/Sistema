@@ -22,11 +22,11 @@ namespace Sistema_Empenos_Anderson
             this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
             txtVendedor.Text = Objetos_Globales.usuario.nombre_Usuario;
             txtFechaVenta.Text = calendarVenta.SelectionStart.ToShortDateString();
-            isv = Objetos_Globales.articulo.PrecioPago * 0.15;
-            subtotal = Objetos_Globales.articulo.PrecioPago - isv;
+            isv = Objetos_Globales.articulo.MontoPago * 0.15;
+            subtotal = Objetos_Globales.articulo.MontoPago - isv;
             txtSubtotal.Text = subtotal.ToString();
             txtISV.Text = isv.ToString();
-            txtTotalPagar.Text = Objetos_Globales.articulo.PrecioPago.ToString();
+            txtTotalPagar.Text = Objetos_Globales.articulo.MontoPago.ToString();
         }
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)
@@ -41,8 +41,20 @@ namespace Sistema_Empenos_Anderson
             }
             else
             {
-                MessageBox.Show("No se encontro el cliente en la Base de Datos\nDesea Agregarlo?", "ALERTA", MessageBoxButtons.YesNo);
-                gbInfoComp.Enabled = true;
+                DialogResult res = MessageBox.Show("No se encontro el cliente en la Base de Datos\nDesea Agregarlo?", "ALERTA", MessageBoxButtons.YesNo);
+                if (res.ToString() == "Yes")
+                {
+                    /*grpInfo_Nuevo_Cliente.Enabled = true;
+                    btnAñadir.Enabled = true;
+                    txtIdentidad.Text = txtBusqueda_ID.Text;*/
+                    txtNombre.Focus();
+                }
+                else
+                {
+                    /*grpInfo_Nuevo_Cliente.Enabled = false;
+                    btnAñadir.Enabled = false;*/
+
+                }
             }
         }
 
@@ -66,7 +78,7 @@ namespace Sistema_Empenos_Anderson
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            gbInfoComp.Enabled = false;
         }
     }
 }

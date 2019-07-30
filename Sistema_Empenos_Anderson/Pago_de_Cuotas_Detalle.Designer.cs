@@ -120,6 +120,7 @@
             this.numMeses.Name = "numMeses";
             this.numMeses.Size = new System.Drawing.Size(33, 20);
             this.numMeses.TabIndex = 9;
+            this.numMeses.ValueChanged += new System.EventHandler(this.numMeses_ValueChanged);
             // 
             // label6
             // 
@@ -158,6 +159,7 @@
             this.btnAceptar.TabIndex = 14;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnSalir
             // 
@@ -207,6 +209,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Pago_de_Cuotas_Detalle";
             this.Text = "Pago_de_Cuotas_Detalle";
+            this.Load += new System.EventHandler(this.Pago_de_Cuotas_Detalle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numMeses)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

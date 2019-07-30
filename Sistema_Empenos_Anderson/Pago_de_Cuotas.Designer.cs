@@ -38,7 +38,6 @@
             this.txtMonto = new System.Windows.Forms.TextBox();
             this.txtEstado = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.bttAgregar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lblNumRecibo = new System.Windows.Forms.Label();
             this.lblNumSerie = new System.Windows.Forms.Label();
@@ -72,7 +71,6 @@
             this.groupBox1.Controls.Add(this.txtMonto);
             this.groupBox1.Controls.Add(this.txtEstado);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.bttAgregar);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.lblNumRecibo);
             this.groupBox1.Controls.Add(this.lblNumSerie);
@@ -124,7 +122,7 @@
             // 
             // btnConsulta
             // 
-            this.btnConsulta.Location = new System.Drawing.Point(285, 118);
+            this.btnConsulta.Location = new System.Drawing.Point(285, 76);
             this.btnConsulta.Name = "btnConsulta";
             this.btnConsulta.Size = new System.Drawing.Size(75, 23);
             this.btnConsulta.TabIndex = 31;
@@ -151,21 +149,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Enabled = false;
             this.label2.Location = new System.Drawing.Point(12, 157);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 26;
             this.label2.Text = "Estado:";
-            // 
-            // bttAgregar
-            // 
-            this.bttAgregar.Location = new System.Drawing.Point(285, 74);
-            this.bttAgregar.Name = "bttAgregar";
-            this.bttAgregar.Size = new System.Drawing.Size(75, 23);
-            this.bttAgregar.TabIndex = 10;
-            this.bttAgregar.Text = "Agregar";
-            this.bttAgregar.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -282,7 +270,6 @@
         private System.Windows.Forms.TextBox txtMonto;
         private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button bttAgregar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblNumRecibo;
         private System.Windows.Forms.Label lblNumSerie;

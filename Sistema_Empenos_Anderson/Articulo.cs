@@ -2,18 +2,18 @@
 {
     public class Articulo
     {
-        private int meses, codigoTipo;
-        private double precioPago, prestado, interes;
+        private int meses, codigoTipo, numeroRecibo;
+        private double montoPago;
+        private float prestado, interes;
         private string descripcion, marca, modelo, estado, numeroSerie, tipo;
 
         public Articulo()
         {
         }
 
-        public Articulo(int meses, double precioPago, double prestado, double interes, string descripcion, string marca, string modelo, string estado, string numeroSerie, string tipo, int codigoTipo)
+        public Articulo(int meses, float prestado, float interes, string descripcion, string marca, string modelo, string estado, string numeroSerie, string tipo, int codigoTipo, int numeroRecibo)
         {
             this.meses = meses;
-            this.precioPago = precioPago;
             this.prestado = prestado;
             this.interes = interes;
             this.descripcion = descripcion;
@@ -23,6 +23,7 @@
             this.numeroSerie = numeroSerie;
             this.tipo = tipo;
             this.codigoTipo = codigoTipo;
+            this.numeroRecibo = numeroRecibo;
         }
 
         public string Descripcion
@@ -49,13 +50,7 @@
             set { this.estado = value; }
         }
 
-        public double PrecioPago
-        {
-            get { return precioPago; }
-            set { this.precioPago = value; }
-        }
-
-        public double Prestado
+        public float Prestado
         {
             get { return prestado; }
             set { this.prestado = value; }
@@ -67,7 +62,7 @@
             set { this.meses = value; }
         }
 
-        public double Interes
+        public float Interes
         {
             get { return interes; }
             set { this.interes = value; }
@@ -89,6 +84,23 @@
         {
             get { return codigoTipo; }
             set { this.codigoTipo = value; }
+        }
+
+        public int NumeroRecibo
+        {
+            get { return numeroRecibo; }
+            set { this.numeroRecibo = value; }
+        }
+
+        public double MontoPago
+        {
+            get { return montoPago; }
+            set { this.montoPago = value; }
+        }
+
+        public double PrecioPago(int cantidadMeses)
+        {
+            return prestado + (cantidadMeses * interes * prestado);
         }
     }
 }

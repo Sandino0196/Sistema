@@ -39,11 +39,9 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.txtPassConfirmar_Change = new System.Windows.Forms.TextBox();
             this.txtPassNuevo_Change = new System.Windows.Forms.TextBox();
-            this.txtPass_Change = new System.Windows.Forms.TextBox();
             this.btnAceptarPassword = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNom_User_Pass = new System.Windows.Forms.TextBox();
             this.btnBuscarPassword = new System.Windows.Forms.Button();
@@ -72,7 +70,7 @@
             this.tabCUsuario.Location = new System.Drawing.Point(12, 12);
             this.tabCUsuario.Name = "tabCUsuario";
             this.tabCUsuario.SelectedIndex = 0;
-            this.tabCUsuario.Size = new System.Drawing.Size(328, 237);
+            this.tabCUsuario.Size = new System.Drawing.Size(328, 299);
             this.tabCUsuario.TabIndex = 0;
             // 
             // tabPage1
@@ -86,7 +84,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(320, 211);
+            this.tabPage1.Size = new System.Drawing.Size(320, 273);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Modificar Tipo Usuario";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -95,7 +93,7 @@
             // 
             this.btnAceptarTipo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAceptarTipo.Enabled = false;
-            this.btnAceptarTipo.Location = new System.Drawing.Point(115, 131);
+            this.btnAceptarTipo.Location = new System.Drawing.Point(141, 183);
             this.btnAceptarTipo.Name = "btnAceptarTipo";
             this.btnAceptarTipo.Size = new System.Drawing.Size(75, 23);
             this.btnAceptarTipo.TabIndex = 5;
@@ -106,7 +104,7 @@
             // lblNom_User
             // 
             this.lblNom_User.AutoSize = true;
-            this.lblNom_User.Location = new System.Drawing.Point(6, 17);
+            this.lblNom_User.Location = new System.Drawing.Point(32, 69);
             this.lblNom_User.Name = "lblNom_User";
             this.lblNom_User.Size = new System.Drawing.Size(103, 13);
             this.lblNom_User.TabIndex = 0;
@@ -115,7 +113,7 @@
             // lblTp_User
             // 
             this.lblTp_User.AutoSize = true;
-            this.lblTp_User.Location = new System.Drawing.Point(6, 93);
+            this.lblTp_User.Location = new System.Drawing.Point(32, 145);
             this.lblTp_User.Name = "lblTp_User";
             this.lblTp_User.Size = new System.Drawing.Size(82, 13);
             this.lblTp_User.TabIndex = 3;
@@ -126,14 +124,14 @@
             this.cbxTp_User_Modificar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTp_User_Modificar.Enabled = false;
             this.cbxTp_User_Modificar.FormattingEnabled = true;
-            this.cbxTp_User_Modificar.Location = new System.Drawing.Point(115, 90);
+            this.cbxTp_User_Modificar.Location = new System.Drawing.Point(141, 142);
             this.cbxTp_User_Modificar.Name = "cbxTp_User_Modificar";
             this.cbxTp_User_Modificar.Size = new System.Drawing.Size(121, 21);
             this.cbxTp_User_Modificar.TabIndex = 4;
             // 
             // txtNom_User_Tipo
             // 
-            this.txtNom_User_Tipo.Location = new System.Drawing.Point(115, 14);
+            this.txtNom_User_Tipo.Location = new System.Drawing.Point(141, 66);
             this.txtNom_User_Tipo.Name = "txtNom_User_Tipo";
             this.txtNom_User_Tipo.Size = new System.Drawing.Size(100, 20);
             this.txtNom_User_Tipo.TabIndex = 1;
@@ -141,7 +139,7 @@
             // btnBuscarTipo
             // 
             this.btnBuscarTipo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscarTipo.Location = new System.Drawing.Point(115, 49);
+            this.btnBuscarTipo.Location = new System.Drawing.Point(141, 101);
             this.btnBuscarTipo.Name = "btnBuscarTipo";
             this.btnBuscarTipo.Size = new System.Drawing.Size(75, 23);
             this.btnBuscarTipo.TabIndex = 2;
@@ -153,18 +151,16 @@
             // 
             this.tabPage2.Controls.Add(this.txtPassConfirmar_Change);
             this.tabPage2.Controls.Add(this.txtPassNuevo_Change);
-            this.tabPage2.Controls.Add(this.txtPass_Change);
             this.tabPage2.Controls.Add(this.btnAceptarPassword);
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.label3);
-            this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.txtNom_User_Pass);
             this.tabPage2.Controls.Add(this.btnBuscarPassword);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(320, 211);
+            this.tabPage2.Size = new System.Drawing.Size(320, 273);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Cambiar Password";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -172,7 +168,7 @@
             // txtPassConfirmar_Change
             // 
             this.txtPassConfirmar_Change.Enabled = false;
-            this.txtPassConfirmar_Change.Location = new System.Drawing.Point(164, 132);
+            this.txtPassConfirmar_Change.Location = new System.Drawing.Point(164, 207);
             this.txtPassConfirmar_Change.Name = "txtPassConfirmar_Change";
             this.txtPassConfirmar_Change.PasswordChar = '*';
             this.txtPassConfirmar_Change.Size = new System.Drawing.Size(131, 20);
@@ -181,26 +177,17 @@
             // txtPassNuevo_Change
             // 
             this.txtPassNuevo_Change.Enabled = false;
-            this.txtPassNuevo_Change.Location = new System.Drawing.Point(115, 99);
+            this.txtPassNuevo_Change.Location = new System.Drawing.Point(115, 174);
             this.txtPassNuevo_Change.Name = "txtPassNuevo_Change";
             this.txtPassNuevo_Change.PasswordChar = '*';
             this.txtPassNuevo_Change.Size = new System.Drawing.Size(131, 20);
             this.txtPassNuevo_Change.TabIndex = 11;
             // 
-            // txtPass_Change
-            // 
-            this.txtPass_Change.Enabled = false;
-            this.txtPass_Change.Location = new System.Drawing.Point(115, 65);
-            this.txtPass_Change.Name = "txtPass_Change";
-            this.txtPass_Change.PasswordChar = '*';
-            this.txtPass_Change.Size = new System.Drawing.Size(131, 20);
-            this.txtPass_Change.TabIndex = 10;
-            // 
             // btnAceptarPassword
             // 
             this.btnAceptarPassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAceptarPassword.Enabled = false;
-            this.btnAceptarPassword.Location = new System.Drawing.Point(128, 167);
+            this.btnAceptarPassword.Location = new System.Drawing.Point(128, 242);
             this.btnAceptarPassword.Name = "btnAceptarPassword";
             this.btnAceptarPassword.Size = new System.Drawing.Size(75, 23);
             this.btnAceptarPassword.TabIndex = 9;
@@ -211,7 +198,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 135);
+            this.label4.Location = new System.Drawing.Point(6, 210);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(152, 13);
             this.label4.TabIndex = 8;
@@ -220,20 +207,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 102);
+            this.label3.Location = new System.Drawing.Point(6, 177);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 13);
             this.label3.TabIndex = 7;
             this.label3.Text = "Password nueva:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 68);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Password actual:";
             // 
             // label1
             // 
@@ -276,7 +254,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(320, 211);
+            this.tabPage3.Size = new System.Drawing.Size(320, 273);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Nuevo Usuario";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -352,7 +330,7 @@
             // btnAceptarNew
             // 
             this.btnAceptarNew.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAceptarNew.Location = new System.Drawing.Point(127, 172);
+            this.btnAceptarNew.Location = new System.Drawing.Point(125, 244);
             this.btnAceptarNew.Name = "btnAceptarNew";
             this.btnAceptarNew.Size = new System.Drawing.Size(75, 23);
             this.btnAceptarNew.TabIndex = 8;
@@ -363,7 +341,7 @@
             // btnVolver
             // 
             this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVolver.Location = new System.Drawing.Point(128, 269);
+            this.btnVolver.Location = new System.Drawing.Point(128, 317);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(100, 49);
             this.btnVolver.TabIndex = 6;
@@ -375,7 +353,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(348, 343);
+            this.ClientSize = new System.Drawing.Size(347, 378);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.tabCUsuario);
             this.Name = "User_Mantenimiento";
@@ -405,11 +383,9 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TextBox txtPassConfirmar_Change;
         private System.Windows.Forms.TextBox txtPassNuevo_Change;
-        private System.Windows.Forms.TextBox txtPass_Change;
         private System.Windows.Forms.Button btnAceptarPassword;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNom_User_Pass;
         private System.Windows.Forms.Button btnBuscarPassword;

@@ -68,7 +68,7 @@ namespace Sistema_Empenos_Anderson
 
         private void Menu_Load(object sender, EventArgs e)
         {
-            if(Objetos_Globales.usuario.codigo_Usuario != 1)
+            if(Objetos_Globales.usuario.codigo_Tipo_Usuario != 1)
             {
                 rdbMantenimiento.Visible = false;
             } else

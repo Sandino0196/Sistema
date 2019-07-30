@@ -48,7 +48,6 @@ namespace Sistema_Empenos_Anderson
                     {
                         grpInfo_Nuevo_Cliente.Enabled = false;
                         btnAñadir.Enabled = false;
-
                     }
                 }
             } else    

@@ -59,7 +59,7 @@ namespace Sistema_Empenos_Anderson
             dtgvArticulos.Rows[row].Cells[2].Value = Objetos_Globales.articulo.Modelo;
             dtgvArticulos.Rows[row].Cells[3].Value = txtPrecio.Text;
 
-            Objetos_Globales.articulo.PrecioPago += double.Parse(txtPrecio.Text);
+            Objetos_Globales.articulo.MontoPago += double.Parse(txtPrecio.Text);
 
             txtNumRecibo.Text = "";
             txtNumSerie.Text = "";

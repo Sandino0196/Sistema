@@ -44,8 +44,6 @@
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtIDComp = new System.Windows.Forms.TextBox();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.lbIDComp = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtApellido = new System.Windows.Forms.TextBox();
@@ -56,9 +54,11 @@
             this.lblVendedor = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnIngresoCliente = new System.Windows.Forms.Button();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtIDComp = new System.Windows.Forms.MaskedTextBox();
+            this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
             this.gbInfoComp.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -148,18 +148,19 @@
             // 
             // calendarVenta
             // 
+            this.calendarVenta.Enabled = false;
             this.calendarVenta.Location = new System.Drawing.Point(18, 18);
             this.calendarVenta.Name = "calendarVenta";
             this.calendarVenta.TabIndex = 23;
             // 
             // gbInfoComp
             // 
+            this.gbInfoComp.Controls.Add(this.txtTelefono);
+            this.gbInfoComp.Controls.Add(this.txtIDComp);
             this.gbInfoComp.Controls.Add(this.btnAdd);
             this.gbInfoComp.Controls.Add(this.txtCorreo);
             this.gbInfoComp.Controls.Add(this.btnBuscarCliente);
             this.gbInfoComp.Controls.Add(this.label5);
-            this.gbInfoComp.Controls.Add(this.txtIDComp);
-            this.gbInfoComp.Controls.Add(this.txtTelefono);
             this.gbInfoComp.Controls.Add(this.lbIDComp);
             this.gbInfoComp.Controls.Add(this.label4);
             this.gbInfoComp.Controls.Add(this.txtApellido);
@@ -176,7 +177,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(232, 66);
+            this.btnAdd.Location = new System.Drawing.Point(232, 59);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 24);
             this.btnAdd.TabIndex = 45;
@@ -210,21 +211,6 @@
             this.label5.Size = new System.Drawing.Size(97, 13);
             this.label5.TabIndex = 43;
             this.label5.Text = "Correo Electronico:";
-            // 
-            // txtIDComp
-            // 
-            this.txtIDComp.Location = new System.Drawing.Point(121, 26);
-            this.txtIDComp.Name = "txtIDComp";
-            this.txtIDComp.Size = new System.Drawing.Size(100, 20);
-            this.txtIDComp.TabIndex = 6;
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Enabled = false;
-            this.txtTelefono.Location = new System.Drawing.Point(121, 115);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(100, 20);
-            this.txtTelefono.TabIndex = 42;
             // 
             // lbIDComp
             // 
@@ -315,15 +301,15 @@
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // btnIngresoCliente
             // 
-            this.button3.Location = new System.Drawing.Point(242, 278);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(90, 58);
-            this.button3.TabIndex = 37;
-            this.button3.Text = "Ingresar Cliente";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnIngresoCliente.Location = new System.Drawing.Point(242, 278);
+            this.btnIngresoCliente.Name = "btnIngresoCliente";
+            this.btnIngresoCliente.Size = new System.Drawing.Size(90, 58);
+            this.btnIngresoCliente.TabIndex = 37;
+            this.btnIngresoCliente.Text = "Ingresar Cliente";
+            this.btnIngresoCliente.UseVisualStyleBackColor = true;
+            this.btnIngresoCliente.Click += new System.EventHandler(this.button3_Click);
             // 
             // txtCodigo
             // 
@@ -342,6 +328,22 @@
             this.label1.TabIndex = 38;
             this.label1.Text = "Codigo Factura";
             // 
+            // txtIDComp
+            // 
+            this.txtIDComp.Location = new System.Drawing.Point(121, 23);
+            this.txtIDComp.Mask = "0000-0000-00000";
+            this.txtIDComp.Name = "txtIDComp";
+            this.txtIDComp.Size = new System.Drawing.Size(100, 20);
+            this.txtIDComp.TabIndex = 46;
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(121, 115);
+            this.txtTelefono.Mask = "0000-0000";
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefono.TabIndex = 47;
+            // 
             // Venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -349,7 +351,7 @@
             this.ClientSize = new System.Drawing.Size(581, 429);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnIngresoCliente);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.gbInfoComp);
@@ -391,13 +393,11 @@
         private System.Windows.Forms.MonthCalendar calendarVenta;
         private System.Windows.Forms.GroupBox gbInfoComp;
         private System.Windows.Forms.Button btnBuscarCliente;
-        private System.Windows.Forms.TextBox txtIDComp;
         private System.Windows.Forms.Label lbIDComp;
         private System.Windows.Forms.TextBox txtVendedor;
         private System.Windows.Forms.Label lblVendedor;
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.Label label3;
@@ -405,9 +405,11 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnIngresoCliente;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.MaskedTextBox txtIDComp;
+        private System.Windows.Forms.MaskedTextBox txtTelefono;
     }
 }

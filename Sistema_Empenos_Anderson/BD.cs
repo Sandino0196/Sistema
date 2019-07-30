@@ -23,6 +23,8 @@ namespace Sistema_Empenos_Anderson
 
         #endregion
 
+        #region Login
+
         public static int Login(string usuario, string password)
         {
             int login = 0;
@@ -63,9 +65,37 @@ namespace Sistema_Empenos_Anderson
             }
             catch
             {
+                CloseConnection();
                 return 0;
             }
         }
+
+        public static void Fecha_Inicio_Sesion(string usuario, string password, string fecha)
+        {
+            OpenConnection();
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SP_Login_Fecha";
+            command.Connection = connection;
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.Add(new SqlParameter("@usuario", usuario));
+            command.Parameters.Add(new SqlParameter("@password", password));
+            command.Parameters.Add(new SqlParameter("@fecha", fecha));
+
+            try
+            {
+                command.ExecuteNonQuery();
+
+                CloseConnection();
+            }
+            catch
+            {
+                CloseConnection();
+                MessageBoxTemporal.Show("No funciono", "Holis", 2, false);
+            }
+        }
+
+        #endregion
 
         #region Cargar Datos
 
@@ -241,22 +271,24 @@ namespace Sistema_Empenos_Anderson
             try
             {
                 command.ExecuteNonQuery();
-                CloseConnection();
 
                 existencia = int.Parse(command.Parameters["@Existencia"].Value.ToString());
+                Objetos_Mantenimiento.articuloMantenimiento.NumeroRecibo = recibo;
+                Objetos_Mantenimiento.articuloMantenimiento.NumeroSerie = numeroSerie;
                 Objetos_Mantenimiento.articuloMantenimiento.Descripcion = command.Parameters["@Descripcion"].Value.ToString();
                 Objetos_Mantenimiento.articuloMantenimiento.Marca = command.Parameters["@Marca"].Value.ToString();
                 Objetos_Mantenimiento.articuloMantenimiento.Modelo = command.Parameters["@Modelo"].Value.ToString();
                 Objetos_Mantenimiento.articuloMantenimiento.Estado = command.Parameters["@Estado"].Value.ToString();
-                Objetos_Mantenimiento.articuloMantenimiento.Prestado = double.Parse(command.Parameters["@Prestado"].Value.ToString());
-                Objetos_Mantenimiento.articuloMantenimiento.Interes = double.Parse(command.Parameters["@Interes"].Value.ToString());
+                Objetos_Mantenimiento.articuloMantenimiento.Prestado = float.Parse(command.Parameters["@Prestado"].Value.ToString());
+                Objetos_Mantenimiento.articuloMantenimiento.Interes = float.Parse(command.Parameters["@Interes"].Value.ToString());
+                Objetos_Globales.identidadTemporal = command.Parameters["@Identidad"].Value.ToString();
                 Objetos_Mantenimiento.articuloMantenimiento.Meses = int.Parse(command.Parameters["@Meses"].Value.ToString());
             }
             catch
             {
                 existencia = 0;
             }
-
+            CloseConnection();
             return existencia;
         }
 
@@ -441,6 +473,12 @@ namespace Sistema_Empenos_Anderson
 
             CloseConnection();
         }
+
+        public static void Ingreso_Pago_Interes()
+        {
+
+        }
+
         #endregion
 
         #region Cambio de datos
