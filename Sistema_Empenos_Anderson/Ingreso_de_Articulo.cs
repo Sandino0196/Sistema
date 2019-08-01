@@ -67,8 +67,8 @@ namespace Sistema_Empenos_Anderson
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Objetos_Globales.articulos.Add(new Articulo(1, float.Parse(txtMonto.Text),
-                float.Parse(txtTasa.Text), txtDescripcion.Text, txtMarca.Text, txtModelo.Text,
+            Objetos_Globales.articulos.Add(new Articulo(1, double.Parse(txtMonto.Text),
+                double.Parse(txtTasa.Text), txtDescripcion.Text, txtMarca.Text, txtModelo.Text,
                 "En Prenda", txtNumero_Serie.Text, cmbTipo_Articulo.SelectedItem.ToString(), 
                 cmbTipo_Articulo.SelectedIndex + 1, int.Parse(txtCod_Recibo.Text)));
             dtgvArticulos.Rows.Add();

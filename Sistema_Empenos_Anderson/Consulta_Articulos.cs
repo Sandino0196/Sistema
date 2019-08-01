@@ -49,7 +49,7 @@ namespace Sistema_Empenos_Anderson
             articulo.Marca = dtgConsultaArticulo.Rows[e.RowIndex].Cells["Marca"].Value.ToString();
             articulo.Modelo = dtgConsultaArticulo.Rows[e.RowIndex].Cells["Modelo"].Value.ToString();
             articulo.Prestado = float.Parse(dtgConsultaArticulo.Rows[e.RowIndex].Cells["Valor_Prestado"].Value.ToString());
-            articulo.Interes = float.Parse(dtgConsultaArticulo.Rows[e.RowIndex].Cells["Tasa_Interes"].Value.ToString());
+            articulo.Interes = double.Parse(dtgConsultaArticulo.Rows[e.RowIndex].Cells["Tasa_Interes"].Value.ToString());
             articulo.Estado = dtgConsultaArticulo.Rows[e.RowIndex].Cells["Estado"].Value.ToString();
             articulo.Descripcion = dtgConsultaArticulo.Rows[e.RowIndex].Cells["Descripcion_Articulo"].Value.ToString();
             articulo.Meses = int.Parse(dtgConsultaArticulo.Rows[e.RowIndex].Cells["Cuotas_Meses"].Value.ToString());

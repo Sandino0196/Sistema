@@ -279,8 +279,8 @@ namespace Sistema_Empenos_Anderson
                 Objetos_Mantenimiento.articuloMantenimiento.Marca = command.Parameters["@Marca"].Value.ToString();
                 Objetos_Mantenimiento.articuloMantenimiento.Modelo = command.Parameters["@Modelo"].Value.ToString();
                 Objetos_Mantenimiento.articuloMantenimiento.Estado = command.Parameters["@Estado"].Value.ToString();
-                Objetos_Mantenimiento.articuloMantenimiento.Prestado = float.Parse(command.Parameters["@Prestado"].Value.ToString());
-                Objetos_Mantenimiento.articuloMantenimiento.Interes = float.Parse(command.Parameters["@Interes"].Value.ToString());
+                Objetos_Mantenimiento.articuloMantenimiento.Prestado = double.Parse(command.Parameters["@Prestado"].Value.ToString());
+                Objetos_Mantenimiento.articuloMantenimiento.Interes = int.Parse(command.Parameters["@Interes"].Value.ToString());
                 Objetos_Globales.identidadTemporal = command.Parameters["@Identidad"].Value.ToString();
                 Objetos_Mantenimiento.articuloMantenimiento.Meses = int.Parse(command.Parameters["@Meses"].Value.ToString());
             }

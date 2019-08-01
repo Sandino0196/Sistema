@@ -8,14 +8,15 @@ namespace Sistema_Empenos_Anderson
         public Pago_de_Cuotas_Detalle()
         {
             InitializeComponent();
-            if (BD.Busqueda_Cliente(Objetos_Globales.identidadTemporal) > 0)
-                txtCliente.Text = Objetos_Globales.cliente.nombre_Cliente + " " + Objetos_Globales.cliente.apellido_Cliente;
+            txtCliente.Text = Objetos_Globales.identidadTemporal;
             numMeses.Minimum = 1;
             numMeses.Maximum = Objetos_Mantenimiento.articuloMantenimiento.Meses;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Pago_de_Cuotas pago = new Pago_de_Cuotas();
+            pago.Show();
             this.Hide();
         }
 
@@ -31,7 +32,7 @@ namespace Sistema_Empenos_Anderson
 
         private void numMeses_ValueChanged(object sender, EventArgs e)
         {
-            txtMonto.Text = Objetos_Mantenimiento.articuloMantenimiento.PrecioPago(int.Parse(numMeses.Value.ToString())).ToString();
+            txtMonto.Text = Objetos_Mantenimiento.articuloMantenimiento.PagoInteres(int.Parse(numMeses.Value.ToString())).ToString();
         }
     }
 }

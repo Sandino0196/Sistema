@@ -58,16 +58,13 @@ namespace Sistema_Empenos_Anderson
         {
             if (BD.Busqueda_Articulo(int.Parse(txtNumRecibo.Text), txtNumSerie.Text) > 0)
             {
+                MessageBoxTemporal.Show(Objetos_Mantenimiento.articuloMantenimiento.Interes.ToString(),"hola",2,false);
                 txtArticulo.Text = Objetos_Mantenimiento.articuloMantenimiento.Descripcion;
                 txtEstado.Text = Objetos_Mantenimiento.articuloMantenimiento.Estado;
                 txtIntereses.Text = Objetos_Mantenimiento.articuloMantenimiento.Interes.ToString();
                 txtMonto.Text = Objetos_Mantenimiento.articuloMantenimiento.Prestado.ToString();
                 txtMeses.Text = Objetos_Mantenimiento.articuloMantenimiento.Meses.ToString();
             }
-            if (BD.Busqueda_Cliente(Objetos_Globales.identidadTemporal) > 0)
-                MessageBoxTemporal.Show(Objetos_Globales.identidadTemporal, "Holis", 2, false);
-            else
-                MessageBoxTemporal.Show("No se encuentra", "Holis", 2, false);
         }
     }
 }

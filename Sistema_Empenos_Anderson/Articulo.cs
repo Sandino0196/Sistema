@@ -3,15 +3,14 @@
     public class Articulo
     {
         private int meses, codigoTipo, numeroRecibo;
-        private double montoPago;
-        private float prestado, interes;
+        private double montoPago, prestado, interes;
         private string descripcion, marca, modelo, estado, numeroSerie, tipo;
 
         public Articulo()
         {
         }
 
-        public Articulo(int meses, float prestado, float interes, string descripcion, string marca, string modelo, string estado, string numeroSerie, string tipo, int codigoTipo, int numeroRecibo)
+        public Articulo(int meses, double prestado, double interes, string descripcion, string marca, string modelo, string estado, string numeroSerie, string tipo, int codigoTipo, int numeroRecibo)
         {
             this.meses = meses;
             this.prestado = prestado;
@@ -50,7 +49,7 @@
             set { this.estado = value; }
         }
 
-        public float Prestado
+        public double Prestado
         {
             get { return prestado; }
             set { this.prestado = value; }
@@ -62,9 +61,9 @@
             set { this.meses = value; }
         }
 
-        public float Interes
+        public double Interes
         {
-            get { return interes; }
+            get { return interes / 100; }
             set { this.interes = value; }
         }
 
@@ -100,7 +99,12 @@
 
         public double PrecioPago(int cantidadMeses)
         {
-            return prestado + (cantidadMeses * interes * prestado);
+            return prestado + (cantidadMeses * Interes * prestado);
+        }
+
+        public double PagoInteres(int mes)
+        {
+            return mes * Interes * prestado;
         }
     }
 }
