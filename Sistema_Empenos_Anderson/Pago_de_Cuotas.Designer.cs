@@ -30,15 +30,14 @@
         {
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtMeses = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtIntereses = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnConsulta = new System.Windows.Forms.Button();
             this.txtMonto = new System.Windows.Forms.TextBox();
             this.txtEstado = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.bttAgregar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lblNumRecibo = new System.Windows.Forms.Label();
             this.lblNumSerie = new System.Windows.Forms.Label();
@@ -64,15 +63,14 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtMeses);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtIntereses);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.btnConsulta);
             this.groupBox1.Controls.Add(this.txtMonto);
             this.groupBox1.Controls.Add(this.txtEstado);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.bttAgregar);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.lblNumRecibo);
             this.groupBox1.Controls.Add(this.lblNumSerie);
@@ -88,13 +86,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Busqueda de Articulo";
             // 
-            // textBox2
+            // txtMeses
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(107, 268);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(162, 20);
-            this.textBox2.TabIndex = 35;
+            this.txtMeses.Enabled = false;
+            this.txtMeses.Location = new System.Drawing.Point(107, 268);
+            this.txtMeses.Name = "txtMeses";
+            this.txtMeses.Size = new System.Drawing.Size(162, 20);
+            this.txtMeses.TabIndex = 35;
             // 
             // label4
             // 
@@ -105,13 +103,13 @@
             this.label4.TabIndex = 34;
             this.label4.Text = "Meses en deuda";
             // 
-            // textBox1
+            // txtIntereses
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(107, 231);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(162, 20);
-            this.textBox1.TabIndex = 33;
+            this.txtIntereses.Enabled = false;
+            this.txtIntereses.Location = new System.Drawing.Point(107, 231);
+            this.txtIntereses.Name = "txtIntereses";
+            this.txtIntereses.Size = new System.Drawing.Size(162, 20);
+            this.txtIntereses.TabIndex = 33;
             // 
             // label3
             // 
@@ -124,7 +122,7 @@
             // 
             // btnConsulta
             // 
-            this.btnConsulta.Location = new System.Drawing.Point(285, 118);
+            this.btnConsulta.Location = new System.Drawing.Point(285, 76);
             this.btnConsulta.Name = "btnConsulta";
             this.btnConsulta.Size = new System.Drawing.Size(75, 23);
             this.btnConsulta.TabIndex = 31;
@@ -151,21 +149,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Enabled = false;
             this.label2.Location = new System.Drawing.Point(12, 157);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 26;
             this.label2.Text = "Estado:";
-            // 
-            // bttAgregar
-            // 
-            this.bttAgregar.Location = new System.Drawing.Point(285, 74);
-            this.bttAgregar.Name = "bttAgregar";
-            this.bttAgregar.Size = new System.Drawing.Size(75, 23);
-            this.bttAgregar.TabIndex = 10;
-            this.bttAgregar.Text = "Agregar";
-            this.bttAgregar.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -179,7 +167,7 @@
             // lblNumRecibo
             // 
             this.lblNumRecibo.AutoSize = true;
-            this.lblNumRecibo.Location = new System.Drawing.Point(12, 79);
+            this.lblNumRecibo.Location = new System.Drawing.Point(12, 33);
             this.lblNumRecibo.Name = "lblNumRecibo";
             this.lblNumRecibo.Size = new System.Drawing.Size(84, 13);
             this.lblNumRecibo.TabIndex = 3;
@@ -188,7 +176,7 @@
             // lblNumSerie
             // 
             this.lblNumSerie.AutoSize = true;
-            this.lblNumSerie.Location = new System.Drawing.Point(12, 30);
+            this.lblNumSerie.Location = new System.Drawing.Point(14, 79);
             this.lblNumSerie.Name = "lblNumSerie";
             this.lblNumSerie.Size = new System.Drawing.Size(74, 13);
             this.lblNumSerie.TabIndex = 2;
@@ -196,14 +184,14 @@
             // 
             // txtNumSerie
             // 
-            this.txtNumSerie.Location = new System.Drawing.Point(107, 30);
+            this.txtNumSerie.Location = new System.Drawing.Point(107, 79);
             this.txtNumSerie.Name = "txtNumSerie";
             this.txtNumSerie.Size = new System.Drawing.Size(162, 20);
             this.txtNumSerie.TabIndex = 4;
             // 
             // txtNumRecibo
             // 
-            this.txtNumRecibo.Location = new System.Drawing.Point(107, 76);
+            this.txtNumRecibo.Location = new System.Drawing.Point(107, 30);
             this.txtNumRecibo.Name = "txtNumRecibo";
             this.txtNumRecibo.Size = new System.Drawing.Size(162, 20);
             this.txtNumRecibo.TabIndex = 5;
@@ -282,7 +270,6 @@
         private System.Windows.Forms.TextBox txtMonto;
         private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button bttAgregar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblNumRecibo;
         private System.Windows.Forms.Label lblNumSerie;
@@ -291,9 +278,9 @@
         private System.Windows.Forms.Button bttBuscar;
         private System.Windows.Forms.TextBox txtArticulo;
         private System.Windows.Forms.Label lblArticulo;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtMeses;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtIntereses;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnAvanzar;

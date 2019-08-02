@@ -1,20 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Sistema_Empenos_Anderson
 {
     public partial class Menu : Form
     {
-        public Menu()
+
+        public Menu(int codigo)
         {
             InitializeComponent();
+            if (codigo != 1)
+                rdbMantenimiento.Visible = false;
+            else
+                rdbMantenimiento.Visible = true;
         }
 
         protected override void OnClosed(EventArgs e)
@@ -34,7 +32,7 @@ namespace Sistema_Empenos_Anderson
             } else if (rdbPago.Checked)
             {
                 Pago_de_Cuotas pago = new Pago_de_Cuotas();
-                Objetos_Globales.articulo = new Articulo();
+                Objetos_Mantenimiento.articuloMantenimiento = new Articulo();
                 pago.Show();
                 this.Hide();
             } else if (rdbRetiro.Checked)
@@ -45,6 +43,7 @@ namespace Sistema_Empenos_Anderson
             } else if (rdbVenta.Checked)
             {
                 Facturacion venta = new Facturacion();
+                Objetos_Globales.articulos = new System.Collections.ArrayList();
                 venta.Show();
                 this.Hide();
             } else if (rdbConsulta.Checked)
@@ -70,7 +69,7 @@ namespace Sistema_Empenos_Anderson
 
         private void Menu_Load(object sender, EventArgs e)
         {
-            if(Objetos_Globales.usuario.codigo_Usuario != 1)
+            if(Objetos_Globales.usuario.codigo_Tipo_Usuario != 1)
             {
                 rdbMantenimiento.Visible = false;
             } else

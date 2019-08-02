@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Sistema_Empenos_Anderson
 {
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             InitializeComponent();
@@ -30,9 +24,14 @@ namespace Sistema_Empenos_Anderson
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(BD.Login(txtUsuario.Text,txtPassword.Text) > 0)
+            Objetos_Globales.fechaHoy = Objetos_Globales.fecha.Day + "/" + Objetos_Globales.fecha.Month + 
+                "/" +Objetos_Globales.fecha.Year + " " + Objetos_Globales.fecha.Hour + ":"
+                + Objetos_Globales.fecha.Minute + ":" + Objetos_Globales.fecha.Second + "."
+                + Objetos_Globales.fecha.Millisecond;
+            if (BD.Login(txtUsuario.Text,txtPassword.Text) > 0)
             {
-                Menu menu = new Menu();
+                BD.Fecha_Inicio_Sesion(txtUsuario.Text, txtPassword.Text, Objetos_Globales.fechaHoy);
+                Menu menu = new Menu(Objetos_Globales.usuario.codigo_Tipo_Usuario);
                 this.Hide();
                 menu.Show();
             } else
@@ -63,9 +62,15 @@ namespace Sistema_Empenos_Anderson
         {
             if ((int)e.KeyChar == (int)Keys.Enter)
             {
+                Objetos_Globales.fechaHoy = Objetos_Globales.fecha.Day.ToString() + "/" + Objetos_Globales.fecha.Month.ToString() +
+                "/" + Objetos_Globales.fecha.Year.ToString() + " " + Objetos_Globales.fecha.Hour.ToString() + ":"
+                + Objetos_Globales.fecha.Minute.ToString() + ":" + Objetos_Globales.fecha.Second.ToString() + "."
+                + Objetos_Globales.fecha.Millisecond.ToString();
+                MessageBoxTemporal.Show(Objetos_Globales.fechaHoy,"Holis",2,false);
                 if (BD.Login(txtUsuario.Text, txtPassword.Text) > 0)
                 {
-                    Menu menu = new Menu();
+                    BD.Fecha_Inicio_Sesion(Objetos_Globales.usuario.nombre_Usuario, Objetos_Globales.usuario.password_Usuario, Objetos_Globales.fechaHoy);
+                    Menu menu = new Menu(Objetos_Globales.usuario.codigo_Usuario);
                     this.Hide();
                     menu.Show();
                 }
@@ -74,6 +79,11 @@ namespace Sistema_Empenos_Anderson
                     MessageBox.Show("Usuario y/o contraseña incorrecta", "Error");
                 }
             }
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

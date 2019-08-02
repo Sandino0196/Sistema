@@ -10,17 +10,9 @@ namespace Sistema_Empenos_Anderson
             InitializeComponent();
         }
 
-        Articulo cuota;
-
-        public Pago_de_Cuotas(Articulo articulo)
-        {
-            cuota = articulo;
-            InitializeComponent();
-        }
-
         protected override void OnClosed(EventArgs e)
         {
-            Menu men = new Sistema_Empenos_Anderson.Menu();
+            Menu men = new Sistema_Empenos_Anderson.Menu(Objetos_Globales.usuario.codigo_Usuario);
             men.Show();
         }
 
@@ -32,6 +24,12 @@ namespace Sistema_Empenos_Anderson
         private void Pago_de_Cuotas_Load(object sender, EventArgs e)
         {
             this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
+            txtNumRecibo.Focus();
+            txtArticulo.Text = Objetos_Mantenimiento.articuloMantenimiento.Descripcion;
+            txtEstado.Text = Objetos_Mantenimiento.articuloMantenimiento.Estado;
+            txtIntereses.Text = Objetos_Mantenimiento.articuloMantenimiento.Interes.ToString();
+            txtMonto.Text = Objetos_Mantenimiento.articuloMantenimiento.Prestado.ToString();
+            txtMeses.Text = Objetos_Mantenimiento.articuloMantenimiento.Meses.ToString();
         }
 
         private void bttBuscar_Click(object sender, EventArgs e)
@@ -47,14 +45,26 @@ namespace Sistema_Empenos_Anderson
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Pago_de_Cuotas_Detalle cuotas_Detalle = new Pago_de_Cuotas_Detalle();
-            cuotas_Detalle.Show();
-            this.Hide();
+            if (Objetos_Mantenimiento.articuloMantenimiento.Estado.Equals("En Prenda"))
+            {
+                Pago_de_Cuotas_Detalle cuotas_Detalle = new Pago_de_Cuotas_Detalle();
+                cuotas_Detalle.Show();
+                this.Hide();
+            } else
+                MessageBoxTemporal.Show("Este articulo ya esta " + txtEstado.Text, "Mensaje Importante",2,false);
         }
 
         private void bttBuscar_Click_1(object sender, EventArgs e)
         {
-
+            if (BD.Busqueda_Articulo(int.Parse(txtNumRecibo.Text), txtNumSerie.Text) > 0)
+            {
+                MessageBoxTemporal.Show(Objetos_Mantenimiento.articuloMantenimiento.Interes.ToString(),"hola",2,false);
+                txtArticulo.Text = Objetos_Mantenimiento.articuloMantenimiento.Descripcion;
+                txtEstado.Text = Objetos_Mantenimiento.articuloMantenimiento.Estado;
+                txtIntereses.Text = Objetos_Mantenimiento.articuloMantenimiento.Interes.ToString();
+                txtMonto.Text = Objetos_Mantenimiento.articuloMantenimiento.Prestado.ToString();
+                txtMeses.Text = Objetos_Mantenimiento.articuloMantenimiento.Meses.ToString();
+            }
         }
     }
 }

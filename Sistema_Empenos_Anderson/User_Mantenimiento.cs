@@ -101,7 +101,7 @@ namespace Sistema_Empenos_Anderson
 
             if (txtPassNuevo_New.Text.Equals(txtPassConfirmar_New.Text))
             {
-                if (BD.Ingreso_Usuario(2, txtNom_User_Nuevo.Text, txtPassNuevo_New.Text, tipo, 1, "Usuario") > 0)
+                if (BD.Ingreso_Usuario(1, txtNom_User_Nuevo.Text, txtPassNuevo_New.Text, tipo, 1, "Usuario", Objetos_Globales.fechaHoy) > 0)
                 {
                     MessageBox.Show("El usuario se ha ingresado correctamente", "Mensaje");
                     txtNom_User_Tipo.Text = "";
@@ -119,7 +119,7 @@ namespace Sistema_Empenos_Anderson
         {
             if (txtPassNuevo_Change.Text.Equals(txtPassConfirmar_Change.Text))
             {
-                if (Objetos_Mantenimiento.usuarioMantenimiento.password_Usuario.Equals(txtPass_Change.Text))
+               /* if (Objetos_Mantenimiento.usuarioMantenimiento.password_Usuario.Equals(txtPass_Change.Text))
                 {
                     if (BD.Cambio_Password(txtNom_User_Pass.Text, txtPassNuevo_Change.Text) > 0)
                     {
@@ -135,7 +135,7 @@ namespace Sistema_Empenos_Anderson
                     else
                         MessageBox.Show("Hubo un error al ingresar la contraseña", "Error");
                 } else
-                    MessageBox.Show("La contraseña del usuario es incorrecta", "Error");
+                    MessageBox.Show("La contraseña del usuario es incorrecta", "Error");*/
             } else
                 MessageBox.Show("Las contraseñas no coinciden", "Error");
         }
@@ -161,7 +161,7 @@ namespace Sistema_Empenos_Anderson
         {
             if (BD.Busqueda_Usuario(txtNom_User_Tipo.Text) > 0)
             {
-                txtPass_Change.Enabled = true;
+                //txtPass_Change.Enabled = true;
                 txtPassNuevo_Change.Enabled = true;
                 txtPassConfirmar_Change.Enabled = true;
                 btnAceptarPassword.Enabled = true;
