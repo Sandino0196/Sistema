@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Sistema_Empenos_Anderson
@@ -45,30 +38,47 @@ namespace Sistema_Empenos_Anderson
         {
             if(BD.Busqueda_Articulo(int.Parse(txtNumRecibo.Text),txtNumSerie.Text) > 0)
             {
-                txtArticulo.Text = Objetos_Globales.articulo.Descripcion;
-                txtEstado.Text = Objetos_Globales.articulo.Estado;
-                txtMonto.Text = Objetos_Globales.articulo.Prestado.ToString();
+                txtArticulo.Text = Objetos_Mantenimiento.articuloMantenimiento.Descripcion;
+                txtEstado.Text = Objetos_Mantenimiento.articuloMantenimiento.Estado;
+                txtMonto.Text = Objetos_Mantenimiento.articuloMantenimiento.Prestado.ToString();
             }
         }
 
         private void bttAgregar_Click(object sender, EventArgs e)
         {
-            dtgvArticulos.Rows.Add();
-            dtgvArticulos.Rows[row].Cells[0].Value = Objetos_Globales.articulo.Descripcion;
-            dtgvArticulos.Rows[row].Cells[1].Value = Objetos_Globales.articulo.Marca;
-            dtgvArticulos.Rows[row].Cells[2].Value = Objetos_Globales.articulo.Modelo;
-            dtgvArticulos.Rows[row].Cells[3].Value = txtPrecio.Text;
+            if (!Objetos_Mantenimiento.articuloMantenimiento.Descripcion.Equals(""))
+            {
+                if (Objetos_Mantenimiento.articuloMantenimiento.Equals("Vencido"))
+                {
+                    Objetos_Globales.articulos.Add(new Articulo(Objetos_Mantenimiento.articuloMantenimiento.Meses, Objetos_Mantenimiento.articuloMantenimiento.Prestado, Objetos_Mantenimiento.articuloMantenimiento.Interes, Objetos_Mantenimiento.articuloMantenimiento.Descripcion,
+                    Objetos_Mantenimiento.articuloMantenimiento.Marca, Objetos_Mantenimiento.articuloMantenimiento.Modelo, Objetos_Mantenimiento.articuloMantenimiento.Estado, Objetos_Mantenimiento.articuloMantenimiento.NumeroSerie, Objetos_Mantenimiento.articuloMantenimiento.Tipo, Objetos_Mantenimiento.articuloMantenimiento.CodigoTipo,
+                    Objetos_Mantenimiento.articuloMantenimiento.NumeroRecibo));
+                    dtgvArticulos.Rows.Add();
+                    dtgvArticulos.Rows[row].Cells[0].Value = Objetos_Mantenimiento.articuloMantenimiento.Descripcion;
+                    dtgvArticulos.Rows[row].Cells[1].Value = Objetos_Mantenimiento.articuloMantenimiento.Marca;
+                    dtgvArticulos.Rows[row].Cells[2].Value = Objetos_Mantenimiento.articuloMantenimiento.Modelo;
+                    dtgvArticulos.Rows[row].Cells[3].Value = txtPrecio.Text;
 
-            Objetos_Globales.articulo.MontoPago += double.Parse(txtPrecio.Text);
+                    ((Articulo)(Objetos_Globales.articulos[row])).MontoPago = double.Parse(txtPrecio.Text);
 
-            txtNumRecibo.Text = "";
-            txtNumSerie.Text = "";
-            txtArticulo.Text = "";
-            txtEstado.Text = "";
-            txtMonto.Text = "";
-            txtPrecio.Text = "";
+                    txtNumRecibo.Text = "";
+                    txtNumSerie.Text = "";
+                    txtArticulo.Text = "";
+                    txtEstado.Text = "";
+                    txtMonto.Text = "";
+                    txtPrecio.Text = "";
 
-            row++;
+                    row++;
+                } else if(Objetos_Mantenimiento.articuloMantenimiento.Estado.Equals("Vendido"))
+                    MessageBoxTemporal.Show("Este articulo ya fue vendido","Mensaje importante",2,false);
+                else if (Objetos_Mantenimiento.articuloMantenimiento.Estado.Equals("Retirado"))
+                    MessageBoxTemporal.Show("Este articulo ya fue Retirado", "Mensaje importante", 2, false);
+                else
+                    MessageBoxTemporal.Show("Este articulo sigue en prenda", "Mensaje importante", 2, false);
+            } else
+            {
+                MessageBoxTemporal.Show("Ingrese un articulo", "Mensaje importante", 2, false);
+            }
         }
 
         private void btnAvanzar_Click(object sender, EventArgs e)

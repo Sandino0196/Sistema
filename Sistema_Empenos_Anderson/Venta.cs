@@ -67,6 +67,11 @@ namespace Sistema_Empenos_Anderson
         private void button2_Click(object sender, EventArgs e)
         {
             BD.Ingreso_Factura(int.Parse(txtCodigo.Text),txtIDComp.Text,1,txtFechaVenta.Text);
+            for(int i = 0; i < Objetos_Globales.articulos.Count; i++)
+            {
+                BD.Ingreso_Articulo_Vendido(int.Parse(txtCodigo.Text),((Articulo)Objetos_Globales.articulos[i]).NumeroSerie,
+                    ((Articulo)Objetos_Globales.articulos[i]).NumeroRecibo, ((Articulo)(Objetos_Globales.articulos[i])).MontoPago);
+            }
         }
 
         private void btnVolver_Click(object sender, EventArgs e)

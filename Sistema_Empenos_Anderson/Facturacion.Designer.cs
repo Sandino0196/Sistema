@@ -51,6 +51,7 @@
             this.Modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAvanzar = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvArticulos)).BeginInit();
             this.SuspendLayout();
@@ -126,7 +127,7 @@
             // 
             // bttEliminar
             // 
-            this.bttEliminar.Location = new System.Drawing.Point(63, 478);
+            this.bttEliminar.Location = new System.Drawing.Point(211, 478);
             this.bttEliminar.Name = "bttEliminar";
             this.bttEliminar.Size = new System.Drawing.Size(75, 23);
             this.bttEliminar.TabIndex = 11;
@@ -257,7 +258,7 @@
             // 
             // btnAvanzar
             // 
-            this.btnAvanzar.Location = new System.Drawing.Point(333, 478);
+            this.btnAvanzar.Location = new System.Drawing.Point(386, 478);
             this.btnAvanzar.Name = "btnAvanzar";
             this.btnAvanzar.Size = new System.Drawing.Size(75, 23);
             this.btnAvanzar.TabIndex = 28;
@@ -265,11 +266,21 @@
             this.btnAvanzar.UseVisualStyleBackColor = true;
             this.btnAvanzar.Click += new System.EventHandler(this.btnAvanzar_Click);
             // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(27, 478);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(75, 23);
+            this.btnVolver.TabIndex = 29;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            // 
             // Facturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(480, 525);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnAvanzar);
             this.Controls.Add(this.dtgvArticulos);
             this.Controls.Add(this.groupBox1);
@@ -308,5 +319,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Modelo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.Button btnConsulta;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

@@ -468,8 +468,14 @@ namespace Sistema_Empenos_Anderson
             command.Parameters.Add(new SqlParameter("@Num_Serie", numeroSerie));
             command.Parameters.Add(new SqlParameter("@Cod_Rec", recibo));
             command.Parameters.Add(new SqlParameter("@Prec_Vent", precio));
-
-            command.ExecuteNonQuery();
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch
+            {
+                MessageBoxTemporal.Show("No pudo realizarse la operación", "Mensaje Imporante", 2, false);
+            }
 
             CloseConnection();
         }
