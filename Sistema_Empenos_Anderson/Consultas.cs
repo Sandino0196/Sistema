@@ -24,7 +24,6 @@ namespace Sistema_Empenos_Anderson
             InitializeComponent();
             lblcambio.Visible = false;
             txtingreso.Visible = false;
-            cmbestado.Visible = false;
             cmbtipartic.Visible = false;
             btnaceptar.Visible = false;
 
@@ -32,24 +31,14 @@ namespace Sistema_Empenos_Anderson
 
         private void cmbseleccion_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cmbseleccion.Text=="Estado de Articulos")
+            
+            if(cmbseleccion.Text=="Tipo de Articulos")
             {
-                lblcambio.Text = "Seleccione un Estado: ";
+                lblcambio.Text = "Seleccione un Tipo de Articulos: ";
                 lblcambio.Visible = true;
                 txtingreso.Visible = false;
-                cmbestado.Visible = true;
-                cmbtipartic.Visible = false;
-                btnaceptar.Visible = false;
-
-            }
-            else if(cmbseleccion.Text=="Tipo de Articulos")
-            {
-                lblcambio.Text = "Seleccione Tipo de Artiuclos: ";
-                lblcambio.Visible = true;
-                txtingreso.Visible = false;
-                cmbestado.Visible = false;
                 cmbtipartic.Visible = true;
-                btnaceptar.Visible = false;
+                btnaceptar.Visible = true;
             }
             else
             {
@@ -58,7 +47,6 @@ namespace Sistema_Empenos_Anderson
                 txtingreso.Visible = true;
                 txtingreso.Clear();
                 txtingreso.Focus();
-                cmbestado.Visible = false;
                 cmbtipartic.Visible = false;
                 btnaceptar.Visible = true;
 
@@ -88,6 +76,30 @@ namespace Sistema_Empenos_Anderson
             {
                 dtConsultas.DataSource = BD.Cargar_Factura(int.Parse(txtingreso.Text));
             }
+            if(cmbseleccion.Text == "Numero de Serie")
+            {
+                dtConsultas.DataSource = BD.Cargar_NumSerie(txtingreso.Text);
+            }
+            if(cmbseleccion.Text == "Tipo de Articulos")
+            {
+                if(cmbtipartic.Text== "Joyería")
+                    dtConsultas.DataSource = BD.Cargar_TpArt(1);
+                 else
+                    if (cmbtipartic.Text == "Transporte")
+                         dtConsultas.DataSource = BD.Cargar_TpArt(2);
+                    else
+                        if (cmbtipartic.Text == "Electrodoméstico")
+                             dtConsultas.DataSource = BD.Cargar_TpArt(3);
+                         else
+                            if (cmbtipartic.Text == "Mueble")
+                                 dtConsultas.DataSource = BD.Cargar_TpArt(4);
+                               else
+                                   if (cmbtipartic.Text == "Electrónico")
+                                         dtConsultas.DataSource = BD.Cargar_TpArt(5);
+                                     else
+                                       dtConsultas.DataSource = BD.Cargar_TpArt(6);
+            }
+
             
         }
     }

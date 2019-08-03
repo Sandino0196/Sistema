@@ -32,7 +32,6 @@
             this.labelseleccion = new System.Windows.Forms.Label();
             this.lblcambio = new System.Windows.Forms.Label();
             this.cmbseleccion = new System.Windows.Forms.ComboBox();
-            this.cmbestado = new System.Windows.Forms.ComboBox();
             this.cmbtipartic = new System.Windows.Forms.ComboBox();
             this.txtingreso = new System.Windows.Forms.TextBox();
             this.btnregresar = new System.Windows.Forms.Button();
@@ -78,44 +77,32 @@
             "Codigo Recibo",
             "Codigo Factura",
             "Tipo de Articulos",
-            "Numero de Serie",
-            "Estado de Articulos"});
+            "Numero de Serie"});
             this.cmbseleccion.Location = new System.Drawing.Point(21, 126);
             this.cmbseleccion.Name = "cmbseleccion";
             this.cmbseleccion.Size = new System.Drawing.Size(163, 21);
             this.cmbseleccion.TabIndex = 3;
             this.cmbseleccion.SelectedIndexChanged += new System.EventHandler(this.cmbseleccion_SelectedIndexChanged);
             // 
-            // cmbestado
-            // 
-            this.cmbestado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbestado.FormattingEnabled = true;
-            this.cmbestado.Items.AddRange(new object[] {
-            "Caducados",
-            "Activos"});
-            this.cmbestado.Location = new System.Drawing.Point(21, 177);
-            this.cmbestado.Name = "cmbestado";
-            this.cmbestado.Size = new System.Drawing.Size(163, 21);
-            this.cmbestado.TabIndex = 4;
-            // 
             // cmbtipartic
             // 
             this.cmbtipartic.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbtipartic.FormattingEnabled = true;
             this.cmbtipartic.Items.AddRange(new object[] {
-            "Electrodomesticos",
-            "Joyerias",
-            "Dispositivos Moviles",
-            "Vehiculos",
-            "Entretenimientos"});
-            this.cmbtipartic.Location = new System.Drawing.Point(21, 177);
+            "Joyería",
+            "Transporte",
+            "Electrodoméstico",
+            "Mueble",
+            "Electrónico",
+            "Entretenimiento"});
+            this.cmbtipartic.Location = new System.Drawing.Point(21, 187);
             this.cmbtipartic.Name = "cmbtipartic";
             this.cmbtipartic.Size = new System.Drawing.Size(163, 21);
             this.cmbtipartic.TabIndex = 5;
             // 
             // txtingreso
             // 
-            this.txtingreso.Location = new System.Drawing.Point(21, 177);
+            this.txtingreso.Location = new System.Drawing.Point(21, 188);
             this.txtingreso.Name = "txtingreso";
             this.txtingreso.Size = new System.Drawing.Size(163, 20);
             this.txtingreso.TabIndex = 6;
@@ -132,7 +119,7 @@
             // 
             // btnaceptar
             // 
-            this.btnaceptar.Location = new System.Drawing.Point(60, 219);
+            this.btnaceptar.Location = new System.Drawing.Point(54, 260);
             this.btnaceptar.Name = "btnaceptar";
             this.btnaceptar.Size = new System.Drawing.Size(88, 49);
             this.btnaceptar.TabIndex = 8;
@@ -159,7 +146,6 @@
             this.Controls.Add(this.btnregresar);
             this.Controls.Add(this.txtingreso);
             this.Controls.Add(this.cmbtipartic);
-            this.Controls.Add(this.cmbestado);
             this.Controls.Add(this.cmbseleccion);
             this.Controls.Add(this.lblcambio);
             this.Controls.Add(this.labelseleccion);
@@ -179,7 +165,6 @@
         private System.Windows.Forms.Label labelseleccion;
         private System.Windows.Forms.Label lblcambio;
         private System.Windows.Forms.ComboBox cmbseleccion;
-        private System.Windows.Forms.ComboBox cmbestado;
         private System.Windows.Forms.ComboBox cmbtipartic;
         private System.Windows.Forms.TextBox txtingreso;
         private System.Windows.Forms.Button btnregresar;
