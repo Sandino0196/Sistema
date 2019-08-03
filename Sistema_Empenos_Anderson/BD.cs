@@ -11,7 +11,7 @@ namespace Sistema_Empenos_Anderson
 
         public static void OpenConnection()
         {
-            connection.ConnectionString = @"Data Source=DESKTOP-D1B8U5J; Initial Catalog=Base_Empeños; Integrated Security=Yes";
+            connection.ConnectionString = @"Data Source=DESKTOP-T785USI; Initial Catalog=Base_Empeños; Integrated Security=Yes";
             connection.Open();
             //Donde dice DATA SOURCE le ponen el nombre de su máquina; 
         }
