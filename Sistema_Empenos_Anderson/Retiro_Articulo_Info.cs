@@ -16,5 +16,15 @@ namespace Sistema_Empenos_Anderson
         {
             InitializeComponent();
         }
+
+        private void btnPagar_Click(object sender, EventArgs e)
+        {
+            //Aca
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            //Ojala
+        }
     }
 }

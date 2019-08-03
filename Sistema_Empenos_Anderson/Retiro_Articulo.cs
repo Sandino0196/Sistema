@@ -30,6 +30,7 @@ namespace Sistema_Empenos_Anderson
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            //Aqui
             if (BD.Busqueda_Articulo(int.Parse(txtCod_Recibo.Text), txtNumSerie.Text) > 0 && Articulo.estado.Equals("En Prenda"))
             {
                 dtgvInfo_Articulo.Rows[0].Cells[0].Value = Articulo.descripcion;
@@ -59,7 +60,6 @@ namespace Sistema_Empenos_Anderson
 
         private void btnRetirar_Click(object sender, EventArgs e)
         {
-            //Probando
             BD.Retirar_Articulo(int.Parse(txtCod_Recibo.Text), txtNumSerie.Text);
             Retiro_Articulo_Info retiro = new Retiro_Articulo_Info();
             retiro.Show();
