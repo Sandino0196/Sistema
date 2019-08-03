@@ -43,11 +43,19 @@
             this.lblNom_TpArt = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.txtModelo = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtMarca = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.txtType = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnConsultaTipo = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.txtModelo2 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtMarca2 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.txtEstado = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnConsultaEstado = new System.Windows.Forms.Button();
@@ -62,14 +70,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtMarca = new System.Windows.Forms.TextBox();
-            this.txtModelo = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtModelo2 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtMarca2 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -233,6 +233,40 @@
             this.tabPage1.Text = "Cambio de Tipo";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // txtModelo
+            // 
+            this.txtModelo.Enabled = false;
+            this.txtModelo.Location = new System.Drawing.Point(239, 157);
+            this.txtModelo.Name = "txtModelo";
+            this.txtModelo.Size = new System.Drawing.Size(96, 20);
+            this.txtModelo.TabIndex = 38;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(193, 160);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(45, 13);
+            this.label7.TabIndex = 37;
+            this.label7.Text = "Modelo:";
+            // 
+            // txtMarca
+            // 
+            this.txtMarca.Enabled = false;
+            this.txtMarca.Location = new System.Drawing.Point(239, 131);
+            this.txtMarca.Name = "txtMarca";
+            this.txtMarca.Size = new System.Drawing.Size(96, 20);
+            this.txtMarca.TabIndex = 36;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(193, 134);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(40, 13);
+            this.label6.TabIndex = 35;
+            this.label6.Text = "Marca:";
+            // 
             // txtType
             // 
             this.txtType.Enabled = false;
@@ -300,6 +334,41 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Cambiar Estado";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // txtModelo2
+            // 
+            this.txtModelo2.Enabled = false;
+            this.txtModelo2.Location = new System.Drawing.Point(229, 159);
+            this.txtModelo2.Name = "txtModelo2";
+            this.txtModelo2.Size = new System.Drawing.Size(106, 20);
+            this.txtModelo2.TabIndex = 38;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(174, 162);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(45, 13);
+            this.label8.TabIndex = 37;
+            this.label8.Text = "Modelo:";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // txtMarca2
+            // 
+            this.txtMarca2.Enabled = false;
+            this.txtMarca2.Location = new System.Drawing.Point(229, 127);
+            this.txtMarca2.Name = "txtMarca2";
+            this.txtMarca2.Size = new System.Drawing.Size(106, 20);
+            this.txtMarca2.TabIndex = 36;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(174, 130);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(40, 13);
+            this.label9.TabIndex = 35;
+            this.label9.Text = "Marca:";
             // 
             // txtEstado
             // 
@@ -431,75 +500,6 @@
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(193, 134);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 13);
-            this.label6.TabIndex = 35;
-            this.label6.Text = "Marca:";
-            // 
-            // txtMarca
-            // 
-            this.txtMarca.Enabled = false;
-            this.txtMarca.Location = new System.Drawing.Point(239, 131);
-            this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(96, 20);
-            this.txtMarca.TabIndex = 36;
-            // 
-            // txtModelo
-            // 
-            this.txtModelo.Enabled = false;
-            this.txtModelo.Location = new System.Drawing.Point(239, 157);
-            this.txtModelo.Name = "txtModelo";
-            this.txtModelo.Size = new System.Drawing.Size(96, 20);
-            this.txtModelo.TabIndex = 38;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(193, 160);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(45, 13);
-            this.label7.TabIndex = 37;
-            this.label7.Text = "Modelo:";
-            // 
-            // txtModelo2
-            // 
-            this.txtModelo2.Enabled = false;
-            this.txtModelo2.Location = new System.Drawing.Point(229, 159);
-            this.txtModelo2.Name = "txtModelo2";
-            this.txtModelo2.Size = new System.Drawing.Size(106, 20);
-            this.txtModelo2.TabIndex = 38;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(174, 162);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(45, 13);
-            this.label8.TabIndex = 37;
-            this.label8.Text = "Modelo:";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // txtMarca2
-            // 
-            this.txtMarca2.Enabled = false;
-            this.txtMarca2.Location = new System.Drawing.Point(229, 127);
-            this.txtMarca2.Name = "txtMarca2";
-            this.txtMarca2.Size = new System.Drawing.Size(106, 20);
-            this.txtMarca2.TabIndex = 36;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(174, 130);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(40, 13);
-            this.label9.TabIndex = 35;
-            this.label9.Text = "Marca:";
             // 
             // Mantenimiento_Articulos
             // 
