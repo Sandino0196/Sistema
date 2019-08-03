@@ -40,8 +40,9 @@
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(138, 70);
             this.btnClientes.TabIndex = 0;
-            this.btnClientes.Text = "Cambiar Estado a un Cliente";
+            this.btnClientes.Text = "Mantenimiento de Clientes";
             this.btnClientes.UseVisualStyleBackColor = true;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // btnArticulos
             // 
@@ -51,6 +52,7 @@
             this.btnArticulos.TabIndex = 1;
             this.btnArticulos.Text = "Mantenimiento de Articulos";
             this.btnArticulos.UseVisualStyleBackColor = true;
+            this.btnArticulos.Click += new System.EventHandler(this.btnArticulos_Click);
             // 
             // btnUsuarios
             // 
@@ -58,7 +60,7 @@
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(138, 70);
             this.btnUsuarios.TabIndex = 2;
-            this.btnUsuarios.Text = "Agregar/Modificar Usuarios";
+            this.btnUsuarios.Text = "Mantenimiento de Usuarios";
             this.btnUsuarios.UseVisualStyleBackColor = true;
             this.btnUsuarios.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -70,6 +72,7 @@
             this.btnVolver.TabIndex = 5;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // Manteminiento
             // 

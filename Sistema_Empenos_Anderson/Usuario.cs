@@ -4,7 +4,7 @@ namespace Sistema_Empenos_Anderson
 {
     public class Usuario
     {
-        private string Nombre_Usuario, Password_Usuario, Tipo_Usuario;
+        private string Nombre_Usuario, Password_Usuario, Tipo_Usuario, Pregunta1, Pregunta2, Respuesta1, Respuesta2;
         private int Codigo_Tipo_Usuario, Codigo_Usuario;
 
         public Usuario()
@@ -49,8 +49,29 @@ namespace Sistema_Empenos_Anderson
             get { return this.Codigo_Usuario; }
             set { this.Codigo_Usuario = value; }
         }
-        //private ArrayList Tipos = new ArrayList();
 
+        public string pregunta1
+        {
+            get { return this.Pregunta1; }
+            set { this.Pregunta1 = value; }
+        }
 
+        public string pregunta2
+        {
+            get { return this.Pregunta2; }
+            set { this.Pregunta2 = value; }
+        }
+
+        public string respuesta1
+        {
+            get { return this.Respuesta1; }
+            set { this.Respuesta1 = value; }
+        }
+
+        public string respuesta2
+        {
+            get { return this.Respuesta2; }
+            set { this.Respuesta2 = value; }
+        }
     }
 }

@@ -49,12 +49,6 @@ namespace Sistema_Empenos_Anderson
             user.Show();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            User_Mantenimiento user = new User_Mantenimiento(2);
-            user.Show();
-        }
-
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
 

@@ -380,7 +380,7 @@ namespace Sistema_Empenos_Anderson
             }
         }
 
-        public static int Ingreso_Usuario(int codigo, string usuario, string password, int tipo, int cod_estado, string estado, string fecha)
+        public static int Ingreso_Usuario(string usuario, string password, int tipo, int cod_estado, string estado, string fecha, string pregunta1, string pregunta2, string respuesta1, string respuesta2)
         {
             OpenConnection();
 
@@ -389,13 +389,16 @@ namespace Sistema_Empenos_Anderson
             command.Connection = connection;
             command.CommandType = CommandType.StoredProcedure;
 
-            command.Parameters.Add(new SqlParameter("@Codigo", codigo));
             command.Parameters.Add(new SqlParameter("@Usuario", usuario));
             command.Parameters.Add(new SqlParameter("@Password", password));
             command.Parameters.Add(new SqlParameter("@Tipo", tipo));
             command.Parameters.Add(new SqlParameter("@Cod_Estado", cod_estado));
             command.Parameters.Add(new SqlParameter("@Estado", estado));
             command.Parameters.Add(new SqlParameter("@Fecha_Creado", fecha));
+            command.Parameters.Add(new SqlParameter("@Pregunta1", pregunta1));
+            command.Parameters.Add(new SqlParameter("@Pregunta2", pregunta2));
+            command.Parameters.Add(new SqlParameter("@Respuesta1", respuesta1));
+            command.Parameters.Add(new SqlParameter("@Respuesta2", respuesta2));
 
             try
             {
@@ -522,7 +525,7 @@ namespace Sistema_Empenos_Anderson
 
         #region Cambio de datos
 
-        public static int Cambio_Password(string usuario, string password)
+        public static int Cambio_Password(string usuario, string password, string respuesta1, string respuesta2)
         {
             OpenConnection();
 
@@ -533,6 +536,8 @@ namespace Sistema_Empenos_Anderson
 
             command.Parameters.Add(new SqlParameter("@Usuario", usuario));
             command.Parameters.Add(new SqlParameter("@Password", password));
+            command.Parameters.Add(new SqlParameter("@Respuesta1", respuesta1));
+            command.Parameters.Add(new SqlParameter("@@Respuesta2", respuesta2));
 
             try
             {
