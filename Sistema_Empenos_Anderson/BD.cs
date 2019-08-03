@@ -265,11 +265,6 @@ namespace Sistema_Empenos_Anderson
             modelo.Size = 50;
             command.Parameters.Add(modelo);
 
-            SqlParameter tipo = new SqlParameter("@Tipo", " ");
-            tipo.Direction = ParameterDirection.Output;
-            tipo.Size = 50;
-            command.Parameters.Add(tipo);
-
             SqlParameter estado = new SqlParameter("@Estado", " ");
             estado.Direction = ParameterDirection.Output;
             estado.Size = 50;
@@ -307,7 +302,6 @@ namespace Sistema_Empenos_Anderson
                 Objetos_Mantenimiento.articuloMantenimiento.Marca = command.Parameters["@Marca"].Value.ToString();
                 Objetos_Mantenimiento.articuloMantenimiento.Modelo = command.Parameters["@Modelo"].Value.ToString();
                 Objetos_Mantenimiento.articuloMantenimiento.Estado = command.Parameters["@Estado"].Value.ToString();
-                Objetos_Mantenimiento.articuloMantenimiento.Tipo = command.Parameters["@Tipo"].Value.ToString();
                 Objetos_Mantenimiento.articuloMantenimiento.Prestado = double.Parse(command.Parameters["@Prestado"].Value.ToString());
                 Objetos_Mantenimiento.articuloMantenimiento.Interes = int.Parse(command.Parameters["@Interes"].Value.ToString());
                 Objetos_Globales.identidadTemporal = command.Parameters["@Identidad"].Value.ToString();
@@ -673,7 +667,7 @@ namespace Sistema_Empenos_Anderson
             
         }
 
-        public static void Actualizar_Estado_Articulo(string Num_Serie, int Num_Recibo, int Cod_Estado)
+        public static void Actualizar_Estado_Articulo(string Num_Serie, int Num_Recibo, int Cod_Estado, string Tipo)
         {
             OpenConnection();
 
@@ -685,6 +679,7 @@ namespace Sistema_Empenos_Anderson
             command.Parameters.Add(new SqlParameter("@Num_Serie", Num_Serie));
             command.Parameters.Add(new SqlParameter("@Recibo", Num_Recibo));
             command.Parameters.Add(new SqlParameter("@Estado", Cod_Estado));
+            command.Parameters.Add(new SqlParameter("@Estado_Tipo", Tipo));
 
             try
             {

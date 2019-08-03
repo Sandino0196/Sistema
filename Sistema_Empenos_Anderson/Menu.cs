@@ -37,9 +37,9 @@ namespace Sistema_Empenos_Anderson
                 this.Hide();
             } else if (rdbRetiro.Checked)
             {
-                /*Retiro_Articulo retiro = new Retiro_Articulo();
+                Retirar_Articulos retiro = new Retirar_Articulos();
                 retiro.Show();
-                this.Hide();*/
+                this.Hide();
             } else if (rdbVenta.Checked)
             {
                 Facturacion venta = new Facturacion();
