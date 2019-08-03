@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Sistema_Empenos_Anderson
@@ -22,6 +15,25 @@ namespace Sistema_Empenos_Anderson
             User_Mantenimiento user = new User_Mantenimiento();
             user.Show();
             this.Hide();
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            Menu men = new Sistema_Empenos_Anderson.Menu(Objetos_Globales.usuario.codigo_Usuario);
+            this.Hide();
+            men.Show();
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnArticulos_Click(object sender, EventArgs e)
+        {
+            Mantenimiento_Articulos mantenimiento = new Mantenimiento_Articulos();
+            this.Hide();
+            mantenimiento.Show();
         }
     }
 }

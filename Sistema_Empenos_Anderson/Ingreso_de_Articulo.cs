@@ -26,8 +26,6 @@ namespace Sistema_Empenos_Anderson
             
         }
 
-        public void llenarDataGrid() { 
-}
         public static int Ingreso = 0, row=0;
 
         protected override void OnClosed(EventArgs e)

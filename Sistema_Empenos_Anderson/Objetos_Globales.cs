@@ -12,6 +12,6 @@ namespace Sistema_Empenos_Anderson
         public static ArrayList articulos;
 
         public static DateTime fecha = DateTime.Now;
-        public static string fechaHoy;
+        public static string fechaHoy, fechaHoyCorta;
     }
 }

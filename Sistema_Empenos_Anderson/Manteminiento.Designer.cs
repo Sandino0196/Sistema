@@ -31,6 +31,7 @@
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnArticulos = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnClientes
@@ -39,8 +40,9 @@
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(138, 70);
             this.btnClientes.TabIndex = 0;
-            this.btnClientes.Text = "Cambiar Estado a un Cliente";
+            this.btnClientes.Text = "Mantenimiento de Clientes";
             this.btnClientes.UseVisualStyleBackColor = true;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // btnArticulos
             // 
@@ -58,9 +60,19 @@
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(138, 70);
             this.btnUsuarios.TabIndex = 2;
-            this.btnUsuarios.Text = "Agregar/Modificar Usuarios";
+            this.btnUsuarios.Text = "Mantenimiento de Usuarios";
             this.btnUsuarios.UseVisualStyleBackColor = true;
             this.btnUsuarios.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(223, 132);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(138, 70);
+            this.btnVolver.TabIndex = 5;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // Manteminiento
             // 
@@ -72,7 +84,6 @@
             this.Controls.Add(this.btnClientes);
             this.Name = "Manteminiento";
             this.Text = "Manteminiento";
-            this.Load += new System.EventHandler(this.Manteminiento_Load);
             this.ResumeLayout(false);
 
         }
@@ -82,5 +93,6 @@
         private System.Windows.Forms.Button btnClientes;
         private System.Windows.Forms.Button btnArticulos;
         private System.Windows.Forms.Button btnUsuarios;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

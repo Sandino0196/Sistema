@@ -409,7 +409,7 @@ namespace Sistema_Empenos_Anderson
             }
         }
 
-        public static int Ingreso_Usuario(int codigo, string usuario, string password, int tipo, int cod_estado, string estado, string fecha)
+        public static int Ingreso_Usuario(string usuario, string password, int tipo, int cod_estado, string estado, string fecha, string pregunta1, string pregunta2, string respuesta1, string respuesta2)
         {
             OpenConnection();
 
@@ -418,13 +418,16 @@ namespace Sistema_Empenos_Anderson
             command.Connection = connection;
             command.CommandType = CommandType.StoredProcedure;
 
-            command.Parameters.Add(new SqlParameter("@Codigo", codigo));
             command.Parameters.Add(new SqlParameter("@Usuario", usuario));
             command.Parameters.Add(new SqlParameter("@Password", password));
             command.Parameters.Add(new SqlParameter("@Tipo", tipo));
             command.Parameters.Add(new SqlParameter("@Cod_Estado", cod_estado));
             command.Parameters.Add(new SqlParameter("@Estado", estado));
             command.Parameters.Add(new SqlParameter("@Fecha_Creado", fecha));
+            command.Parameters.Add(new SqlParameter("@Pregunta1", pregunta1));
+            command.Parameters.Add(new SqlParameter("@Pregunta2", pregunta2));
+            command.Parameters.Add(new SqlParameter("@Respuesta1", respuesta1));
+            command.Parameters.Add(new SqlParameter("@Respuesta2", respuesta2));
 
             try
             {
@@ -479,9 +482,17 @@ namespace Sistema_Empenos_Anderson
             command.Parameters.Add(new SqlParameter("@Cod_Us", codigoUsuario));
             command.Parameters.Add(new SqlParameter("@Fecha", fecha));
 
-            command.ExecuteNonQuery();
+            try
+            {
+                command.ExecuteNonQuery();
 
-            CloseConnection();
+                CloseConnection();
+            }
+            catch
+            {
+                MessageBoxTemporal.Show("No pudo realizarse la operación", "Mensaje Imporante", 1, false);
+                CloseConnection();
+            }
         }
 
         public static void Ingreso_Articulo_Vendido(int codigoFactura, string numeroSerie, int recibo, double precio)
@@ -500,17 +511,42 @@ namespace Sistema_Empenos_Anderson
             try
             {
                 command.ExecuteNonQuery();
+                CloseConnection();
+            }
+            catch
+            {
+                MessageBoxTemporal.Show("No pudo realizarse la operación", "Mensaje Imporante", 1, false);
+                CloseConnection();
+            }
+        }
+
+        public static void Ingreso_Pago_Interes(int recibo, string numeroSerie, int codigoCuota, string identidad, string fecha, double pago, int codigoUsuario)
+        {
+            OpenConnection();
+
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SP_Ingreso_Pago_Interes";
+            command.Connection = connection;
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.Add(new SqlParameter("@Codigo_Recibo", recibo));
+            command.Parameters.Add(new SqlParameter("@Numero_Serie", numeroSerie));
+            command.Parameters.Add(new SqlParameter("@Codigo_Cuota", codigoCuota));
+            command.Parameters.Add(new SqlParameter("@Identidad", identidad));
+            command.Parameters.Add(new SqlParameter("@Fecha", fecha));
+            command.Parameters.Add(new SqlParameter("@Pago", pago));
+            command.Parameters.Add(new SqlParameter("@Codigo_Usuario", codigoUsuario));
+
+            try
+            {
+                command.ExecuteNonQuery();
+                CloseConnection();
             }
             catch
             {
                 MessageBoxTemporal.Show("No pudo realizarse la operación", "Mensaje Imporante", 2, false);
+                CloseConnection();
             }
-
-            CloseConnection();
-        }
-
-        public static void Ingreso_Pago_Interes()
-        {
 
         }
 
@@ -518,7 +554,7 @@ namespace Sistema_Empenos_Anderson
 
         #region Cambio de datos
 
-        public static int Cambio_Password(string usuario, string password)
+        public static int Cambio_Password(string usuario, string password, string respuesta1, string respuesta2)
         {
             OpenConnection();
 
@@ -529,6 +565,8 @@ namespace Sistema_Empenos_Anderson
 
             command.Parameters.Add(new SqlParameter("@Usuario", usuario));
             command.Parameters.Add(new SqlParameter("@Password", password));
+            command.Parameters.Add(new SqlParameter("@Respuesta1", respuesta1));
+            command.Parameters.Add(new SqlParameter("@@Respuesta2", respuesta2));
 
             try
             {
@@ -554,6 +592,32 @@ namespace Sistema_Empenos_Anderson
 
             command.Parameters.Add(new SqlParameter("@Usuario", usuario));
             command.Parameters.Add(new SqlParameter("@Tipo", tipo));
+
+            try
+            {
+                command.ExecuteNonQuery();
+                CloseConnection();
+                return 1;
+            }
+            catch
+            {
+                CloseConnection();
+                return 0;
+            }
+        }
+
+        public static int Modificar_Meses(int recibo, string numeroSerie, int meses)
+        {
+            OpenConnection();
+
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SP_Modificar_Meses";
+            command.Connection = connection;
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.Add(new SqlParameter("@Codigo_Recibo", recibo));
+            command.Parameters.Add(new SqlParameter("@Numero_Serie", numeroSerie));
+            command.Parameters.Add(new SqlParameter("@Meses", meses));
 
             try
             {

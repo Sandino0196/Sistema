@@ -58,13 +58,19 @@ namespace Sistema_Empenos_Anderson
         {
             if (BD.Busqueda_Articulo(int.Parse(txtNumRecibo.Text), txtNumSerie.Text) > 0)
             {
-                MessageBoxTemporal.Show(Objetos_Mantenimiento.articuloMantenimiento.Interes.ToString(),"hola",2,false);
                 txtArticulo.Text = Objetos_Mantenimiento.articuloMantenimiento.Descripcion;
                 txtEstado.Text = Objetos_Mantenimiento.articuloMantenimiento.Estado;
                 txtIntereses.Text = Objetos_Mantenimiento.articuloMantenimiento.Interes.ToString();
                 txtMonto.Text = Objetos_Mantenimiento.articuloMantenimiento.Prestado.ToString();
                 txtMeses.Text = Objetos_Mantenimiento.articuloMantenimiento.Meses.ToString();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Menu men = new Sistema_Empenos_Anderson.Menu(Objetos_Globales.usuario.codigo_Tipo_Usuario);
+            this.Hide();
+            men.Show();
         }
     }
 }

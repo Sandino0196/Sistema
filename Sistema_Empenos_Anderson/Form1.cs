@@ -28,6 +28,8 @@ namespace Sistema_Empenos_Anderson
                 "/" +Objetos_Globales.fecha.Year + " " + Objetos_Globales.fecha.Hour + ":"
                 + Objetos_Globales.fecha.Minute + ":" + Objetos_Globales.fecha.Second + "."
                 + Objetos_Globales.fecha.Millisecond;
+            Objetos_Globales.fechaHoyCorta = Objetos_Globales.fecha.Day + "/" + Objetos_Globales.fecha.Month +
+                "/" + Objetos_Globales.fecha.Year;
             if (BD.Login(txtUsuario.Text,txtPassword.Text) > 0)
             {
                 BD.Fecha_Inicio_Sesion(txtUsuario.Text, txtPassword.Text, Objetos_Globales.fechaHoy);
@@ -47,12 +49,6 @@ namespace Sistema_Empenos_Anderson
             user.Show();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            User_Mantenimiento user = new User_Mantenimiento(2);
-            user.Show();
-        }
-
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
 
@@ -66,7 +62,6 @@ namespace Sistema_Empenos_Anderson
                 "/" + Objetos_Globales.fecha.Year.ToString() + " " + Objetos_Globales.fecha.Hour.ToString() + ":"
                 + Objetos_Globales.fecha.Minute.ToString() + ":" + Objetos_Globales.fecha.Second.ToString() + "."
                 + Objetos_Globales.fecha.Millisecond.ToString();
-                MessageBoxTemporal.Show(Objetos_Globales.fechaHoy,"Holis",2,false);
                 if (BD.Login(txtUsuario.Text, txtPassword.Text) > 0)
                 {
                     BD.Fecha_Inicio_Sesion(Objetos_Globales.usuario.nombre_Usuario, Objetos_Globales.usuario.password_Usuario, Objetos_Globales.fechaHoy);

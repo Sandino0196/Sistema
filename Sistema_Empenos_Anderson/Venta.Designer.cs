@@ -38,8 +38,9 @@
             this.lblSubtotal = new System.Windows.Forms.Label();
             this.lblISV = new System.Windows.Forms.Label();
             this.lblFechaVenta = new System.Windows.Forms.Label();
-            this.calendarVenta = new System.Windows.Forms.MonthCalendar();
             this.gbInfoComp = new System.Windows.Forms.GroupBox();
+            this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
+            this.txtIDComp = new System.Windows.Forms.MaskedTextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
@@ -54,17 +55,16 @@
             this.lblVendedor = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.btnIngresoCliente = new System.Windows.Forms.Button();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtIDComp = new System.Windows.Forms.MaskedTextBox();
-            this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
+            this.Facturacion = new System.Windows.Forms.GroupBox();
             this.gbInfoComp.SuspendLayout();
+            this.Facturacion.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtMonto
             // 
-            this.txtMonto.Location = new System.Drawing.Point(118, 395);
+            this.txtMonto.Location = new System.Drawing.Point(112, 230);
             this.txtMonto.Name = "txtMonto";
             this.txtMonto.Size = new System.Drawing.Size(100, 20);
             this.txtMonto.TabIndex = 33;
@@ -72,7 +72,7 @@
             // txtTotalPagar
             // 
             this.txtTotalPagar.Enabled = false;
-            this.txtTotalPagar.Location = new System.Drawing.Point(118, 365);
+            this.txtTotalPagar.Location = new System.Drawing.Point(112, 200);
             this.txtTotalPagar.Name = "txtTotalPagar";
             this.txtTotalPagar.Size = new System.Drawing.Size(100, 20);
             this.txtTotalPagar.TabIndex = 32;
@@ -80,7 +80,7 @@
             // txtSubtotal
             // 
             this.txtSubtotal.Enabled = false;
-            this.txtSubtotal.Location = new System.Drawing.Point(118, 299);
+            this.txtSubtotal.Location = new System.Drawing.Point(112, 134);
             this.txtSubtotal.Name = "txtSubtotal";
             this.txtSubtotal.Size = new System.Drawing.Size(100, 20);
             this.txtSubtotal.TabIndex = 31;
@@ -88,7 +88,7 @@
             // txtISV
             // 
             this.txtISV.Enabled = false;
-            this.txtISV.Location = new System.Drawing.Point(118, 331);
+            this.txtISV.Location = new System.Drawing.Point(112, 166);
             this.txtISV.Name = "txtISV";
             this.txtISV.Size = new System.Drawing.Size(100, 20);
             this.txtISV.TabIndex = 30;
@@ -96,7 +96,7 @@
             // txtFechaVenta
             // 
             this.txtFechaVenta.Enabled = false;
-            this.txtFechaVenta.Location = new System.Drawing.Point(118, 264);
+            this.txtFechaVenta.Location = new System.Drawing.Point(112, 99);
             this.txtFechaVenta.Name = "txtFechaVenta";
             this.txtFechaVenta.Size = new System.Drawing.Size(100, 20);
             this.txtFechaVenta.TabIndex = 29;
@@ -104,7 +104,7 @@
             // lblMonto
             // 
             this.lblMonto.AutoSize = true;
-            this.lblMonto.Location = new System.Drawing.Point(57, 402);
+            this.lblMonto.Location = new System.Drawing.Point(51, 237);
             this.lblMonto.Name = "lblMonto";
             this.lblMonto.Size = new System.Drawing.Size(40, 13);
             this.lblMonto.TabIndex = 28;
@@ -113,7 +113,7 @@
             // lblTotalPagar
             // 
             this.lblTotalPagar.AutoSize = true;
-            this.lblTotalPagar.Location = new System.Drawing.Point(23, 368);
+            this.lblTotalPagar.Location = new System.Drawing.Point(17, 203);
             this.lblTotalPagar.Name = "lblTotalPagar";
             this.lblTotalPagar.Size = new System.Drawing.Size(74, 13);
             this.lblTotalPagar.TabIndex = 27;
@@ -122,7 +122,7 @@
             // lblSubtotal
             // 
             this.lblSubtotal.AutoSize = true;
-            this.lblSubtotal.Location = new System.Drawing.Point(48, 302);
+            this.lblSubtotal.Location = new System.Drawing.Point(42, 137);
             this.lblSubtotal.Name = "lblSubtotal";
             this.lblSubtotal.Size = new System.Drawing.Size(49, 13);
             this.lblSubtotal.TabIndex = 26;
@@ -131,7 +131,7 @@
             // lblISV
             // 
             this.lblISV.AutoSize = true;
-            this.lblISV.Location = new System.Drawing.Point(64, 334);
+            this.lblISV.Location = new System.Drawing.Point(58, 169);
             this.lblISV.Name = "lblISV";
             this.lblISV.Size = new System.Drawing.Size(33, 13);
             this.lblISV.TabIndex = 25;
@@ -140,18 +140,11 @@
             // lblFechaVenta
             // 
             this.lblFechaVenta.AutoSize = true;
-            this.lblFechaVenta.Location = new System.Drawing.Point(11, 271);
+            this.lblFechaVenta.Location = new System.Drawing.Point(5, 106);
             this.lblFechaVenta.Name = "lblFechaVenta";
             this.lblFechaVenta.Size = new System.Drawing.Size(86, 13);
             this.lblFechaVenta.TabIndex = 24;
             this.lblFechaVenta.Text = "Fecha de Venta:";
-            // 
-            // calendarVenta
-            // 
-            this.calendarVenta.Enabled = false;
-            this.calendarVenta.Location = new System.Drawing.Point(18, 18);
-            this.calendarVenta.Name = "calendarVenta";
-            this.calendarVenta.TabIndex = 23;
             // 
             // gbInfoComp
             // 
@@ -167,7 +160,6 @@
             this.gbInfoComp.Controls.Add(this.label3);
             this.gbInfoComp.Controls.Add(this.label2);
             this.gbInfoComp.Controls.Add(this.txtNombre);
-            this.gbInfoComp.Enabled = false;
             this.gbInfoComp.Location = new System.Drawing.Point(236, 18);
             this.gbInfoComp.Name = "gbInfoComp";
             this.gbInfoComp.Size = new System.Drawing.Size(328, 187);
@@ -175,8 +167,26 @@
             this.gbInfoComp.TabStop = false;
             this.gbInfoComp.Text = "Información Cliente";
             // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Enabled = false;
+            this.txtTelefono.Location = new System.Drawing.Point(121, 115);
+            this.txtTelefono.Mask = "0000-0000";
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefono.TabIndex = 47;
+            // 
+            // txtIDComp
+            // 
+            this.txtIDComp.Location = new System.Drawing.Point(121, 23);
+            this.txtIDComp.Mask = "0000-0000-00000";
+            this.txtIDComp.Name = "txtIDComp";
+            this.txtIDComp.Size = new System.Drawing.Size(100, 20);
+            this.txtIDComp.TabIndex = 46;
+            // 
             // btnAdd
             // 
+            this.btnAdd.Enabled = false;
             this.btnAdd.Location = new System.Drawing.Point(232, 59);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 24);
@@ -267,7 +277,7 @@
             // txtVendedor
             // 
             this.txtVendedor.Enabled = false;
-            this.txtVendedor.Location = new System.Drawing.Point(118, 231);
+            this.txtVendedor.Location = new System.Drawing.Point(112, 66);
             this.txtVendedor.Name = "txtVendedor";
             this.txtVendedor.Size = new System.Drawing.Size(100, 20);
             this.txtVendedor.TabIndex = 7;
@@ -275,7 +285,7 @@
             // lblVendedor
             // 
             this.lblVendedor.AutoSize = true;
-            this.lblVendedor.Location = new System.Drawing.Point(48, 234);
+            this.lblVendedor.Location = new System.Drawing.Point(42, 69);
             this.lblVendedor.Name = "lblVendedor";
             this.lblVendedor.Size = new System.Drawing.Size(56, 13);
             this.lblVendedor.TabIndex = 3;
@@ -283,7 +293,7 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(468, 278);
+            this.btnVolver.Location = new System.Drawing.Point(453, 225);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(90, 58);
             this.btnVolver.TabIndex = 35;
@@ -293,7 +303,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(357, 278);
+            this.btnAceptar.Location = new System.Drawing.Point(270, 225);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(90, 58);
             this.btnAceptar.TabIndex = 36;
@@ -301,20 +311,10 @@
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.button2_Click);
             // 
-            // btnIngresoCliente
-            // 
-            this.btnIngresoCliente.Location = new System.Drawing.Point(242, 278);
-            this.btnIngresoCliente.Name = "btnIngresoCliente";
-            this.btnIngresoCliente.Size = new System.Drawing.Size(90, 58);
-            this.btnIngresoCliente.TabIndex = 37;
-            this.btnIngresoCliente.Text = "Ingresar Cliente";
-            this.btnIngresoCliente.UseVisualStyleBackColor = true;
-            this.btnIngresoCliente.Click += new System.EventHandler(this.button3_Click);
-            // 
             // txtCodigo
             // 
             this.txtCodigo.Enabled = false;
-            this.txtCodigo.Location = new System.Drawing.Point(118, 192);
+            this.txtCodigo.Location = new System.Drawing.Point(112, 27);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(100, 20);
             this.txtCodigo.TabIndex = 39;
@@ -322,59 +322,52 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 195);
+            this.label1.Location = new System.Drawing.Point(17, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 13);
             this.label1.TabIndex = 38;
             this.label1.Text = "Codigo Factura";
             // 
-            // txtIDComp
+            // Facturacion
             // 
-            this.txtIDComp.Location = new System.Drawing.Point(121, 23);
-            this.txtIDComp.Mask = "0000-0000-00000";
-            this.txtIDComp.Name = "txtIDComp";
-            this.txtIDComp.Size = new System.Drawing.Size(100, 20);
-            this.txtIDComp.TabIndex = 46;
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Location = new System.Drawing.Point(121, 115);
-            this.txtTelefono.Mask = "0000-0000";
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(100, 20);
-            this.txtTelefono.TabIndex = 47;
+            this.Facturacion.Controls.Add(this.txtCodigo);
+            this.Facturacion.Controls.Add(this.lblFechaVenta);
+            this.Facturacion.Controls.Add(this.label1);
+            this.Facturacion.Controls.Add(this.lblISV);
+            this.Facturacion.Controls.Add(this.lblSubtotal);
+            this.Facturacion.Controls.Add(this.lblTotalPagar);
+            this.Facturacion.Controls.Add(this.lblMonto);
+            this.Facturacion.Controls.Add(this.txtFechaVenta);
+            this.Facturacion.Controls.Add(this.txtVendedor);
+            this.Facturacion.Controls.Add(this.txtISV);
+            this.Facturacion.Controls.Add(this.txtMonto);
+            this.Facturacion.Controls.Add(this.txtSubtotal);
+            this.Facturacion.Controls.Add(this.lblVendedor);
+            this.Facturacion.Controls.Add(this.txtTotalPagar);
+            this.Facturacion.Location = new System.Drawing.Point(12, 18);
+            this.Facturacion.Name = "Facturacion";
+            this.Facturacion.Size = new System.Drawing.Size(218, 265);
+            this.Facturacion.TabIndex = 40;
+            this.Facturacion.TabStop = false;
+            this.Facturacion.Text = "Facturacion";
             // 
             // Venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(581, 429);
-            this.Controls.Add(this.txtCodigo);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnIngresoCliente);
+            this.ClientSize = new System.Drawing.Size(581, 296);
+            this.Controls.Add(this.Facturacion);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.gbInfoComp);
-            this.Controls.Add(this.txtVendedor);
-            this.Controls.Add(this.txtMonto);
-            this.Controls.Add(this.lblVendedor);
-            this.Controls.Add(this.txtTotalPagar);
-            this.Controls.Add(this.txtSubtotal);
-            this.Controls.Add(this.txtISV);
-            this.Controls.Add(this.txtFechaVenta);
-            this.Controls.Add(this.lblMonto);
-            this.Controls.Add(this.lblTotalPagar);
-            this.Controls.Add(this.lblSubtotal);
-            this.Controls.Add(this.lblISV);
-            this.Controls.Add(this.lblFechaVenta);
-            this.Controls.Add(this.calendarVenta);
             this.Name = "Venta";
             this.Text = "Venta";
             this.Load += new System.EventHandler(this.Venta_Load);
             this.gbInfoComp.ResumeLayout(false);
             this.gbInfoComp.PerformLayout();
+            this.Facturacion.ResumeLayout(false);
+            this.Facturacion.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -390,7 +383,6 @@
         private System.Windows.Forms.Label lblSubtotal;
         private System.Windows.Forms.Label lblISV;
         private System.Windows.Forms.Label lblFechaVenta;
-        private System.Windows.Forms.MonthCalendar calendarVenta;
         private System.Windows.Forms.GroupBox gbInfoComp;
         private System.Windows.Forms.Button btnBuscarCliente;
         private System.Windows.Forms.Label lbIDComp;
@@ -405,11 +397,11 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Button btnIngresoCliente;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MaskedTextBox txtIDComp;
         private System.Windows.Forms.MaskedTextBox txtTelefono;
+        private System.Windows.Forms.GroupBox Facturacion;
     }
 }
