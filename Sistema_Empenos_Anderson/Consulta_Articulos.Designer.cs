@@ -105,7 +105,7 @@
             // dtgConsultaArticulo
             // 
             this.dtgConsultaArticulo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgConsultaArticulo.Location = new System.Drawing.Point(12, 147);
+            this.dtgConsultaArticulo.Location = new System.Drawing.Point(18, 147);
             this.dtgConsultaArticulo.Name = "dtgConsultaArticulo";
             this.dtgConsultaArticulo.ReadOnly = true;
             this.dtgConsultaArticulo.Size = new System.Drawing.Size(464, 148);
