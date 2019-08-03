@@ -117,6 +117,7 @@
             // 
             // bttAgregar
             // 
+            this.bttAgregar.Enabled = false;
             this.bttAgregar.Location = new System.Drawing.Point(232, 74);
             this.bttAgregar.Name = "bttAgregar";
             this.bttAgregar.Size = new System.Drawing.Size(75, 23);
@@ -133,6 +134,7 @@
             this.bttEliminar.TabIndex = 11;
             this.bttEliminar.Text = "Eliminar";
             this.bttEliminar.UseVisualStyleBackColor = true;
+            this.bttEliminar.Click += new System.EventHandler(this.bttEliminar_Click);
             // 
             // groupBox1
             // 
@@ -274,6 +276,7 @@
             this.btnVolver.TabIndex = 29;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // Facturacion
             // 

@@ -43,6 +43,7 @@ namespace Sistema_Empenos_Anderson
             } else if (rdbVenta.Checked)
             {
                 Facturacion venta = new Facturacion();
+                Objetos_Globales.cliente = new Cliente();
                 Objetos_Globales.articulos = new System.Collections.ArrayList();
                 venta.Show();
                 this.Hide();

@@ -18,20 +18,20 @@ namespace Sistema_Empenos_Anderson
             men.Show();
         }
 
-        private void bttRegresar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bttAceptar_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Facturacion_Load(object sender, EventArgs e)
         {
             this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
-            
+            if(Objetos_Globales.articulos.Count != 0)
+            {
+                for(int i = 0; i < Objetos_Globales.articulos.Count; i++)
+                {
+                    dtgvArticulos.Rows.Add();
+                    dtgvArticulos.Rows[i].Cells[0].Value = ((Articulo)Objetos_Globales.articulos[i]).Descripcion;                    
+                    dtgvArticulos.Rows[i].Cells[1].Value = ((Articulo)Objetos_Globales.articulos[i]).Marca;
+                    dtgvArticulos.Rows[i].Cells[2].Value = ((Articulo)Objetos_Globales.articulos[i]).Modelo;
+                    dtgvArticulos.Rows[i].Cells[3].Value = ((Articulo)Objetos_Globales.articulos[i]).MontoPago;
+                }
+            }
         }
 
         private void bttBuscar_Click(object sender, EventArgs e)
@@ -41,6 +41,11 @@ namespace Sistema_Empenos_Anderson
                 txtArticulo.Text = Objetos_Mantenimiento.articuloMantenimiento.Descripcion;
                 txtEstado.Text = Objetos_Mantenimiento.articuloMantenimiento.Estado;
                 txtMonto.Text = Objetos_Mantenimiento.articuloMantenimiento.Prestado.ToString();
+                bttAgregar.Enabled = true;
+            } else
+            {
+                MessageBoxTemporal.Show("Archivo no encontrado", "Mensaje importante", 2, false);
+                bttAgregar.Enabled = false;
             }
         }
 
@@ -69,6 +74,7 @@ namespace Sistema_Empenos_Anderson
                     txtPrecio.Text = "";
 
                     row++;
+                    bttAgregar.Enabled = false;
                 } else if(Objetos_Mantenimiento.articuloMantenimiento.Estado.Equals("Vendido"))
                     MessageBoxTemporal.Show("Este articulo ya fue vendido","Mensaje importante",2,false);
                 else if (Objetos_Mantenimiento.articuloMantenimiento.Estado.Equals("Retirado"))
@@ -76,9 +82,7 @@ namespace Sistema_Empenos_Anderson
                 else
                     MessageBoxTemporal.Show("Este articulo sigue en prenda", "Mensaje importante", 2, false);
             } else
-            {
                 MessageBoxTemporal.Show("Ingrese un articulo", "Mensaje importante", 2, false);
-            }
         }
 
         private void btnAvanzar_Click(object sender, EventArgs e)
@@ -92,6 +96,18 @@ namespace Sistema_Empenos_Anderson
         {
             Consulta_Articulos cons = new Consulta_Articulos();
             cons.Show();
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            Menu men = new Sistema_Empenos_Anderson.Menu(Objetos_Globales.usuario.codigo_Usuario);
+            this.Hide();
+            men.Show();
+        }
+
+        private void bttEliminar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
