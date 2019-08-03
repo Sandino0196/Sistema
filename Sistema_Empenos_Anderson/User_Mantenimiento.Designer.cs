@@ -69,11 +69,17 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtNom_User_Nuevo = new System.Windows.Forms.TextBox();
             this.btnAceptarNew = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtUsuarioEliminar = new System.Windows.Forms.TextBox();
+            this.btnBuscarEliminar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.tabCUsuario.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabCUsuario
@@ -81,6 +87,7 @@
             this.tabCUsuario.Controls.Add(this.tabPage1);
             this.tabCUsuario.Controls.Add(this.tabPage2);
             this.tabCUsuario.Controls.Add(this.tabPage3);
+            this.tabCUsuario.Controls.Add(this.tabPage4);
             this.tabCUsuario.Location = new System.Drawing.Point(12, 12);
             this.tabCUsuario.Name = "tabCUsuario";
             this.tabCUsuario.SelectedIndex = 0;
@@ -100,7 +107,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(320, 307);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Modificar Tipo Usuario";
+            this.tabPage1.Text = "Modificar Tipo";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // btnAceptarTipo
@@ -488,10 +495,63 @@
             this.btnAceptarNew.UseVisualStyleBackColor = true;
             this.btnAceptarNew.Click += new System.EventHandler(this.btnAceptarNew_Click);
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.btnEliminar);
+            this.tabPage4.Controls.Add(this.label2);
+            this.tabPage4.Controls.Add(this.txtUsuarioEliminar);
+            this.tabPage4.Controls.Add(this.btnBuscarEliminar);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(320, 307);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Eliminar Usuario";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.Enabled = false;
+            this.btnEliminar.Location = new System.Drawing.Point(192, 180);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 9;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(113, 96);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(103, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Nombre del Usuario:";
+            // 
+            // txtUsuarioEliminar
+            // 
+            this.txtUsuarioEliminar.Location = new System.Drawing.Point(116, 129);
+            this.txtUsuarioEliminar.Name = "txtUsuarioEliminar";
+            this.txtUsuarioEliminar.Size = new System.Drawing.Size(100, 20);
+            this.txtUsuarioEliminar.TabIndex = 7;
+            // 
+            // btnBuscarEliminar
+            // 
+            this.btnBuscarEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscarEliminar.Location = new System.Drawing.Point(56, 180);
+            this.btnBuscarEliminar.Name = "btnBuscarEliminar";
+            this.btnBuscarEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarEliminar.TabIndex = 8;
+            this.btnBuscarEliminar.Text = "Buscar";
+            this.btnBuscarEliminar.UseVisualStyleBackColor = true;
+            this.btnBuscarEliminar.Click += new System.EventHandler(this.button2_Click);
+            // 
             // btnVolver
             // 
             this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVolver.Location = new System.Drawing.Point(119, 351);
+            this.btnVolver.Location = new System.Drawing.Point(132, 351);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(100, 49);
             this.btnVolver.TabIndex = 6;
@@ -516,6 +576,8 @@
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -564,5 +626,10 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cmbPreguntas1;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtUsuarioEliminar;
+        private System.Windows.Forms.Button btnBuscarEliminar;
     }
 }

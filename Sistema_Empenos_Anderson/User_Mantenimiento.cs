@@ -102,7 +102,7 @@ namespace Sistema_Empenos_Anderson
                 tipo = 1;
             else
                 tipo = 2;
-            if(BD.Busqueda_Usuario(txtNom_User_Nuevo.Text) > 0)
+            if(BD.Busqueda_Usuario(txtNom_User_Nuevo.Text) == 0)
             {
                 if (txtPassNuevo_New.Text.Equals(txtPassConfirmar_New.Text))
                 {
@@ -185,6 +185,29 @@ namespace Sistema_Empenos_Anderson
             {
                 MessageBox.Show("No se ha encontrado al usuario", "Advertencia");
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (BD.Busqueda_Usuario(txtUsuarioEliminar.Text) > 0)
+            {
+                if(Objetos_Mantenimiento.usuarioMantenimiento.estado == 2)
+                    MessageBoxTemporal.Show("Usuario ya eliminado", "Mensaje Imporante", 1, false);
+                else
+                {
+                    MessageBoxTemporal.Show("Usuario Encontrado", "Mensaje Imporante", 1, false);
+                    btnEliminar.Enabled = true;
+                }
+            }
+            else
+                MessageBoxTemporal.Show("No se ha encontrado al usuario", "Advertencia",1,false);
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            BD.EliminarUsuario(txtUsuarioEliminar.Text);
+            MessageBoxTemporal.Show("Usuario eliminado", "Advertencia", 1, false);
+            btnEliminar.Enabled = false;
         }
     }
 }

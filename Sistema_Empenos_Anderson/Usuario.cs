@@ -5,7 +5,7 @@ namespace Sistema_Empenos_Anderson
     public class Usuario
     {
         private string Nombre_Usuario, Password_Usuario, Tipo_Usuario, Pregunta1, Pregunta2, Respuesta1, Respuesta2;
-        private int Codigo_Tipo_Usuario, Codigo_Usuario;
+        private int Codigo_Tipo_Usuario, Codigo_Usuario, Estado;
 
         public Usuario()
         {
@@ -72,6 +72,12 @@ namespace Sistema_Empenos_Anderson
         {
             get { return this.Respuesta2; }
             set { this.Respuesta2 = value; }
+        }
+
+        public int estado
+        {
+            get { return this.Estado; }
+            set { this.Estado = value; }
         }
     }
 }
