@@ -21,9 +21,19 @@ namespace Sistema_Empenos_Anderson
                 return 1;
             else{
                 return 0;
-            }
+            }    
+        }
 
-            
+        private void Limpiar()
+        {
+            txtCod_Recibo.Enabled = false;
+            txtNumero_Serie.Text = "";
+            txtDescripcion.Text = "";
+            txtMarca.Text = "";
+            txtModelo.Text = "";
+            txtMonto.Text = "";
+            txtTasa.Text = "";
+            txtNumero_Serie.Focus();
         }
 
         public void llenarDataGrid() { 
@@ -48,7 +58,7 @@ namespace Sistema_Empenos_Anderson
             MessageBoxTemporal.Show("Transaccion finalizada", "Listo", 1, false);
             Menu men = new Sistema_Empenos_Anderson.Menu(Objetos_Globales.usuario.codigo_Tipo_Usuario);
             men.Show();
-            this.Close();
+            this.Dispose();
         }
 
         private void Ingreso_de_Articulo_Load(object sender, EventArgs e)
@@ -100,6 +110,7 @@ namespace Sistema_Empenos_Anderson
                 dtgvArticulos.Rows[row].Cells[3].Value = txtMarca.Text;
                 dtgvArticulos.Rows[row].Cells[4].Value = txtModelo.Text;
                 row++;
+                Limpiar();
             }
             
         }

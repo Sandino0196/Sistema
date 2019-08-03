@@ -126,6 +126,9 @@
     <Compile Include="Mantenimiento_Articulos.Designer.cs">
       <DependentUpon>Mantenimiento_Articulos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Retiro_Articulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="User_Mantenimiento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +187,9 @@
     </Compile>
     <EmbeddedResource Include="Mantenimiento_Articulos.resx">
       <DependentUpon>Mantenimiento_Articulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Retiro_Articulo.resx">
+      <DependentUpon>Retiro_Articulo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User_Mantenimiento.resx">
       <DependentUpon>User_Mantenimiento.cs</DependentUpon>

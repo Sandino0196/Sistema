@@ -65,6 +65,10 @@ namespace Sistema_Empenos_Anderson
                 txtMonto.Text = Objetos_Mantenimiento.articuloMantenimiento.Prestado.ToString();
                 txtMeses.Text = Objetos_Mantenimiento.articuloMantenimiento.Meses.ToString();
             }
+            else
+            {
+                MessageBoxTemporal.Show("No se Encontro el Articulo","Error",2,false);
+            }
         }
     }
 }
