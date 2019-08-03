@@ -270,11 +270,6 @@ namespace Sistema_Empenos_Anderson
             modelo.Size = 50;
             command.Parameters.Add(modelo);
 
-            SqlParameter tipo = new SqlParameter("@Tipo", " ");
-            tipo.Direction = ParameterDirection.Output;
-            tipo.Size = 50;
-            command.Parameters.Add(tipo);
-
             SqlParameter estado = new SqlParameter("@Estado", " ");
             estado.Direction = ParameterDirection.Output;
             estado.Size = 50;
@@ -312,7 +307,6 @@ namespace Sistema_Empenos_Anderson
                 Objetos_Mantenimiento.articuloMantenimiento.Marca = command.Parameters["@Marca"].Value.ToString();
                 Objetos_Mantenimiento.articuloMantenimiento.Modelo = command.Parameters["@Modelo"].Value.ToString();
                 Objetos_Mantenimiento.articuloMantenimiento.Estado = command.Parameters["@Estado"].Value.ToString();
-                Objetos_Mantenimiento.articuloMantenimiento.Tipo = command.Parameters["@Tipo"].Value.ToString();
                 Objetos_Mantenimiento.articuloMantenimiento.Prestado = double.Parse(command.Parameters["@Prestado"].Value.ToString());
                 Objetos_Mantenimiento.articuloMantenimiento.Interes = int.Parse(command.Parameters["@Interes"].Value.ToString());
                 Objetos_Globales.identidadTemporal = command.Parameters["@Identidad"].Value.ToString();
@@ -326,7 +320,7 @@ namespace Sistema_Empenos_Anderson
             return existencia;
         }
 
-        public static int Busqueda_Usuario(string nombreUsuario)
+            public static int Busqueda_Usuario(string nombreUsuario)
         {
             OpenConnection();
             SqlCommand command = new SqlCommand();
