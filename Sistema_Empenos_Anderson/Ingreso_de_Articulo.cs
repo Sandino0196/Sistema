@@ -13,15 +13,14 @@ namespace Sistema_Empenos_Anderson
         private int Validar_Monto(string campo)
         {
             string Monto;
-            int y;
             double  x;
             bool verificador;
             Monto = campo;
 
             if(verificador = Double.TryParse(Monto.ToString(), out x) == true)
-                return y = 1;
+                return 1;
             else{
-                return y = 0;
+                return 0;
             }
 
             
@@ -33,7 +32,7 @@ namespace Sistema_Empenos_Anderson
 
         protected override void OnClosed(EventArgs e)
         {
-            Menu men = new Sistema_Empenos_Anderson.Menu();
+            Menu men = new Sistema_Empenos_Anderson.Menu(Objetos_Globales.usuario.codigo_Tipo_Usuario);
             men.Show();
         }
 
@@ -46,8 +45,8 @@ namespace Sistema_Empenos_Anderson
                     ((Articulo)Objetos_Globales.articulos[i]).Marca, ((Articulo)Objetos_Globales.articulos[i]).Modelo, 
                     ((Articulo)Objetos_Globales.articulos[i]).Prestado, ((Articulo)Objetos_Globales.articulos[i]).Interes, 1,
                     ((Articulo)Objetos_Globales.articulos[i]).Meses, "Articulo");
-            MessageBox.Show("Listo","Listo");
-            Menu men = new Sistema_Empenos_Anderson.Menu();
+            MessageBoxTemporal.Show("Transaccion finalizada", "Listo", 1, false);
+            Menu men = new Sistema_Empenos_Anderson.Menu(Objetos_Globales.usuario.codigo_Tipo_Usuario);
             men.Show();
             this.Close();
         }
@@ -90,11 +89,10 @@ namespace Sistema_Empenos_Anderson
             }
             else
             {
-                Objetos_Globales.articulos.Add(new Articulo(1, double.Parse(txtMonto.Text) +
-                (double.Parse(txtMonto.Text) * double.Parse(txtTasa.Text)), double.Parse(txtMonto.Text),
+                Objetos_Globales.articulos.Add(new Articulo(1, double.Parse(txtMonto.Text),
                 double.Parse(txtTasa.Text), txtDescripcion.Text, txtMarca.Text, txtModelo.Text,
                 "En Prenda", txtNumero_Serie.Text, cmbTipo_Articulo.SelectedItem.ToString(),
-                cmbTipo_Articulo.SelectedIndex + 1));
+                cmbTipo_Articulo.SelectedIndex + 1, int.Parse(txtCod_Recibo.Text)));
                 dtgvArticulos.Rows.Add();
                 dtgvArticulos.Rows[row].Cells[0].Value = txtNumero_Serie.Text;
                 dtgvArticulos.Rows[row].Cells[1].Value = txtDescripcion.Text;
