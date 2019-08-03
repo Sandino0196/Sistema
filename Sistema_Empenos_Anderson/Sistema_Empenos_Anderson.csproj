@@ -97,6 +97,12 @@
     <Compile Include="Manteminiento.Designer.cs">
       <DependentUpon>Manteminiento.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimiento_Articulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento_Articulo.Designer.cs">
+      <DependentUpon>Mantenimiento_Articulo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manteminiento.resx">
       <DependentUpon>Manteminiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento_Articulo.resx">
+      <DependentUpon>Mantenimiento_Articulo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -11,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Sistema_Empenos_Anderson
 {
-    public partial class Mantenimiento_Articulos : Form
+    public partial class Mantenimiento_Articulo : Form
     {
-        public Mantenimiento_Articulos()
+        public Mantenimiento_Articulo()
         {
             InitializeComponent();
+        }
+
+        private void Mantenimiento_Articulo_Load(object sender, EventArgs e)
+        {
+
         }
 
         private int Validar_Recibo(string recibo)
@@ -32,7 +36,7 @@ namespace Sistema_Empenos_Anderson
             {
                 return 0;
             }
-                
+
         }
 
         protected override void OnClosed(EventArgs e)
@@ -88,17 +92,18 @@ namespace Sistema_Empenos_Anderson
             {
                 MessageBoxTemporal.Show("No se actualizo la informacion!", "Alerta", 1, false);
             }
-            
-            
+
+
         }
 
         private void bttBuscar_Click(object sender, EventArgs e)
         {
-            if(Validar_Recibo(Recibotxt.Text)==0)
+            if (Validar_Recibo(Recibotxt.Text) == 0)
             {
-                MessageBoxTemporal.Show("Ingreso incorrectamente el codigo de Recibo","Error", 1, false);
-            }else
-            if(BD.Busqueda_Articulo(int.Parse(Recibotxt.Text), Serietxt.Text)!=0)
+                MessageBoxTemporal.Show("Ingreso incorrectamente el codigo de Recibo", "Error", 1, false);
+            }
+            else
+            if (BD.Busqueda_Articulo(int.Parse(Recibotxt.Text), Serietxt.Text) != 0)
             {
                 //Probando
                 txtArticulo.Text = Objetos_Mantenimiento.articuloMantenimiento.Descripcion;
@@ -108,9 +113,9 @@ namespace Sistema_Empenos_Anderson
             }
             else
             {
-                MessageBoxTemporal.Show("No se encontro el articulo","Error",1,false);
+                MessageBoxTemporal.Show("No se encontro el articulo", "Error", 1, false);
             }
-            
+
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -122,29 +127,31 @@ namespace Sistema_Empenos_Anderson
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if(Validar_Recibo(txtNum_Recibo.Text)==0)
+            if (Validar_Recibo(txtNum_Recibo.Text) == 0)
             {
-                MessageBoxTemporal.Show("Ingreso incorrectamente el numero de Recibo","Error",1, false);
-            }else
+                MessageBoxTemporal.Show("Ingreso incorrectamente el numero de Recibo", "Error", 1, false);
+            }
+            else
             //Probando
-            if(BD.Busqueda_Articulo(int.Parse(txtNum_Recibo.Text), txtNum_Serie.Text)!=0)
+            if (BD.Busqueda_Articulo(int.Parse(txtNum_Recibo.Text), txtNum_Serie.Text) != 0)
             {
                 txtDescripcion.Text = Objetos_Mantenimiento.articuloMantenimiento.Descripcion;
                 txtEstado.Text = Objetos_Mantenimiento.articuloMantenimiento.Estado;
                 txtMarca2.Text = Objetos_Mantenimiento.articuloMantenimiento.Marca;
                 txtModelo2.Text = Objetos_Mantenimiento.articuloMantenimiento.Modelo;
             }
-            else{
+            else
+            {
                 MessageBoxTemporal.Show("No se encontro el articulo", "Error", 1, false);
             }
-            
+
 
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            BD.Actualizar_Estado_Articulo(txtNum_Serie.Text, int.Parse(txtNum_Recibo.Text), cmbEstados.SelectedIndex+1, cmbEstados.SelectedItem.ToString());
-            MessageBoxTemporal.Show("Informacion Actualizada!","Informacion", 1, false);
+            BD.Actualizar_Estado_Articulo(txtNum_Serie.Text, int.Parse(txtNum_Recibo.Text), cmbEstados.SelectedIndex + 1, cmbEstados.SelectedItem.ToString());
+            MessageBoxTemporal.Show("Informacion Actualizada!", "Informacion", 1, false);
         }
     }
 }
