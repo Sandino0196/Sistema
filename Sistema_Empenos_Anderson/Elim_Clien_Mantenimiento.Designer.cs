@@ -31,10 +31,8 @@
             this.ID_Clientelbl = new System.Windows.Forms.Label();
             this.bttBuscar = new System.Windows.Forms.Button();
             this.bttElim = new System.Windows.Forms.Button();
-            this.bttLimpiar = new System.Windows.Forms.Button();
-            this.Regresarbtt = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.txtID_Cliente = new System.Windows.Forms.MaskedTextBox();
-            this.btnActivar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -43,8 +41,17 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.btnBuscarMod = new System.Windows.Forms.Button();
+            this.txtIdentidadMod = new System.Windows.Forms.MaskedTextBox();
+            this.txtTelefonoMod = new System.Windows.Forms.MaskedTextBox();
+            this.txtCorreoMod = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtApellidoMod = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtNombreMod = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -61,7 +68,7 @@
             // 
             // bttBuscar
             // 
-            this.bttBuscar.Location = new System.Drawing.Point(139, 47);
+            this.bttBuscar.Location = new System.Drawing.Point(113, 48);
             this.bttBuscar.Name = "bttBuscar";
             this.bttBuscar.Size = new System.Drawing.Size(75, 23);
             this.bttBuscar.TabIndex = 4;
@@ -71,7 +78,8 @@
             // 
             // bttElim
             // 
-            this.bttElim.Location = new System.Drawing.Point(64, 238);
+            this.bttElim.Enabled = false;
+            this.bttElim.Location = new System.Drawing.Point(113, 192);
             this.bttElim.Name = "bttElim";
             this.bttElim.Size = new System.Drawing.Size(75, 23);
             this.bttElim.TabIndex = 5;
@@ -79,23 +87,15 @@
             this.bttElim.UseVisualStyleBackColor = true;
             this.bttElim.Click += new System.EventHandler(this.bttElim_Click);
             // 
-            // bttLimpiar
+            // btnVolver
             // 
-            this.bttLimpiar.Location = new System.Drawing.Point(193, 197);
-            this.bttLimpiar.Name = "bttLimpiar";
-            this.bttLimpiar.Size = new System.Drawing.Size(75, 23);
-            this.bttLimpiar.TabIndex = 6;
-            this.bttLimpiar.Text = "Limpiar";
-            this.bttLimpiar.UseVisualStyleBackColor = true;
-            // 
-            // Regresarbtt
-            // 
-            this.Regresarbtt.Location = new System.Drawing.Point(193, 238);
-            this.Regresarbtt.Name = "Regresarbtt";
-            this.Regresarbtt.Size = new System.Drawing.Size(75, 23);
-            this.Regresarbtt.TabIndex = 7;
-            this.Regresarbtt.Text = "Regresar";
-            this.Regresarbtt.UseVisualStyleBackColor = true;
+            this.btnVolver.Location = new System.Drawing.Point(114, 293);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(100, 48);
+            this.btnVolver.TabIndex = 7;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // txtID_Cliente
             // 
@@ -105,19 +105,10 @@
             this.txtID_Cliente.Size = new System.Drawing.Size(100, 20);
             this.txtID_Cliente.TabIndex = 8;
             // 
-            // btnActivar
-            // 
-            this.btnActivar.Location = new System.Drawing.Point(64, 197);
-            this.btnActivar.Name = "btnActivar";
-            this.btnActivar.Size = new System.Drawing.Size(75, 23);
-            this.btnActivar.TabIndex = 9;
-            this.btnActivar.Text = "Activar";
-            this.btnActivar.UseVisualStyleBackColor = true;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 92);
+            this.label1.Location = new System.Drawing.Point(6, 92);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 13);
             this.label1.TabIndex = 10;
@@ -126,7 +117,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(34, 130);
+            this.label2.Location = new System.Drawing.Point(6, 130);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 13);
             this.label2.TabIndex = 11;
@@ -135,7 +126,7 @@
             // txtNombre
             // 
             this.txtNombre.Enabled = false;
-            this.txtNombre.Location = new System.Drawing.Point(139, 89);
+            this.txtNombre.Location = new System.Drawing.Point(103, 89);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(170, 20);
             this.txtNombre.TabIndex = 12;
@@ -143,7 +134,7 @@
             // txtEstado
             // 
             this.txtEstado.Enabled = false;
-            this.txtEstado.Location = new System.Drawing.Point(139, 127);
+            this.txtEstado.Location = new System.Drawing.Point(103, 127);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(170, 20);
             this.txtEstado.TabIndex = 13;
@@ -155,7 +146,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(429, 305);
+            this.tabControl1.Size = new System.Drawing.Size(297, 275);
             this.tabControl1.TabIndex = 14;
             // 
             // tabPage1
@@ -166,30 +157,36 @@
             this.tabPage1.Controls.Add(this.txtNombre);
             this.tabPage1.Controls.Add(this.bttBuscar);
             this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.bttLimpiar);
             this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.Regresarbtt);
-            this.tabPage1.Controls.Add(this.btnActivar);
             this.tabPage1.Controls.Add(this.txtID_Cliente);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(421, 279);
+            this.tabPage1.Size = new System.Drawing.Size(289, 249);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "Eliminar Cliente";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnAceptar);
+            this.tabPage2.Controls.Add(this.txtTelefonoMod);
+            this.tabPage2.Controls.Add(this.txtCorreoMod);
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Controls.Add(this.txtApellidoMod);
+            this.tabPage2.Controls.Add(this.label6);
+            this.tabPage2.Controls.Add(this.txtNombreMod);
+            this.tabPage2.Controls.Add(this.label7);
             this.tabPage2.Controls.Add(this.label3);
-            this.tabPage2.Controls.Add(this.button1);
-            this.tabPage2.Controls.Add(this.maskedTextBox1);
+            this.tabPage2.Controls.Add(this.btnBuscarMod);
+            this.tabPage2.Controls.Add(this.txtIdentidadMod);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(421, 279);
+            this.tabPage2.Size = new System.Drawing.Size(289, 249);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Modificar Cliente";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // label3
@@ -201,29 +198,111 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Identidad Cliente:";
             // 
-            // button1
+            // btnBuscarMod
             // 
-            this.button1.Location = new System.Drawing.Point(123, 46);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnBuscarMod.Location = new System.Drawing.Point(123, 46);
+            this.btnBuscarMod.Name = "btnBuscarMod";
+            this.btnBuscarMod.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarMod.TabIndex = 10;
+            this.btnBuscarMod.Text = "Buscar";
+            this.btnBuscarMod.UseVisualStyleBackColor = true;
+            this.btnBuscarMod.Click += new System.EventHandler(this.button1_Click);
             // 
-            // maskedTextBox1
+            // txtIdentidadMod
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(107, 9);
-            this.maskedTextBox1.Mask = "0000-0000-00000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox1.TabIndex = 11;
+            this.txtIdentidadMod.Location = new System.Drawing.Point(107, 9);
+            this.txtIdentidadMod.Mask = "0000-0000-00000";
+            this.txtIdentidadMod.Name = "txtIdentidadMod";
+            this.txtIdentidadMod.Size = new System.Drawing.Size(100, 20);
+            this.txtIdentidadMod.TabIndex = 11;
+            // 
+            // txtTelefonoMod
+            // 
+            this.txtTelefonoMod.Enabled = false;
+            this.txtTelefonoMod.Location = new System.Drawing.Point(107, 137);
+            this.txtTelefonoMod.Mask = "0000-0000";
+            this.txtTelefonoMod.Name = "txtTelefonoMod";
+            this.txtTelefonoMod.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefonoMod.TabIndex = 18;
+            // 
+            // txtCorreoMod
+            // 
+            this.txtCorreoMod.Enabled = false;
+            this.txtCorreoMod.Location = new System.Drawing.Point(107, 164);
+            this.txtCorreoMod.Name = "txtCorreoMod";
+            this.txtCorreoMod.Size = new System.Drawing.Size(100, 20);
+            this.txtCorreoMod.TabIndex = 24;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(13, 167);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(97, 13);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "Correo Electronico:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(30, 140);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(52, 13);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "Telefono:";
+            // 
+            // txtApellidoMod
+            // 
+            this.txtApellidoMod.Enabled = false;
+            this.txtApellidoMod.Location = new System.Drawing.Point(107, 111);
+            this.txtApellidoMod.Name = "txtApellidoMod";
+            this.txtApellidoMod.Size = new System.Drawing.Size(100, 20);
+            this.txtApellidoMod.TabIndex = 21;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(35, 114);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(47, 13);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Apellido:";
+            // 
+            // txtNombreMod
+            // 
+            this.txtNombreMod.Enabled = false;
+            this.txtNombreMod.Location = new System.Drawing.Point(107, 85);
+            this.txtNombreMod.Name = "txtNombreMod";
+            this.txtNombreMod.Size = new System.Drawing.Size(100, 20);
+            this.txtNombreMod.TabIndex = 19;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(35, 88);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(47, 13);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Nombre:";
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Enabled = false;
+            this.btnAceptar.Location = new System.Drawing.Point(123, 199);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptar.TabIndex = 25;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // Elim_Clien_Mantenimiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(454, 425);
+            this.ClientSize = new System.Drawing.Size(319, 354);
             this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.btnVolver);
             this.Name = "Elim_Clien_Mantenimiento";
             this.Text = "Elim_Clien_Mantenimiento";
             this.tabControl1.ResumeLayout(false);
@@ -239,10 +318,8 @@
         private System.Windows.Forms.Label ID_Clientelbl;
         private System.Windows.Forms.Button bttBuscar;
         private System.Windows.Forms.Button bttElim;
-        private System.Windows.Forms.Button bttLimpiar;
-        private System.Windows.Forms.Button Regresarbtt;
+        private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.MaskedTextBox txtID_Cliente;
-        private System.Windows.Forms.Button btnActivar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNombre;
@@ -251,7 +328,16 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.Button btnBuscarMod;
+        private System.Windows.Forms.MaskedTextBox txtIdentidadMod;
+        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.MaskedTextBox txtTelefonoMod;
+        private System.Windows.Forms.TextBox txtCorreoMod;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtApellidoMod;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtNombreMod;
+        private System.Windows.Forms.Label label7;
     }
 }

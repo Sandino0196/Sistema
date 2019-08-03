@@ -218,6 +218,10 @@ namespace Sistema_Empenos_Anderson
             correo.Size = 50;
             command.Parameters.Add(correo);
 
+            SqlParameter estado = new SqlParameter("@Estado", 0);
+            estado.Direction = ParameterDirection.Output;
+            command.Parameters.Add(estado);
+
             SqlParameter verificador = new SqlParameter("@Verificador", 0);
             verificador.Direction = ParameterDirection.Output;
             command.Parameters.Add(verificador);
@@ -721,6 +725,56 @@ namespace Sistema_Empenos_Anderson
             catch
             {
                 MessageBoxTemporal.Show("Error al encontrar usuario", "Error", 2, false);
+            }
+        }
+
+        public static void EliminarCliente(string identidad)
+        {
+            OpenConnection();
+
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SP_Eliminar_Cliente";
+            command.Connection = connection;
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.Add(new SqlParameter("@Identidad", identidad));
+
+            try
+            {
+                command.ExecuteNonQuery();
+                CloseConnection();
+            }
+            catch
+            {
+                MessageBoxTemporal.Show("Error al encontrar cliente", "Error", 2, false);
+            }
+        }
+
+        public static void Actualizar_Cliente(string identidad, string nombre, string apellido, string telefono, string correo)
+        {
+            OpenConnection();
+
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SP_Modificar_Cliente";
+            command.Connection = connection;
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.Add(new SqlParameter("@identidad", identidad));
+            command.Parameters.Add(new SqlParameter("@nombre", nombre));
+            command.Parameters.Add(new SqlParameter("@apellido", apellido));
+            command.Parameters.Add(new SqlParameter("@telefono", telefono));
+            command.Parameters.Add(new SqlParameter("@correo", correo));
+
+            try
+            {
+                command.ExecuteNonQuery();
+                CloseConnection();
+                
+            }
+            catch
+            {
+                CloseConnection();
+                MessageBoxTemporal.Show("Error al encontrar cliente", "Error", 2, false);
             }
         }
 

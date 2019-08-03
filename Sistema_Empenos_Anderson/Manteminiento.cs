@@ -26,7 +26,9 @@ namespace Sistema_Empenos_Anderson
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-
+            Elim_Clien_Mantenimiento cliente = new Elim_Clien_Mantenimiento();
+            this.Hide();
+            cliente.Show();
         }
 
         private void btnArticulos_Click(object sender, EventArgs e)
