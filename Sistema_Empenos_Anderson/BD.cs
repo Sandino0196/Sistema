@@ -341,6 +341,16 @@ namespace Sistema_Empenos_Anderson
             pass.Size = 50;
             command.Parameters.Add(pass);
 
+            SqlParameter preg1 = new SqlParameter("@Pregunta1", " ");
+            preg1.Direction = ParameterDirection.Output;
+            preg1.Size = 50;
+            command.Parameters.Add(preg1);
+
+            SqlParameter preg2 = new SqlParameter("@Pregunta2", " ");
+            preg2.Direction = ParameterDirection.Output;
+            preg2.Size = 50;
+            command.Parameters.Add(preg2);
+
             try
             {
                 command.ExecuteNonQuery();
@@ -348,6 +358,8 @@ namespace Sistema_Empenos_Anderson
                 Objetos_Mantenimiento.usuarioMantenimiento.nombre_Usuario = nombreUsuario;
                 Objetos_Mantenimiento.usuarioMantenimiento.tipo_Usuario = command.Parameters["@Tipo"].Value.ToString();
                 Objetos_Mantenimiento.usuarioMantenimiento.password_Usuario = command.Parameters["@Password"].Value.ToString();
+                Objetos_Mantenimiento.usuarioMantenimiento.pregunta1 = command.Parameters["@Pregunta1"].Value.ToString();
+                Objetos_Mantenimiento.usuarioMantenimiento.pregunta2 = command.Parameters["@Pregunta2"].Value.ToString();
                 return 1;
             }
             catch

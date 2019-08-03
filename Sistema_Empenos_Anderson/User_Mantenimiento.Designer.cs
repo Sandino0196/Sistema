@@ -37,6 +37,12 @@
             this.txtNom_User_Tipo = new System.Windows.Forms.TextBox();
             this.btnBuscarTipo = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.txtRespuesta2Pass = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.lblPregunta2 = new System.Windows.Forms.Label();
+            this.txtRespuesta1Pass = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lblPregunta1 = new System.Windows.Forms.Label();
             this.txtPassConfirmar_Change = new System.Windows.Forms.TextBox();
             this.txtPassNuevo_Change = new System.Windows.Forms.TextBox();
             this.btnAceptarPassword = new System.Windows.Forms.Button();
@@ -46,6 +52,14 @@
             this.txtNom_User_Pass = new System.Windows.Forms.TextBox();
             this.btnBuscarPassword = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.txtRespuesta2 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtRespuesta1 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.cmbPreguntas2 = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.cmbPreguntas1 = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.cbxTp_User_New = new System.Windows.Forms.ComboBox();
             this.txtPassConfirmar_New = new System.Windows.Forms.TextBox();
@@ -56,20 +70,6 @@
             this.txtNom_User_Nuevo = new System.Windows.Forms.TextBox();
             this.btnAceptarNew = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
-            this.lblPregunta1 = new System.Windows.Forms.Label();
-            this.txtRespuesta1Pass = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.lblPregunta2 = new System.Windows.Forms.Label();
-            this.txtRespuesta2Pass = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.cmbPreguntas1 = new System.Windows.Forms.ComboBox();
-            this.cmbPreguntas2 = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtRespuesta1 = new System.Windows.Forms.TextBox();
-            this.txtRespuesta2 = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.tabCUsuario.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -185,6 +185,60 @@
             this.tabPage2.Text = "Cambiar Password";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // txtRespuesta2Pass
+            // 
+            this.txtRespuesta2Pass.Enabled = false;
+            this.txtRespuesta2Pass.Location = new System.Drawing.Point(115, 168);
+            this.txtRespuesta2Pass.Name = "txtRespuesta2Pass";
+            this.txtRespuesta2Pass.PasswordChar = '*';
+            this.txtRespuesta2Pass.Size = new System.Drawing.Size(131, 20);
+            this.txtRespuesta2Pass.TabIndex = 19;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(6, 171);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(58, 13);
+            this.label11.TabIndex = 18;
+            this.label11.Text = "Respuesta";
+            // 
+            // lblPregunta2
+            // 
+            this.lblPregunta2.AutoSize = true;
+            this.lblPregunta2.Location = new System.Drawing.Point(27, 140);
+            this.lblPregunta2.Name = "lblPregunta2";
+            this.lblPregunta2.Size = new System.Drawing.Size(59, 13);
+            this.lblPregunta2.TabIndex = 17;
+            this.lblPregunta2.Text = "Pregunta 2";
+            // 
+            // txtRespuesta1Pass
+            // 
+            this.txtRespuesta1Pass.Enabled = false;
+            this.txtRespuesta1Pass.Location = new System.Drawing.Point(115, 103);
+            this.txtRespuesta1Pass.Name = "txtRespuesta1Pass";
+            this.txtRespuesta1Pass.PasswordChar = '*';
+            this.txtRespuesta1Pass.Size = new System.Drawing.Size(131, 20);
+            this.txtRespuesta1Pass.TabIndex = 16;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 106);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(58, 13);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Respuesta";
+            // 
+            // lblPregunta1
+            // 
+            this.lblPregunta1.AutoSize = true;
+            this.lblPregunta1.Location = new System.Drawing.Point(27, 77);
+            this.lblPregunta1.Name = "lblPregunta1";
+            this.lblPregunta1.Size = new System.Drawing.Size(59, 13);
+            this.lblPregunta1.TabIndex = 13;
+            this.lblPregunta1.Text = "Pregunta 1";
+            // 
             // txtPassConfirmar_Change
             // 
             this.txtPassConfirmar_Change.Enabled = false;
@@ -252,7 +306,7 @@
             // btnBuscarPassword
             // 
             this.btnBuscarPassword.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscarPassword.Location = new System.Drawing.Point(128, 36);
+            this.btnBuscarPassword.Location = new System.Drawing.Point(115, 45);
             this.btnBuscarPassword.Name = "btnBuscarPassword";
             this.btnBuscarPassword.Size = new System.Drawing.Size(75, 23);
             this.btnBuscarPassword.TabIndex = 5;
@@ -286,6 +340,74 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Nuevo Usuario";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // txtRespuesta2
+            // 
+            this.txtRespuesta2.Location = new System.Drawing.Point(112, 245);
+            this.txtRespuesta2.Name = "txtRespuesta2";
+            this.txtRespuesta2.Size = new System.Drawing.Size(131, 20);
+            this.txtRespuesta2.TabIndex = 22;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(6, 248);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(58, 13);
+            this.label15.TabIndex = 21;
+            this.label15.Text = "Respuesta";
+            // 
+            // txtRespuesta1
+            // 
+            this.txtRespuesta1.Location = new System.Drawing.Point(112, 186);
+            this.txtRespuesta1.Name = "txtRespuesta1";
+            this.txtRespuesta1.Size = new System.Drawing.Size(131, 20);
+            this.txtRespuesta1.TabIndex = 20;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(6, 189);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(58, 13);
+            this.label14.TabIndex = 19;
+            this.label14.Text = "Respuesta";
+            // 
+            // cmbPreguntas2
+            // 
+            this.cmbPreguntas2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPreguntas2.FormattingEnabled = true;
+            this.cmbPreguntas2.Location = new System.Drawing.Point(112, 218);
+            this.cmbPreguntas2.Name = "cmbPreguntas2";
+            this.cmbPreguntas2.Size = new System.Drawing.Size(202, 21);
+            this.cmbPreguntas2.TabIndex = 18;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(6, 221);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(59, 13);
+            this.label13.TabIndex = 17;
+            this.label13.Text = "Pregunta 2";
+            // 
+            // cmbPreguntas1
+            // 
+            this.cmbPreguntas1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPreguntas1.FormattingEnabled = true;
+            this.cmbPreguntas1.Location = new System.Drawing.Point(112, 155);
+            this.cmbPreguntas1.Name = "cmbPreguntas1";
+            this.cmbPreguntas1.Size = new System.Drawing.Size(202, 21);
+            this.cmbPreguntas1.TabIndex = 16;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(6, 158);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(59, 13);
+            this.label12.TabIndex = 15;
+            this.label12.Text = "Pregunta 1";
             // 
             // label8
             // 
@@ -376,128 +498,6 @@
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
-            // 
-            // lblPregunta1
-            // 
-            this.lblPregunta1.AutoSize = true;
-            this.lblPregunta1.Location = new System.Drawing.Point(27, 69);
-            this.lblPregunta1.Name = "lblPregunta1";
-            this.lblPregunta1.Size = new System.Drawing.Size(59, 13);
-            this.lblPregunta1.TabIndex = 13;
-            this.lblPregunta1.Text = "Pregunta 1";
-            // 
-            // txtRespuesta1Pass
-            // 
-            this.txtRespuesta1Pass.Enabled = false;
-            this.txtRespuesta1Pass.Location = new System.Drawing.Point(115, 103);
-            this.txtRespuesta1Pass.Name = "txtRespuesta1Pass";
-            this.txtRespuesta1Pass.PasswordChar = '*';
-            this.txtRespuesta1Pass.Size = new System.Drawing.Size(131, 20);
-            this.txtRespuesta1Pass.TabIndex = 16;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 106);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(58, 13);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "Respuesta";
-            // 
-            // lblPregunta2
-            // 
-            this.lblPregunta2.AutoSize = true;
-            this.lblPregunta2.Location = new System.Drawing.Point(27, 140);
-            this.lblPregunta2.Name = "lblPregunta2";
-            this.lblPregunta2.Size = new System.Drawing.Size(59, 13);
-            this.lblPregunta2.TabIndex = 17;
-            this.lblPregunta2.Text = "Pregunta 2";
-            // 
-            // txtRespuesta2Pass
-            // 
-            this.txtRespuesta2Pass.Enabled = false;
-            this.txtRespuesta2Pass.Location = new System.Drawing.Point(115, 168);
-            this.txtRespuesta2Pass.Name = "txtRespuesta2Pass";
-            this.txtRespuesta2Pass.PasswordChar = '*';
-            this.txtRespuesta2Pass.Size = new System.Drawing.Size(131, 20);
-            this.txtRespuesta2Pass.TabIndex = 19;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 171);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(58, 13);
-            this.label11.TabIndex = 18;
-            this.label11.Text = "Respuesta";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 158);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(59, 13);
-            this.label12.TabIndex = 15;
-            this.label12.Text = "Pregunta 1";
-            // 
-            // cmbPreguntas1
-            // 
-            this.cmbPreguntas1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPreguntas1.FormattingEnabled = true;
-            this.cmbPreguntas1.Location = new System.Drawing.Point(112, 155);
-            this.cmbPreguntas1.Name = "cmbPreguntas1";
-            this.cmbPreguntas1.Size = new System.Drawing.Size(202, 21);
-            this.cmbPreguntas1.TabIndex = 16;
-            // 
-            // cmbPreguntas2
-            // 
-            this.cmbPreguntas2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPreguntas2.FormattingEnabled = true;
-            this.cmbPreguntas2.Location = new System.Drawing.Point(112, 218);
-            this.cmbPreguntas2.Name = "cmbPreguntas2";
-            this.cmbPreguntas2.Size = new System.Drawing.Size(202, 21);
-            this.cmbPreguntas2.TabIndex = 18;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(6, 221);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(59, 13);
-            this.label13.TabIndex = 17;
-            this.label13.Text = "Pregunta 2";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 189);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(58, 13);
-            this.label14.TabIndex = 19;
-            this.label14.Text = "Respuesta";
-            // 
-            // txtRespuesta1
-            // 
-            this.txtRespuesta1.Location = new System.Drawing.Point(112, 186);
-            this.txtRespuesta1.Name = "txtRespuesta1";
-            this.txtRespuesta1.Size = new System.Drawing.Size(131, 20);
-            this.txtRespuesta1.TabIndex = 20;
-            // 
-            // txtRespuesta2
-            // 
-            this.txtRespuesta2.Location = new System.Drawing.Point(112, 245);
-            this.txtRespuesta2.Name = "txtRespuesta2";
-            this.txtRespuesta2.Size = new System.Drawing.Size(131, 20);
-            this.txtRespuesta2.TabIndex = 22;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(6, 248);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(58, 13);
-            this.label15.TabIndex = 21;
-            this.label15.Text = "Respuesta";
             // 
             // User_Mantenimiento
             // 

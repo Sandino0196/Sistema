@@ -135,14 +135,12 @@ namespace Sistema_Empenos_Anderson
             {
                if (Objetos_Mantenimiento.usuarioMantenimiento.password_Usuario.Equals(txtPassNuevo_Change.Text))
                 {
-                    if (BD.Cambio_Password(txtNom_User_Pass.Text, txtPassNuevo_Change.Text) > 0)
+                    if (BD.Cambio_Password(txtNom_User_Pass.Text, txtPassNuevo_Change.Text, txtRespuesta1Pass.Text, txtRespuesta2Pass.Text) > 0)
                     {
                         MessageBox.Show("Se ha modificado correctamente", "Mensaje");
                         txtNom_User_Pass.Text = "";
-                        txtPass_Change.Text = "";
                         txtPassNuevo_Change.Text = "";
                         txtPassConfirmar_Change.Text = "";
-                        txtPass_Change.Enabled = false;
                         txtPassNuevo_Change.Enabled = false;
                         txtPassConfirmar_Change.Enabled = false;
                     }
@@ -164,18 +162,21 @@ namespace Sistema_Empenos_Anderson
 
             if(BD.Cambio_Tipo_Usuario(txtNom_User_Tipo.Text,tipo) > 0)
             {
-                MessageBox.Show("Cambio realizado correctamente","Mensaje");
+                MessageBoxTemporal.Show("Cambio realizado correctamente","Mensaje",1,false);
                 cbxTp_User_Modificar.Enabled = false;
                 btnAceptarTipo.Enabled = false;
             } else
-                MessageBox.Show("No se pudo realizar el cambio", "Error");
+                MessageBoxTemporal.Show("No se pudo realizar el cambio", "Error",1,false);
         }
 
         private void btnBuscarPassword_Click(object sender, EventArgs e)
         {
             if (BD.Busqueda_Usuario(txtNom_User_Tipo.Text) > 0)
             {
-                //txtPass_Change.Enabled = true;
+                lblPregunta1.Text = Objetos_Mantenimiento.usuarioMantenimiento.pregunta1;
+                lblPregunta2.Text = Objetos_Mantenimiento.usuarioMantenimiento.pregunta2;
+                txtRespuesta1Pass.Enabled = true;
+                txtRespuesta2Pass.Enabled = true;
                 txtPassNuevo_Change.Enabled = true;
                 txtPassConfirmar_Change.Enabled = true;
                 btnAceptarPassword.Enabled = true;
