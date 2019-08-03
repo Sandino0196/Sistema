@@ -55,6 +55,7 @@ namespace Sistema_Empenos_Anderson
 
         private void Tipo_Art_Mantenimiento_Load(object sender, EventArgs e)
         {
+            //Comentario por aqui
             cbxTipo_Art.DataSource = BD.CargarTipoArticulos();
             cbxTipo_Art.DisplayMember = "Descripcion";
             cbxTipo_Art.ValueMember = "Codigo_Tipo_Articulo";
@@ -76,6 +77,7 @@ namespace Sistema_Empenos_Anderson
         {
             if (Recibotxt.Text == "" || Validar_Recibo(Recibotxt.Text) == 0 || Serietxt.Text == "")
             {
+                //Comentario por aca
                 MessageBoxTemporal.Show("Ingreso incorrectamente algunos datos", "Alerta", 1, false);
             }
             else if (BD.Actualizar_Tipo_Articulo(Serietxt.Text, int.Parse(Recibotxt.Text), cbxTipo_Art.SelectedIndex + 1) == 1)
@@ -98,6 +100,7 @@ namespace Sistema_Empenos_Anderson
             }else
             if(BD.Busqueda_Articulo(int.Parse(Recibotxt.Text), Serietxt.Text)!=0)
             {
+                //Probando
                 txtArticulo.Text = Objetos_Mantenimiento.articuloMantenimiento.Descripcion;
                 txtType.Text = Objetos_Mantenimiento.articuloMantenimiento.Tipo;
                 txtMarca.Text = Objetos_Mantenimiento.articuloMantenimiento.Marca;
@@ -123,6 +126,7 @@ namespace Sistema_Empenos_Anderson
             {
                 MessageBoxTemporal.Show("Ingreso incorrectamente el numero de Recibo","Error",1, false);
             }else
+            //Probando
             if(BD.Busqueda_Articulo(int.Parse(txtNum_Recibo.Text), txtNum_Serie.Text)!=0)
             {
                 txtDescripcion.Text = Objetos_Mantenimiento.articuloMantenimiento.Descripcion;
