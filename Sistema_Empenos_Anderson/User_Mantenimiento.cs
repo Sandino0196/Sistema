@@ -135,19 +135,17 @@ namespace Sistema_Empenos_Anderson
             {
                if (Objetos_Mantenimiento.usuarioMantenimiento.password_Usuario.Equals(txtPassNuevo_Change.Text))
                 {
-                    if (BD.Cambio_Password(txtNom_User_Pass.Text, txtPassNuevo_Change.Text) > 0)
+                   /* if (BD.Cambio_Password(txtNom_User_Pass.Text, txtPassNuevo_Change.Text) > 0)
                     {
                         MessageBox.Show("Se ha modificado correctamente", "Mensaje");
                         txtNom_User_Pass.Text = "";
-                        txtPass_Change.Text = "";
                         txtPassNuevo_Change.Text = "";
                         txtPassConfirmar_Change.Text = "";
-                        txtPass_Change.Enabled = false;
                         txtPassNuevo_Change.Enabled = false;
                         txtPassConfirmar_Change.Enabled = false;
                     }
                     else
-                        MessageBox.Show("Hubo un error al ingresar la contraseña", "Error");
+                        MessageBox.Show("Hubo un error al ingresar la contraseña", "Error");*/
                 } else
                     MessageBox.Show("No se puede cambiar porque la contraseña es la misma", "Error");
             } else
