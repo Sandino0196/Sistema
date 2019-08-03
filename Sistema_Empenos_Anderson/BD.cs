@@ -11,7 +11,7 @@ namespace Sistema_Empenos_Anderson
 
         public static void OpenConnection()
         {
-            connection.ConnectionString = @"Data Source=DESKTOP-D1B8U5J; Initial Catalog=Base_Empeños; Integrated Security=Yes";
+            connection.ConnectionString = @"Data Source=DESKTOP-H4LNV2M\MSSQLSERVER01; Initial Catalog=Base_Empeños; Integrated Security=Yes";
             connection.Open();
             //Donde dice DATA SOURCE le ponen el nombre de su máquina; 
         }
@@ -146,6 +146,43 @@ namespace Sistema_Empenos_Anderson
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.Fill(dt);
                 BD.CloseConnection();
+                return dt;
+            }
+            catch
+            {
+                return dt;
+            }
+        }
+
+        public static DataTable Cargar_Cliente(string codigo)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                OpenConnection();
+                SqlCommand cmd = new SqlCommand("Select  * from[dbo].[F_Buscar_Cliente]('" + codigo + "') ", BD.connection);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
+                CloseConnection();
+                return dt;
+            }
+            catch
+            {
+                return dt;
+            }
+        }
+        public static DataTable Cargar_Factura(int codigo)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                OpenConnection();
+                SqlCommand cmd = new SqlCommand("Select  * from[dbo].[F_Buscar_Factura]('" + codigo + "') ", BD.connection);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
+                CloseConnection();
                 return dt;
             }
             catch
