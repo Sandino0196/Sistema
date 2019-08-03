@@ -70,33 +70,6 @@ namespace Sistema_Empenos_Anderson
             }
         }
 
-        public static void Fecha_Inicio_Sesion(string usuario, string password, string fecha)
-        {
-            OpenConnection();
-            SqlCommand command = new SqlCommand();
-            command.CommandText = "SP_Login_Fecha";
-            command.Connection = connection;
-            command.CommandType = CommandType.StoredProcedure;
-
-            command.Parameters.Add(new SqlParameter("@usuario", usuario));
-            command.Parameters.Add(new SqlParameter("@password", password));
-            command.Parameters.Add(new SqlParameter("@fecha", fecha));
-
-            try
-            {
-                command.ExecuteNonQuery();
-
-                CloseConnection();
-            }
-            catch
-            {
-                CloseConnection();
-                MessageBoxTemporal.Show("No funciono", "Holis", 2, false);
-            }
-        }
-
-        #endregion
-
         #region Cargar Datos
 
         public static DataTable CargarArticulo(int codigo)
@@ -242,6 +215,11 @@ namespace Sistema_Empenos_Anderson
             modelo.Size = 50;
             command.Parameters.Add(modelo);
 
+            SqlParameter tipo = new SqlParameter("@Tipo", " ");
+            tipo.Direction = ParameterDirection.Output;
+            tipo.Size = 50;
+            command.Parameters.Add(tipo);
+
             SqlParameter estado = new SqlParameter("@Estado", " ");
             estado.Direction = ParameterDirection.Output;
             estado.Size = 50;
@@ -279,6 +257,7 @@ namespace Sistema_Empenos_Anderson
                 Objetos_Mantenimiento.articuloMantenimiento.Marca = command.Parameters["@Marca"].Value.ToString();
                 Objetos_Mantenimiento.articuloMantenimiento.Modelo = command.Parameters["@Modelo"].Value.ToString();
                 Objetos_Mantenimiento.articuloMantenimiento.Estado = command.Parameters["@Estado"].Value.ToString();
+                Objetos_Mantenimiento.articuloMantenimiento.Tipo = command.Parameters["@Tipo"].Value.ToString();
                 Objetos_Mantenimiento.articuloMantenimiento.Prestado = double.Parse(command.Parameters["@Prestado"].Value.ToString());
                 Objetos_Mantenimiento.articuloMantenimiento.Interes = int.Parse(command.Parameters["@Interes"].Value.ToString());
                 Objetos_Globales.identidadTemporal = command.Parameters["@Identidad"].Value.ToString();
@@ -538,6 +517,61 @@ namespace Sistema_Empenos_Anderson
                 return 0;
             }
         }
+
+        #endregion
+
+        #region Mantenimiento
+
+        public static int Actualizar_Tipo_Articulo(string Num_Serie, int Num_Recibo, int Cod_Tipo)
+        {
+            OpenConnection();
+
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SP_Actualizar_Tipo_Articulo";
+            command.Connection = connection;
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.Add(new SqlParameter("@Num_Serie", Num_Serie));
+            command.Parameters.Add(new SqlParameter("@Num_Recibo", Num_Recibo));
+            command.Parameters.Add(new SqlParameter("@Cod_Tipo", Cod_Tipo));
+            try
+            {
+                command.ExecuteNonQuery();
+                CloseConnection();
+                return 1;
+            }
+            catch
+            {
+                return 0;
+            }
+            
+        }
+
+        public static void Actualizar_Estado_Articulo(string Num_Serie, int Num_Recibo, int Cod_Estado)
+        {
+            OpenConnection();
+
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SP_Actualizar_Estado_Articulo";
+            command.Connection = connection;
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.Add(new SqlParameter("@Num_Serie", Num_Serie));
+            command.Parameters.Add(new SqlParameter("@Recibo", Num_Recibo));
+            command.Parameters.Add(new SqlParameter("@Estado", Cod_Estado));
+
+            try
+            {
+                command.ExecuteNonQuery();
+                CloseConnection();
+            }
+            catch
+            {
+                MessageBoxTemporal.Show("No se encontro el articulo", "Error", 2, false);
+            }
+            
+        }
+
 
         #endregion
     }

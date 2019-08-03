@@ -51,6 +51,7 @@
             this.btnArticulos.TabIndex = 1;
             this.btnArticulos.Text = "Mantenimiento de Articulos";
             this.btnArticulos.UseVisualStyleBackColor = true;
+            this.btnArticulos.Click += new System.EventHandler(this.btnArticulos_Click);
             // 
             // btnUsuarios
             // 
@@ -82,6 +83,7 @@
             this.Controls.Add(this.btnClientes);
             this.Name = "Manteminiento";
             this.Text = "Manteminiento";
+            this.Load += new System.EventHandler(this.Manteminiento_Load);
             this.ResumeLayout(false);
 
         }
