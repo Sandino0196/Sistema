@@ -25,6 +25,7 @@ namespace Sistema_Empenos_Anderson
             lblcambio.Visible = false;
             txtingreso.Visible = false;
             cmbtipartic.Visible = false;
+            txtID.Visible = false;
             btnaceptar.Visible = false;
 
         }
@@ -37,7 +38,17 @@ namespace Sistema_Empenos_Anderson
                 lblcambio.Text = "Seleccione un Tipo de Articulos: ";
                 lblcambio.Visible = true;
                 txtingreso.Visible = false;
+                txtID.Visible = false;
                 cmbtipartic.Visible = true;
+                btnaceptar.Visible = true;
+            }
+            else 
+            if(cmbseleccion.Text == "Identidad del Cliente")
+            {
+                lblcambio.Text = "Ingrese Identidad del Cliente: ";
+                lblcambio.Visible = true;
+                txtingreso.Visible = false;
+                txtID.Visible = true;
                 btnaceptar.Visible = true;
             }
             else
@@ -45,6 +56,7 @@ namespace Sistema_Empenos_Anderson
                 lblcambio.Text = "Ingrese Datos: ";
                 lblcambio.Visible = true;
                 txtingreso.Visible = true;
+                txtID.Visible = false;
                 txtingreso.Clear();
                 txtingreso.Focus();
                 cmbtipartic.Visible = false;
@@ -66,7 +78,7 @@ namespace Sistema_Empenos_Anderson
         private void btnaceptar_Click(object sender, EventArgs e)
         {
             if(cmbseleccion.Text=="Identidad del Cliente")
-                dtConsultas.DataSource = BD.Cargar_Cliente(txtingreso.Text); 
+                dtConsultas.DataSource = BD.Cargar_Cliente(txtID.Text); 
 
             if(cmbseleccion.Text== "Codigo Recibo")
             {

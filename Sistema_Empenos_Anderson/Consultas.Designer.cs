@@ -37,6 +37,7 @@
             this.btnregresar = new System.Windows.Forms.Button();
             this.btnaceptar = new System.Windows.Forms.Button();
             this.dtConsultas = new System.Windows.Forms.DataGridView();
+            this.txtID = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtConsultas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -135,12 +136,21 @@
             this.dtConsultas.Size = new System.Drawing.Size(1047, 337);
             this.dtConsultas.TabIndex = 9;
             // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(21, 188);
+            this.txtID.Mask = "0000-0000-00000";
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(163, 20);
+            this.txtID.TabIndex = 11;
+            // 
             // Consultas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumTurquoise;
             this.ClientSize = new System.Drawing.Size(1295, 470);
+            this.Controls.Add(this.txtID);
             this.Controls.Add(this.dtConsultas);
             this.Controls.Add(this.btnaceptar);
             this.Controls.Add(this.btnregresar);
@@ -170,5 +180,6 @@
         private System.Windows.Forms.Button btnregresar;
         private System.Windows.Forms.Button btnaceptar;
         private System.Windows.Forms.DataGridView dtConsultas;
+        private System.Windows.Forms.MaskedTextBox txtID;
     }
 }
