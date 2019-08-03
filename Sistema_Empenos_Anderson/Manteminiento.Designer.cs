@@ -31,8 +31,6 @@
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnArticulos = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
-            this.btnVolver = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnClientes
@@ -64,31 +62,11 @@
             this.btnUsuarios.UseVisualStyleBackColor = true;
             this.btnUsuarios.Click += new System.EventHandler(this.button3_Click);
             // 
-            // btnVolver
-            // 
-            this.btnVolver.Location = new System.Drawing.Point(223, 132);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(138, 70);
-            this.btnVolver.TabIndex = 5;
-            this.btnVolver.Text = "Volver";
-            this.btnVolver.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(185, 100);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "label1";
-            // 
             // Manteminiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(373, 236);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnUsuarios);
             this.Controls.Add(this.btnArticulos);
             this.Controls.Add(this.btnClientes);
@@ -96,7 +74,6 @@
             this.Text = "Manteminiento";
             this.Load += new System.EventHandler(this.Manteminiento_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -105,7 +82,5 @@
         private System.Windows.Forms.Button btnClientes;
         private System.Windows.Forms.Button btnArticulos;
         private System.Windows.Forms.Button btnUsuarios;
-        private System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.Label label1;
     }
 }
