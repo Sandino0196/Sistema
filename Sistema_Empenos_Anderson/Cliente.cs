@@ -3,6 +3,7 @@
     public class Cliente
     {
         private string Identidad_Cliente, Nombre_Cliente, Apellido_Cliente, Telefono_Cliente, Correo_Cliente;
+        private int Estado;
 
         public Cliente()
         {
@@ -15,6 +16,12 @@
             Apellido_Cliente = apellido_Cliente;
             Telefono_Cliente = telefono_Cliente;
             Correo_Cliente = correo_Cliente;
+        }
+
+        public int estado
+        {
+            get { return this.Estado; }
+            set { this.Estado = value; }
         }
 
         public string identidad_Cliente

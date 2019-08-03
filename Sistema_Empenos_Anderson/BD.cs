@@ -50,6 +50,10 @@ namespace Sistema_Empenos_Anderson
             pCodigoTipo.Direction = ParameterDirection.Output;
             command.Parameters.Add(pCodigoTipo);
 
+            SqlParameter pEstado = new SqlParameter("@Estado", 0);
+            pEstado.Direction = ParameterDirection.Output;
+            command.Parameters.Add(pEstado);
+
             try
             {
                 command.ExecuteNonQuery();
@@ -61,6 +65,7 @@ namespace Sistema_Empenos_Anderson
                 Objetos_Globales.usuario.nombre_Usuario = usuario;
                 Objetos_Globales.usuario.password_Usuario = password;
                 Objetos_Globales.usuario.codigo_Tipo_Usuario = int.Parse(command.Parameters["@codigoTipo"].Value.ToString());
+                Objetos_Globales.usuario.estado = int.Parse(command.Parameters["@Estado"].Value.ToString());
                 return login;
             }
             catch
@@ -250,6 +255,10 @@ namespace Sistema_Empenos_Anderson
             correo.Size = 50;
             command.Parameters.Add(correo);
 
+            SqlParameter estado = new SqlParameter("@Estado", 0);
+            estado.Direction = ParameterDirection.Output;
+            command.Parameters.Add(estado);
+
             SqlParameter verificador = new SqlParameter("@Verificador", 0);
             verificador.Direction = ParameterDirection.Output;
             command.Parameters.Add(verificador);
@@ -352,7 +361,7 @@ namespace Sistema_Empenos_Anderson
             return existencia;
         }
 
-        public static int Busqueda_Usuario(string nombreUsuario)
+            public static int Busqueda_Usuario(string nombreUsuario)
         {
             OpenConnection();
             SqlCommand command = new SqlCommand();
@@ -382,6 +391,10 @@ namespace Sistema_Empenos_Anderson
             preg2.Size = 50;
             command.Parameters.Add(preg2);
 
+            SqlParameter estado = new SqlParameter("@Estado", 0);
+            estado.Direction = ParameterDirection.Output;
+            command.Parameters.Add(estado);
+
             try
             {
                 command.ExecuteNonQuery();
@@ -391,6 +404,7 @@ namespace Sistema_Empenos_Anderson
                 Objetos_Mantenimiento.usuarioMantenimiento.password_Usuario = command.Parameters["@Password"].Value.ToString();
                 Objetos_Mantenimiento.usuarioMantenimiento.pregunta1 = command.Parameters["@Pregunta1"].Value.ToString();
                 Objetos_Mantenimiento.usuarioMantenimiento.pregunta2 = command.Parameters["@Pregunta2"].Value.ToString();
+                Objetos_Mantenimiento.usuarioMantenimiento.estado = int.Parse(command.Parameters["@Estado"].Value.ToString());
                 return 1;
             }
             catch
@@ -730,6 +744,77 @@ namespace Sistema_Empenos_Anderson
             
         }
 
+        public static void EliminarUsuario(string usuario)
+        {
+            OpenConnection();
+
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SP_Eliminar_Usuario";
+            command.Connection = connection;
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.Add(new SqlParameter("@Usuario", usuario));
+
+            try
+            {
+                command.ExecuteNonQuery();
+                CloseConnection();
+            }
+            catch
+            {
+                MessageBoxTemporal.Show("Error al encontrar usuario", "Error", 2, false);
+            }
+        }
+
+        public static void EliminarCliente(string identidad)
+        {
+            OpenConnection();
+
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SP_Eliminar_Cliente";
+            command.Connection = connection;
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.Add(new SqlParameter("@Identidad", identidad));
+
+            try
+            {
+                command.ExecuteNonQuery();
+                CloseConnection();
+            }
+            catch
+            {
+                MessageBoxTemporal.Show("Error al encontrar cliente", "Error", 2, false);
+            }
+        }
+
+        public static void Actualizar_Cliente(string identidad, string nombre, string apellido, string telefono, string correo)
+        {
+            OpenConnection();
+
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SP_Modificar_Cliente";
+            command.Connection = connection;
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.Add(new SqlParameter("@identidad", identidad));
+            command.Parameters.Add(new SqlParameter("@nombre", nombre));
+            command.Parameters.Add(new SqlParameter("@apellido", apellido));
+            command.Parameters.Add(new SqlParameter("@telefono", telefono));
+            command.Parameters.Add(new SqlParameter("@correo", correo));
+
+            try
+            {
+                command.ExecuteNonQuery();
+                CloseConnection();
+                
+            }
+            catch
+            {
+                CloseConnection();
+                MessageBoxTemporal.Show("Error al encontrar cliente", "Error", 2, false);
+            }
+        }
 
         #endregion
     }
