@@ -41,8 +41,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnRetirar = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvInfo_Articulo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -156,31 +154,11 @@
             this.btnRetirar.UseVisualStyleBackColor = true;
             this.btnRetirar.Click += new System.EventHandler(this.btnRetirar_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(463, 258);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 13);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Solo es prueba, ojala";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(479, 303);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // Retiro_Articulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(844, 326);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnRetirar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtNumSerie);
@@ -214,7 +192,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
         private System.Windows.Forms.DataGridViewTextBoxColumn Modelo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Monto;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
     }
 }
