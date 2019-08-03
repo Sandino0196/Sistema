@@ -32,6 +32,30 @@ namespace Sistema_Empenos_Anderson
             {
                 return 0;
             }
+
+        }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            Manteminiento man = new Manteminiento();
+            this.Dispose();
+            man.Show();
+        }
+
+        private int Validar_Recibo(string recibo)
+        {
+            string dato;
+            int x;
+            bool verificador;
+            dato = recibo;
+            if (verificador = int.TryParse(dato.ToString(), out x) == true)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
                 
         }
 
@@ -137,10 +161,60 @@ namespace Sistema_Empenos_Anderson
 
         }
 
+        private void bttBuscar_Click(object sender, EventArgs e)
+        {
+            if (Validar_Recibo(Recibotxt.Text) == 0)
+            {
+                MessageBoxTemporal.Show("Ingreso incorrectamente el codigo de Recibo", "Error", 1, false);
+            }
+            else
+            if (BD.Busqueda_Articulo(int.Parse(Recibotxt.Text), Serietxt.Text) != 0)
+            {
+                txtArticulo.Text = Objetos_Mantenimiento.articuloMantenimiento.Descripcion;
+                txtType.Text = Objetos_Mantenimiento.articuloMantenimiento.Tipo;
+                txtMarca.Text = Objetos_Mantenimiento.articuloMantenimiento.Marca;
+                txtModelo.Text = Objetos_Mantenimiento.articuloMantenimiento.Modelo;
+            }
+            else
+            {
+                MessageBoxTemporal.Show("No se encontro el articulo", "Error", 1, false);
+            }
+
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            Manteminiento man = new Manteminiento();
+            this.Dispose();
+            man.Show();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (Validar_Recibo(txtNum_Recibo.Text) == 0)
+            {
+                MessageBoxTemporal.Show("Ingreso incorrectamente el numero de Recibo", "Error", 1, false);
+            }
+            else
+            if (BD.Busqueda_Articulo(int.Parse(txtNum_Recibo.Text), txtNum_Serie.Text) != 0)
+            {
+                txtDescripcion.Text = Objetos_Mantenimiento.articuloMantenimiento.Descripcion;
+                txtEstado.Text = Objetos_Mantenimiento.articuloMantenimiento.Estado;
+                txtMarca2.Text = Objetos_Mantenimiento.articuloMantenimiento.Marca;
+                txtModelo2.Text = Objetos_Mantenimiento.articuloMantenimiento.Modelo;
+            }
+            else
+            {
+                MessageBoxTemporal.Show("No se encontro el articulo", "Error", 1, false);
+            }
+
+
+        }
+
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            BD.Actualizar_Estado_Articulo(txtNum_Serie.Text, int.Parse(txtNum_Recibo.Text), cmbEstados.SelectedIndex+1);
-            MessageBoxTemporal.Show("Informacion Actualizada!","Informacion", 1, false);
+            BD.Actualizar_Estado_Articulo(txtNum_Serie.Text, int.Parse(txtNum_Recibo.Text), cmbEstados.SelectedIndex + 1);
+            MessageBoxTemporal.Show("Informacion Actualizada!", "Informacion", 1, false);
         }
     }
 }

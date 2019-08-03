@@ -19,8 +19,8 @@ namespace Sistema_Empenos_Anderson
 
         protected override void OnClosed(EventArgs e)
         {
-            Menu men = new Menu();
             this.Dispose();
+            Menu men = new Menu(Objetos_Globales.usuario.codigo_Tipo_Usuario);
             men.Show();
         }
 
@@ -31,16 +31,11 @@ namespace Sistema_Empenos_Anderson
             this.Hide();
         }
 
-        private void Manteminiento_Load(object sender, EventArgs e)
-        {
-            this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
-        }
-
         private void btnArticulos_Click(object sender, EventArgs e)
         {
-            Mantenimiento_Articulos art = new Mantenimiento_Articulos();
-            this.Dispose();
-            art.Show();
+            Mantenimiento_Articulos man = new Mantenimiento_Articulos();
+            this.Hide();
+            man.Show();
         }
     }
 }

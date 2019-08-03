@@ -11,7 +11,7 @@ namespace Sistema_Empenos_Anderson
 
         public static void OpenConnection()
         {
-            connection.ConnectionString = @"Data Source=DESKTOP-D1B8U5J; Initial Catalog=Base_Empeños; Integrated Security=Yes";
+            connection.ConnectionString = @"Data Source=DESKTOP-T785USI; Initial Catalog=Base_Empeños; Integrated Security=Yes";
             connection.Open();
             //Donde dice DATA SOURCE le ponen el nombre de su máquina; 
         }
@@ -245,6 +245,10 @@ namespace Sistema_Empenos_Anderson
             SqlParameter existe = new SqlParameter("@Existencia", 0);
             existe.Direction = ParameterDirection.Output;
             command.Parameters.Add(existe);
+
+            SqlParameter tipo = new SqlParameter("@Tipo", 0);
+            tipo.Direction = ParameterDirection.Output;
+            command.Parameters.Add(tipo);
 
             try
             {
@@ -570,6 +574,61 @@ namespace Sistema_Empenos_Anderson
                 MessageBoxTemporal.Show("No se encontro el articulo", "Error", 2, false);
             }
             
+        }
+
+
+        #endregion
+
+        #region Mantenimiento
+
+        public static int Actualizar_Tipo_Articulo(string Num_Serie, int Num_Recibo, int Cod_Tipo)
+        {
+            OpenConnection();
+
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SP_Actualizar_Tipo_Articulo";
+            command.Connection = connection;
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.Add(new SqlParameter("@Num_Serie", Num_Serie));
+            command.Parameters.Add(new SqlParameter("@Num_Recibo", Num_Recibo));
+            command.Parameters.Add(new SqlParameter("@Cod_Tipo", Cod_Tipo));
+            try
+            {
+                command.ExecuteNonQuery();
+                CloseConnection();
+                return 1;
+            }
+            catch
+            {
+                return 0;
+            }
+
+        }
+
+        public static void Actualizar_Estado_Articulo(string Num_Serie, int Num_Recibo, int Cod_Estado)
+        {
+            OpenConnection();
+
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SP_Actualizar_Estado_Articulo";
+            command.Connection = connection;
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.Add(new SqlParameter("@Num_Serie", Num_Serie));
+            command.Parameters.Add(new SqlParameter("@Recibo", Num_Recibo));
+            command.Parameters.Add(new SqlParameter("@Estado", Cod_Estado));
+
+            try
+            {
+                command.ExecuteNonQuery();
+                CloseConnection();
+            }
+            catch
+            {
+                MessageBoxTemporal.Show("No se encontro el articulo", "Error", 2, false);
+            }
+
         }
 
 
