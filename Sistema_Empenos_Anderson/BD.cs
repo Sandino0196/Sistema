@@ -361,7 +361,7 @@ namespace Sistema_Empenos_Anderson
             return existencia;
         }
 
-            public static int Busqueda_Usuario(string nombreUsuario)
+        public static int Busqueda_Usuario(string nombreUsuario)
         {
             OpenConnection();
             SqlCommand command = new SqlCommand();
