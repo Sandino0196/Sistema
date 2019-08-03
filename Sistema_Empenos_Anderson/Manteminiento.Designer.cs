@@ -51,6 +51,7 @@
             this.btnArticulos.TabIndex = 1;
             this.btnArticulos.Text = "Mantenimiento de Articulos";
             this.btnArticulos.UseVisualStyleBackColor = true;
+            this.btnArticulos.Click += new System.EventHandler(this.btnArticulos_Click);
             // 
             // btnUsuarios
             // 
