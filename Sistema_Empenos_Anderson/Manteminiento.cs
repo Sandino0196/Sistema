@@ -10,6 +10,13 @@ namespace Sistema_Empenos_Anderson
             InitializeComponent();
         }
 
+        protected override void OnClosed(EventArgs e)
+        {
+            this.Dispose();
+            Menu men = new Menu(Objetos_Globales.usuario.codigo_Tipo_Usuario);
+            men.Show();
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
             User_Mantenimiento user = new User_Mantenimiento();
@@ -36,6 +43,11 @@ namespace Sistema_Empenos_Anderson
             Mantenimiento_Articulos mantenimiento = new Mantenimiento_Articulos();
             this.Hide();
             mantenimiento.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

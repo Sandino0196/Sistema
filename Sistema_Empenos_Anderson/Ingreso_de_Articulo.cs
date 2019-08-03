@@ -46,7 +46,7 @@ namespace Sistema_Empenos_Anderson
             MessageBoxTemporal.Show("Transaccion finalizada", "Listo", 1, false);
             Menu men = new Sistema_Empenos_Anderson.Menu(Objetos_Globales.usuario.codigo_Tipo_Usuario);
             men.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void Ingreso_de_Articulo_Load(object sender, EventArgs e)
