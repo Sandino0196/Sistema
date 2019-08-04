@@ -36,7 +36,6 @@
             this.bttBuscar = new System.Windows.Forms.Button();
             this.dtgConsultaArticulo = new System.Windows.Forms.DataGridView();
             this.lbl1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnCerrarConsulta = new System.Windows.Forms.Button();
             this.gbConsArti.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgConsultaArticulo)).BeginInit();
@@ -94,6 +93,7 @@
             // 
             // bttBuscar
             // 
+            this.bttBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bttBuscar.Location = new System.Drawing.Point(290, 104);
             this.bttBuscar.Name = "bttBuscar";
             this.bttBuscar.Size = new System.Drawing.Size(75, 23);
@@ -121,19 +121,10 @@
             this.lbl1.TabIndex = 5;
             this.lbl1.Text = "label1";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(242, 316);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Agregar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // btnCerrarConsulta
             // 
-            this.btnCerrarConsulta.Location = new System.Drawing.Point(92, 316);
+            this.btnCerrarConsulta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrarConsulta.Location = new System.Drawing.Point(209, 322);
             this.btnCerrarConsulta.Name = "btnCerrarConsulta";
             this.btnCerrarConsulta.Size = new System.Drawing.Size(75, 23);
             this.btnCerrarConsulta.TabIndex = 7;
@@ -147,15 +138,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(488, 357);
             this.Controls.Add(this.btnCerrarConsulta);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.lbl1);
             this.Controls.Add(this.dtgConsultaArticulo);
             this.Controls.Add(this.bttBuscar);
             this.Controls.Add(this.txtCod);
             this.Controls.Add(this.lbl);
             this.Controls.Add(this.gbConsArti);
+            this.MaximizeBox = false;
             this.Name = "Consulta_Articulos";
-            this.Text = "Consulta de Articulos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Consulta de Artículos";
             this.Load += new System.EventHandler(this.Consulta_Facturacion_Load);
             this.gbConsArti.ResumeLayout(false);
             this.gbConsArti.PerformLayout();
@@ -175,7 +167,6 @@
         private System.Windows.Forms.Button bttBuscar;
         private System.Windows.Forms.DataGridView dtgConsultaArticulo;
         private System.Windows.Forms.Label lbl1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnCerrarConsulta;
     }
 }

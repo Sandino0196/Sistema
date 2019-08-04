@@ -1,6 +1,6 @@
 ﻿namespace Sistema_Empenos_Anderson
 {
-    partial class Elim_Clien_Mantenimiento
+    partial class Mantenimiento_Clientes
     {
         /// <summary>
         /// Required designer variable.
@@ -40,9 +40,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnBuscarMod = new System.Windows.Forms.Button();
-            this.txtIdentidadMod = new System.Windows.Forms.MaskedTextBox();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.txtTelefonoMod = new System.Windows.Forms.MaskedTextBox();
             this.txtCorreoMod = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -51,7 +49,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtNombreMod = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnAceptar = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnBuscarMod = new System.Windows.Forms.Button();
+            this.txtIdentidadMod = new System.Windows.Forms.MaskedTextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -68,6 +68,7 @@
             // 
             // bttBuscar
             // 
+            this.bttBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bttBuscar.Location = new System.Drawing.Point(113, 48);
             this.bttBuscar.Name = "bttBuscar";
             this.bttBuscar.Size = new System.Drawing.Size(75, 23);
@@ -78,6 +79,7 @@
             // 
             // bttElim
             // 
+            this.bttElim.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bttElim.Enabled = false;
             this.bttElim.Location = new System.Drawing.Point(113, 192);
             this.bttElim.Name = "bttElim";
@@ -89,6 +91,7 @@
             // 
             // btnVolver
             // 
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVolver.Location = new System.Drawing.Point(114, 293);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(100, 48);
@@ -189,32 +192,17 @@
             this.tabPage2.Text = "Modificar Cliente";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // btnAceptar
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 12);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 13);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Identidad Cliente:";
-            // 
-            // btnBuscarMod
-            // 
-            this.btnBuscarMod.Location = new System.Drawing.Point(123, 46);
-            this.btnBuscarMod.Name = "btnBuscarMod";
-            this.btnBuscarMod.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscarMod.TabIndex = 10;
-            this.btnBuscarMod.Text = "Buscar";
-            this.btnBuscarMod.UseVisualStyleBackColor = true;
-            this.btnBuscarMod.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // txtIdentidadMod
-            // 
-            this.txtIdentidadMod.Location = new System.Drawing.Point(107, 9);
-            this.txtIdentidadMod.Mask = "0000-0000-00000";
-            this.txtIdentidadMod.Name = "txtIdentidadMod";
-            this.txtIdentidadMod.Size = new System.Drawing.Size(100, 20);
-            this.txtIdentidadMod.TabIndex = 11;
+            this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAceptar.Enabled = false;
+            this.btnAceptar.Location = new System.Drawing.Point(123, 199);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptar.TabIndex = 25;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // txtTelefonoMod
             // 
@@ -258,6 +246,7 @@
             this.txtApellidoMod.Name = "txtApellidoMod";
             this.txtApellidoMod.Size = new System.Drawing.Size(100, 20);
             this.txtApellidoMod.TabIndex = 21;
+            this.txtApellidoMod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidoMod_KeyPress);
             // 
             // label6
             // 
@@ -275,6 +264,8 @@
             this.txtNombreMod.Name = "txtNombreMod";
             this.txtNombreMod.Size = new System.Drawing.Size(100, 20);
             this.txtNombreMod.TabIndex = 19;
+            this.txtNombreMod.TextChanged += new System.EventHandler(this.txtNombreMod_TextChanged);
+            this.txtNombreMod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreMod_KeyPress);
             // 
             // label7
             // 
@@ -285,26 +276,46 @@
             this.label7.TabIndex = 17;
             this.label7.Text = "Nombre:";
             // 
-            // btnAceptar
+            // label3
             // 
-            this.btnAceptar.Enabled = false;
-            this.btnAceptar.Location = new System.Drawing.Point(123, 199);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 25;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(89, 13);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Identidad Cliente:";
             // 
-            // Elim_Clien_Mantenimiento
+            // btnBuscarMod
+            // 
+            this.btnBuscarMod.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscarMod.Location = new System.Drawing.Point(123, 46);
+            this.btnBuscarMod.Name = "btnBuscarMod";
+            this.btnBuscarMod.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarMod.TabIndex = 10;
+            this.btnBuscarMod.Text = "Buscar";
+            this.btnBuscarMod.UseVisualStyleBackColor = true;
+            this.btnBuscarMod.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txtIdentidadMod
+            // 
+            this.txtIdentidadMod.Location = new System.Drawing.Point(107, 9);
+            this.txtIdentidadMod.Mask = "0000-0000-00000";
+            this.txtIdentidadMod.Name = "txtIdentidadMod";
+            this.txtIdentidadMod.Size = new System.Drawing.Size(100, 20);
+            this.txtIdentidadMod.TabIndex = 11;
+            // 
+            // Mantenimiento_Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(319, 354);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.btnVolver);
-            this.Name = "Elim_Clien_Mantenimiento";
-            this.Text = "Elim_Clien_Mantenimiento";
+            this.MaximizeBox = false;
+            this.Name = "Mantenimiento_Clientes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Mantenimiento de Clientes";
+            this.Load += new System.EventHandler(this.Mantenimiento_Clientes_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

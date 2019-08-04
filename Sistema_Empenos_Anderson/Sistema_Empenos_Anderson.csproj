@@ -61,11 +61,11 @@
     <Compile Include="Consulta_Articulos.Designer.cs">
       <DependentUpon>Consulta_Articulos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Elim_Clien_Mantenimiento.cs">
+    <Compile Include="Mantenimiento_Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Elim_Clien_Mantenimiento.Designer.cs">
-      <DependentUpon>Elim_Clien_Mantenimiento.cs</DependentUpon>
+    <Compile Include="Mantenimiento_Clientes.Designer.cs">
+      <DependentUpon>Mantenimiento_Clientes.cs</DependentUpon>
     </Compile>
     <Compile Include="Facturacion.cs">
       <SubType>Form</SubType>
@@ -139,11 +139,11 @@
       <DependentUpon>User_Mantenimiento.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs" />
-    <Compile Include="Venta.cs">
+    <Compile Include="Facturacion_Detalle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Venta.Designer.cs">
-      <DependentUpon>Venta.cs</DependentUpon>
+    <Compile Include="Facturacion_Detalle.Designer.cs">
+      <DependentUpon>Facturacion_Detalle.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Consultas.resx">
       <DependentUpon>Consultas.cs</DependentUpon>
@@ -151,8 +151,8 @@
     <EmbeddedResource Include="Consulta_Articulos.resx">
       <DependentUpon>Consulta_Articulos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Elim_Clien_Mantenimiento.resx">
-      <DependentUpon>Elim_Clien_Mantenimiento.cs</DependentUpon>
+    <EmbeddedResource Include="Mantenimiento_Clientes.resx">
+      <DependentUpon>Mantenimiento_Clientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Facturacion.resx">
       <DependentUpon>Facturacion.cs</DependentUpon>
@@ -197,8 +197,8 @@
     <EmbeddedResource Include="User_Mantenimiento.resx">
       <DependentUpon>User_Mantenimiento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Venta.resx">
-      <DependentUpon>Venta.cs</DependentUpon>
+    <EmbeddedResource Include="Facturacion_Detalle.resx">
+      <DependentUpon>Facturacion_Detalle.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

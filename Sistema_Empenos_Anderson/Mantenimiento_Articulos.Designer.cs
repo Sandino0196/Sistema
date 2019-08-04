@@ -52,16 +52,6 @@
             this.bttAñadir = new System.Windows.Forms.Button();
             this.txtNom_TpArt = new System.Windows.Forms.TextBox();
             this.lblNom_TpArt = new System.Windows.Forms.Label();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.txtModelo = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtMarca = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtType = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btnConsultaTipo = new System.Windows.Forms.Button();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.txtModelo2 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -80,132 +70,22 @@
             this.txtNum_Serie = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnVolver = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // bttActualizar
+            // btnVolver
             // 
-            this.bttActualizar.Location = new System.Drawing.Point(125, 231);
-            this.bttActualizar.Name = "bttActualizar";
-            this.bttActualizar.Size = new System.Drawing.Size(75, 23);
-            this.bttActualizar.TabIndex = 9;
-            this.bttActualizar.Text = "Actualizar";
-            this.bttActualizar.UseVisualStyleBackColor = true;
-            this.bttActualizar.Click += new System.EventHandler(this.bttActualizar_Click);
-            // 
-            // lblTipo
-            // 
-            this.lblTipo.AutoSize = true;
-            this.lblTipo.Location = new System.Drawing.Point(6, 196);
-            this.lblTipo.Name = "lblTipo";
-            this.lblTipo.Size = new System.Drawing.Size(172, 13);
-            this.lblTipo.TabIndex = 8;
-            this.lblTipo.Text = "Seleccione Nuevo Tipo de Articulo";
-            // 
-            // cbxTipo_Art
-            // 
-            this.cbxTipo_Art.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxTipo_Art.FormattingEnabled = true;
-            this.cbxTipo_Art.Items.AddRange(new object[] {
-            "Automovil",
-            "Joyería",
-            "Electrodomesticos",
-            "Electrónico"});
-            this.cbxTipo_Art.Location = new System.Drawing.Point(197, 193);
-            this.cbxTipo_Art.Name = "cbxTipo_Art";
-            this.cbxTipo_Art.Size = new System.Drawing.Size(121, 21);
-            this.cbxTipo_Art.TabIndex = 7;
-            this.cbxTipo_Art.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // txtArticulo
-            // 
-            this.txtArticulo.Enabled = false;
-            this.txtArticulo.Location = new System.Drawing.Point(59, 131);
-            this.txtArticulo.Name = "txtArticulo";
-            this.txtArticulo.Size = new System.Drawing.Size(122, 20);
-            this.txtArticulo.TabIndex = 6;
-            // 
-            // lblArt
-            // 
-            this.lblArt.AutoSize = true;
-            this.lblArt.Location = new System.Drawing.Point(6, 134);
-            this.lblArt.Name = "lblArt";
-            this.lblArt.Size = new System.Drawing.Size(47, 13);
-            this.lblArt.TabIndex = 5;
-            this.lblArt.Text = "Artículo:";
-            // 
-            // bttBuscar
-            // 
-            this.bttBuscar.Location = new System.Drawing.Point(9, 94);
-            this.bttBuscar.Name = "bttBuscar";
-            this.bttBuscar.Size = new System.Drawing.Size(75, 23);
-            this.bttBuscar.TabIndex = 4;
-            this.bttBuscar.Text = "Buscar";
-            this.bttBuscar.UseVisualStyleBackColor = true;
-            this.bttBuscar.Click += new System.EventHandler(this.bttBuscar_Click);
-            // 
-            // Recibotxt
-            // 
-            this.Recibotxt.Location = new System.Drawing.Point(140, 62);
-            this.Recibotxt.Name = "Recibotxt";
-            this.Recibotxt.Size = new System.Drawing.Size(100, 20);
-            this.Recibotxt.TabIndex = 3;
-            // 
-            // Serietxt
-            // 
-            this.Serietxt.Location = new System.Drawing.Point(140, 24);
-            this.Serietxt.Name = "Serietxt";
-            this.Serietxt.Size = new System.Drawing.Size(100, 20);
-            this.Serietxt.TabIndex = 2;
-            // 
-            // Num_Reci_lbl
-            // 
-            this.Num_Reci_lbl.AutoSize = true;
-            this.Num_Reci_lbl.Location = new System.Drawing.Point(6, 62);
-            this.Num_Reci_lbl.Name = "Num_Reci_lbl";
-            this.Num_Reci_lbl.Size = new System.Drawing.Size(99, 13);
-            this.Num_Reci_lbl.TabIndex = 1;
-            this.Num_Reci_lbl.Text = "Número de Recibo:";
-            // 
-            // Num_Se_lbl
-            // 
-            this.Num_Se_lbl.AutoSize = true;
-            this.Num_Se_lbl.Location = new System.Drawing.Point(6, 24);
-            this.Num_Se_lbl.Name = "Num_Se_lbl";
-            this.Num_Se_lbl.Size = new System.Drawing.Size(89, 13);
-            this.Num_Se_lbl.TabIndex = 0;
-            this.Num_Se_lbl.Text = "Número de Serie:";
-            // 
-            // bttAñadir
-            // 
-            this.bttAñadir.Location = new System.Drawing.Point(125, 161);
-            this.bttAñadir.Name = "bttAñadir";
-            this.bttAñadir.Size = new System.Drawing.Size(100, 39);
-            this.bttAñadir.TabIndex = 2;
-            this.bttAñadir.Text = "Añadir";
-            this.bttAñadir.UseVisualStyleBackColor = true;
-            // 
-            // txtNom_TpArt
-            // 
-            this.txtNom_TpArt.Location = new System.Drawing.Point(125, 110);
-            this.txtNom_TpArt.Name = "txtNom_TpArt";
-            this.txtNom_TpArt.Size = new System.Drawing.Size(100, 20);
-            this.txtNom_TpArt.TabIndex = 1;
-            // 
-            // lblNom_TpArt
-            // 
-            this.lblNom_TpArt.AutoSize = true;
-            this.lblNom_TpArt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNom_TpArt.Location = new System.Drawing.Point(63, 71);
-            this.lblNom_TpArt.Name = "lblNom_TpArt";
-            this.lblNom_TpArt.Size = new System.Drawing.Size(247, 16);
-            this.lblNom_TpArt.TabIndex = 0;
-            this.lblNom_TpArt.Text = "Ingrese un Nuevo Tipo de Articulo:";
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVolver.Location = new System.Drawing.Point(141, 330);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(100, 49);
+            this.btnVolver.TabIndex = 7;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // tabControl1
             // 
@@ -299,6 +179,7 @@
             // 
             // btnConsultaTipo
             // 
+            this.btnConsultaTipo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConsultaTipo.Location = new System.Drawing.Point(125, 94);
             this.btnConsultaTipo.Name = "btnConsultaTipo";
             this.btnConsultaTipo.Size = new System.Drawing.Size(75, 23);
@@ -306,6 +187,102 @@
             this.btnConsultaTipo.Text = "Consulta";
             this.btnConsultaTipo.UseVisualStyleBackColor = true;
             this.btnConsultaTipo.Click += new System.EventHandler(this.btnConsulta_Click);
+            // 
+            // bttActualizar
+            // 
+            this.bttActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bttActualizar.Location = new System.Drawing.Point(125, 231);
+            this.bttActualizar.Name = "bttActualizar";
+            this.bttActualizar.Size = new System.Drawing.Size(75, 23);
+            this.bttActualizar.TabIndex = 9;
+            this.bttActualizar.Text = "Actualizar";
+            this.bttActualizar.UseVisualStyleBackColor = true;
+            this.bttActualizar.Click += new System.EventHandler(this.bttActualizar_Click);
+            // 
+            // cbxTipo_Art
+            // 
+            this.cbxTipo_Art.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxTipo_Art.FormattingEnabled = true;
+            this.cbxTipo_Art.Items.AddRange(new object[] {
+            "Automovil",
+            "Joyería",
+            "Electrodomesticos",
+            "Electrónico"});
+            this.cbxTipo_Art.Location = new System.Drawing.Point(197, 193);
+            this.cbxTipo_Art.Name = "cbxTipo_Art";
+            this.cbxTipo_Art.Size = new System.Drawing.Size(121, 21);
+            this.cbxTipo_Art.TabIndex = 7;
+            this.cbxTipo_Art.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // lblTipo
+            // 
+            this.lblTipo.AutoSize = true;
+            this.lblTipo.Location = new System.Drawing.Point(6, 196);
+            this.lblTipo.Name = "lblTipo";
+            this.lblTipo.Size = new System.Drawing.Size(174, 13);
+            this.lblTipo.TabIndex = 8;
+            this.lblTipo.Text = "Seleccione Nuevo Tipo de Artículo";
+            // 
+            // Num_Se_lbl
+            // 
+            this.Num_Se_lbl.AutoSize = true;
+            this.Num_Se_lbl.Location = new System.Drawing.Point(6, 24);
+            this.Num_Se_lbl.Name = "Num_Se_lbl";
+            this.Num_Se_lbl.Size = new System.Drawing.Size(89, 13);
+            this.Num_Se_lbl.TabIndex = 0;
+            this.Num_Se_lbl.Text = "Número de Serie:";
+            // 
+            // Num_Reci_lbl
+            // 
+            this.Num_Reci_lbl.AutoSize = true;
+            this.Num_Reci_lbl.Location = new System.Drawing.Point(6, 62);
+            this.Num_Reci_lbl.Name = "Num_Reci_lbl";
+            this.Num_Reci_lbl.Size = new System.Drawing.Size(99, 13);
+            this.Num_Reci_lbl.TabIndex = 1;
+            this.Num_Reci_lbl.Text = "Número de Recibo:";
+            // 
+            // txtArticulo
+            // 
+            this.txtArticulo.Enabled = false;
+            this.txtArticulo.Location = new System.Drawing.Point(59, 131);
+            this.txtArticulo.Name = "txtArticulo";
+            this.txtArticulo.Size = new System.Drawing.Size(122, 20);
+            this.txtArticulo.TabIndex = 6;
+            // 
+            // Serietxt
+            // 
+            this.Serietxt.Location = new System.Drawing.Point(140, 24);
+            this.Serietxt.Name = "Serietxt";
+            this.Serietxt.Size = new System.Drawing.Size(100, 20);
+            this.Serietxt.TabIndex = 2;
+            // 
+            // lblArt
+            // 
+            this.lblArt.AutoSize = true;
+            this.lblArt.Location = new System.Drawing.Point(6, 134);
+            this.lblArt.Name = "lblArt";
+            this.lblArt.Size = new System.Drawing.Size(47, 13);
+            this.lblArt.TabIndex = 5;
+            this.lblArt.Text = "Artículo:";
+            // 
+            // Recibotxt
+            // 
+            this.Recibotxt.Location = new System.Drawing.Point(140, 62);
+            this.Recibotxt.Name = "Recibotxt";
+            this.Recibotxt.Size = new System.Drawing.Size(100, 20);
+            this.Recibotxt.TabIndex = 3;
+            this.Recibotxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Recibotxt_KeyPress);
+            // 
+            // bttBuscar
+            // 
+            this.bttBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bttBuscar.Location = new System.Drawing.Point(9, 94);
+            this.bttBuscar.Name = "bttBuscar";
+            this.bttBuscar.Size = new System.Drawing.Size(75, 23);
+            this.bttBuscar.TabIndex = 4;
+            this.bttBuscar.Text = "Buscar";
+            this.bttBuscar.UseVisualStyleBackColor = true;
+            this.bttBuscar.Click += new System.EventHandler(this.bttBuscar_Click);
             // 
             // tabPage2
             // 
@@ -317,8 +294,36 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(341, 271);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Añadir Tipo de Articulo";
+            this.tabPage2.Text = "Añadir Tipo de Artículo";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // bttAñadir
+            // 
+            this.bttAñadir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bttAñadir.Location = new System.Drawing.Point(125, 161);
+            this.bttAñadir.Name = "bttAñadir";
+            this.bttAñadir.Size = new System.Drawing.Size(100, 39);
+            this.bttAñadir.TabIndex = 2;
+            this.bttAñadir.Text = "Añadir";
+            this.bttAñadir.UseVisualStyleBackColor = true;
+            // 
+            // txtNom_TpArt
+            // 
+            this.txtNom_TpArt.Location = new System.Drawing.Point(125, 111);
+            this.txtNom_TpArt.Name = "txtNom_TpArt";
+            this.txtNom_TpArt.Size = new System.Drawing.Size(100, 20);
+            this.txtNom_TpArt.TabIndex = 1;
+            this.txtNom_TpArt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNom_TpArt_KeyPress);
+            // 
+            // lblNom_TpArt
+            // 
+            this.lblNom_TpArt.AutoSize = true;
+            this.lblNom_TpArt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNom_TpArt.Location = new System.Drawing.Point(56, 70);
+            this.lblNom_TpArt.Name = "lblNom_TpArt";
+            this.lblNom_TpArt.Size = new System.Drawing.Size(247, 16);
+            this.lblNom_TpArt.TabIndex = 0;
+            this.lblNom_TpArt.Text = "Ingrese un Nuevo Tipo de Artículo:";
             // 
             // tabPage3
             // 
@@ -402,6 +407,7 @@
             // 
             // btnConsultaEstado
             // 
+            this.btnConsultaEstado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConsultaEstado.Location = new System.Drawing.Point(191, 87);
             this.btnConsultaEstado.Name = "btnConsultaEstado";
             this.btnConsultaEstado.Size = new System.Drawing.Size(75, 23);
@@ -412,6 +418,7 @@
             // 
             // btnUpdate
             // 
+            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUpdate.Location = new System.Drawing.Point(125, 229);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
@@ -462,6 +469,7 @@
             // 
             // btnBuscar
             // 
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscar.Location = new System.Drawing.Point(61, 87);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
@@ -476,6 +484,8 @@
             this.txtNum_Recibo.Name = "txtNum_Recibo";
             this.txtNum_Recibo.Size = new System.Drawing.Size(121, 20);
             this.txtNum_Recibo.TabIndex = 13;
+            this.txtNum_Recibo.TextChanged += new System.EventHandler(this.txtNum_Recibo_TextChanged);
+            this.txtNum_Recibo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNum_Recibo_KeyPress);
             // 
             // txtNum_Serie
             // 
@@ -502,36 +512,17 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "Número de Serie:";
             // 
-            // btnVolver
-            // 
-            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVolver.Location = new System.Drawing.Point(141, 330);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(100, 49);
-            this.btnVolver.TabIndex = 7;
-            this.btnVolver.Text = "Volver";
-            this.btnVolver.UseVisualStyleBackColor = true;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(67, 346);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 13);
-            this.label10.TabIndex = 8;
-            this.label10.Text = "label10";
-            // 
             // Mantenimiento_Articulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(372, 391);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.tabControl1);
+            this.MaximizeBox = false;
             this.Name = "Mantenimiento_Articulos";
-            this.Text = "Mantenimiento de Articulos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Mantenimiento de Artículos";
             this.Load += new System.EventHandler(this.Tipo_Art_Mantenimiento_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -541,7 +532,6 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -588,6 +578,5 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtMarca2;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
     }
 }

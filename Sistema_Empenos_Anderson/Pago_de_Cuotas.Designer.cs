@@ -84,7 +84,7 @@
             this.groupBox1.Size = new System.Drawing.Size(366, 311);
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Busqueda de Articulo";
+            this.groupBox1.Text = "Busqueda de Artículo";
             // 
             // txtMeses
             // 
@@ -122,6 +122,7 @@
             // 
             // btnConsulta
             // 
+            this.btnConsulta.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConsulta.Location = new System.Drawing.Point(285, 76);
             this.btnConsulta.Name = "btnConsulta";
             this.btnConsulta.Size = new System.Drawing.Size(75, 23);
@@ -195,9 +196,11 @@
             this.txtNumRecibo.Name = "txtNumRecibo";
             this.txtNumRecibo.Size = new System.Drawing.Size(162, 20);
             this.txtNumRecibo.TabIndex = 5;
+            this.txtNumRecibo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumRecibo_KeyPress);
             // 
             // bttBuscar
             // 
+            this.bttBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bttBuscar.Location = new System.Drawing.Point(285, 25);
             this.bttBuscar.Name = "bttBuscar";
             this.bttBuscar.Size = new System.Drawing.Size(75, 23);
@@ -225,6 +228,7 @@
             // 
             // button1
             // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Location = new System.Drawing.Point(60, 383);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(86, 39);
@@ -235,6 +239,7 @@
             // 
             // btnAvanzar
             // 
+            this.btnAvanzar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAvanzar.Location = new System.Drawing.Point(258, 383);
             this.btnAvanzar.Name = "btnAvanzar";
             this.btnAvanzar.Size = new System.Drawing.Size(89, 39);
@@ -253,8 +258,10 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label6);
             this.Margin = new System.Windows.Forms.Padding(1);
+            this.MaximizeBox = false;
             this.Name = "Pago_de_Cuotas";
-            this.Text = "Pago de Cuotas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Pago de Intereses";
             this.Load += new System.EventHandler(this.Pago_de_Cuotas_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

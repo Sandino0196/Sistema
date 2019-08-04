@@ -566,8 +566,10 @@
             this.ClientSize = new System.Drawing.Size(347, 412);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.tabCUsuario);
+            this.MaximizeBox = false;
             this.Name = "User_Mantenimiento";
-            this.Text = "User_Mantenimiento";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Mantenimiento de Usuarios";
             this.Load += new System.EventHandler(this.User_Mantenimiento_Load);
             this.tabCUsuario.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

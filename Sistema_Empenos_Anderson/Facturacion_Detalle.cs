@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Sistema_Empenos_Anderson
 {
-    public partial class Venta : Form
+    public partial class Facturacion_Detalle : Form
     {
-        public Venta()
+        public Facturacion_Detalle()
         {
             InitializeComponent();
         }
@@ -18,6 +19,7 @@ namespace Sistema_Empenos_Anderson
 
         private void Venta_Load(object sender, EventArgs e)
         {
+            this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
             double subtotal = 0, isv = 0;
             this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
             txtVendedor.Text = Objetos_Globales.usuario.nombre_Usuario;
@@ -56,10 +58,28 @@ namespace Sistema_Empenos_Anderson
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            BD.Ingreso_Cliente(txtIDComp.Text, txtNombre.Text, txtApellido.Text, txtTelefono.Text, txtCorreo.Text,1, "Cliente");
-            Objetos_Globales.cliente.identidad_Cliente = txtIDComp.Text;
-            MessageBoxTemporal.Show("Ingresado Correctamente", "Empeños Anderson",1,false);
-            btnAdd.Enabled = false;
+            if (txtTelefono.MaskFull && txtNombre.Text != "" && txtApellido.Text != "" && Validar_Correo(txtCorreo.Text))
+            {
+                if (BD.Ingreso_Cliente(txtIDComp.Text, txtNombre.Text, txtApellido.Text, txtTelefono.Text, txtCorreo.Text, 1, "Cliente") == 0)
+                {
+                    MessageBoxTemporal.Show("Identidad encontrada en otro registro, utilice otra o el cliente ya está agregado", "Mensaje Importante", 2, false);
+                }
+                else
+                {
+                    MessageBoxTemporal.Show("Ingresado correctamente", "Mensaje Importante", 1, false);
+                    Objetos_Globales.cliente.nombre_Cliente = txtNombre.Text;
+                    Objetos_Globales.cliente.apellido_Cliente = txtApellido.Text;
+                    Objetos_Globales.cliente.telefono_Cliente = txtTelefono.Text;
+                    Objetos_Globales.cliente.correo_Cliente = txtCorreo.Text;
+                    Objetos_Globales.cliente.identidad_Cliente = txtIDComp.Text;
+                    btnAdd.Enabled = false;
+                }
+            }
+            else
+            {
+                MessageBoxTemporal.Show("Ha ingresado incorrectamente algunos datos!\nPorfavor Reviselos.", "Mensaje Importante", 2, false);
+            }
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -90,6 +110,67 @@ namespace Sistema_Empenos_Anderson
             this.Hide();
             Facturacion facturacion = new Facturacion();
             facturacion.Show();
+        }
+
+        private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBoxTemporal.Show("Solo se permiten numeros", "Advertencia", 1, false);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtMonto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBoxTemporal.Show("Solo se permiten numeros", "Advertencia", 1, false);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBoxTemporal.Show("Solo se permiten letras", "Advertencia", 1, false);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBoxTemporal.Show("Solo se permiten letras", "Advertencia", 1, false);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private Boolean Validar_Correo(string email)
+        {
+            string expresion;
+            expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            if (Regex.IsMatch(email, expresion))
+            {
+                if (Regex.Replace(email, expresion, String.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

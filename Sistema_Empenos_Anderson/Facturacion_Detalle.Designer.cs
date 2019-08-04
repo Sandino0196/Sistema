@@ -1,6 +1,6 @@
 ﻿namespace Sistema_Empenos_Anderson
 {
-    partial class Venta
+    partial class Facturacion_Detalle
     {
         /// <summary>
         /// Required designer variable.
@@ -68,6 +68,7 @@
             this.txtMonto.Name = "txtMonto";
             this.txtMonto.Size = new System.Drawing.Size(100, 20);
             this.txtMonto.TabIndex = 33;
+            this.txtMonto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMonto_KeyPress);
             // 
             // txtTotalPagar
             // 
@@ -186,6 +187,7 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.Enabled = false;
             this.btnAdd.Location = new System.Drawing.Point(232, 59);
             this.btnAdd.Name = "btnAdd";
@@ -205,6 +207,7 @@
             // 
             // btnBuscarCliente
             // 
+            this.btnBuscarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscarCliente.Location = new System.Drawing.Point(232, 23);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Size = new System.Drawing.Size(75, 24);
@@ -216,11 +219,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(27, 145);
+            this.label5.Location = new System.Drawing.Point(18, 145);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(97, 13);
             this.label5.TabIndex = 43;
-            this.label5.Text = "Correo Electronico:";
+            this.label5.Text = "Correo Electrónico:";
             // 
             // lbIDComp
             // 
@@ -247,6 +250,7 @@
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(100, 20);
             this.txtApellido.TabIndex = 40;
+            this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido_KeyPress);
             // 
             // label3
             // 
@@ -273,6 +277,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNombre.TabIndex = 38;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // txtVendedor
             // 
@@ -293,6 +298,7 @@
             // 
             // btnVolver
             // 
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVolver.Location = new System.Drawing.Point(453, 225);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(90, 58);
@@ -303,6 +309,7 @@
             // 
             // btnAceptar
             // 
+            this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAceptar.Location = new System.Drawing.Point(270, 225);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(90, 58);
@@ -318,6 +325,7 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(100, 20);
             this.txtCodigo.TabIndex = 39;
+            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             // 
             // label1
             // 
@@ -351,7 +359,7 @@
             this.Facturacion.TabStop = false;
             this.Facturacion.Text = "Facturacion";
             // 
-            // Venta
+            // Facturacion_Detalle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -360,8 +368,10 @@
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.gbInfoComp);
-            this.Name = "Venta";
-            this.Text = "Venta";
+            this.MaximizeBox = false;
+            this.Name = "Facturacion_Detalle";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Facturación";
             this.Load += new System.EventHandler(this.Venta_Load);
             this.gbInfoComp.ResumeLayout(false);
             this.gbInfoComp.PerformLayout();

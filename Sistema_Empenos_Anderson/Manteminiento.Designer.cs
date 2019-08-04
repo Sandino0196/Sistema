@@ -37,6 +37,7 @@
             // 
             // btnClientes
             // 
+            this.btnClientes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClientes.Location = new System.Drawing.Point(12, 24);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(138, 70);
@@ -47,16 +48,18 @@
             // 
             // btnArticulos
             // 
+            this.btnArticulos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnArticulos.Location = new System.Drawing.Point(224, 24);
             this.btnArticulos.Name = "btnArticulos";
             this.btnArticulos.Size = new System.Drawing.Size(138, 70);
             this.btnArticulos.TabIndex = 1;
-            this.btnArticulos.Text = "Mantenimiento de Articulos";
+            this.btnArticulos.Text = "Mantenimiento de Artículos";
             this.btnArticulos.UseVisualStyleBackColor = true;
             this.btnArticulos.Click += new System.EventHandler(this.btnArticulos_Click);
             // 
             // btnUsuarios
             // 
+            this.btnUsuarios.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUsuarios.Location = new System.Drawing.Point(12, 132);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(138, 70);
@@ -77,6 +80,7 @@
             // 
             // button1
             // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Location = new System.Drawing.Point(223, 132);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(138, 70);
@@ -94,8 +98,11 @@
             this.Controls.Add(this.btnUsuarios);
             this.Controls.Add(this.btnArticulos);
             this.Controls.Add(this.btnClientes);
+            this.MaximizeBox = false;
             this.Name = "Manteminiento";
-            this.Text = "Manteminiento";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Menú de Manteminiento";
+            this.Load += new System.EventHandler(this.Manteminiento_Load);
             this.ResumeLayout(false);
 
         }

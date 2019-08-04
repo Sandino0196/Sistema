@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Sistema_Empenos_Anderson
 {
-    public partial class Elim_Clien_Mantenimiento : Form
+    public partial class Mantenimiento_Clientes : Form
     {
-        public Elim_Clien_Mantenimiento()
+        public Mantenimiento_Clientes()
         {
             InitializeComponent();
         }
@@ -80,6 +80,36 @@ namespace Sistema_Empenos_Anderson
         {
             BD.Actualizar_Cliente(txtIdentidadMod.Text, txtNombreMod.Text, txtApellidoMod.Text, txtTelefonoMod.Text, txtCorreoMod.Text);
             MessageBoxTemporal.Show("Cliente modificado", "Mensaje Importante", 1, false);
+        }
+
+        private void txtNombreMod_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombreMod_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBoxTemporal.Show("Solo se permiten letras", "Advertencia", 1, false);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtApellidoMod_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBoxTemporal.Show("Solo se permiten letras", "Advertencia", 1, false);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void Mantenimiento_Clientes_Load(object sender, EventArgs e)
+        {
+            this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
         }
     }
 }

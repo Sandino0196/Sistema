@@ -10,9 +10,9 @@ namespace Sistema_Empenos_Anderson
         {
             InitializeComponent();
             if (codigo != 1)
-                rdbMantenimiento.Visible = false;
+                rdbMantenimiento.Enabled = true;
             else
-                rdbMantenimiento.Visible = true;
+                rdbMantenimiento.Enabled = false;
         }
 
         protected override void OnClosed(EventArgs e)
@@ -37,6 +37,8 @@ namespace Sistema_Empenos_Anderson
                 this.Hide();
             } else if (rdbRetiro.Checked)
             {
+                Objetos_Globales.cliente = new Cliente();
+                Objetos_Mantenimiento.articuloMantenimiento = new Articulo();
                 Retirar_Articulos retiro = new Retirar_Articulos();
                 retiro.Show();
                 this.Hide();
@@ -58,9 +60,7 @@ namespace Sistema_Empenos_Anderson
                 manteminiento.Show();
                 this.Hide();
             } else
-            {
                 MessageBox.Show("Seleccione una opción, por favor", "Advertencia");
-            }
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -70,14 +70,6 @@ namespace Sistema_Empenos_Anderson
 
         private void Menu_Load(object sender, EventArgs e)
         {
-            if(Objetos_Globales.usuario.codigo_Tipo_Usuario != 1)
-            {
-                rdbMantenimiento.Visible = false;
-            } else
-            {
-                rdbMantenimiento.Visible = true;
-            }
-
             this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
         }
 

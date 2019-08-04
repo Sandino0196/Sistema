@@ -33,7 +33,7 @@ namespace Sistema_Empenos_Anderson
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            Elim_Clien_Mantenimiento cliente = new Elim_Clien_Mantenimiento();
+            Mantenimiento_Clientes cliente = new Mantenimiento_Clientes();
             this.Hide();
             cliente.Show();
         }
@@ -48,6 +48,11 @@ namespace Sistema_Empenos_Anderson
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Manteminiento_Load(object sender, EventArgs e)
+        {
+            this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
         }
     }
 }

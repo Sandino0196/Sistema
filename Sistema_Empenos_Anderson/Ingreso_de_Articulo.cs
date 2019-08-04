@@ -79,6 +79,26 @@ namespace Sistema_Empenos_Anderson
             ingreso.Show();
         }
 
+        private void txtCod_Recibo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBoxTemporal.Show("Solo se permiten numeros", "Advertencia", 1, false);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtMonto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBoxTemporal.Show("Solo se permiten numeros", "Advertencia", 1, false);
+                e.Handled = true;
+                return;
+            }
+        }
+
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             if(txtCod_Recibo.Text=="" || Validar_Monto(txtCod_Recibo.Text)==0 || txtNumero_Serie.Text=="" || txtDescripcion.Text=="" || txtMarca.Text=="" || txtModelo.Text=="" || Validar_Monto(txtMonto.Text)==0 || txtMonto.Text=="" || Validar_Monto(txtTasa.Text)==0)

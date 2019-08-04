@@ -50,6 +50,7 @@ namespace Sistema_Empenos_Anderson
 
         private void label4_Click(object sender, EventArgs e)
         {
+            this.Hide();
             User_Mantenimiento user = new User_Mantenimiento(1);
             user.Show();
         }

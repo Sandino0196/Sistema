@@ -88,7 +88,7 @@ namespace Sistema_Empenos_Anderson
         private void btnAvanzar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Venta venta = new Venta();
+            Facturacion_Detalle venta = new Facturacion_Detalle();
             venta.Show();
         }
 
@@ -108,6 +108,31 @@ namespace Sistema_Empenos_Anderson
         private void bttEliminar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtNumRecibo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNumRecibo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBoxTemporal.Show("Solo se permiten numeros", "Advertencia", 1, false);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBoxTemporal.Show("Solo se permiten numeros", "Advertencia", 1, false);
+                e.Handled = true;
+                return;
+            }
         }
     }
 }

@@ -84,6 +84,7 @@
             this.txtCod_Recibo.Name = "txtCod_Recibo";
             this.txtCod_Recibo.Size = new System.Drawing.Size(100, 20);
             this.txtCod_Recibo.TabIndex = 11;
+            this.txtCod_Recibo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCod_Recibo_KeyPress);
             // 
             // txtNumero_Serie
             // 
@@ -135,6 +136,7 @@
             // 
             // clndrFecha
             // 
+            this.clndrFecha.Enabled = false;
             this.clndrFecha.Location = new System.Drawing.Point(518, 106);
             this.clndrFecha.Name = "clndrFecha";
             this.clndrFecha.TabIndex = 17;
@@ -193,6 +195,7 @@
             this.txtMonto.Name = "txtMonto";
             this.txtMonto.Size = new System.Drawing.Size(100, 20);
             this.txtMonto.TabIndex = 25;
+            this.txtMonto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMonto_KeyPress);
             // 
             // label9
             // 
@@ -265,6 +268,7 @@
             // 
             // btnVolver
             // 
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVolver.Location = new System.Drawing.Point(12, 422);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(75, 23);
@@ -275,6 +279,7 @@
             // 
             // btnAvanzar
             // 
+            this.btnAvanzar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAvanzar.Location = new System.Drawing.Point(741, 422);
             this.btnAvanzar.Name = "btnAvanzar";
             this.btnAvanzar.Size = new System.Drawing.Size(75, 23);
@@ -285,6 +290,7 @@
             // 
             // btnAgregar
             // 
+            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregar.Location = new System.Drawing.Point(196, 382);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
@@ -321,7 +327,9 @@
             this.Controls.Add(this.txtCod_Recibo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
+            this.MaximizeBox = false;
             this.Name = "Ingreso_de_Articulo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ingreso de Articulo";
             this.Load += new System.EventHandler(this.Ingreso_de_Articulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvArticulos)).EndInit();

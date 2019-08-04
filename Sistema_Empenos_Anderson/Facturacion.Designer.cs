@@ -87,9 +87,12 @@
             this.txtNumRecibo.Name = "txtNumRecibo";
             this.txtNumRecibo.Size = new System.Drawing.Size(100, 20);
             this.txtNumRecibo.TabIndex = 5;
+            this.txtNumRecibo.TextChanged += new System.EventHandler(this.txtNumRecibo_TextChanged);
+            this.txtNumRecibo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumRecibo_KeyPress);
             // 
             // bttBuscar
             // 
+            this.bttBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bttBuscar.Location = new System.Drawing.Point(232, 25);
             this.bttBuscar.Name = "bttBuscar";
             this.bttBuscar.Size = new System.Drawing.Size(75, 23);
@@ -117,6 +120,7 @@
             // 
             // bttAgregar
             // 
+            this.bttAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bttAgregar.Enabled = false;
             this.bttAgregar.Location = new System.Drawing.Point(232, 74);
             this.bttAgregar.Name = "bttAgregar";
@@ -128,6 +132,7 @@
             // 
             // bttEliminar
             // 
+            this.bttEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bttEliminar.Location = new System.Drawing.Point(211, 478);
             this.bttEliminar.Name = "bttEliminar";
             this.bttEliminar.Size = new System.Drawing.Size(75, 23);
@@ -162,6 +167,7 @@
             // 
             // btnConsulta
             // 
+            this.btnConsulta.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConsulta.Location = new System.Drawing.Point(232, 118);
             this.btnConsulta.Name = "btnConsulta";
             this.btnConsulta.Size = new System.Drawing.Size(75, 23);
@@ -176,6 +182,7 @@
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(100, 20);
             this.txtPrecio.TabIndex = 30;
+            this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
             // 
             // label3
             // 
@@ -260,6 +267,7 @@
             // 
             // btnAvanzar
             // 
+            this.btnAvanzar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAvanzar.Location = new System.Drawing.Point(386, 478);
             this.btnAvanzar.Name = "btnAvanzar";
             this.btnAvanzar.Size = new System.Drawing.Size(75, 23);
@@ -270,6 +278,7 @@
             // 
             // btnVolver
             // 
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVolver.Location = new System.Drawing.Point(27, 478);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(75, 23);
@@ -288,8 +297,10 @@
             this.Controls.Add(this.dtgvArticulos);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.bttEliminar);
+            this.MaximizeBox = false;
             this.Name = "Facturacion";
-            this.Text = "Facturacion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Facturación";
             this.Load += new System.EventHandler(this.Facturacion_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

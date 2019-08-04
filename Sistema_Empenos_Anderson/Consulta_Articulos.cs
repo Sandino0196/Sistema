@@ -14,7 +14,7 @@ namespace Sistema_Empenos_Anderson
 
         private void Consulta_Facturacion_Load(object sender, EventArgs e)
         {
-           
+            this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
         }
 
         private void rbRecibo_CheckedChanged(object sender, EventArgs e)

@@ -45,7 +45,7 @@ namespace Sistema_Empenos_Anderson
 
         private void Pago_de_Cuotas_Detalle_Load(object sender, EventArgs e)
         {
-            
+            this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
         }
 
         private void numMeses_ValueChanged(object sender, EventArgs e)
@@ -58,6 +58,21 @@ namespace Sistema_Empenos_Anderson
             this.Hide();
             Menu men = new Sistema_Empenos_Anderson.Menu(Objetos_Globales.usuario.codigo_Tipo_Usuario);
             men.Show();
+        }
+
+        private void txtMonto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void txtIngresado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBoxTemporal.Show("Solo se permiten numeros", "Advertencia", 1, false);
+                e.Handled = true;
+                return;
+            }
         }
     }
 }

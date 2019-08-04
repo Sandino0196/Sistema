@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Threading;
+using System.Text.RegularExpressions;
 
 namespace Sistema_Empenos_Anderson
 {
@@ -22,18 +23,25 @@ namespace Sistema_Empenos_Anderson
 
         }
 
-        private int Validar_Correo()
+        private Boolean Validar_Correo(string email)
         {
-            string Correo;
-            Correo = txtCorreo.Text;
-            int verificador=0;
-            for(int x=0; x<Correo.Length; x++)
+            string expresion;
+            expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            if (Regex.IsMatch(email, expresion))
             {
-                if (Correo[x].ToString() == "@" || Correo[x].ToString() == ".")
-                    verificador++;
+                if (Regex.Replace(email, expresion, String.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-
-            return verificador;
+            else
+            {
+                return false;
+            }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -78,12 +86,13 @@ namespace Sistema_Empenos_Anderson
         private void Ingreso_de_Cliente_Load(object sender, EventArgs e)
         {
             this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
+            txtBusqueda_ID.Focus();
             txtBusqueda_ID.Select();
         }
 
         private void btnAñadir_Click(object sender, EventArgs e)
         {
-            if (txtTelefono.MaskFull && txtNombre.Text!="" && txtApellido.Text!="" && Validar_Correo()==2)
+            if (txtTelefono.MaskFull && txtNombre.Text!="" && txtApellido.Text!="" && Validar_Correo(txtCorreo.Text))
             {
                 if (BD.Ingreso_Cliente(txtIdentidad.Text, txtNombre.Text, txtApellido.Text, txtTelefono.Text, txtCorreo.Text, 1, "Cliente") == 0)
                 {
@@ -109,5 +118,24 @@ namespace Sistema_Empenos_Anderson
             }
         }
 
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBoxTemporal.Show("Solo se permiten letras", "Advertencia", 1, false);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBoxTemporal.Show("Solo se permiten letras", "Advertencia", 1, false);
+                e.Handled = true;
+                return;
+            }
+        }
     }
 }

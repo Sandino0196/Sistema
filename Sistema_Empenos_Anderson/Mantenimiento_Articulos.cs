@@ -55,7 +55,6 @@ namespace Sistema_Empenos_Anderson
 
         private void Tipo_Art_Mantenimiento_Load(object sender, EventArgs e)
         {
-            //Comentario por aqui
             cbxTipo_Art.DataSource = BD.CargarTipoArticulos();
             cbxTipo_Art.DisplayMember = "Descripcion";
             cbxTipo_Art.ValueMember = "Codigo_Tipo_Articulo";
@@ -145,6 +144,41 @@ namespace Sistema_Empenos_Anderson
         {
             BD.Actualizar_Estado_Articulo(txtNum_Serie.Text, int.Parse(txtNum_Recibo.Text), cmbEstados.SelectedIndex+1, cmbEstados.SelectedItem.ToString());
             MessageBoxTemporal.Show("Informacion Actualizada!","Informacion", 1, false);
+        }
+
+        private void Recibotxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBoxTemporal.Show("Solo se permiten numeros", "Advertencia", 1, false);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtNom_TpArt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBoxTemporal.Show("Solo se permiten letras", "Advertencia", 1, false);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtNum_Recibo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNum_Recibo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBoxTemporal.Show("Solo se permiten numeros", "Advertencia", 1, false);
+                e.Handled = true;
+                return;
+            }
         }
     }
 }

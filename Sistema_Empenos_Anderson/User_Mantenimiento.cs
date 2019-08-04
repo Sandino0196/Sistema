@@ -16,15 +16,23 @@ namespace Sistema_Empenos_Anderson
         public User_Mantenimiento()
         {
             InitializeComponent();
-            txtNom_User_Tipo.Enabled = true;
-            btnBuscarTipo.Enabled = true;
             txtNom_User_Pass.Enabled = true;
             btnBuscarPassword.Enabled = true;
+            txtRespuesta1Pass.Enabled = true;
+            txtRespuesta2Pass.Enabled = true;
+            cmbPreguntas1.Enabled = true;
+            cmbPreguntas2.Enabled = true;
             txtNom_User_Nuevo.Enabled = true;
             txtPassNuevo_New.Enabled = true;
             txtPassConfirmar_New.Enabled = true;
-            cmbPreguntas1.Enabled = true;
-            cmbPreguntas2.Enabled = true;
+            cbxTp_User_New.Enabled = true;
+            btnAceptarNew.Enabled = true;
+            btnBuscarEliminar.Enabled = true;
+            txtUsuarioEliminar.Enabled = true;
+            txtRespuesta1.Enabled = true;
+            txtRespuesta2.Enabled = true;
+            txtNom_User_Tipo.Enabled = true;
+            btnBuscarTipo.Enabled = true;
         }
 
         public User_Mantenimiento(int tab)
@@ -37,13 +45,19 @@ namespace Sistema_Empenos_Anderson
             {
                 txtNom_User_Pass.Enabled = true;
                 btnBuscarPassword.Enabled = true;
-                cmbPreguntas1.Enabled = true;
-                cmbPreguntas2.Enabled = true;
+                txtRespuesta1Pass.Enabled = true;
+                txtRespuesta2Pass.Enabled = true;
+                cmbPreguntas1.Enabled = false;
+                cmbPreguntas2.Enabled = false;
                 txtNom_User_Nuevo.Enabled = false;
                 txtPassNuevo_New.Enabled = false;
                 txtPassConfirmar_New.Enabled = false;
                 cbxTp_User_New.Enabled = false;
                 btnAceptarNew.Enabled = false;
+                btnBuscarEliminar.Enabled = false;
+                txtUsuarioEliminar.Enabled = false;
+                txtRespuesta1.Enabled = false;
+                txtRespuesta2.Enabled = false;
             }
         }
 
@@ -51,7 +65,9 @@ namespace Sistema_Empenos_Anderson
         {
             if(Objetos_Globales.usuario.codigo_Usuario == 0)
             {
+                Form1 form = new Form1();
                 this.Close();
+                form.Show();
             } else {
                 Manteminiento manteminiento = new Manteminiento();
                 this.Close();
@@ -73,6 +89,7 @@ namespace Sistema_Empenos_Anderson
 
         private void User_Mantenimiento_Load(object sender, EventArgs e)
         {
+            this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
             BD.OpenConnection();
             SqlDataAdapter da = new SqlDataAdapter("SP_Tipos_Usuario", BD.connection);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;

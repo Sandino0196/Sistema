@@ -135,6 +135,7 @@
             // 
             // btnVolver
             // 
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVolver.Location = new System.Drawing.Point(15, 436);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(75, 23);
@@ -145,6 +146,7 @@
             // 
             // btnAceptar
             // 
+            this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAceptar.Location = new System.Drawing.Point(140, 436);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
@@ -155,6 +157,7 @@
             // 
             // btnSalir
             // 
+            this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSalir.Location = new System.Drawing.Point(263, 436);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
@@ -174,10 +177,12 @@
             // 
             // txtMonto
             // 
+            this.txtMonto.Enabled = false;
             this.txtMonto.Location = new System.Drawing.Point(104, 359);
             this.txtMonto.Name = "txtMonto";
             this.txtMonto.Size = new System.Drawing.Size(100, 20);
             this.txtMonto.TabIndex = 19;
+            this.txtMonto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMonto_KeyPress);
             // 
             // txtIngresado
             // 
@@ -185,6 +190,7 @@
             this.txtIngresado.Name = "txtIngresado";
             this.txtIngresado.Size = new System.Drawing.Size(100, 20);
             this.txtIngresado.TabIndex = 20;
+            this.txtIngresado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIngresado_KeyPress);
             // 
             // Pago_de_Cuotas_Detalle
             // 
@@ -207,8 +213,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtCodigoPago);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
             this.Name = "Pago_de_Cuotas_Detalle";
-            this.Text = "Pago_de_Cuotas_Detalle";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Recibo de Pago de Interés";
             this.Load += new System.EventHandler(this.Pago_de_Cuotas_Detalle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numMeses)).EndInit();
             this.ResumeLayout(false);

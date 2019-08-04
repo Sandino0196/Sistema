@@ -122,6 +122,7 @@
             // 
             // btnregresar
             // 
+            this.btnregresar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnregresar.Location = new System.Drawing.Point(21, 409);
             this.btnregresar.Name = "btnregresar";
             this.btnregresar.Size = new System.Drawing.Size(88, 49);
@@ -132,6 +133,7 @@
             // 
             // btnaceptar
             // 
+            this.btnaceptar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnaceptar.Location = new System.Drawing.Point(60, 219);
             this.btnaceptar.Name = "btnaceptar";
             this.btnaceptar.Size = new System.Drawing.Size(88, 49);
@@ -164,7 +166,9 @@
             this.Controls.Add(this.lblcambio);
             this.Controls.Add(this.labelseleccion);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
             this.Name = "Consultas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultas";
             this.Load += new System.EventHandler(this.Consultas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtConsultas)).EndInit();
