@@ -41,9 +41,9 @@
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.txtMonto = new System.Windows.Forms.MaskedTextBox();
-            this.txtIngresado = new System.Windows.Forms.MaskedTextBox();
             this.txtCliente = new System.Windows.Forms.MaskedTextBox();
+            this.txtMonto = new System.Windows.Forms.TextBox();
+            this.txtIngresado = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numMeses)).BeginInit();
             this.SuspendLayout();
             // 
@@ -163,22 +163,6 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // txtMonto
-            // 
-            this.txtMonto.Location = new System.Drawing.Point(104, 359);
-            this.txtMonto.Mask = "00000.00";
-            this.txtMonto.Name = "txtMonto";
-            this.txtMonto.Size = new System.Drawing.Size(54, 20);
-            this.txtMonto.TabIndex = 16;
-            // 
-            // txtIngresado
-            // 
-            this.txtIngresado.Location = new System.Drawing.Point(104, 398);
-            this.txtIngresado.Mask = "00000.00";
-            this.txtIngresado.Name = "txtIngresado";
-            this.txtIngresado.Size = new System.Drawing.Size(54, 20);
-            this.txtIngresado.TabIndex = 17;
-            // 
             // txtCliente
             // 
             this.txtCliente.Enabled = false;
@@ -188,14 +172,28 @@
             this.txtCliente.Size = new System.Drawing.Size(158, 20);
             this.txtCliente.TabIndex = 18;
             // 
+            // txtMonto
+            // 
+            this.txtMonto.Location = new System.Drawing.Point(104, 359);
+            this.txtMonto.Name = "txtMonto";
+            this.txtMonto.Size = new System.Drawing.Size(100, 20);
+            this.txtMonto.TabIndex = 19;
+            // 
+            // txtIngresado
+            // 
+            this.txtIngresado.Location = new System.Drawing.Point(105, 398);
+            this.txtIngresado.Name = "txtIngresado";
+            this.txtIngresado.Size = new System.Drawing.Size(100, 20);
+            this.txtIngresado.TabIndex = 20;
+            // 
             // Pago_de_Cuotas_Detalle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(350, 471);
-            this.Controls.Add(this.txtCliente);
             this.Controls.Add(this.txtIngresado);
             this.Controls.Add(this.txtMonto);
+            this.Controls.Add(this.txtCliente);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnVolver);
@@ -233,8 +231,8 @@
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.MaskedTextBox txtMonto;
-        private System.Windows.Forms.MaskedTextBox txtIngresado;
         private System.Windows.Forms.MaskedTextBox txtCliente;
+        private System.Windows.Forms.TextBox txtMonto;
+        private System.Windows.Forms.TextBox txtIngresado;
     }
 }

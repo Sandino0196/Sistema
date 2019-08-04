@@ -28,9 +28,12 @@ namespace Sistema_Empenos_Anderson
             {
                 if(BD.Modificar_Meses(Objetos_Mantenimiento.articuloMantenimiento.NumeroRecibo, Objetos_Mantenimiento.articuloMantenimiento.NumeroSerie, Objetos_Mantenimiento.articuloMantenimiento.Meses - int.Parse(numMeses.Value.ToString())) > 0)
                 {
+                    Objetos_Globales.fechaHoyCorta = Objetos_Globales.fecha.Day + "/" + Objetos_Globales.fecha.Month +
+                "/" + Objetos_Globales.fecha.Year;
                     BD.Ingreso_Pago_Interes(Objetos_Mantenimiento.articuloMantenimiento.NumeroRecibo, Objetos_Mantenimiento.articuloMantenimiento.NumeroSerie,
                         int.Parse(txtCodigoPago.Text), txtCliente.Text, Objetos_Globales.fechaHoyCorta, double.Parse(txtMonto.Text),
                         Objetos_Globales.usuario.codigo_Usuario);
+                    MessageBoxTemporal.Show(Objetos_Globales.fechaHoyCorta, "Mensaje importante", 1, false);
                     MessageBoxTemporal.Show("Transaccion Finalizada", "Mensaje importante", 1, false);
                     this.Hide();
                     Menu men = new Sistema_Empenos_Anderson.Menu(Objetos_Globales.usuario.codigo_Tipo_Usuario);

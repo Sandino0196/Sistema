@@ -405,10 +405,12 @@ namespace Sistema_Empenos_Anderson
                 Objetos_Mantenimiento.usuarioMantenimiento.pregunta1 = command.Parameters["@Pregunta1"].Value.ToString();
                 Objetos_Mantenimiento.usuarioMantenimiento.pregunta2 = command.Parameters["@Pregunta2"].Value.ToString();
                 Objetos_Mantenimiento.usuarioMantenimiento.estado = int.Parse(command.Parameters["@Estado"].Value.ToString());
+                CloseConnection();
                 return 1;
             }
             catch
             {
+                CloseConnection();
                 return 0;
             }
 
@@ -480,7 +482,7 @@ namespace Sistema_Empenos_Anderson
             command.Parameters.Add(new SqlParameter("@Tipo", tipo));
             command.Parameters.Add(new SqlParameter("@Cod_Estado", cod_estado));
             command.Parameters.Add(new SqlParameter("@Estado", estado));
-            command.Parameters.Add(new SqlParameter("@Fecha_Creado", fecha));
+            command.Parameters.Add(new SqlParameter("@FechaCreacion", fecha));
             command.Parameters.Add(new SqlParameter("@Pregunta1", pregunta1));
             command.Parameters.Add(new SqlParameter("@Pregunta2", pregunta2));
             command.Parameters.Add(new SqlParameter("@Respuesta1", respuesta1));
@@ -597,11 +599,13 @@ namespace Sistema_Empenos_Anderson
             try
             {
                 command.ExecuteNonQuery();
+                //MessageBoxTemporal.Show("Prueba","Prueba",2,false);
                 CloseConnection();
             }
-            catch
+            catch(SqlException e)
             {
-                MessageBoxTemporal.Show("No pudo realizarse la operación", "Mensaje Imporante", 2, false);
+                MessageBoxTemporal.Show(e.Message, "Mensaje Imporante", 3, false);
+                
                 CloseConnection();
             }
 
