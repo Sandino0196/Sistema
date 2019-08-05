@@ -28,160 +28,145 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rdbMantenimiento = new System.Windows.Forms.RadioButton();
-            this.rdbConsulta = new System.Windows.Forms.RadioButton();
-            this.rdbVenta = new System.Windows.Forms.RadioButton();
-            this.rdbRetiro = new System.Windows.Forms.RadioButton();
-            this.rdbPago = new System.Windows.Forms.RadioButton();
-            this.rdbIngreso = new System.Windows.Forms.RadioButton();
-            this.btnIngresar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
+            this.btnIngresoArticulo = new System.Windows.Forms.Button();
+            this.btnInteres = new System.Windows.Forms.Button();
+            this.btnRetiro = new System.Windows.Forms.Button();
+            this.btnVenta = new System.Windows.Forms.Button();
+            this.btnConsulta = new System.Windows.Forms.Button();
+            this.btnMantenimiento = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // btnIngresoArticulo
             // 
-            this.groupBox1.Controls.Add(this.rdbMantenimiento);
-            this.groupBox1.Controls.Add(this.rdbConsulta);
-            this.groupBox1.Controls.Add(this.rdbVenta);
-            this.groupBox1.Controls.Add(this.rdbRetiro);
-            this.groupBox1.Controls.Add(this.rdbPago);
-            this.groupBox1.Controls.Add(this.rdbIngreso);
-            this.groupBox1.Location = new System.Drawing.Point(12, 62);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox1.Size = new System.Drawing.Size(393, 376);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            this.btnIngresoArticulo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnIngresoArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngresoArticulo.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresoArticulo.Image")));
+            this.btnIngresoArticulo.Location = new System.Drawing.Point(92, 33);
+            this.btnIngresoArticulo.Name = "btnIngresoArticulo";
+            this.btnIngresoArticulo.Size = new System.Drawing.Size(200, 50);
+            this.btnIngresoArticulo.TabIndex = 6;
+            this.btnIngresoArticulo.Text = "Ingreso de Artículo";
+            this.btnIngresoArticulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnIngresoArticulo.UseVisualStyleBackColor = true;
+            this.btnIngresoArticulo.Click += new System.EventHandler(this.button1_Click);
             // 
-            // rdbMantenimiento
+            // btnInteres
             // 
-            this.rdbMantenimiento.AutoSize = true;
-            this.rdbMantenimiento.Location = new System.Drawing.Point(129, 304);
-            this.rdbMantenimiento.Name = "rdbMantenimiento";
-            this.rdbMantenimiento.Size = new System.Drawing.Size(94, 17);
-            this.rdbMantenimiento.TabIndex = 5;
-            this.rdbMantenimiento.Text = "Mantenimiento";
-            this.rdbMantenimiento.UseVisualStyleBackColor = true;
+            this.btnInteres.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInteres.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInteres.Image = ((System.Drawing.Image)(resources.GetObject("btnInteres.Image")));
+            this.btnInteres.Location = new System.Drawing.Point(92, 89);
+            this.btnInteres.Name = "btnInteres";
+            this.btnInteres.Size = new System.Drawing.Size(200, 50);
+            this.btnInteres.TabIndex = 7;
+            this.btnInteres.Text = "Pago de Interés";
+            this.btnInteres.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInteres.UseVisualStyleBackColor = true;
+            this.btnInteres.Click += new System.EventHandler(this.button2_Click);
             // 
-            // rdbConsulta
+            // btnRetiro
             // 
-            this.rdbConsulta.AutoSize = true;
-            this.rdbConsulta.Location = new System.Drawing.Point(129, 258);
-            this.rdbConsulta.Name = "rdbConsulta";
-            this.rdbConsulta.Size = new System.Drawing.Size(71, 17);
-            this.rdbConsulta.TabIndex = 4;
-            this.rdbConsulta.Text = "Consultas";
-            this.rdbConsulta.UseVisualStyleBackColor = true;
+            this.btnRetiro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRetiro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRetiro.Image = ((System.Drawing.Image)(resources.GetObject("btnRetiro.Image")));
+            this.btnRetiro.Location = new System.Drawing.Point(92, 145);
+            this.btnRetiro.Name = "btnRetiro";
+            this.btnRetiro.Size = new System.Drawing.Size(200, 50);
+            this.btnRetiro.TabIndex = 8;
+            this.btnRetiro.Text = "Retiro de Artículo";
+            this.btnRetiro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRetiro.UseVisualStyleBackColor = true;
+            this.btnRetiro.Click += new System.EventHandler(this.btnRetiro_Click);
             // 
-            // rdbVenta
+            // btnVenta
             // 
-            this.rdbVenta.AutoSize = true;
-            this.rdbVenta.Location = new System.Drawing.Point(129, 213);
-            this.rdbVenta.Name = "rdbVenta";
-            this.rdbVenta.Size = new System.Drawing.Size(106, 17);
-            this.rdbVenta.TabIndex = 3;
-            this.rdbVenta.Text = "Venta de Articulo";
-            this.rdbVenta.UseVisualStyleBackColor = true;
+            this.btnVenta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVenta.Image = ((System.Drawing.Image)(resources.GetObject("btnVenta.Image")));
+            this.btnVenta.Location = new System.Drawing.Point(92, 201);
+            this.btnVenta.Name = "btnVenta";
+            this.btnVenta.Size = new System.Drawing.Size(200, 50);
+            this.btnVenta.TabIndex = 9;
+            this.btnVenta.Text = "Venta de Artículo";
+            this.btnVenta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVenta.UseVisualStyleBackColor = true;
+            this.btnVenta.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // rdbRetiro
+            // btnConsulta
             // 
-            this.rdbRetiro.AutoSize = true;
-            this.rdbRetiro.Location = new System.Drawing.Point(129, 167);
-            this.rdbRetiro.Name = "rdbRetiro";
-            this.rdbRetiro.Size = new System.Drawing.Size(106, 17);
-            this.rdbRetiro.TabIndex = 2;
-            this.rdbRetiro.Text = "Retiro de Articulo";
-            this.rdbRetiro.UseVisualStyleBackColor = true;
+            this.btnConsulta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsulta.Image = ((System.Drawing.Image)(resources.GetObject("btnConsulta.Image")));
+            this.btnConsulta.Location = new System.Drawing.Point(92, 257);
+            this.btnConsulta.Name = "btnConsulta";
+            this.btnConsulta.Size = new System.Drawing.Size(200, 50);
+            this.btnConsulta.TabIndex = 10;
+            this.btnConsulta.Text = "Consultas";
+            this.btnConsulta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConsulta.UseVisualStyleBackColor = true;
+            this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
             // 
-            // rdbPago
+            // btnMantenimiento
             // 
-            this.rdbPago.AutoSize = true;
-            this.rdbPago.Location = new System.Drawing.Point(129, 119);
-            this.rdbPago.Name = "rdbPago";
-            this.rdbPago.Size = new System.Drawing.Size(100, 17);
-            this.rdbPago.TabIndex = 1;
-            this.rdbPago.Text = "Pago de Interes";
-            this.rdbPago.UseVisualStyleBackColor = true;
-            // 
-            // rdbIngreso
-            // 
-            this.rdbIngreso.AutoSize = true;
-            this.rdbIngreso.Location = new System.Drawing.Point(129, 68);
-            this.rdbIngreso.Name = "rdbIngreso";
-            this.rdbIngreso.Size = new System.Drawing.Size(113, 17);
-            this.rdbIngreso.TabIndex = 0;
-            this.rdbIngreso.Text = "Ingreso de Articulo";
-            this.rdbIngreso.UseVisualStyleBackColor = true;
-            // 
-            // btnIngresar
-            // 
-            this.btnIngresar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnIngresar.Location = new System.Drawing.Point(71, 444);
-            this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(75, 37);
-            this.btnIngresar.TabIndex = 1;
-            this.btnIngresar.Text = "INGRESAR";
-            this.btnIngresar.UseVisualStyleBackColor = true;
-            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(128, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Bienvenido a Empeños Anderson";
+            this.btnMantenimiento.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMantenimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMantenimiento.Image = ((System.Drawing.Image)(resources.GetObject("btnMantenimiento.Image")));
+            this.btnMantenimiento.Location = new System.Drawing.Point(92, 313);
+            this.btnMantenimiento.Name = "btnMantenimiento";
+            this.btnMantenimiento.Size = new System.Drawing.Size(200, 50);
+            this.btnMantenimiento.TabIndex = 11;
+            this.btnMantenimiento.Text = "Mantenimiento";
+            this.btnMantenimiento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMantenimiento.UseVisualStyleBackColor = true;
+            this.btnMantenimiento.Click += new System.EventHandler(this.btnMantenimiento_Click);
             // 
             // btnCerrar
             // 
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrar.Location = new System.Drawing.Point(296, 444);
+            this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
+            this.btnCerrar.Location = new System.Drawing.Point(92, 369);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(75, 37);
-            this.btnCerrar.TabIndex = 3;
-            this.btnCerrar.Text = "CERRAR SESION";
+            this.btnCerrar.Size = new System.Drawing.Size(200, 50);
+            this.btnCerrar.TabIndex = 12;
+            this.btnCerrar.Text = "Cerrar Sesión";
+            this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click_1);
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(418, 493);
+            this.ClientSize = new System.Drawing.Size(386, 445);
             this.Controls.Add(this.btnCerrar);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnIngresar);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btnMantenimiento);
+            this.Controls.Add(this.btnConsulta);
+            this.Controls.Add(this.btnVenta);
+            this.Controls.Add(this.btnRetiro);
+            this.Controls.Add(this.btnIngresoArticulo);
+            this.Controls.Add(this.btnInteres);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Menu";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Menu";
+            this.Text = "Bienvenido a Empeños Anderson";
             this.Load += new System.EventHandler(this.Menu_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton rdbMantenimiento;
-        private System.Windows.Forms.RadioButton rdbConsulta;
-        private System.Windows.Forms.RadioButton rdbVenta;
-        private System.Windows.Forms.RadioButton rdbRetiro;
-        private System.Windows.Forms.RadioButton rdbPago;
-        private System.Windows.Forms.RadioButton rdbIngreso;
-        private System.Windows.Forms.Button btnIngresar;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnIngresoArticulo;
+        private System.Windows.Forms.Button btnInteres;
+        private System.Windows.Forms.Button btnRetiro;
+        private System.Windows.Forms.Button btnVenta;
+        private System.Windows.Forms.Button btnConsulta;
+        private System.Windows.Forms.Button btnMantenimiento;
         private System.Windows.Forms.Button btnCerrar;
     }
 }
