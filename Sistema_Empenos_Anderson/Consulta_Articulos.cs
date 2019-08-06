@@ -33,6 +33,8 @@ namespace Sistema_Empenos_Anderson
         {
             if (rbRecibo.Checked)
                 dtgConsultaArticulo.DataSource = BD.CargarArticulo(int.Parse(txtCod.Text));
+            if (rbCliente.Checked)
+                dtgConsultaArticulo.DataSource = BD.Cargar_Cliente(txtCod.Text);
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -219,6 +219,45 @@ namespace Sistema_Empenos_Anderson
             }
         }
 
+
+        public static DataTable Cargar_NumSerie(string codigo)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                OpenConnection();
+                SqlCommand cmd = new SqlCommand("Select  * from[dbo].[F_Buscar_Serie]('" + codigo + "') ", BD.connection);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
+                CloseConnection();
+                return dt;
+            }
+            catch
+            {
+                return dt;
+            }
+        }
+
+        public static DataTable Cargar_TpArt(int codigo)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                OpenConnection();
+                SqlCommand cmd = new SqlCommand("Select  * from[dbo].[F_Buscar_TArticulo]('" + codigo + "') ", BD.connection);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
+                CloseConnection();
+                return dt;
+            }
+            catch
+            {
+                return dt;
+            }
+        }
+
         #endregion
 
         #region Busqueda
