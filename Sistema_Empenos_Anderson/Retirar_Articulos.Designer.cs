@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Retirar_Articulos));
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtRecibo = new System.Windows.Forms.TextBox();
@@ -43,6 +44,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnRetirar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.btnRetiro = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvInfo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +52,8 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(47, 9);
+            this.label6.ForeColor = System.Drawing.Color.Navy;
+            this.label6.Location = new System.Drawing.Point(75, 9);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(451, 33);
             this.label6.TabIndex = 9;
@@ -59,15 +62,16 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(50, 85);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(50, 156);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 13);
+            this.label1.Size = new System.Drawing.Size(112, 13);
             this.label1.TabIndex = 10;
             this.label1.Text = "Código de Recibo:";
             // 
             // txtRecibo
             // 
-            this.txtRecibo.Location = new System.Drawing.Point(151, 82);
+            this.txtRecibo.Location = new System.Drawing.Point(168, 152);
             this.txtRecibo.Name = "txtRecibo";
             this.txtRecibo.Size = new System.Drawing.Size(100, 20);
             this.txtRecibo.TabIndex = 11;
@@ -75,7 +79,7 @@
             // 
             // txtSerie
             // 
-            this.txtSerie.Location = new System.Drawing.Point(365, 82);
+            this.txtSerie.Location = new System.Drawing.Point(409, 149);
             this.txtSerie.Name = "txtSerie";
             this.txtSerie.Size = new System.Drawing.Size(100, 20);
             this.txtSerie.TabIndex = 13;
@@ -83,21 +87,24 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(264, 85);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(294, 152);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 13);
+            this.label2.Size = new System.Drawing.Size(105, 13);
             this.label2.TabIndex = 12;
             this.label2.Text = "Número de Serie:";
             // 
             // btnBuscar
             // 
+            this.btnBuscar.BackColor = System.Drawing.Color.Gold;
             this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscar.Location = new System.Drawing.Point(231, 127);
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Location = new System.Drawing.Point(245, 208);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 14;
             this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // dtgvInfo
@@ -108,7 +115,7 @@
             this.Marca,
             this.Modelo,
             this.Monto});
-            this.dtgvInfo.Location = new System.Drawing.Point(36, 156);
+            this.dtgvInfo.Location = new System.Drawing.Point(43, 258);
             this.dtgvInfo.Name = "dtgvInfo";
             this.dtgvInfo.Size = new System.Drawing.Size(443, 47);
             this.dtgvInfo.TabIndex = 15;
@@ -135,7 +142,7 @@
             // 
             // txtMontoPagado
             // 
-            this.txtMontoPagado.Location = new System.Drawing.Point(253, 216);
+            this.txtMontoPagado.Location = new System.Drawing.Point(302, 341);
             this.txtMontoPagado.Name = "txtMontoPagado";
             this.txtMontoPagado.Size = new System.Drawing.Size(100, 20);
             this.txtMontoPagado.TabIndex = 17;
@@ -143,38 +150,62 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(107, 219);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(124, 344);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(144, 13);
+            this.label3.Size = new System.Drawing.Size(172, 13);
             this.label3.TabIndex = 16;
             this.label3.Text = "Monto Pagado por el Cliente:";
             // 
             // btnRetirar
             // 
+            this.btnRetirar.BackColor = System.Drawing.Color.Gold;
             this.btnRetirar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRetirar.Location = new System.Drawing.Point(318, 269);
+            this.btnRetirar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRetirar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnRetirar.Location = new System.Drawing.Point(365, 445);
             this.btnRetirar.Name = "btnRetirar";
             this.btnRetirar.Size = new System.Drawing.Size(75, 23);
             this.btnRetirar.TabIndex = 18;
             this.btnRetirar.Text = "Retirar";
-            this.btnRetirar.UseVisualStyleBackColor = true;
+            this.btnRetirar.UseVisualStyleBackColor = false;
             this.btnRetirar.Click += new System.EventHandler(this.btnRetirar_Click);
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(132, 269);
+            this.btnVolver.BackColor = System.Drawing.Color.Gold;
+            this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.Location = new System.Drawing.Point(151, 445);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(75, 23);
             this.btnVolver.TabIndex = 19;
             this.btnVolver.Text = "Volver";
-            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
+            // btnRetiro
+            // 
+            this.btnRetiro.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnRetiro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRetiro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRetiro.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.btnRetiro.Image = ((System.Drawing.Image)(resources.GetObject("btnRetiro.Image")));
+            this.btnRetiro.Location = new System.Drawing.Point(53, 45);
+            this.btnRetiro.Name = "btnRetiro";
+            this.btnRetiro.Size = new System.Drawing.Size(491, 50);
+            this.btnRetiro.TabIndex = 20;
+            this.btnRetiro.Text = "Retiro de Artículo";
+            this.btnRetiro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRetiro.UseVisualStyleBackColor = false;
+            this.btnRetiro.Click += new System.EventHandler(this.btnRetiro_Click);
             // 
             // Retirar_Articulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(552, 317);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(664, 489);
+            this.Controls.Add(this.btnRetiro);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnRetirar);
             this.Controls.Add(this.txtMontoPagado);
@@ -214,5 +245,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Modelo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Monto;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Button btnRetiro;
     }
 }

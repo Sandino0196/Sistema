@@ -76,5 +76,10 @@ namespace Sistema_Empenos_Anderson
             this.Hide();
             men.Show();
         }
+
+        private void btnRetiro_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
