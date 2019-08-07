@@ -96,12 +96,13 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.BackColor = System.Drawing.Color.Gold;
+            this.btnBuscar.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(245, 208);
+            this.btnBuscar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnBuscar.Location = new System.Drawing.Point(245, 200);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(75, 31);
             this.btnBuscar.TabIndex = 14;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
@@ -159,13 +160,13 @@
             // 
             // btnRetirar
             // 
-            this.btnRetirar.BackColor = System.Drawing.Color.Gold;
+            this.btnRetirar.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnRetirar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRetirar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRetirar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnRetirar.Location = new System.Drawing.Point(365, 445);
+            this.btnRetirar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnRetirar.Location = new System.Drawing.Point(365, 437);
             this.btnRetirar.Name = "btnRetirar";
-            this.btnRetirar.Size = new System.Drawing.Size(75, 23);
+            this.btnRetirar.Size = new System.Drawing.Size(75, 31);
             this.btnRetirar.TabIndex = 18;
             this.btnRetirar.Text = "Retirar";
             this.btnRetirar.UseVisualStyleBackColor = false;
@@ -173,11 +174,12 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.BackColor = System.Drawing.Color.Gold;
+            this.btnVolver.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Location = new System.Drawing.Point(151, 445);
+            this.btnVolver.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnVolver.Location = new System.Drawing.Point(151, 437);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(75, 23);
+            this.btnVolver.Size = new System.Drawing.Size(75, 31);
             this.btnVolver.TabIndex = 19;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -203,7 +205,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(664, 489);
             this.Controls.Add(this.btnRetiro);
             this.Controls.Add(this.btnVolver);
