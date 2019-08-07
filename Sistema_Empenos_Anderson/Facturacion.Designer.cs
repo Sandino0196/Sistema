@@ -63,7 +63,7 @@
             // 
             this.lblNumSerie.AutoSize = true;
             this.lblNumSerie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumSerie.Location = new System.Drawing.Point(12, 30);
+            this.lblNumSerie.Location = new System.Drawing.Point(6, 33);
             this.lblNumSerie.Name = "lblNumSerie";
             this.lblNumSerie.Size = new System.Drawing.Size(87, 13);
             this.lblNumSerie.TabIndex = 2;
@@ -73,7 +73,7 @@
             // 
             this.lblNumRecibo.AutoSize = true;
             this.lblNumRecibo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumRecibo.Location = new System.Drawing.Point(13, 58);
+            this.lblNumRecibo.Location = new System.Drawing.Point(6, 58);
             this.lblNumRecibo.Name = "lblNumRecibo";
             this.lblNumRecibo.Size = new System.Drawing.Size(98, 13);
             this.lblNumRecibo.TabIndex = 3;
@@ -101,9 +101,9 @@
             this.bttBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bttBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttBuscar.ForeColor = System.Drawing.SystemColors.Control;
-            this.bttBuscar.Location = new System.Drawing.Point(232, 25);
+            this.bttBuscar.Location = new System.Drawing.Point(232, 30);
             this.bttBuscar.Name = "bttBuscar";
-            this.bttBuscar.Size = new System.Drawing.Size(75, 23);
+            this.bttBuscar.Size = new System.Drawing.Size(75, 32);
             this.bttBuscar.TabIndex = 6;
             this.bttBuscar.Text = "Buscar";
             this.bttBuscar.UseVisualStyleBackColor = false;
@@ -113,7 +113,7 @@
             // 
             this.lblArticulo.AutoSize = true;
             this.lblArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblArticulo.Location = new System.Drawing.Point(12, 84);
+            this.lblArticulo.Location = new System.Drawing.Point(6, 84);
             this.lblArticulo.Name = "lblArticulo";
             this.lblArticulo.Size = new System.Drawing.Size(56, 13);
             this.lblArticulo.TabIndex = 7;
@@ -134,9 +134,9 @@
             this.bttAgregar.Enabled = false;
             this.bttAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttAgregar.ForeColor = System.Drawing.SystemColors.Control;
-            this.bttAgregar.Location = new System.Drawing.Point(232, 74);
+            this.bttAgregar.Location = new System.Drawing.Point(232, 70);
             this.bttAgregar.Name = "bttAgregar";
-            this.bttAgregar.Size = new System.Drawing.Size(75, 23);
+            this.bttAgregar.Size = new System.Drawing.Size(75, 34);
             this.bttAgregar.TabIndex = 10;
             this.bttAgregar.Text = "Agregar";
             this.bttAgregar.UseVisualStyleBackColor = false;
@@ -148,9 +148,9 @@
             this.bttEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bttEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttEliminar.ForeColor = System.Drawing.SystemColors.Control;
-            this.bttEliminar.Location = new System.Drawing.Point(266, 512);
+            this.bttEliminar.Location = new System.Drawing.Point(268, 512);
             this.bttEliminar.Name = "bttEliminar";
-            this.bttEliminar.Size = new System.Drawing.Size(75, 31);
+            this.bttEliminar.Size = new System.Drawing.Size(73, 31);
             this.bttEliminar.TabIndex = 11;
             this.bttEliminar.Text = "Eliminar";
             this.bttEliminar.UseVisualStyleBackColor = false;
@@ -176,7 +176,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(136, 132);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(318, 201);
+            this.groupBox1.Size = new System.Drawing.Size(410, 201);
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Búsqueda por Número Serie y Número Recibo";
@@ -187,9 +187,9 @@
             this.btnConsulta.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsulta.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnConsulta.Location = new System.Drawing.Point(232, 118);
+            this.btnConsulta.Location = new System.Drawing.Point(232, 113);
             this.btnConsulta.Name = "btnConsulta";
-            this.btnConsulta.Size = new System.Drawing.Size(75, 23);
+            this.btnConsulta.Size = new System.Drawing.Size(75, 32);
             this.btnConsulta.TabIndex = 31;
             this.btnConsulta.Text = "Consulta";
             this.btnConsulta.UseVisualStyleBackColor = false;
@@ -207,7 +207,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 165);
+            this.label3.Location = new System.Drawing.Point(9, 165);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 13);
             this.label3.TabIndex = 29;
@@ -234,7 +234,7 @@
             this.label2.AutoSize = true;
             this.label2.Enabled = false;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 113);
+            this.label2.Location = new System.Drawing.Point(6, 113);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 13);
             this.label2.TabIndex = 26;
@@ -244,7 +244,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 139);
+            this.label1.Location = new System.Drawing.Point(6, 139);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 13);
             this.label1.TabIndex = 25;
@@ -258,7 +258,7 @@
             this.Marca,
             this.Modelo,
             this.Precio});
-            this.dtgvArticulos.Location = new System.Drawing.Point(59, 350);
+            this.dtgvArticulos.Location = new System.Drawing.Point(115, 339);
             this.dtgvArticulos.Name = "dtgvArticulos";
             this.dtgvArticulos.Size = new System.Drawing.Size(449, 150);
             this.dtgvArticulos.TabIndex = 27;

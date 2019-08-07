@@ -37,11 +37,12 @@
             this.btnMantenimiento = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnIngresoArticulo
             // 
-            this.btnIngresoArticulo.BackColor = System.Drawing.Color.Khaki;
+            this.btnIngresoArticulo.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnIngresoArticulo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIngresoArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresoArticulo.ForeColor = System.Drawing.Color.Black;
@@ -57,7 +58,7 @@
             // 
             // btnInteres
             // 
-            this.btnInteres.BackColor = System.Drawing.Color.Khaki;
+            this.btnInteres.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnInteres.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInteres.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInteres.ForeColor = System.Drawing.Color.Black;
@@ -73,7 +74,7 @@
             // 
             // btnRetiro
             // 
-            this.btnRetiro.BackColor = System.Drawing.Color.Khaki;
+            this.btnRetiro.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnRetiro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRetiro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRetiro.ForeColor = System.Drawing.Color.Black;
@@ -89,7 +90,7 @@
             // 
             // btnVenta
             // 
-            this.btnVenta.BackColor = System.Drawing.Color.Khaki;
+            this.btnVenta.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnVenta.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVenta.ForeColor = System.Drawing.Color.Black;
@@ -105,7 +106,7 @@
             // 
             // btnConsulta
             // 
-            this.btnConsulta.BackColor = System.Drawing.Color.Khaki;
+            this.btnConsulta.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnConsulta.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsulta.ForeColor = System.Drawing.Color.Black;
@@ -121,7 +122,7 @@
             // 
             // btnMantenimiento
             // 
-            this.btnMantenimiento.BackColor = System.Drawing.Color.Khaki;
+            this.btnMantenimiento.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnMantenimiento.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMantenimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMantenimiento.ForeColor = System.Drawing.Color.Black;
@@ -137,7 +138,7 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.BackColor = System.Drawing.Color.Khaki;
+            this.btnCerrar.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.ForeColor = System.Drawing.Color.Black;
@@ -156,11 +157,22 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label1.Location = new System.Drawing.Point(187, 38);
+            this.label1.Location = new System.Drawing.Point(208, 63);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(114, 19);
             this.label1.TabIndex = 13;
             this.label1.Text = "BIENVENIDO ";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Navy;
+            this.label6.Location = new System.Drawing.Point(40, 21);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(451, 33);
+            this.label6.TabIndex = 32;
+            this.label6.Text = "Sistema de Empeños Anderson";
             // 
             // Menu
             // 
@@ -168,6 +180,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(527, 563);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnMantenimiento);
@@ -199,5 +212,6 @@
         private System.Windows.Forms.Button btnMantenimiento;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label6;
     }
 }

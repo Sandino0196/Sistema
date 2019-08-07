@@ -121,7 +121,7 @@
             this.btnaceptar.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnaceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnaceptar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnaceptar.Location = new System.Drawing.Point(46, 317);
+            this.btnaceptar.Location = new System.Drawing.Point(21, 323);
             this.btnaceptar.Name = "btnaceptar";
             this.btnaceptar.Size = new System.Drawing.Size(88, 49);
             this.btnaceptar.TabIndex = 8;
@@ -176,7 +176,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(939, 513);
+            this.ClientSize = new System.Drawing.Size(1208, 532);
             this.Controls.Add(this.btnConsulta);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtID);

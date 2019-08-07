@@ -68,25 +68,29 @@
             // 
             // bttBuscar
             // 
+            this.bttBuscar.BackColor = System.Drawing.Color.DarkSlateGray;
             this.bttBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bttBuscar.ForeColor = System.Drawing.SystemColors.Control;
             this.bttBuscar.Location = new System.Drawing.Point(113, 48);
             this.bttBuscar.Name = "bttBuscar";
             this.bttBuscar.Size = new System.Drawing.Size(75, 23);
             this.bttBuscar.TabIndex = 4;
             this.bttBuscar.Text = "Buscar";
-            this.bttBuscar.UseVisualStyleBackColor = true;
+            this.bttBuscar.UseVisualStyleBackColor = false;
             this.bttBuscar.Click += new System.EventHandler(this.bttBuscar_Click);
             // 
             // bttElim
             // 
+            this.bttElim.BackColor = System.Drawing.Color.DarkSlateGray;
             this.bttElim.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bttElim.Enabled = false;
+            this.bttElim.ForeColor = System.Drawing.SystemColors.Control;
             this.bttElim.Location = new System.Drawing.Point(113, 192);
             this.bttElim.Name = "bttElim";
             this.bttElim.Size = new System.Drawing.Size(75, 23);
             this.bttElim.TabIndex = 5;
             this.bttElim.Text = "Eliminar";
-            this.bttElim.UseVisualStyleBackColor = true;
+            this.bttElim.UseVisualStyleBackColor = false;
             this.bttElim.Click += new System.EventHandler(this.bttElim_Click);
             // 
             // btnVolver
@@ -156,6 +160,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.tabPage1.Controls.Add(this.bttElim);
             this.tabPage1.Controls.Add(this.txtEstado);
             this.tabPage1.Controls.Add(this.ID_Clientelbl);
@@ -170,10 +175,10 @@
             this.tabPage1.Size = new System.Drawing.Size(289, 249);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Eliminar Cliente";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.tabPage2.Controls.Add(this.btnAceptar);
             this.tabPage2.Controls.Add(this.txtTelefonoMod);
             this.tabPage2.Controls.Add(this.txtCorreoMod);
@@ -192,18 +197,19 @@
             this.tabPage2.Size = new System.Drawing.Size(289, 249);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Modificar Cliente";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // btnAceptar
             // 
+            this.btnAceptar.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAceptar.Enabled = false;
+            this.btnAceptar.ForeColor = System.Drawing.SystemColors.Control;
             this.btnAceptar.Location = new System.Drawing.Point(123, 199);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 25;
             this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // txtTelefonoMod
@@ -289,13 +295,15 @@
             // 
             // btnBuscarMod
             // 
+            this.btnBuscarMod.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnBuscarMod.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscarMod.ForeColor = System.Drawing.SystemColors.Control;
             this.btnBuscarMod.Location = new System.Drawing.Point(123, 46);
             this.btnBuscarMod.Name = "btnBuscarMod";
             this.btnBuscarMod.Size = new System.Drawing.Size(75, 23);
             this.btnBuscarMod.TabIndex = 10;
             this.btnBuscarMod.Text = "Buscar";
-            this.btnBuscarMod.UseVisualStyleBackColor = true;
+            this.btnBuscarMod.UseVisualStyleBackColor = false;
             this.btnBuscarMod.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtIdentidadMod

@@ -96,35 +96,41 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.tabPage1.Controls.Add(this.btnAceptarTipo);
             this.tabPage1.Controls.Add(this.lblNom_User);
             this.tabPage1.Controls.Add(this.lblTp_User);
             this.tabPage1.Controls.Add(this.cbxTp_User_Modificar);
             this.tabPage1.Controls.Add(this.txtNom_User_Tipo);
             this.tabPage1.Controls.Add(this.btnBuscarTipo);
+            this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(320, 307);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Modificar Tipo";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // btnAceptarTipo
             // 
+            this.btnAceptarTipo.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnAceptarTipo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAceptarTipo.Enabled = false;
+            this.btnAceptarTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptarTipo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnAceptarTipo.Location = new System.Drawing.Point(116, 215);
             this.btnAceptarTipo.Name = "btnAceptarTipo";
             this.btnAceptarTipo.Size = new System.Drawing.Size(75, 23);
             this.btnAceptarTipo.TabIndex = 5;
             this.btnAceptarTipo.Text = "Aceptar";
-            this.btnAceptarTipo.UseVisualStyleBackColor = true;
+            this.btnAceptarTipo.UseVisualStyleBackColor = false;
             this.btnAceptarTipo.Click += new System.EventHandler(this.btnAceptarTipo_Click);
             // 
             // lblNom_User
             // 
             this.lblNom_User.AutoSize = true;
+            this.lblNom_User.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.lblNom_User.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNom_User.Location = new System.Drawing.Point(100, 53);
             this.lblNom_User.Name = "lblNom_User";
             this.lblNom_User.Size = new System.Drawing.Size(103, 13);
@@ -134,6 +140,8 @@
             // lblTp_User
             // 
             this.lblTp_User.AutoSize = true;
+            this.lblTp_User.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.lblTp_User.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTp_User.Location = new System.Drawing.Point(41, 171);
             this.lblTp_User.Name = "lblTp_User";
             this.lblTp_User.Size = new System.Drawing.Size(82, 13);
@@ -159,17 +167,21 @@
             // 
             // btnBuscarTipo
             // 
+            this.btnBuscarTipo.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnBuscarTipo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscarTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarTipo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnBuscarTipo.Location = new System.Drawing.Point(116, 127);
             this.btnBuscarTipo.Name = "btnBuscarTipo";
             this.btnBuscarTipo.Size = new System.Drawing.Size(75, 23);
             this.btnBuscarTipo.TabIndex = 2;
             this.btnBuscarTipo.Text = "Buscar";
-            this.btnBuscarTipo.UseVisualStyleBackColor = true;
+            this.btnBuscarTipo.UseVisualStyleBackColor = false;
             this.btnBuscarTipo.Click += new System.EventHandler(this.btnBuscarTipo_Click);
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.tabPage2.Controls.Add(this.txtRespuesta2Pass);
             this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.lblPregunta2);
@@ -190,7 +202,6 @@
             this.tabPage2.Size = new System.Drawing.Size(320, 307);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Cambiar Password";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // txtRespuesta2Pass
             // 
@@ -266,14 +277,16 @@
             // 
             // btnAceptarPassword
             // 
+            this.btnAceptarPassword.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnAceptarPassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAceptarPassword.Enabled = false;
+            this.btnAceptarPassword.ForeColor = System.Drawing.SystemColors.Control;
             this.btnAceptarPassword.Location = new System.Drawing.Point(115, 278);
             this.btnAceptarPassword.Name = "btnAceptarPassword";
             this.btnAceptarPassword.Size = new System.Drawing.Size(75, 23);
             this.btnAceptarPassword.TabIndex = 9;
             this.btnAceptarPassword.Text = "Aceptar";
-            this.btnAceptarPassword.UseVisualStyleBackColor = true;
+            this.btnAceptarPassword.UseVisualStyleBackColor = false;
             this.btnAceptarPassword.Click += new System.EventHandler(this.btnAceptarPassword_Click);
             // 
             // label4
@@ -312,17 +325,20 @@
             // 
             // btnBuscarPassword
             // 
+            this.btnBuscarPassword.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnBuscarPassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscarPassword.ForeColor = System.Drawing.SystemColors.Control;
             this.btnBuscarPassword.Location = new System.Drawing.Point(115, 45);
             this.btnBuscarPassword.Name = "btnBuscarPassword";
             this.btnBuscarPassword.Size = new System.Drawing.Size(75, 23);
             this.btnBuscarPassword.TabIndex = 5;
             this.btnBuscarPassword.Text = "Buscar";
-            this.btnBuscarPassword.UseVisualStyleBackColor = true;
+            this.btnBuscarPassword.UseVisualStyleBackColor = false;
             this.btnBuscarPassword.Click += new System.EventHandler(this.btnBuscarPassword_Click);
             // 
             // tabPage3
             // 
+            this.tabPage3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.tabPage3.Controls.Add(this.txtRespuesta2);
             this.tabPage3.Controls.Add(this.label15);
             this.tabPage3.Controls.Add(this.txtRespuesta1);
@@ -346,7 +362,6 @@
             this.tabPage3.Size = new System.Drawing.Size(320, 307);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Nuevo Usuario";
-            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // txtRespuesta2
             // 
@@ -486,17 +501,20 @@
             // 
             // btnAceptarNew
             // 
+            this.btnAceptarNew.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnAceptarNew.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAceptarNew.ForeColor = System.Drawing.SystemColors.Control;
             this.btnAceptarNew.Location = new System.Drawing.Point(112, 278);
             this.btnAceptarNew.Name = "btnAceptarNew";
             this.btnAceptarNew.Size = new System.Drawing.Size(75, 23);
             this.btnAceptarNew.TabIndex = 8;
             this.btnAceptarNew.Text = "Aceptar";
-            this.btnAceptarNew.UseVisualStyleBackColor = true;
+            this.btnAceptarNew.UseVisualStyleBackColor = false;
             this.btnAceptarNew.Click += new System.EventHandler(this.btnAceptarNew_Click);
             // 
             // tabPage4
             // 
+            this.tabPage4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.tabPage4.Controls.Add(this.btnEliminar);
             this.tabPage4.Controls.Add(this.label2);
             this.tabPage4.Controls.Add(this.txtUsuarioEliminar);
@@ -507,18 +525,19 @@
             this.tabPage4.Size = new System.Drawing.Size(320, 307);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Eliminar Usuario";
-            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // btnEliminar
             // 
+            this.btnEliminar.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminar.Enabled = false;
+            this.btnEliminar.ForeColor = System.Drawing.SystemColors.Control;
             this.btnEliminar.Location = new System.Drawing.Point(192, 180);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 9;
             this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // label2
@@ -539,13 +558,15 @@
             // 
             // btnBuscarEliminar
             // 
+            this.btnBuscarEliminar.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnBuscarEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscarEliminar.ForeColor = System.Drawing.SystemColors.Control;
             this.btnBuscarEliminar.Location = new System.Drawing.Point(56, 180);
             this.btnBuscarEliminar.Name = "btnBuscarEliminar";
             this.btnBuscarEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscarEliminar.TabIndex = 8;
             this.btnBuscarEliminar.Text = "Buscar";
-            this.btnBuscarEliminar.UseVisualStyleBackColor = true;
+            this.btnBuscarEliminar.UseVisualStyleBackColor = false;
             this.btnBuscarEliminar.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnVolver
@@ -554,7 +575,7 @@
             this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnVolver.Location = new System.Drawing.Point(166, 370);
+            this.btnVolver.Location = new System.Drawing.Point(274, 382);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(100, 30);
             this.btnVolver.TabIndex = 6;

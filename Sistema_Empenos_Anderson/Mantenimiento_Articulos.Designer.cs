@@ -103,6 +103,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.tabPage1.Controls.Add(this.txtModelo);
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.txtMarca);
@@ -126,7 +127,6 @@
             this.tabPage1.Size = new System.Drawing.Size(341, 271);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Cambio de Tipo";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // txtModelo
             // 
@@ -182,24 +182,28 @@
             // 
             // btnConsultaTipo
             // 
+            this.btnConsultaTipo.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnConsultaTipo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConsultaTipo.ForeColor = System.Drawing.SystemColors.Control;
             this.btnConsultaTipo.Location = new System.Drawing.Point(125, 94);
             this.btnConsultaTipo.Name = "btnConsultaTipo";
             this.btnConsultaTipo.Size = new System.Drawing.Size(75, 23);
             this.btnConsultaTipo.TabIndex = 32;
             this.btnConsultaTipo.Text = "Consulta";
-            this.btnConsultaTipo.UseVisualStyleBackColor = true;
+            this.btnConsultaTipo.UseVisualStyleBackColor = false;
             this.btnConsultaTipo.Click += new System.EventHandler(this.btnConsulta_Click);
             // 
             // bttActualizar
             // 
+            this.bttActualizar.BackColor = System.Drawing.Color.DarkSlateGray;
             this.bttActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bttActualizar.ForeColor = System.Drawing.SystemColors.Control;
             this.bttActualizar.Location = new System.Drawing.Point(125, 231);
             this.bttActualizar.Name = "bttActualizar";
             this.bttActualizar.Size = new System.Drawing.Size(75, 23);
             this.bttActualizar.TabIndex = 9;
             this.bttActualizar.Text = "Actualizar";
-            this.bttActualizar.UseVisualStyleBackColor = true;
+            this.bttActualizar.UseVisualStyleBackColor = false;
             this.bttActualizar.Click += new System.EventHandler(this.bttActualizar_Click);
             // 
             // cbxTipo_Art
@@ -278,17 +282,20 @@
             // 
             // bttBuscar
             // 
+            this.bttBuscar.BackColor = System.Drawing.Color.DarkSlateGray;
             this.bttBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bttBuscar.ForeColor = System.Drawing.SystemColors.Control;
             this.bttBuscar.Location = new System.Drawing.Point(9, 94);
             this.bttBuscar.Name = "bttBuscar";
             this.bttBuscar.Size = new System.Drawing.Size(75, 23);
             this.bttBuscar.TabIndex = 4;
             this.bttBuscar.Text = "Buscar";
-            this.bttBuscar.UseVisualStyleBackColor = true;
+            this.bttBuscar.UseVisualStyleBackColor = false;
             this.bttBuscar.Click += new System.EventHandler(this.bttBuscar_Click);
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.tabPage2.Controls.Add(this.bttAñadir);
             this.tabPage2.Controls.Add(this.txtNom_TpArt);
             this.tabPage2.Controls.Add(this.lblNom_TpArt);
@@ -298,17 +305,18 @@
             this.tabPage2.Size = new System.Drawing.Size(341, 271);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Añadir Tipo de Artículo";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // bttAñadir
             // 
+            this.bttAñadir.BackColor = System.Drawing.Color.DarkSlateGray;
             this.bttAñadir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bttAñadir.ForeColor = System.Drawing.SystemColors.Control;
             this.bttAñadir.Location = new System.Drawing.Point(125, 161);
             this.bttAñadir.Name = "bttAñadir";
             this.bttAñadir.Size = new System.Drawing.Size(100, 39);
             this.bttAñadir.TabIndex = 2;
             this.bttAñadir.Text = "Añadir";
-            this.bttAñadir.UseVisualStyleBackColor = true;
+            this.bttAñadir.UseVisualStyleBackColor = false;
             // 
             // txtNom_TpArt
             // 
@@ -330,6 +338,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.tabPage3.Controls.Add(this.txtModelo2);
             this.tabPage3.Controls.Add(this.label8);
             this.tabPage3.Controls.Add(this.txtMarca2);
@@ -353,7 +362,6 @@
             this.tabPage3.Size = new System.Drawing.Size(341, 271);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Cambiar Estado";
-            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // txtModelo2
             // 
@@ -410,24 +418,28 @@
             // 
             // btnConsultaEstado
             // 
+            this.btnConsultaEstado.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnConsultaEstado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConsultaEstado.ForeColor = System.Drawing.SystemColors.Control;
             this.btnConsultaEstado.Location = new System.Drawing.Point(191, 87);
             this.btnConsultaEstado.Name = "btnConsultaEstado";
             this.btnConsultaEstado.Size = new System.Drawing.Size(75, 23);
             this.btnConsultaEstado.TabIndex = 32;
             this.btnConsultaEstado.Text = "Consulta";
-            this.btnConsultaEstado.UseVisualStyleBackColor = true;
+            this.btnConsultaEstado.UseVisualStyleBackColor = false;
             this.btnConsultaEstado.Click += new System.EventHandler(this.btnConsultaEstado_Click);
             // 
             // btnUpdate
             // 
+            this.btnUpdate.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpdate.ForeColor = System.Drawing.SystemColors.Control;
             this.btnUpdate.Location = new System.Drawing.Point(125, 229);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 19;
             this.btnUpdate.Text = "Actualizar";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // lblTipo_Estado
@@ -472,13 +484,15 @@
             // 
             // btnBuscar
             // 
+            this.btnBuscar.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscar.ForeColor = System.Drawing.SystemColors.Control;
             this.btnBuscar.Location = new System.Drawing.Point(61, 87);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 14;
             this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtNum_Recibo
