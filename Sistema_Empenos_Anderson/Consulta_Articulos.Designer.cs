@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Consulta_Articulos));
             this.gbConsArti = new System.Windows.Forms.GroupBox();
             this.rbCliente = new System.Windows.Forms.RadioButton();
             this.rbRecibo = new System.Windows.Forms.RadioButton();
@@ -37,6 +38,9 @@
             this.dtgConsultaArticulo = new System.Windows.Forms.DataGridView();
             this.lbl1 = new System.Windows.Forms.Label();
             this.btnCerrarConsulta = new System.Windows.Forms.Button();
+            this.btnConsulta = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.Volver = new System.Windows.Forms.Button();
             this.gbConsArti.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgConsultaArticulo)).BeginInit();
             this.SuspendLayout();
@@ -45,7 +49,8 @@
             // 
             this.gbConsArti.Controls.Add(this.rbCliente);
             this.gbConsArti.Controls.Add(this.rbRecibo);
-            this.gbConsArti.Location = new System.Drawing.Point(12, 12);
+            this.gbConsArti.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbConsArti.Location = new System.Drawing.Point(69, 136);
             this.gbConsArti.Name = "gbConsArti";
             this.gbConsArti.Size = new System.Drawing.Size(333, 82);
             this.gbConsArti.TabIndex = 0;
@@ -55,9 +60,10 @@
             // rbCliente
             // 
             this.rbCliente.AutoSize = true;
+            this.rbCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbCliente.Location = new System.Drawing.Point(191, 38);
             this.rbCliente.Name = "rbCliente";
-            this.rbCliente.Size = new System.Drawing.Size(111, 17);
+            this.rbCliente.Size = new System.Drawing.Size(129, 17);
             this.rbCliente.TabIndex = 1;
             this.rbCliente.TabStop = true;
             this.rbCliente.Text = "Buscar por Cliente";
@@ -67,9 +73,10 @@
             // rbRecibo
             // 
             this.rbRecibo.AutoSize = true;
-            this.rbRecibo.Location = new System.Drawing.Point(6, 38);
+            this.rbRecibo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbRecibo.Location = new System.Drawing.Point(22, 38);
             this.rbRecibo.Name = "rbRecibo";
-            this.rbRecibo.Size = new System.Drawing.Size(113, 17);
+            this.rbRecibo.Size = new System.Drawing.Size(130, 17);
             this.rbRecibo.TabIndex = 0;
             this.rbRecibo.TabStop = true;
             this.rbRecibo.Text = "Buscar por Recibo";
@@ -86,26 +93,29 @@
             // 
             // txtCod
             // 
-            this.txtCod.Location = new System.Drawing.Point(184, 106);
+            this.txtCod.Location = new System.Drawing.Point(243, 236);
             this.txtCod.Name = "txtCod";
             this.txtCod.Size = new System.Drawing.Size(100, 20);
             this.txtCod.TabIndex = 2;
             // 
             // bttBuscar
             // 
+            this.bttBuscar.BackColor = System.Drawing.Color.DarkSlateGray;
             this.bttBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bttBuscar.Location = new System.Drawing.Point(290, 104);
+            this.bttBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttBuscar.ForeColor = System.Drawing.SystemColors.Control;
+            this.bttBuscar.Location = new System.Drawing.Point(361, 228);
             this.bttBuscar.Name = "bttBuscar";
-            this.bttBuscar.Size = new System.Drawing.Size(75, 23);
+            this.bttBuscar.Size = new System.Drawing.Size(75, 35);
             this.bttBuscar.TabIndex = 3;
             this.bttBuscar.Text = "Buscar";
-            this.bttBuscar.UseVisualStyleBackColor = true;
+            this.bttBuscar.UseVisualStyleBackColor = false;
             this.bttBuscar.Click += new System.EventHandler(this.bttBuscar_Click);
             // 
             // dtgConsultaArticulo
             // 
             this.dtgConsultaArticulo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgConsultaArticulo.Location = new System.Drawing.Point(18, 147);
+            this.dtgConsultaArticulo.Location = new System.Drawing.Point(69, 274);
             this.dtgConsultaArticulo.Name = "dtgConsultaArticulo";
             this.dtgConsultaArticulo.ReadOnly = true;
             this.dtgConsultaArticulo.Size = new System.Drawing.Size(464, 148);
@@ -115,7 +125,7 @@
             // lbl1
             // 
             this.lbl1.AutoSize = true;
-            this.lbl1.Location = new System.Drawing.Point(15, 109);
+            this.lbl1.Location = new System.Drawing.Point(66, 236);
             this.lbl1.Name = "lbl1";
             this.lbl1.Size = new System.Drawing.Size(35, 13);
             this.lbl1.TabIndex = 5;
@@ -123,20 +133,66 @@
             // 
             // btnCerrarConsulta
             // 
+            this.btnCerrarConsulta.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnCerrarConsulta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrarConsulta.Location = new System.Drawing.Point(209, 322);
+            this.btnCerrarConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarConsulta.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnCerrarConsulta.Location = new System.Drawing.Point(260, 440);
             this.btnCerrarConsulta.Name = "btnCerrarConsulta";
-            this.btnCerrarConsulta.Size = new System.Drawing.Size(75, 23);
+            this.btnCerrarConsulta.Size = new System.Drawing.Size(75, 37);
             this.btnCerrarConsulta.TabIndex = 7;
             this.btnCerrarConsulta.Text = "Cerrar";
-            this.btnCerrarConsulta.UseVisualStyleBackColor = true;
+            this.btnCerrarConsulta.UseVisualStyleBackColor = false;
             this.btnCerrarConsulta.Click += new System.EventHandler(this.btnCerrarConsulta_Click);
+            // 
+            // btnConsulta
+            // 
+            this.btnConsulta.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnConsulta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsulta.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.btnConsulta.Image = ((System.Drawing.Image)(resources.GetObject("btnConsulta.Image")));
+            this.btnConsulta.Location = new System.Drawing.Point(69, 52);
+            this.btnConsulta.Name = "btnConsulta";
+            this.btnConsulta.Size = new System.Drawing.Size(397, 52);
+            this.btnConsulta.TabIndex = 11;
+            this.btnConsulta.Text = "Consultas";
+            this.btnConsulta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConsulta.UseVisualStyleBackColor = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Navy;
+            this.label6.Location = new System.Drawing.Point(53, 9);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(451, 33);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Sistema de Empeños Anderson";
+            // 
+            // Volver
+            // 
+            this.Volver.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.Volver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Volver.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Volver.ForeColor = System.Drawing.SystemColors.Control;
+            this.Volver.Location = new System.Drawing.Point(179, 440);
+            this.Volver.Name = "Volver";
+            this.Volver.Size = new System.Drawing.Size(75, 37);
+            this.Volver.TabIndex = 13;
+            this.Volver.Text = "Volver";
+            this.Volver.UseVisualStyleBackColor = false;
             // 
             // Consulta_Articulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(488, 357);
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(619, 489);
+            this.Controls.Add(this.Volver);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.btnConsulta);
             this.Controls.Add(this.btnCerrarConsulta);
             this.Controls.Add(this.lbl1);
             this.Controls.Add(this.dtgConsultaArticulo);
@@ -168,5 +224,8 @@
         private System.Windows.Forms.DataGridView dtgConsultaArticulo;
         private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.Button btnCerrarConsulta;
+        private System.Windows.Forms.Button btnConsulta;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button Volver;
     }
 }

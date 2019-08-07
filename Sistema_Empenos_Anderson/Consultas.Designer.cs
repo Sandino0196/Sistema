@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Consultas));
             this.labelseleccion = new System.Windows.Forms.Label();
             this.lblcambio = new System.Windows.Forms.Label();
             this.cmbseleccion = new System.Windows.Forms.ComboBox();
@@ -38,34 +38,28 @@
             this.btnaceptar = new System.Windows.Forms.Button();
             this.dtConsultas = new System.Windows.Forms.DataGridView();
             this.txtID = new System.Windows.Forms.MaskedTextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnConsulta = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtConsultas)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Modern No. 20", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(402, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(411, 34);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Sistema de Empeños Anderson";
             // 
             // labelseleccion
             // 
             this.labelseleccion.AutoSize = true;
+            this.labelseleccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelseleccion.Location = new System.Drawing.Point(18, 110);
             this.labelseleccion.Name = "labelseleccion";
-            this.labelseleccion.Size = new System.Drawing.Size(149, 13);
+            this.labelseleccion.Size = new System.Drawing.Size(178, 13);
             this.labelseleccion.TabIndex = 1;
             this.labelseleccion.Text = "Seleccione Tipo de Consulta: ";
             // 
             // lblcambio
             // 
             this.lblcambio.AutoSize = true;
+            this.lblcambio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblcambio.Location = new System.Drawing.Point(18, 161);
             this.lblcambio.Name = "lblcambio";
-            this.lblcambio.Size = new System.Drawing.Size(35, 13);
+            this.lblcambio.Size = new System.Drawing.Size(41, 13);
             this.lblcambio.TabIndex = 2;
             this.lblcambio.Text = "label3";
             // 
@@ -110,29 +104,35 @@
             // 
             // btnregresar
             // 
+            this.btnregresar.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnregresar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnregresar.Location = new System.Drawing.Point(21, 409);
+            this.btnregresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnregresar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnregresar.Location = new System.Drawing.Point(21, 431);
             this.btnregresar.Name = "btnregresar";
             this.btnregresar.Size = new System.Drawing.Size(88, 49);
             this.btnregresar.TabIndex = 7;
             this.btnregresar.Text = "Regresar";
-            this.btnregresar.UseVisualStyleBackColor = true;
+            this.btnregresar.UseVisualStyleBackColor = false;
             this.btnregresar.Click += new System.EventHandler(this.btnregresar_Click);
             // 
             // btnaceptar
             // 
-            this.btnaceptar.Location = new System.Drawing.Point(54, 260);
+            this.btnaceptar.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnaceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnaceptar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnaceptar.Location = new System.Drawing.Point(46, 317);
             this.btnaceptar.Name = "btnaceptar";
             this.btnaceptar.Size = new System.Drawing.Size(88, 49);
             this.btnaceptar.TabIndex = 8;
             this.btnaceptar.Text = "Aceptar";
-            this.btnaceptar.UseVisualStyleBackColor = true;
+            this.btnaceptar.UseVisualStyleBackColor = false;
             this.btnaceptar.Click += new System.EventHandler(this.btnaceptar_Click);
             // 
             // dtConsultas
             // 
             this.dtConsultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtConsultas.Location = new System.Drawing.Point(226, 96);
+            this.dtConsultas.Location = new System.Drawing.Point(204, 161);
             this.dtConsultas.Name = "dtConsultas";
             this.dtConsultas.Size = new System.Drawing.Size(1047, 337);
             this.dtConsultas.TabIndex = 9;
@@ -145,12 +145,40 @@
             this.txtID.Size = new System.Drawing.Size(163, 20);
             this.txtID.TabIndex = 11;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Navy;
+            this.label6.Location = new System.Drawing.Point(272, 25);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(451, 33);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Sistema de Empeños Anderson";
+            // 
+            // btnConsulta
+            // 
+            this.btnConsulta.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnConsulta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsulta.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.btnConsulta.Image = ((System.Drawing.Image)(resources.GetObject("btnConsulta.Image")));
+            this.btnConsulta.Location = new System.Drawing.Point(278, 71);
+            this.btnConsulta.Name = "btnConsulta";
+            this.btnConsulta.Size = new System.Drawing.Size(397, 52);
+            this.btnConsulta.TabIndex = 14;
+            this.btnConsulta.Text = "Consultas";
+            this.btnConsulta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConsulta.UseVisualStyleBackColor = false;
+            // 
             // Consultas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.ClientSize = new System.Drawing.Size(1295, 470);
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(939, 513);
+            this.Controls.Add(this.btnConsulta);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.dtConsultas);
             this.Controls.Add(this.btnaceptar);
@@ -160,7 +188,6 @@
             this.Controls.Add(this.cmbseleccion);
             this.Controls.Add(this.lblcambio);
             this.Controls.Add(this.labelseleccion);
-            this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.Name = "Consultas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -173,8 +200,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelseleccion;
         private System.Windows.Forms.Label lblcambio;
         private System.Windows.Forms.ComboBox cmbseleccion;
@@ -184,5 +209,7 @@
         private System.Windows.Forms.Button btnaceptar;
         private System.Windows.Forms.DataGridView dtConsultas;
         private System.Windows.Forms.MaskedTextBox txtID;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnConsulta;
     }
 }

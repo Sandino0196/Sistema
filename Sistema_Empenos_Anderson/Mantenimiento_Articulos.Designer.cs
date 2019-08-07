@@ -78,13 +78,16 @@
             // 
             // btnVolver
             // 
+            this.btnVolver.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.ForeColor = System.Drawing.SystemColors.Control;
             this.btnVolver.Location = new System.Drawing.Point(141, 330);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(100, 49);
             this.btnVolver.TabIndex = 7;
             this.btnVolver.Text = "Volver";
-            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // tabControl1
@@ -516,6 +519,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(372, 391);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.tabControl1);

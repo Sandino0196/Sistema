@@ -550,9 +550,10 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.BackColor = System.Drawing.Color.Gold;
+            this.btnVolver.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.ForeColor = System.Drawing.SystemColors.Control;
             this.btnVolver.Location = new System.Drawing.Point(166, 370);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(100, 30);
@@ -565,7 +566,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(386, 412);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.tabCUsuario);

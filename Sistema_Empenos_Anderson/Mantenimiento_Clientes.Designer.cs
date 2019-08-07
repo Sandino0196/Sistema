@@ -91,13 +91,15 @@
             // 
             // btnVolver
             // 
+            this.btnVolver.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVolver.ForeColor = System.Drawing.SystemColors.Control;
             this.btnVolver.Location = new System.Drawing.Point(114, 293);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(100, 48);
             this.btnVolver.TabIndex = 7;
             this.btnVolver.Text = "Volver";
-            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // txtID_Cliente
@@ -308,6 +310,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(319, 354);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.btnVolver);

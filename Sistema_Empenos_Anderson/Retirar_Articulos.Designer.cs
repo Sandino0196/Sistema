@@ -187,7 +187,7 @@
             // 
             // btnRetiro
             // 
-            this.btnRetiro.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnRetiro.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnRetiro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRetiro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRetiro.ForeColor = System.Drawing.Color.DarkSlateGray;

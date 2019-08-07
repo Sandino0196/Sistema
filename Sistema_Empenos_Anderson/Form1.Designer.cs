@@ -66,7 +66,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.label3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(288, 283);
@@ -113,7 +113,7 @@
             this.lblOlvidarPass.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblOlvidarPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOlvidarPass.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblOlvidarPass.Location = new System.Drawing.Point(251, 354);
+            this.lblOlvidarPass.Location = new System.Drawing.Point(247, 353);
             this.lblOlvidarPass.Name = "lblOlvidarPass";
             this.lblOlvidarPass.Size = new System.Drawing.Size(155, 13);
             this.lblOlvidarPass.TabIndex = 6;
@@ -148,8 +148,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(677, 468);
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(653, 468);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lblOlvidarPass);
