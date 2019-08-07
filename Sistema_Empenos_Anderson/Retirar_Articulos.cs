@@ -69,5 +69,12 @@ namespace Sistema_Empenos_Anderson
                 return;
             }
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            Menu men = new Sistema_Empenos_Anderson.Menu(Objetos_Globales.usuario.codigo_Usuario);
+            this.Hide();
+            men.Show();
+        }
     }
 }

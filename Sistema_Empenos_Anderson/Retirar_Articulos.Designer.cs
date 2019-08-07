@@ -35,13 +35,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.dtgvInfo = new System.Windows.Forms.DataGridView();
-            this.txtMontoPagado = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnRetirar = new System.Windows.Forms.Button();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtMontoPagado = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnRetirar = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvInfo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,33 +113,6 @@
             this.dtgvInfo.Size = new System.Drawing.Size(443, 47);
             this.dtgvInfo.TabIndex = 15;
             // 
-            // txtMontoPagado
-            // 
-            this.txtMontoPagado.Location = new System.Drawing.Point(253, 216);
-            this.txtMontoPagado.Name = "txtMontoPagado";
-            this.txtMontoPagado.Size = new System.Drawing.Size(100, 20);
-            this.txtMontoPagado.TabIndex = 17;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(107, 219);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(144, 13);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Monto Pagado por el Cliente:";
-            // 
-            // btnRetirar
-            // 
-            this.btnRetirar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRetirar.Location = new System.Drawing.Point(273, 256);
-            this.btnRetirar.Name = "btnRetirar";
-            this.btnRetirar.Size = new System.Drawing.Size(75, 23);
-            this.btnRetirar.TabIndex = 18;
-            this.btnRetirar.Text = "Retirar";
-            this.btnRetirar.UseVisualStyleBackColor = true;
-            this.btnRetirar.Click += new System.EventHandler(this.btnRetirar_Click);
-            // 
             // Descripcion
             // 
             this.Descripcion.HeaderText = "Descripción";
@@ -159,11 +133,49 @@
             this.Monto.HeaderText = "Monto a Pagar";
             this.Monto.Name = "Monto";
             // 
+            // txtMontoPagado
+            // 
+            this.txtMontoPagado.Location = new System.Drawing.Point(253, 216);
+            this.txtMontoPagado.Name = "txtMontoPagado";
+            this.txtMontoPagado.Size = new System.Drawing.Size(100, 20);
+            this.txtMontoPagado.TabIndex = 17;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(107, 219);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(144, 13);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Monto Pagado por el Cliente:";
+            // 
+            // btnRetirar
+            // 
+            this.btnRetirar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRetirar.Location = new System.Drawing.Point(318, 269);
+            this.btnRetirar.Name = "btnRetirar";
+            this.btnRetirar.Size = new System.Drawing.Size(75, 23);
+            this.btnRetirar.TabIndex = 18;
+            this.btnRetirar.Text = "Retirar";
+            this.btnRetirar.UseVisualStyleBackColor = true;
+            this.btnRetirar.Click += new System.EventHandler(this.btnRetirar_Click);
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(132, 269);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(75, 23);
+            this.btnVolver.TabIndex = 19;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // Retirar_Articulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(552, 317);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnRetirar);
             this.Controls.Add(this.txtMontoPagado);
             this.Controls.Add(this.label3);
@@ -201,5 +213,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
         private System.Windows.Forms.DataGridViewTextBoxColumn Modelo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Monto;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

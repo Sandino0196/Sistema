@@ -100,7 +100,7 @@ namespace Sistema_Empenos_Anderson
                 }
                 MessageBoxTemporal.Show("Realizado correctamente", "Mensaje importante", 1, false);
                 this.Hide();
-                Menu men = new Sistema_Empenos_Anderson.Menu(Objetos_Globales.usuario.codigo_Usuario);
+                Menu men = new Sistema_Empenos_Anderson.Menu(Objetos_Globales.usuario.codigo_Tipo_Usuario);
                 men.Show();
             }
         }

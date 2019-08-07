@@ -50,6 +50,7 @@
             this.btnAñadir = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.txtBusqueda_ID = new System.Windows.Forms.MaskedTextBox();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.grpInfo_Nuevo_Cliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_Info_Cliente)).BeginInit();
             this.SuspendLayout();
@@ -255,12 +256,23 @@
             this.txtBusqueda_ID.Size = new System.Drawing.Size(100, 20);
             this.txtBusqueda_ID.TabIndex = 9;
             // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(18, 218);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(75, 23);
+            this.btnVolver.TabIndex = 10;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // Ingreso_de_Cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(711, 253);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.txtBusqueda_ID);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnAñadir);
@@ -306,5 +318,6 @@
         private System.Windows.Forms.MaskedTextBox txtBusqueda_ID;
         private System.Windows.Forms.MaskedTextBox txtTelefono;
         private System.Windows.Forms.MaskedTextBox txtIdentidad;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

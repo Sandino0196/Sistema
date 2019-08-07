@@ -47,7 +47,9 @@ namespace Sistema_Empenos_Anderson
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Menu men = new Sistema_Empenos_Anderson.Menu(Objetos_Globales.usuario.codigo_Tipo_Usuario);
+            this.Hide();
+            men.Show();
         }
 
         private void Manteminiento_Load(object sender, EventArgs e)
