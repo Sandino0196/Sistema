@@ -39,6 +39,7 @@
             // 
             this.btnClientes.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnClientes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClientes.ForeColor = System.Drawing.SystemColors.Control;
             this.btnClientes.Location = new System.Drawing.Point(12, 24);
             this.btnClientes.Name = "btnClientes";
@@ -52,6 +53,7 @@
             // 
             this.btnArticulos.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnArticulos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnArticulos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnArticulos.ForeColor = System.Drawing.SystemColors.Control;
             this.btnArticulos.Location = new System.Drawing.Point(224, 24);
             this.btnArticulos.Name = "btnArticulos";
@@ -65,6 +67,7 @@
             // 
             this.btnUsuarios.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnUsuarios.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuarios.ForeColor = System.Drawing.SystemColors.Control;
             this.btnUsuarios.Location = new System.Drawing.Point(12, 132);
             this.btnUsuarios.Name = "btnUsuarios";
@@ -88,6 +91,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.DarkSlateGray;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.Control;
             this.button1.Location = new System.Drawing.Point(223, 132);
             this.button1.Name = "button1";
