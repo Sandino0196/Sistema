@@ -183,6 +183,7 @@
             this.Volver.TabIndex = 13;
             this.Volver.Text = "Volver";
             this.Volver.UseVisualStyleBackColor = false;
+            this.Volver.Click += new System.EventHandler(this.Volver_Click);
             // 
             // Consulta_Articulos
             // 

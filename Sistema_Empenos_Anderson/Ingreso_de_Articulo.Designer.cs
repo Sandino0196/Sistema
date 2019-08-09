@@ -325,6 +325,7 @@
             // 
             // btnIngresoArticulo
             // 
+            this.btnIngresoArticulo.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnIngresoArticulo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIngresoArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresoArticulo.ForeColor = System.Drawing.Color.DarkSlateGray;
@@ -335,13 +336,13 @@
             this.btnIngresoArticulo.TabIndex = 32;
             this.btnIngresoArticulo.Text = "Ingreso de Artículo";
             this.btnIngresoArticulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIngresoArticulo.UseVisualStyleBackColor = true;
+            this.btnIngresoArticulo.UseVisualStyleBackColor = false;
             // 
             // Ingreso_de_Articulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(966, 503);
             this.Controls.Add(this.btnIngresoArticulo);
             this.Controls.Add(this.btnAgregar);

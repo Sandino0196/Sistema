@@ -135,11 +135,11 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.pictureBox1.Image = global::Sistema_Empenos_Anderson.Properties.Resources.quizas;
             this.pictureBox1.Location = new System.Drawing.Point(254, 85);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(148, 99);
+            this.pictureBox1.Size = new System.Drawing.Size(148, 117);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;

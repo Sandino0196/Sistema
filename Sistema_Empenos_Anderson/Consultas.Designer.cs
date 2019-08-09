@@ -108,9 +108,9 @@
             this.btnregresar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnregresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnregresar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnregresar.Location = new System.Drawing.Point(21, 431);
+            this.btnregresar.Location = new System.Drawing.Point(21, 438);
             this.btnregresar.Name = "btnregresar";
-            this.btnregresar.Size = new System.Drawing.Size(88, 49);
+            this.btnregresar.Size = new System.Drawing.Size(88, 42);
             this.btnregresar.TabIndex = 7;
             this.btnregresar.Text = "Regresar";
             this.btnregresar.UseVisualStyleBackColor = false;
@@ -121,9 +121,9 @@
             this.btnaceptar.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnaceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnaceptar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnaceptar.Location = new System.Drawing.Point(21, 323);
+            this.btnaceptar.Location = new System.Drawing.Point(21, 331);
             this.btnaceptar.Name = "btnaceptar";
-            this.btnaceptar.Size = new System.Drawing.Size(88, 49);
+            this.btnaceptar.Size = new System.Drawing.Size(88, 41);
             this.btnaceptar.TabIndex = 8;
             this.btnaceptar.Text = "Aceptar";
             this.btnaceptar.UseVisualStyleBackColor = false;
