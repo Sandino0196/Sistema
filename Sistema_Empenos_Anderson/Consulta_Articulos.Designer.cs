@@ -40,7 +40,7 @@
             this.btnCerrarConsulta = new System.Windows.Forms.Button();
             this.btnConsulta = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.Volver = new System.Windows.Forms.Button();
+            this.txtCodCliente = new System.Windows.Forms.MaskedTextBox();
             this.gbConsArti.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgConsultaArticulo)).BeginInit();
             this.SuspendLayout();
@@ -93,9 +93,9 @@
             // 
             // txtCod
             // 
-            this.txtCod.Location = new System.Drawing.Point(243, 236);
+            this.txtCod.Location = new System.Drawing.Point(219, 236);
             this.txtCod.Name = "txtCod";
-            this.txtCod.Size = new System.Drawing.Size(100, 20);
+            this.txtCod.Size = new System.Drawing.Size(124, 20);
             this.txtCod.TabIndex = 2;
             // 
             // bttBuscar
@@ -171,19 +171,13 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "Sistema de Empeños Anderson";
             // 
-            // Volver
+            // txtCodCliente
             // 
-            this.Volver.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.Volver.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Volver.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Volver.ForeColor = System.Drawing.SystemColors.Control;
-            this.Volver.Location = new System.Drawing.Point(179, 440);
-            this.Volver.Name = "Volver";
-            this.Volver.Size = new System.Drawing.Size(75, 37);
-            this.Volver.TabIndex = 13;
-            this.Volver.Text = "Volver";
-            this.Volver.UseVisualStyleBackColor = false;
-            this.Volver.Click += new System.EventHandler(this.Volver_Click);
+            this.txtCodCliente.Location = new System.Drawing.Point(219, 236);
+            this.txtCodCliente.Mask = "0000-0000-00000";
+            this.txtCodCliente.Name = "txtCodCliente";
+            this.txtCodCliente.Size = new System.Drawing.Size(124, 20);
+            this.txtCodCliente.TabIndex = 13;
             // 
             // Consulta_Articulos
             // 
@@ -191,7 +185,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(619, 489);
-            this.Controls.Add(this.Volver);
+            this.Controls.Add(this.txtCodCliente);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnConsulta);
             this.Controls.Add(this.btnCerrarConsulta);
@@ -227,6 +221,6 @@
         private System.Windows.Forms.Button btnCerrarConsulta;
         private System.Windows.Forms.Button btnConsulta;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button Volver;
+        private System.Windows.Forms.MaskedTextBox txtCodCliente;
     }
 }
