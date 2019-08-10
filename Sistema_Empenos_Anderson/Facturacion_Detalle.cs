@@ -20,15 +20,19 @@ namespace Sistema_Empenos_Anderson
         private void Venta_Load(object sender, EventArgs e)
         {
             this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
-            double subtotal = 0, isv = 0;
+            double subtotal = 0, isv = 0, total = 0;
             this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
             txtVendedor.Text = Objetos_Globales.usuario.nombre_Usuario;
             txtFechaVenta.Text = Objetos_Globales.fechaHoyCorta();
-            isv = Objetos_Globales.articulo.MontoPago * 0.15;
-            subtotal = Objetos_Globales.articulo.MontoPago - isv;
+            for(int i = 0; i < Objetos_Globales.articulos.Count; i++)
+            {
+                total += ((Articulo)Objetos_Globales.articulos[i]).MontoPago;
+            }
+            isv = total * 0.15;
+            subtotal = total - isv;
             txtSubtotal.Text = subtotal.ToString();
             txtISV.Text = isv.ToString();
-            txtTotalPagar.Text = Objetos_Globales.articulo.MontoPago.ToString();
+            txtTotalPagar.Text = total.ToString();
         }
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)
@@ -66,6 +70,10 @@ namespace Sistema_Empenos_Anderson
                 }
                 else
                 {
+                    for (int i = 0; i < Objetos_Globales.articulos.Count; i++)
+                    {
+                        BD.Actualizar_Estado_Articulo(((Articulo)Objetos_Globales.articulos[i]).NumeroSerie, ((Articulo)Objetos_Globales.articulos[i]).NumeroRecibo, 3, "Articulo");
+                    }
                     MessageBoxTemporal.Show("Ingresado correctamente", "Mensaje Importante", 1, false);
                     Objetos_Globales.cliente.nombre_Cliente = txtNombre.Text;
                     Objetos_Globales.cliente.apellido_Cliente = txtApellido.Text;
@@ -97,6 +105,7 @@ namespace Sistema_Empenos_Anderson
                 {
                     BD.Ingreso_Articulo_Vendido(int.Parse(txtCodigo.Text), ((Articulo)Objetos_Globales.articulos[i]).NumeroSerie,
                         ((Articulo)Objetos_Globales.articulos[i]).NumeroRecibo, ((Articulo)(Objetos_Globales.articulos[i])).MontoPago);
+                    BD.Actualizar_Estado_Articulo(((Articulo)Objetos_Globales.articulos[i]).NumeroSerie, ((Articulo)Objetos_Globales.articulos[i]).NumeroRecibo, 3, "Articulo");
                 }
                 MessageBoxTemporal.Show("Realizado correctamente", "Mensaje importante", 1, false);
                 this.Hide();

@@ -53,7 +53,7 @@ namespace Sistema_Empenos_Anderson
         {
             if (!Objetos_Mantenimiento.articuloMantenimiento.Descripcion.Equals(""))
             {
-                if (Objetos_Mantenimiento.articuloMantenimiento.Equals("Vencido"))
+                if (Objetos_Mantenimiento.articuloMantenimiento.Estado.Equals("Vencido"))
                 {
                     Objetos_Globales.articulos.Add(new Articulo(Objetos_Mantenimiento.articuloMantenimiento.Meses, Objetos_Mantenimiento.articuloMantenimiento.Prestado, Objetos_Mantenimiento.articuloMantenimiento.Interes, Objetos_Mantenimiento.articuloMantenimiento.Descripcion,
                     Objetos_Mantenimiento.articuloMantenimiento.Marca, Objetos_Mantenimiento.articuloMantenimiento.Modelo, Objetos_Mantenimiento.articuloMantenimiento.Estado, Objetos_Mantenimiento.articuloMantenimiento.NumeroSerie, Objetos_Mantenimiento.articuloMantenimiento.Tipo, Objetos_Mantenimiento.articuloMantenimiento.CodigoTipo,
@@ -63,6 +63,7 @@ namespace Sistema_Empenos_Anderson
                     dtgvArticulos.Rows[row].Cells[1].Value = Objetos_Mantenimiento.articuloMantenimiento.Marca;
                     dtgvArticulos.Rows[row].Cells[2].Value = Objetos_Mantenimiento.articuloMantenimiento.Modelo;
                     dtgvArticulos.Rows[row].Cells[3].Value = txtPrecio.Text;
+                    ((Articulo)Objetos_Globales.articulos[row]).MontoPago = double.Parse(txtPrecio.Text);
 
                     ((Articulo)(Objetos_Globales.articulos[row])).MontoPago = double.Parse(txtPrecio.Text);
 

@@ -56,6 +56,7 @@ namespace Sistema_Empenos_Anderson
                 BD.Actualizar_Estado_Articulo(txtSerie.Text, int.Parse(txtRecibo.Text), 4, "Articulo");
                 cambio = double.Parse(txtMontoPagado.Text) - Objetos_Mantenimiento.articuloMantenimiento.PrecioPago(Objetos_Mantenimiento.articuloMantenimiento.Meses);
                 MessageBoxTemporal.Show("El articulo fue retirado con exito\nCambio:" + cambio,"Informacion",2,false);
+                BD.Ingreso_Retiro(int.Parse(txtRetiro.Text), Objetos_Globales.identidadTemporal, int.Parse(txtRecibo.Text),txtSerie.Text,Objetos_Globales.fechaHoyCorta());
                 this.Close();
             }
         }
@@ -83,6 +84,16 @@ namespace Sistema_Empenos_Anderson
         }
 
         private void txtMontoPagado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBoxTemporal.Show("Solo se permiten numeros", "Advertencia", 1, false);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtRetiro_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             {

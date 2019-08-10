@@ -76,7 +76,6 @@ namespace Sistema_Empenos_Anderson
         {
             if (Recibotxt.Text == "" || Validar_Recibo(Recibotxt.Text) == 0 || Serietxt.Text == "")
             {
-                //Comentario por aca
                 MessageBoxTemporal.Show("Ingreso incorrectamente algunos datos", "Alerta", 1, false);
             }
             else if (BD.Actualizar_Tipo_Articulo(Serietxt.Text, int.Parse(Recibotxt.Text), cbxTipo_Art.SelectedIndex + 1) == 1)
@@ -142,8 +141,8 @@ namespace Sistema_Empenos_Anderson
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            BD.Actualizar_Estado_Articulo(txtNum_Serie.Text, int.Parse(txtNum_Recibo.Text), cmbEstados.SelectedIndex+1, cmbEstados.SelectedItem.ToString());
-            MessageBoxTemporal.Show("Informacion Actualizada!","Informacion", 1, false);
+            BD.Actualizar_Estado_Articulo(txtNum_Serie.Text, int.Parse(txtNum_Recibo.Text), cmbEstados.SelectedIndex+1, "Articulo");
+            MessageBoxTemporal.Show("Informacion Actualizada!", "Informacion", 1, false);
         }
 
         private void Recibotxt_KeyPress(object sender, KeyPressEventArgs e)

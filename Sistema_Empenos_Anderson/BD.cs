@@ -172,7 +172,7 @@ namespace Sistema_Empenos_Anderson
             try
             {
                 BD.OpenConnection();
-                SqlDataAdapter da = new SqlDataAdapter("SP_Estados", BD.connection);
+                SqlDataAdapter da = new SqlDataAdapter("SP_Estados_Articulos", BD.connection);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.Fill(dt);
                 BD.CloseConnection();
@@ -655,6 +655,22 @@ namespace Sistema_Empenos_Anderson
                 CloseConnection();
             }
 
+        }
+
+        public static void Ingreso_Retiro(int retiro, string identidad, int recibo, string numero, string fecha)
+        {
+            OpenConnection();
+
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SP_Ingreso_Retiro";
+            command.Connection = connection;
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.Add(new SqlParameter("@Codigo", retiro));
+            command.Parameters.Add(new SqlParameter("@Identidad", identidad));
+            command.Parameters.Add(new SqlParameter("@Recibo", recibo));
+            command.Parameters.Add(new SqlParameter("@Numero", numero));
+            command.Parameters.Add(new SqlParameter("@Fecha", fecha));
         }
 
         #endregion
