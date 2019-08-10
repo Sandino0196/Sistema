@@ -17,6 +17,13 @@ namespace Sistema_Empenos_Anderson
             InitializeComponent();
         }
 
+        protected override void OnClosed(EventArgs e)
+        {
+            Manteminiento man = new Manteminiento();
+            man.Show();
+            this.Dispose();
+        }
+
         private void bttBuscar_Click(object sender, EventArgs e)
         {
             if (txtID_Cliente.MaskFull)

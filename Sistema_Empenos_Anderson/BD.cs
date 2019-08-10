@@ -384,6 +384,11 @@ namespace Sistema_Empenos_Anderson
             existe.Direction = ParameterDirection.Output;
             command.Parameters.Add(existe);
 
+            SqlParameter tipo = new SqlParameter("@Tipo", " ");
+            tipo.Direction = ParameterDirection.Output;
+            tipo.Size = 50;
+            command.Parameters.Add(tipo);
+
             try
             {
                 command.ExecuteNonQuery();
@@ -399,6 +404,7 @@ namespace Sistema_Empenos_Anderson
                 Objetos_Mantenimiento.articuloMantenimiento.Interes = int.Parse(command.Parameters["@Interes"].Value.ToString());
                 Objetos_Globales.identidadTemporal = command.Parameters["@Identidad"].Value.ToString();
                 Objetos_Mantenimiento.articuloMantenimiento.Meses = int.Parse(command.Parameters["@Meses"].Value.ToString());
+                Objetos_Mantenimiento.articuloMantenimiento.Tipo = command.Parameters["@Tipo"].Value.ToString();
                 CloseConnection();
             }
             catch
@@ -413,7 +419,7 @@ namespace Sistema_Empenos_Anderson
         {
             OpenConnection();
             SqlCommand command = new SqlCommand();
-            command.CommandText = "SP_Busqueda_Usuario ";
+            command.CommandText = "SP_Busqueda_Usuario";
             command.Connection = connection;
             command.CommandType = CommandType.StoredProcedure;
 

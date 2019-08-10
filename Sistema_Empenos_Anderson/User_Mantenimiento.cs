@@ -61,6 +61,13 @@ namespace Sistema_Empenos_Anderson
             }
         }
 
+        protected override void OnClosed(EventArgs e)
+        {
+            Manteminiento man = new Manteminiento();
+            man.Show();
+            this.Dispose();
+        }
+
         private void btnVolver_Click(object sender, EventArgs e)
         {
             if(Objetos_Globales.usuario.codigo_Usuario == 0)
@@ -150,7 +157,7 @@ namespace Sistema_Empenos_Anderson
         {
             if (txtPassNuevo_Change.Text.Equals(txtPassConfirmar_Change.Text))
             {
-               if (Objetos_Mantenimiento.usuarioMantenimiento.password_Usuario.Equals(txtPassNuevo_Change.Text))
+               if (Objetos_Mantenimiento.usuarioMantenimiento.password_Usuario !=  (txtPassNuevo_Change.Text))
                 {
                     if (BD.Cambio_Password(txtNom_User_Pass.Text, txtPassNuevo_Change.Text, txtRespuesta1Pass.Text, txtRespuesta2Pass.Text) > 0)
                     {
@@ -188,7 +195,7 @@ namespace Sistema_Empenos_Anderson
 
         private void btnBuscarPassword_Click(object sender, EventArgs e)
         {
-            if (BD.Busqueda_Usuario(txtNom_User_Tipo.Text) > 0)
+            if (BD.Busqueda_Usuario(txtNom_User_Pass.Text) > 0)
             {
                 lblPregunta1.Text = Objetos_Mantenimiento.usuarioMantenimiento.pregunta1;
                 lblPregunta2.Text = Objetos_Mantenimiento.usuarioMantenimiento.pregunta2;
