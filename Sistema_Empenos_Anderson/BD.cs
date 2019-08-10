@@ -119,7 +119,6 @@ namespace Sistema_Empenos_Anderson
             catch
             {
                 CloseConnection();
-                MessageBoxTemporal.Show("No funciono", "Holis", 2, false);
             }
         }
 
@@ -417,6 +416,8 @@ namespace Sistema_Empenos_Anderson
 
         public static int Busqueda_Usuario(string nombreUsuario)
         {
+            int existencia = 0;
+
             OpenConnection();
             SqlCommand command = new SqlCommand();
             command.CommandText = "SP_Busqueda_Usuario";
@@ -449,6 +450,10 @@ namespace Sistema_Empenos_Anderson
             estado.Direction = ParameterDirection.Output;
             command.Parameters.Add(estado);
 
+            SqlParameter existe = new SqlParameter("@Existe", 0);
+            existe.Direction = ParameterDirection.Output;
+            command.Parameters.Add(existe);
+
             try
             {
                 command.ExecuteNonQuery();
@@ -458,8 +463,9 @@ namespace Sistema_Empenos_Anderson
                 Objetos_Mantenimiento.usuarioMantenimiento.pregunta1 = command.Parameters["@Pregunta1"].Value.ToString();
                 Objetos_Mantenimiento.usuarioMantenimiento.pregunta2 = command.Parameters["@Pregunta2"].Value.ToString();
                 Objetos_Mantenimiento.usuarioMantenimiento.estado = int.Parse(command.Parameters["@Estado"].Value.ToString());
+                existencia = int.Parse(command.Parameters["@Existe"].Value.ToString());
                 CloseConnection();
-                return 1;
+                return existencia;
             }
             catch
             {

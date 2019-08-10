@@ -121,18 +121,13 @@ namespace Sistema_Empenos_Anderson
 
         private void btnAceptarNew_Click(object sender, EventArgs e)
         {
-            int tipo;
-            if (cbxTp_User_New.SelectedItem.ToString().Equals("Administrador"))
-                tipo = 1;
-            else
-                tipo = 2;
             if(BD.Busqueda_Usuario(txtNom_User_Nuevo.Text) == 0)
             {
                 if (txtPassNuevo_New.Text.Equals(txtPassConfirmar_New.Text))
                 {
                     if(cmbPreguntas1.SelectedIndex != cmbPreguntas2.SelectedIndex)
                     {
-                        if (BD.Ingreso_Usuario(txtNom_User_Nuevo.Text, txtPassNuevo_New.Text, tipo, 1, "Usuario",
+                        if (BD.Ingreso_Usuario(txtNom_User_Nuevo.Text, txtPassNuevo_New.Text,cbxTp_User_New.SelectedIndex+1, 1, "Usuario",
                         Objetos_Globales.fechaHoy(), cmbPreguntas1.SelectedItem.ToString(),
                         cmbPreguntas2.SelectedItem.ToString(), txtRespuesta1.Text, txtRespuesta2.Text) > 0)
                         {
@@ -178,13 +173,7 @@ namespace Sistema_Empenos_Anderson
 
         private void btnAceptarTipo_Click(object sender, EventArgs e)
         {
-            int tipo;
-            if (cbxTp_User_Modificar.SelectedItem.ToString().Equals("Administrador"))
-                tipo = 1;
-            else
-                tipo = 2;
-
-            if(BD.Cambio_Tipo_Usuario(txtNom_User_Tipo.Text,tipo) > 0)
+            if(BD.Cambio_Tipo_Usuario(txtNom_User_Tipo.Text, cbxTp_User_Modificar.SelectedIndex+1) > 0)
             {
                 MessageBoxTemporal.Show("Cambio realizado correctamente","Mensaje",1,false);
                 cbxTp_User_Modificar.Enabled = false;

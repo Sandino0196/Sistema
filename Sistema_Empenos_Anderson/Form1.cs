@@ -26,8 +26,8 @@ namespace Sistema_Empenos_Anderson
         {
             if (BD.Login(txtUsuario.Text,txtPassword.Text) > 0)
             {
-                if(Objetos_Globales.usuario.estado == 2)               
-                    MessageBoxTemporal.Show("Usuario inactivo", "Mensaje Importante", 2, false);
+                if(Objetos_Globales.usuario.estado == 2)
+                    MessageBoxTemporal.Show("Usuario inactivo", "Mensaje Importante", 1, false);
                 else
                 {
                     BD.Fecha_Inicio_Sesion(txtUsuario.Text, txtPassword.Text, Objetos_Globales.fechaHoy());
