@@ -134,6 +134,7 @@
             this.dtConsultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtConsultas.Location = new System.Drawing.Point(204, 161);
             this.dtConsultas.Name = "dtConsultas";
+            this.dtConsultas.ReadOnly = true;
             this.dtConsultas.Size = new System.Drawing.Size(1047, 337);
             this.dtConsultas.TabIndex = 9;
             // 

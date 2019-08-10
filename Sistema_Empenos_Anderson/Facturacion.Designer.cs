@@ -37,7 +37,6 @@
             this.lblArticulo = new System.Windows.Forms.Label();
             this.txtArticulo = new System.Windows.Forms.TextBox();
             this.bttAgregar = new System.Windows.Forms.Button();
-            this.bttEliminar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnConsulta = new System.Windows.Forms.Button();
             this.txtPrecio = new System.Windows.Forms.TextBox();
@@ -141,20 +140,6 @@
             this.bttAgregar.Text = "Agregar";
             this.bttAgregar.UseVisualStyleBackColor = false;
             this.bttAgregar.Click += new System.EventHandler(this.bttAgregar_Click);
-            // 
-            // bttEliminar
-            // 
-            this.bttEliminar.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.bttEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bttEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttEliminar.ForeColor = System.Drawing.SystemColors.Control;
-            this.bttEliminar.Location = new System.Drawing.Point(268, 512);
-            this.bttEliminar.Name = "bttEliminar";
-            this.bttEliminar.Size = new System.Drawing.Size(73, 31);
-            this.bttEliminar.TabIndex = 11;
-            this.bttEliminar.Text = "Eliminar";
-            this.bttEliminar.UseVisualStyleBackColor = false;
-            this.bttEliminar.Click += new System.EventHandler(this.bttEliminar_Click);
             // 
             // groupBox1
             // 
@@ -353,7 +338,6 @@
             this.Controls.Add(this.btnAvanzar);
             this.Controls.Add(this.dtgvArticulos);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.bttEliminar);
             this.MaximizeBox = false;
             this.Name = "Facturacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -376,7 +360,6 @@
         private System.Windows.Forms.Label lblArticulo;
         private System.Windows.Forms.TextBox txtArticulo;
         private System.Windows.Forms.Button bttAgregar;
-        private System.Windows.Forms.Button bttEliminar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtMonto;
         private System.Windows.Forms.TextBox txtEstado;

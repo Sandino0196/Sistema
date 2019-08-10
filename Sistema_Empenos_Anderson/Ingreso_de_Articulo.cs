@@ -30,7 +30,7 @@ namespace Sistema_Empenos_Anderson
 
         protected override void OnClosed(EventArgs e)
         {
-            Menu men = new Sistema_Empenos_Anderson.Menu(Objetos_Globales.usuario.codigo_Tipo_Usuario);
+            Menu men = new Sistema_Empenos_Anderson.Menu();
             men.Show();
         }
 
@@ -44,7 +44,7 @@ namespace Sistema_Empenos_Anderson
                     ((Articulo)Objetos_Globales.articulos[i]).Prestado, ((Articulo)Objetos_Globales.articulos[i]).Interes, 1,
                     ((Articulo)Objetos_Globales.articulos[i]).Meses, "Articulo");
             MessageBoxTemporal.Show("Transaccion finalizada", "Listo", 1, false);
-            Menu men = new Sistema_Empenos_Anderson.Menu(Objetos_Globales.usuario.codigo_Tipo_Usuario);
+            Menu men = new Sistema_Empenos_Anderson.Menu();
             men.Show();
             this.Hide();
         }
@@ -107,17 +107,66 @@ namespace Sistema_Empenos_Anderson
             }
             else
             {
-                Objetos_Globales.articulos.Add(new Articulo(1, double.Parse(txtMonto.Text),
+                if(Objetos_Globales.articulos.Count == 0)
+                {
+                    Objetos_Globales.articulos.Add(new Articulo(1, double.Parse(txtMonto.Text),
                 double.Parse(txtTasa.Text), txtDescripcion.Text, txtMarca.Text, txtModelo.Text,
-                "En Prenda", txtNumero_Serie.Text, cmbTipo_Articulo.SelectedItem.ToString(),
+                "En Prenda", txtNumero_Serie.Text, cmbTipo_Articulo.SelectedValue.ToString(),
                 cmbTipo_Articulo.SelectedIndex + 1, int.Parse(txtCod_Recibo.Text)));
-                dtgvArticulos.Rows.Add();
-                dtgvArticulos.Rows[row].Cells[0].Value = txtNumero_Serie.Text;
-                dtgvArticulos.Rows[row].Cells[1].Value = txtDescripcion.Text;
-                dtgvArticulos.Rows[row].Cells[2].Value = cmbTipo_Articulo.SelectedItem.ToString();
-                dtgvArticulos.Rows[row].Cells[3].Value = txtMarca.Text;
-                dtgvArticulos.Rows[row].Cells[4].Value = txtModelo.Text;
-                row++;
+
+                    MessageBoxTemporal.Show(cmbTipo_Articulo.SelectedValue.ToString(), "probando", 1, false);
+                    dtgvArticulos.Rows.Add();
+                    dtgvArticulos.Rows[row].Cells[0].Value = txtNumero_Serie.Text;
+                    dtgvArticulos.Rows[row].Cells[1].Value = txtDescripcion.Text;
+                    dtgvArticulos.Rows[row].Cells[2].Value = ((Articulo)Objetos_Globales.articulos[row]).Tipo;
+                    dtgvArticulos.Rows[row].Cells[3].Value = txtMarca.Text;
+                    dtgvArticulos.Rows[row].Cells[4].Value = txtModelo.Text;
+                    row++;
+                    txtCod_Recibo.Enabled = false;
+                    txtNumero_Serie.Text = "";
+                    txtDescripcion.Text = "";
+                    txtMarca.Text = "";
+                    txtModelo.Text = "";
+                    txtMonto.Text = "";
+                    txtTasa.Text = "";
+                } else
+                {
+                    bool existeArticulo = false;
+                    for (int i = 0; i < Objetos_Globales.articulos.Count; i++)
+                    {
+                        if (((Articulo)Objetos_Globales.articulos[i]).NumeroSerie.Equals(txtNumero_Serie.Text)) { 
+                            i = Objetos_Globales.articulos.Count;
+                            existeArticulo = true;
+                        } else
+                            existeArticulo = false;
+                    }
+
+                    if (!existeArticulo)
+                    {
+                        Objetos_Globales.articulos.Add(new Articulo(1, double.Parse(txtMonto.Text),
+                double.Parse(txtTasa.Text), txtDescripcion.Text, txtMarca.Text, txtModelo.Text,
+                "En Prenda", txtNumero_Serie.Text, cmbTipo_Articulo.SelectedValue.ToString(),
+                cmbTipo_Articulo.SelectedIndex + 1, int.Parse(txtCod_Recibo.Text)));
+
+                        MessageBoxTemporal.Show(cmbTipo_Articulo.SelectedValue.ToString(), "probando", 1, false);
+                        dtgvArticulos.Rows.Add();
+                        dtgvArticulos.Rows[row].Cells[0].Value = txtNumero_Serie.Text;
+                        dtgvArticulos.Rows[row].Cells[1].Value = txtDescripcion.Text;
+                        dtgvArticulos.Rows[row].Cells[2].Value = ((Articulo)Objetos_Globales.articulos[row]).Tipo;
+                        dtgvArticulos.Rows[row].Cells[3].Value = txtMarca.Text;
+                        dtgvArticulos.Rows[row].Cells[4].Value = txtModelo.Text;
+                        row++;
+                        txtCod_Recibo.Enabled = false;
+                        txtNumero_Serie.Text = "";
+                        txtDescripcion.Text = "";
+                        txtMarca.Text = "";
+                        txtModelo.Text = "";
+                        txtMonto.Text = "";
+                        txtTasa.Text = "";
+                    }
+                    else                    
+                        MessageBoxTemporal.Show("Este articulo ya se ha ingresado", "Mensaje Importante", 2, false);
+                }
             }
             
         }

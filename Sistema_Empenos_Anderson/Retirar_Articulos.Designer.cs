@@ -147,6 +147,7 @@
             this.txtMontoPagado.Name = "txtMontoPagado";
             this.txtMontoPagado.Size = new System.Drawing.Size(100, 20);
             this.txtMontoPagado.TabIndex = 17;
+            this.txtMontoPagado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMontoPagado_KeyPress);
             // 
             // label3
             // 

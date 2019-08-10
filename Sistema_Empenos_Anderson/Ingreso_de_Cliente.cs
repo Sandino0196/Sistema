@@ -14,7 +14,7 @@ namespace Sistema_Empenos_Anderson
 
         protected override void OnClosed(EventArgs e)
         {
-            Menu men = new Menu(Objetos_Globales.usuario.codigo_Usuario);
+            Menu men = new Menu();
             men.Show();
         }
 
@@ -140,7 +140,7 @@ namespace Sistema_Empenos_Anderson
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            Menu men = new Sistema_Empenos_Anderson.Menu(Objetos_Globales.usuario.codigo_Tipo_Usuario);
+            Menu men = new Sistema_Empenos_Anderson.Menu();
             this.Hide();
             men.Show();
         }

@@ -7,10 +7,10 @@ namespace Sistema_Empenos_Anderson
     public partial class Menu : Form
     {
 
-        public Menu(int codigo)
+        public Menu()
         {
             InitializeComponent();
-            if (codigo != 1)
+            if (Objetos_Globales.usuario.codigo_Tipo_Usuario == 1)
                 btnMantenimiento.Enabled = true;
             else
                 btnMantenimiento.Enabled = false;

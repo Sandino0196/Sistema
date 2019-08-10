@@ -90,9 +90,9 @@ namespace Sistema_Empenos_Anderson
             command.Parameters.Add(descripcion);
 
 
-                command.ExecuteNonQuery();
-                CloseConnection();
-                Cantidad = int.Parse(command.Parameters["@Cantidad"].Value.ToString());
+            command.ExecuteNonQuery();
+            CloseConnection();
+            Cantidad = int.Parse(command.Parameters["@Cantidad"].Value.ToString());
             return Cantidad;
 
 
@@ -142,6 +142,7 @@ namespace Sistema_Empenos_Anderson
             }
             catch
             {
+                CloseConnection();
                 return dt;
             }
         }
@@ -160,6 +161,7 @@ namespace Sistema_Empenos_Anderson
             }
             catch
             {
+                CloseConnection();
                 return dt;
             }
         }
@@ -178,6 +180,7 @@ namespace Sistema_Empenos_Anderson
             }
             catch
             {
+                CloseConnection();
                 return dt;
             }
         }
@@ -197,6 +200,7 @@ namespace Sistema_Empenos_Anderson
             }
             catch
             {
+                CloseConnection();
                 return dt;
             }
         }
@@ -215,6 +219,7 @@ namespace Sistema_Empenos_Anderson
             }
             catch
             {
+                CloseConnection();
                 return dt;
             }
         }
@@ -235,6 +240,7 @@ namespace Sistema_Empenos_Anderson
             }
             catch
             {
+                CloseConnection();
                 return dt;
             }
         }
@@ -254,6 +260,7 @@ namespace Sistema_Empenos_Anderson
             }
             catch
             {
+                CloseConnection();
                 return dt;
             }
         }
@@ -317,6 +324,7 @@ namespace Sistema_Empenos_Anderson
             }
             catch
             {
+                CloseConnection();
                 Verificador = 0;
             }
             return Verificador;
@@ -391,12 +399,13 @@ namespace Sistema_Empenos_Anderson
                 Objetos_Mantenimiento.articuloMantenimiento.Interes = int.Parse(command.Parameters["@Interes"].Value.ToString());
                 Objetos_Globales.identidadTemporal = command.Parameters["@Identidad"].Value.ToString();
                 Objetos_Mantenimiento.articuloMantenimiento.Meses = int.Parse(command.Parameters["@Meses"].Value.ToString());
+                CloseConnection();
             }
             catch
             {
+                CloseConnection();
                 existencia = 0;
             }
-            CloseConnection();
             return existencia;
         }
 
@@ -437,7 +446,6 @@ namespace Sistema_Empenos_Anderson
             try
             {
                 command.ExecuteNonQuery();
-                CloseConnection();
                 Objetos_Mantenimiento.usuarioMantenimiento.nombre_Usuario = nombreUsuario;
                 Objetos_Mantenimiento.usuarioMantenimiento.tipo_Usuario = command.Parameters["@Tipo"].Value.ToString();
                 Objetos_Mantenimiento.usuarioMantenimiento.password_Usuario = command.Parameters["@Password"].Value.ToString();
@@ -638,7 +646,6 @@ namespace Sistema_Empenos_Anderson
             try
             {
                 command.ExecuteNonQuery();
-                //MessageBoxTemporal.Show("Prueba","Prueba",2,false);
                 CloseConnection();
             }
             catch(SqlException e)
@@ -756,6 +763,7 @@ namespace Sistema_Empenos_Anderson
             }
             catch
             {
+                CloseConnection();
                 return 0;
             }
             
@@ -783,6 +791,7 @@ namespace Sistema_Empenos_Anderson
             catch
             {
                 MessageBoxTemporal.Show("No se encontro el articulo", "Error", 2, false);
+                CloseConnection();
             }
             
         }
@@ -806,6 +815,7 @@ namespace Sistema_Empenos_Anderson
             catch
             {
                 MessageBoxTemporal.Show("Error al encontrar usuario", "Error", 2, false);
+                CloseConnection();
             }
         }
 
@@ -828,6 +838,7 @@ namespace Sistema_Empenos_Anderson
             catch
             {
                 MessageBoxTemporal.Show("Error al encontrar cliente", "Error", 2, false);
+                CloseConnection();
             }
         }
 

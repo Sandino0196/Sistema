@@ -189,6 +189,7 @@
             this.txtMonto.Name = "txtMonto";
             this.txtMonto.Size = new System.Drawing.Size(116, 20);
             this.txtMonto.TabIndex = 19;
+            this.txtMonto.TextChanged += new System.EventHandler(this.txtMonto_TextChanged);
             this.txtMonto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMonto_KeyPress);
             // 
             // txtIngresado

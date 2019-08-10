@@ -125,12 +125,8 @@ namespace Sistema_Empenos_Anderson
                 {
                     if(cmbPreguntas1.SelectedIndex != cmbPreguntas2.SelectedIndex)
                     {
-                        Objetos_Globales.fechaHoy = Objetos_Globales.fecha.Day + "/" + Objetos_Globales.fecha.Month +
-                "/" + Objetos_Globales.fecha.Year + " " + Objetos_Globales.fecha.Hour + ":"
-                + Objetos_Globales.fecha.Minute + ":" + Objetos_Globales.fecha.Second + "."
-                + Objetos_Globales.fecha.Millisecond;
                         if (BD.Ingreso_Usuario(txtNom_User_Nuevo.Text, txtPassNuevo_New.Text, tipo, 1, "Usuario",
-                        Objetos_Globales.fechaHoy, cmbPreguntas1.SelectedItem.ToString(),
+                        Objetos_Globales.fechaHoy(), cmbPreguntas1.SelectedItem.ToString(),
                         cmbPreguntas2.SelectedItem.ToString(), txtRespuesta1.Text, txtRespuesta2.Text) > 0)
                         {
                             MessageBoxTemporal.Show("El usuario se ha ingresado correctamente", "Mensaje", 1, false);

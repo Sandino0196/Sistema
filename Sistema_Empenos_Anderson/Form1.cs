@@ -24,20 +24,14 @@ namespace Sistema_Empenos_Anderson
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Objetos_Globales.fechaHoy = Objetos_Globales.fecha.Day + "/" + Objetos_Globales.fecha.Month + 
-                "/" +Objetos_Globales.fecha.Year + " " + Objetos_Globales.fecha.Hour + ":"
-                + Objetos_Globales.fecha.Minute + ":" + Objetos_Globales.fecha.Second + "."
-                + Objetos_Globales.fecha.Millisecond;
-            Objetos_Globales.fechaHoyCorta = Objetos_Globales.fecha.Day + "/" + Objetos_Globales.fecha.Month +
-                "/" + Objetos_Globales.fecha.Year;
             if (BD.Login(txtUsuario.Text,txtPassword.Text) > 0)
             {
                 if(Objetos_Globales.usuario.estado == 2)               
                     MessageBoxTemporal.Show("Usuario inactivo", "Mensaje Importante", 2, false);
                 else
                 {
-                    BD.Fecha_Inicio_Sesion(txtUsuario.Text, txtPassword.Text, Objetos_Globales.fechaHoy);
-                    Menu menu = new Menu(Objetos_Globales.usuario.codigo_Tipo_Usuario);
+                    BD.Fecha_Inicio_Sesion(txtUsuario.Text, txtPassword.Text, Objetos_Globales.fechaHoy());
+                    Menu menu = new Menu();
                     this.Hide();
                     menu.Show();
                 }
@@ -64,14 +58,10 @@ namespace Sistema_Empenos_Anderson
         {
             if ((int)e.KeyChar == (int)Keys.Enter)
             {
-                Objetos_Globales.fechaHoy = Objetos_Globales.fecha.Day.ToString() + "/" + Objetos_Globales.fecha.Month.ToString() +
-                "/" + Objetos_Globales.fecha.Year.ToString() + " " + Objetos_Globales.fecha.Hour.ToString() + ":"
-                + Objetos_Globales.fecha.Minute.ToString() + ":" + Objetos_Globales.fecha.Second.ToString() + "."
-                + Objetos_Globales.fecha.Millisecond.ToString();
                 if (BD.Login(txtUsuario.Text, txtPassword.Text) > 0)
                 {
-                    BD.Fecha_Inicio_Sesion(Objetos_Globales.usuario.nombre_Usuario, Objetos_Globales.usuario.password_Usuario, Objetos_Globales.fechaHoy);
-                    Menu menu = new Menu(Objetos_Globales.usuario.codigo_Usuario);
+                    BD.Fecha_Inicio_Sesion(Objetos_Globales.usuario.nombre_Usuario, Objetos_Globales.usuario.password_Usuario, Objetos_Globales.fechaHoy());
+                    Menu menu = new Menu();
                     this.Hide();
                     menu.Show();
                 }

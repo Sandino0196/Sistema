@@ -198,6 +198,7 @@
             this.Correo_Electronico});
             this.dtgv_Info_Cliente.Location = new System.Drawing.Point(14, 147);
             this.dtgv_Info_Cliente.Name = "dtgv_Info_Cliente";
+            this.dtgv_Info_Cliente.ReadOnly = true;
             this.dtgv_Info_Cliente.Size = new System.Drawing.Size(517, 47);
             this.dtgv_Info_Cliente.TabIndex = 4;
             this.dtgv_Info_Cliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -206,21 +207,25 @@
             // 
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
             // 
             // Apellido
             // 
             this.Apellido.HeaderText = "Apellido";
             this.Apellido.Name = "Apellido";
+            this.Apellido.ReadOnly = true;
             // 
             // Telefono
             // 
             this.Telefono.HeaderText = "Telefono";
             this.Telefono.Name = "Telefono";
+            this.Telefono.ReadOnly = true;
             // 
             // Correo_Electronico
             // 
             this.Correo_Electronico.HeaderText = "Correo_Electronico";
             this.Correo_Electronico.Name = "Correo_Electronico";
+            this.Correo_Electronico.ReadOnly = true;
             // 
             // btnAvanzar
             // 

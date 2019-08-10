@@ -13,7 +13,7 @@ namespace Sistema_Empenos_Anderson
 
         protected override void OnClosed(EventArgs e)
         {
-            Menu men = new Sistema_Empenos_Anderson.Menu(Objetos_Globales.usuario.codigo_Usuario);
+            Menu men = new Sistema_Empenos_Anderson.Menu();
             men.Show();
         }
 
@@ -23,7 +23,7 @@ namespace Sistema_Empenos_Anderson
             double subtotal = 0, isv = 0;
             this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
             txtVendedor.Text = Objetos_Globales.usuario.nombre_Usuario;
-            txtFechaVenta.Text = Objetos_Globales.fechaHoyCorta;
+            txtFechaVenta.Text = Objetos_Globales.fechaHoyCorta();
             isv = Objetos_Globales.articulo.MontoPago * 0.15;
             subtotal = Objetos_Globales.articulo.MontoPago - isv;
             txtSubtotal.Text = subtotal.ToString();
@@ -100,7 +100,7 @@ namespace Sistema_Empenos_Anderson
                 }
                 MessageBoxTemporal.Show("Realizado correctamente", "Mensaje importante", 1, false);
                 this.Hide();
-                Menu men = new Sistema_Empenos_Anderson.Menu(Objetos_Globales.usuario.codigo_Tipo_Usuario);
+                Menu men = new Sistema_Empenos_Anderson.Menu();
                 men.Show();
             }
         }

@@ -12,7 +12,7 @@ namespace Sistema_Empenos_Anderson
 
         protected override void OnClosed(EventArgs e)
         {
-            Menu men = new Sistema_Empenos_Anderson.Menu(Objetos_Globales.usuario.codigo_Usuario);
+            Menu men = new Sistema_Empenos_Anderson.Menu();
             men.Show();
         }
 
@@ -30,6 +30,7 @@ namespace Sistema_Empenos_Anderson
             txtIntereses.Text = Objetos_Mantenimiento.articuloMantenimiento.Interes.ToString();
             txtMonto.Text = Objetos_Mantenimiento.articuloMantenimiento.Prestado.ToString();
             txtMeses.Text = Objetos_Mantenimiento.articuloMantenimiento.Meses.ToString();
+            btnAvanzar.Enabled = false;
         }
 
         private void bttBuscar_Click(object sender, EventArgs e)
@@ -63,12 +64,13 @@ namespace Sistema_Empenos_Anderson
                 txtIntereses.Text = Objetos_Mantenimiento.articuloMantenimiento.Interes.ToString();
                 txtMonto.Text = Objetos_Mantenimiento.articuloMantenimiento.Prestado.ToString();
                 txtMeses.Text = Objetos_Mantenimiento.articuloMantenimiento.Meses.ToString();
+                btnAvanzar.Enabled = true;
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Menu men = new Sistema_Empenos_Anderson.Menu(Objetos_Globales.usuario.codigo_Tipo_Usuario);
+            Menu men = new Sistema_Empenos_Anderson.Menu();
             this.Hide();
             men.Show();
         }

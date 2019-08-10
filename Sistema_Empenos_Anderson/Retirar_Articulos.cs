@@ -19,14 +19,14 @@ namespace Sistema_Empenos_Anderson
 
         protected override void OnClosed(EventArgs e)
         {
-            this.Dispose();
-            Manteminiento man = new Manteminiento();
-            man.Show();
+            Menu men = new Sistema_Empenos_Anderson.Menu();
+            men.Show();
         }
 
         private void Retirar_Articulos_Load(object sender, EventArgs e)
         {
             this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
+            btnRetirar.Enabled = false;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -72,7 +72,7 @@ namespace Sistema_Empenos_Anderson
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            Menu men = new Sistema_Empenos_Anderson.Menu(Objetos_Globales.usuario.codigo_Usuario);
+            Menu men = new Sistema_Empenos_Anderson.Menu();
             this.Hide();
             men.Show();
         }
@@ -80,6 +80,16 @@ namespace Sistema_Empenos_Anderson
         private void btnRetiro_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtMontoPagado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBoxTemporal.Show("Solo se permiten numeros", "Advertencia", 1, false);
+                e.Handled = true;
+                return;
+            }
         }
     }
 }
