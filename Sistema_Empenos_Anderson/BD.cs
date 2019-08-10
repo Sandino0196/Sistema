@@ -191,7 +191,7 @@ namespace Sistema_Empenos_Anderson
             try
             {
                 OpenConnection();
-                SqlCommand cmd = new SqlCommand("Select  * from[dbo].[F_Buscar_Cliente]('" + codigo + "') ", BD.connection);
+                SqlCommand cmd = new SqlCommand("Select * from[dbo].[F_Buscar_Cliente]('" + codigo + "') ", BD.connection);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 dt = new DataTable();
                 da.Fill(dt);
@@ -460,7 +460,122 @@ namespace Sistema_Empenos_Anderson
                 CloseConnection();
                 return 0;
             }
+        }
 
+        public static int Busqueda_Recibo(int recibo)
+        {
+            int existencia = 0;
+            OpenConnection();
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SP_Busqueda_Recibo";
+            command.Connection = connection;
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.Add(new SqlParameter("@Recibo", recibo));
+
+            SqlParameter existe = new SqlParameter("@Existe", 0);
+            existe.Direction = ParameterDirection.Output;            
+            command.Parameters.Add(existe);
+
+            try
+            {
+                command.ExecuteNonQuery();
+                existencia = int.Parse(command.Parameters["@Existe"].Value.ToString());
+                CloseConnection();
+                return existencia;
+            }
+            catch
+            {
+                CloseConnection();
+                return 0;
+            }
+        }
+
+        public static int Busqueda_Retiro(int retiro)
+        {
+            int existencia = 0;
+            OpenConnection();
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SP_Busqueda_Retiro";
+            command.Connection = connection;
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.Add(new SqlParameter("@Retiro", retiro));
+
+            SqlParameter existe = new SqlParameter("@Existe", 0);
+            existe.Direction = ParameterDirection.Output;
+            command.Parameters.Add(existe);
+
+            try
+            {
+                command.ExecuteNonQuery();
+                existencia = int.Parse(command.Parameters["@Existe"].Value.ToString());
+                CloseConnection();
+                return existencia;
+            }
+            catch
+            {
+                CloseConnection();
+                return 0;
+            }
+        }
+
+        public static int Busqueda_Interes(int interes)
+        {
+            int existencia = 0;
+            OpenConnection();
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SP_Busqueda_Interes";
+            command.Connection = connection;
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.Add(new SqlParameter("@Interes", interes));
+
+            SqlParameter existe = new SqlParameter("@Existe", 0);
+            existe.Direction = ParameterDirection.Output;
+            command.Parameters.Add(existe);
+
+            try
+            {
+                command.ExecuteNonQuery();
+                existencia = int.Parse(command.Parameters["@Existe"].Value.ToString());
+                CloseConnection();
+                return existencia;
+            }
+            catch
+            {
+                CloseConnection();
+                return 0;
+            }
+        }
+
+        public static int Busqueda_Factura(int factura)
+        {
+            int existencia = 0;
+            OpenConnection();
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SP_Busqueda_Factura";
+            command.Connection = connection;
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.Add(new SqlParameter("@Factura", factura));
+
+            SqlParameter existe = new SqlParameter("@Existe", 0);
+            existe.Direction = ParameterDirection.Output;
+            command.Parameters.Add(existe);
+
+            try
+            {
+                command.ExecuteNonQuery();
+                existencia = int.Parse(command.Parameters["@Existe"].Value.ToString());
+                CloseConnection();
+                return existencia;
+            }
+            catch
+            {
+                CloseConnection();
+                return 0;
+            }
         }
 
         #endregion
@@ -481,8 +596,15 @@ namespace Sistema_Empenos_Anderson
             command.Parameters.Add(new SqlParameter("@Cod_Usuario", Codigo_user));
             command.Parameters.Add(new SqlParameter("@Fecha_Recibo", Fecha));
 
-            command.ExecuteNonQuery();
-            CloseConnection();
+            try
+            {
+                command.ExecuteNonQuery();
+                CloseConnection();
+            }
+            catch
+            {
+                CloseConnection();
+            }
         }
 
         public static int Ingreso_Cliente(string identidad, string nombre, string apellido, string telefono, string correo, int cod_estado, string estado)

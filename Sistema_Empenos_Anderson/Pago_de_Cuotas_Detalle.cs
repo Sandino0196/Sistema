@@ -28,22 +28,28 @@ namespace Sistema_Empenos_Anderson
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if(double.Parse(txtIngresado.Text) < double.Parse(txtMonto.Text))
-                MessageBoxTemporal.Show("El monto ingresado no es suficiente para pagar", "Mensaje importante", 1, false);
-            else
+            if (BD.Busqueda_Interes(int.Parse(txtCodigoPago.Text)) == 0)
             {
-                if(BD.Modificar_Meses(Objetos_Mantenimiento.articuloMantenimiento.NumeroRecibo, Objetos_Mantenimiento.articuloMantenimiento.NumeroSerie, Objetos_Mantenimiento.articuloMantenimiento.Meses - int.Parse(numMeses.Value.ToString())) > 0)
+                if (double.Parse(txtIngresado.Text) < double.Parse(txtMonto.Text))
+                    MessageBoxTemporal.Show("El monto ingresado no es suficiente para pagar", "Mensaje importante", 1, false);
+                else
                 {
-                    BD.Ingreso_Pago_Interes(Objetos_Mantenimiento.articuloMantenimiento.NumeroRecibo, Objetos_Mantenimiento.articuloMantenimiento.NumeroSerie,
-                        int.Parse(txtCodigoPago.Text), txtCliente.Text, Objetos_Globales.fechaHoyCorta(), double.Parse(txtMonto.Text),
-                        Objetos_Globales.usuario.codigo_Usuario);                    
-                    MessageBoxTemporal.Show("Transaccion Finalizada", "Mensaje importante", 1, false);
-                    this.Hide();
-                    Menu men = new Sistema_Empenos_Anderson.Menu();
-                    men.Show();
-                } else
-                    MessageBoxTemporal.Show("Ha ocurrido un error", "Mensaje importante", 1, false);
+                    if (BD.Modificar_Meses(Objetos_Mantenimiento.articuloMantenimiento.NumeroRecibo, Objetos_Mantenimiento.articuloMantenimiento.NumeroSerie, Objetos_Mantenimiento.articuloMantenimiento.Meses - int.Parse(numMeses.Value.ToString())) > 0)
+                    {
+                        BD.Ingreso_Pago_Interes(Objetos_Mantenimiento.articuloMantenimiento.NumeroRecibo, Objetos_Mantenimiento.articuloMantenimiento.NumeroSerie,
+                            int.Parse(txtCodigoPago.Text), txtCliente.Text, Objetos_Globales.fechaHoyCorta(), double.Parse(txtMonto.Text),
+                            Objetos_Globales.usuario.codigo_Usuario);
+                        MessageBoxTemporal.Show("Transaccion Finalizada", "Mensaje importante", 1, false);
+                        this.Hide();
+                        Menu men = new Sistema_Empenos_Anderson.Menu();
+                        men.Show();
+                    }
+                    else
+                        MessageBoxTemporal.Show("Ha ocurrido un error", "Mensaje importante", 1, false);
+                }
             }
+            else
+                MessageBoxTemporal.Show("Este codigo de pago ya fue utilizado","Mensaje Importante",2,false);
         }
 
         private void Pago_de_Cuotas_Detalle_Load(object sender, EventArgs e)

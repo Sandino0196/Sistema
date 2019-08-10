@@ -49,15 +49,14 @@
             this.txtTasa = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.dtgvArticulos = new System.Windows.Forms.DataGridView();
-            this.Numero_Serie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Articulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnAvanzar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnIngresoArticulo = new System.Windows.Forms.Button();
+            this.Numero_Serie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Articulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvArticulos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -241,43 +240,12 @@
             this.dtgvArticulos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Numero_Serie,
             this.Articulo,
-            this.Tipo,
             this.Marca,
             this.Modelo});
             this.dtgvArticulos.Location = new System.Drawing.Point(317, 328);
             this.dtgvArticulos.Name = "dtgvArticulos";
             this.dtgvArticulos.Size = new System.Drawing.Size(635, 134);
             this.dtgvArticulos.TabIndex = 28;
-            // 
-            // Numero_Serie
-            // 
-            this.Numero_Serie.HeaderText = "Numero_Serie";
-            this.Numero_Serie.Name = "Numero_Serie";
-            this.Numero_Serie.ReadOnly = true;
-            // 
-            // Articulo
-            // 
-            this.Articulo.HeaderText = "Articulo";
-            this.Articulo.Name = "Articulo";
-            this.Articulo.ReadOnly = true;
-            // 
-            // Tipo
-            // 
-            this.Tipo.HeaderText = "Tipo";
-            this.Tipo.Name = "Tipo";
-            this.Tipo.ReadOnly = true;
-            // 
-            // Marca
-            // 
-            this.Marca.HeaderText = "Marca";
-            this.Marca.Name = "Marca";
-            this.Marca.ReadOnly = true;
-            // 
-            // Modelo
-            // 
-            this.Modelo.HeaderText = "Modelo";
-            this.Modelo.Name = "Modelo";
-            this.Modelo.ReadOnly = true;
             // 
             // btnVolver
             // 
@@ -337,6 +305,30 @@
             this.btnIngresoArticulo.Text = "Ingreso de Artículo";
             this.btnIngresoArticulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnIngresoArticulo.UseVisualStyleBackColor = false;
+            // 
+            // Numero_Serie
+            // 
+            this.Numero_Serie.HeaderText = "Numero_Serie";
+            this.Numero_Serie.Name = "Numero_Serie";
+            this.Numero_Serie.ReadOnly = true;
+            // 
+            // Articulo
+            // 
+            this.Articulo.HeaderText = "Articulo";
+            this.Articulo.Name = "Articulo";
+            this.Articulo.ReadOnly = true;
+            // 
+            // Marca
+            // 
+            this.Marca.HeaderText = "Marca";
+            this.Marca.Name = "Marca";
+            this.Marca.ReadOnly = true;
+            // 
+            // Modelo
+            // 
+            this.Modelo.HeaderText = "Modelo";
+            this.Modelo.Name = "Modelo";
+            this.Modelo.ReadOnly = true;
             // 
             // Ingreso_de_Articulo
             // 
@@ -402,14 +394,13 @@
         private System.Windows.Forms.TextBox txtTasa;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView dtgvArticulos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Numero_Serie;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Articulo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Modelo;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnAvanzar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnIngresoArticulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Numero_Serie;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Articulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Modelo;
     }
 }

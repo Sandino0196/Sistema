@@ -92,26 +92,31 @@ namespace Sistema_Empenos_Anderson
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if(double.Parse(txtTotalPagar.Text) > double.Parse(txtMonto.Text))
-                MessageBoxTemporal.Show("Monto ingresado es menor al de venta", "Mensaje importante", 2, false);
-            else
+            if (BD.Busqueda_Factura(int.Parse(txtCodigo.Text)) == 0)
             {
-                if (txtIDComp.MaskFull)
-                    BD.Ingreso_Factura(int.Parse(txtCodigo.Text), txtIDComp.Text, Objetos_Globales.usuario.codigo_Usuario, txtFechaVenta.Text);
+                if (double.Parse(txtTotalPagar.Text) > double.Parse(txtMonto.Text))
+                    MessageBoxTemporal.Show("Monto ingresado es menor al de venta", "Mensaje importante", 2, false);
                 else
-                    BD.Ingreso_Factura(int.Parse(txtCodigo.Text), null, Objetos_Globales.usuario.codigo_Usuario, txtFechaVenta.Text);
-
-                for (int i = 0; i < Objetos_Globales.articulos.Count; i++)
                 {
-                    BD.Ingreso_Articulo_Vendido(int.Parse(txtCodigo.Text), ((Articulo)Objetos_Globales.articulos[i]).NumeroSerie,
-                        ((Articulo)Objetos_Globales.articulos[i]).NumeroRecibo, ((Articulo)(Objetos_Globales.articulos[i])).MontoPago);
-                    BD.Actualizar_Estado_Articulo(((Articulo)Objetos_Globales.articulos[i]).NumeroSerie, ((Articulo)Objetos_Globales.articulos[i]).NumeroRecibo, 3, "Articulo");
+                    if (txtIDComp.MaskFull)
+                        BD.Ingreso_Factura(int.Parse(txtCodigo.Text), txtIDComp.Text, Objetos_Globales.usuario.codigo_Usuario, txtFechaVenta.Text);
+                    else
+                        BD.Ingreso_Factura(int.Parse(txtCodigo.Text), null, Objetos_Globales.usuario.codigo_Usuario, txtFechaVenta.Text);
+
+                    for (int i = 0; i < Objetos_Globales.articulos.Count; i++)
+                    {
+                        BD.Ingreso_Articulo_Vendido(int.Parse(txtCodigo.Text), ((Articulo)Objetos_Globales.articulos[i]).NumeroSerie,
+                            ((Articulo)Objetos_Globales.articulos[i]).NumeroRecibo, ((Articulo)(Objetos_Globales.articulos[i])).MontoPago);
+                        BD.Actualizar_Estado_Articulo(((Articulo)Objetos_Globales.articulos[i]).NumeroSerie, ((Articulo)Objetos_Globales.articulos[i]).NumeroRecibo, 3, "Articulo");
+                    }
+                    MessageBoxTemporal.Show("Realizado correctamente", "Mensaje importante", 1, false);
+                    this.Hide();
+                    Menu men = new Sistema_Empenos_Anderson.Menu();
+                    men.Show();
                 }
-                MessageBoxTemporal.Show("Realizado correctamente", "Mensaje importante", 1, false);
-                this.Hide();
-                Menu men = new Sistema_Empenos_Anderson.Menu();
-                men.Show();
             }
+            else
+                MessageBoxTemporal.Show("Este numero de factura ya existe","Mensaje Importante",1,false);
         }
 
         private void btnVolver_Click(object sender, EventArgs e)

@@ -81,7 +81,6 @@ namespace Sistema_Empenos_Anderson
         {
             if(cmbseleccion.Text=="Identidad del Cliente")
                 dtConsultas.DataSource = BD.Cargar_Cliente(txtID.Text); 
-
             if(cmbseleccion.Text== "Codigo Recibo")
             {
                 dtConsultas.DataSource = BD.CargarArticulo(int.Parse(txtingreso.Text));

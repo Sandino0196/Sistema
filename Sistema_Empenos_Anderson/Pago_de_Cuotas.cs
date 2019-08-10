@@ -57,14 +57,19 @@ namespace Sistema_Empenos_Anderson
 
         private void bttBuscar_Click_1(object sender, EventArgs e)
         {
-            if (BD.Busqueda_Articulo(int.Parse(txtNumRecibo.Text), txtNumSerie.Text) > 0)
+            if (txtNumRecibo.Text.Equals("") && txtNumSerie.Text.Equals(""))
+                MessageBoxTemporal.Show("Ingrese los valores correspondientes", "Mensaje Importante", 2, false);
+            else
             {
-                txtArticulo.Text = Objetos_Mantenimiento.articuloMantenimiento.Descripcion;
-                txtEstado.Text = Objetos_Mantenimiento.articuloMantenimiento.Estado;
-                txtIntereses.Text = Objetos_Mantenimiento.articuloMantenimiento.Interes.ToString();
-                txtMonto.Text = Objetos_Mantenimiento.articuloMantenimiento.Prestado.ToString();
-                txtMeses.Text = Objetos_Mantenimiento.articuloMantenimiento.Meses.ToString();
-                btnAvanzar.Enabled = true;
+                if (BD.Busqueda_Articulo(int.Parse(txtNumRecibo.Text), txtNumSerie.Text) > 0)
+                {
+                    txtArticulo.Text = Objetos_Mantenimiento.articuloMantenimiento.Descripcion;
+                    txtEstado.Text = Objetos_Mantenimiento.articuloMantenimiento.Estado;
+                    txtIntereses.Text = Objetos_Mantenimiento.articuloMantenimiento.Interes.ToString();
+                    txtMonto.Text = Objetos_Mantenimiento.articuloMantenimiento.Prestado.ToString();
+                    txtMeses.Text = Objetos_Mantenimiento.articuloMantenimiento.Meses.ToString();
+                    btnAvanzar.Enabled = true;
+                }
             }
         }
 

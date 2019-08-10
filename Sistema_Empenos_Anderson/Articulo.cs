@@ -63,7 +63,7 @@
 
         public double Interes
         {
-            get { return interes / 100; }
+            get { return interes; }
             set { this.interes = value; }
         }
 

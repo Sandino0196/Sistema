@@ -44,7 +44,7 @@ namespace Sistema_Empenos_Anderson
                 bttAgregar.Enabled = true;
             } else
             {
-                MessageBoxTemporal.Show("Archivo no encontrado", "Mensaje importante", 2, false);
+                MessageBoxTemporal.Show("Artículo no encontrado", "Mensaje importante", 2, false);
                 bttAgregar.Enabled = false;
             }
         }

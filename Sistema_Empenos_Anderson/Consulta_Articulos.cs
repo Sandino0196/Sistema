@@ -12,12 +12,6 @@ namespace Sistema_Empenos_Anderson
             InitializeComponent();
         }
 
-        protected override void OnClosed(EventArgs e)
-        {
-            Menu men = new Sistema_Empenos_Anderson.Menu();
-            men.Show();
-        }
-
         private void Consulta_Facturacion_Load(object sender, EventArgs e)
         {
             this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
@@ -25,14 +19,24 @@ namespace Sistema_Empenos_Anderson
 
         private void rbRecibo_CheckedChanged(object sender, EventArgs e)
         {
-            if(rbRecibo.Checked)
+            if (rbRecibo.Checked)
+            {
                 lbl1.Text = "Ingrese Código del Recibo:";
+                txtCod.Visible = true;
+                txtCodCliente.Visible = false;
+                txtCod.Focus();
+            }
         }
 
         private void rbCliente_CheckedChanged(object sender, EventArgs e)
         {
             if (rbCliente.Checked)
+            {
                 lbl1.Text = "Ingrese Identidad del Cliente:";
+                txtCod.Visible = false;
+                txtCodCliente.Visible = true;
+                txtCodCliente.Focus();
+            }
         }
 
         private void bttBuscar_Click(object sender, EventArgs e)
@@ -40,7 +44,7 @@ namespace Sistema_Empenos_Anderson
             if (rbRecibo.Checked)
                 dtgConsultaArticulo.DataSource = BD.CargarArticulo(int.Parse(txtCod.Text));
             if (rbCliente.Checked)
-                dtgConsultaArticulo.DataSource = BD.Cargar_Cliente(txtCod.Text);
+                dtgConsultaArticulo.DataSource = BD.Cargar_Cliente(txtCodCliente.Text);
         }
 
         private void button1_Click(object sender, EventArgs e)

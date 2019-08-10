@@ -47,18 +47,23 @@ namespace Sistema_Empenos_Anderson
 
         private void btnRetirar_Click(object sender, EventArgs e)
         {
-            if(Double.Parse(txtMontoPagado.Text) < Objetos_Mantenimiento.articuloMantenimiento.PrecioPago(Objetos_Mantenimiento.articuloMantenimiento.Meses) || txtMontoPagado.Text==null)
+            if (BD.Busqueda_Retiro(int.Parse(txtRetiro.Text)) == 0)
             {
-                MessageBoxTemporal.Show("El valor ingresado no puede ser menor al monto a pagar","Alerta",2,false);
-            }else
-            {
-                double cambio = 0;
-                BD.Actualizar_Estado_Articulo(txtSerie.Text, int.Parse(txtRecibo.Text), 4, "Articulo");
-                cambio = double.Parse(txtMontoPagado.Text) - Objetos_Mantenimiento.articuloMantenimiento.PrecioPago(Objetos_Mantenimiento.articuloMantenimiento.Meses);
-                MessageBoxTemporal.Show("El articulo fue retirado con exito\nCambio:" + cambio,"Informacion",2,false);
-                BD.Ingreso_Retiro(int.Parse(txtRetiro.Text), Objetos_Globales.identidadTemporal, int.Parse(txtRecibo.Text),txtSerie.Text,Objetos_Globales.fechaHoyCorta());
-                this.Close();
-            }
+                if (Double.Parse(txtMontoPagado.Text) < Objetos_Mantenimiento.articuloMantenimiento.PrecioPago(Objetos_Mantenimiento.articuloMantenimiento.Meses) || txtMontoPagado.Text == null)
+                {
+                    MessageBoxTemporal.Show("El valor ingresado no puede ser menor al monto a pagar", "Alerta", 2, false);
+                }
+                else
+                {
+                    double cambio = 0;
+                    BD.Actualizar_Estado_Articulo(txtSerie.Text, int.Parse(txtRecibo.Text), 4, "Articulo");
+                    cambio = double.Parse(txtMontoPagado.Text) - Objetos_Mantenimiento.articuloMantenimiento.PrecioPago(Objetos_Mantenimiento.articuloMantenimiento.Meses);
+                    MessageBoxTemporal.Show("El articulo fue retirado con exito\nCambio:" + cambio, "Informacion", 2, false);
+                    BD.Ingreso_Retiro(int.Parse(txtRetiro.Text), Objetos_Globales.identidadTemporal, int.Parse(txtRecibo.Text), txtSerie.Text, Objetos_Globales.fechaHoyCorta());
+                    this.Close();
+                }
+            } else
+                MessageBoxTemporal.Show("Este codigo de retiro ya fue utilizado", "Mensaje Importante", 2, false);
         }
 
         private void txtRecibo_KeyPress(object sender, KeyPressEventArgs e)
