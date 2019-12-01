@@ -104,6 +104,12 @@
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="MessageBoxTemporal.cs" />
+    <Compile Include="NuevoModulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NuevoModulo.Designer.cs">
+      <DependentUpon>NuevoModulo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Objetos_Globales.cs" />
     <Compile Include="Objetos_Mantenimiento.cs" />
     <Compile Include="Pago_de_Cuotas.cs">
@@ -171,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NuevoModulo.resx">
+      <DependentUpon>NuevoModulo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pago_de_Cuotas.resx">
       <DependentUpon>Pago_de_Cuotas.cs</DependentUpon>
