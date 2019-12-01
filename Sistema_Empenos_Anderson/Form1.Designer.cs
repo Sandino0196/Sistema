@@ -79,7 +79,9 @@
             // txtUsuario
             // 
             this.txtUsuario.Location = new System.Drawing.Point(266, 245);
+            this.txtUsuario.MaxLength = 50;
             this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.ShortcutsEnabled = false;
             this.txtUsuario.Size = new System.Drawing.Size(116, 20);
             this.txtUsuario.TabIndex = 3;
             this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
@@ -87,8 +89,10 @@
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(266, 318);
+            this.txtPassword.MaxLength = 50;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
+            this.txtPassword.ShortcutsEnabled = false;
             this.txtPassword.Size = new System.Drawing.Size(116, 20);
             this.txtPassword.TabIndex = 4;
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);

@@ -41,6 +41,7 @@ namespace Sistema_Empenos_Anderson
                 txtID.Visible = false;
                 cmbtipartic.Visible = true;
                 btnaceptar.Visible = true;
+                txtIngresochar.Visible = false;
             }
             else 
             if(cmbseleccion.Text == "Identidad del Cliente")
@@ -50,19 +51,36 @@ namespace Sistema_Empenos_Anderson
                 txtingreso.Visible = false;
                 txtID.Visible = true;
                 btnaceptar.Visible = true;
+                txtIngresochar.Visible = false;
             }
             else
             {
-                lblcambio.Text = "Ingrese Datos: ";
-                lblcambio.Visible = true;
-                txtingreso.Visible = true;
-                txtID.Visible = false;
-                txtingreso.Clear();
-                txtingreso.Focus();
-                cmbtipartic.Visible = false;
-                btnaceptar.Visible = true;
+                if (cmbseleccion.Text == "Numero de Serie")
+                {
+                    lblcambio.Text = "Ingrese Datos: ";
+                    lblcambio.Visible = true;
+                    txtIngresochar.Visible = true;
+                    txtID.Visible = false;
+                    txtIngresochar.Clear();
+                    txtIngresochar.Focus();
+                    cmbtipartic.Visible = false;
+                    btnaceptar.Visible = true;
+                }
+                else
+                {
+                    lblcambio.Text = "Ingrese Datos: ";
+                    lblcambio.Visible = true;
+                    txtingreso.Visible = true;
+                    txtID.Visible = false;
+                    txtingreso.Clear();
+                    txtingreso.Focus();
+                    cmbtipartic.Visible = false;
+                    btnaceptar.Visible = true;
+                    txtIngresochar.Visible = false;
+                }
 
             }
+            
         }
 
         private void btnregresar_Click(object sender, EventArgs e)
@@ -91,7 +109,7 @@ namespace Sistema_Empenos_Anderson
             }
             if(cmbseleccion.Text == "Numero de Serie")
             {
-                dtConsultas.DataSource = BD.Cargar_NumSerie(txtingreso.Text);
+                dtConsultas.DataSource = BD.Cargar_NumSerie(txtIngresochar.Text);
             }
             if(cmbseleccion.Text == "Tipo de Articulos")
             {
@@ -114,6 +132,16 @@ namespace Sistema_Empenos_Anderson
             }
 
             
+        }
+
+        private void txtingreso_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBoxTemporal.Show("Solo se permiten numeros", "Advertencia", 1, false);
+                e.Handled = true;
+                return;
+            }
         }
     }
 }

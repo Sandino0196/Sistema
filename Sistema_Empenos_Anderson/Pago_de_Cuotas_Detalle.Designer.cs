@@ -63,8 +63,10 @@
             // 
             this.txtCodigoPago.Location = new System.Drawing.Point(337, 110);
             this.txtCodigoPago.Name = "txtCodigoPago";
+            this.txtCodigoPago.ShortcutsEnabled = false;
             this.txtCodigoPago.Size = new System.Drawing.Size(184, 20);
             this.txtCodigoPago.TabIndex = 1;
+            this.txtCodigoPago.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigoPago_KeyPress);
             // 
             // label2
             // 
@@ -179,6 +181,7 @@
             this.txtCliente.Location = new System.Drawing.Point(337, 150);
             this.txtCliente.Mask = "0000-0000-00000";
             this.txtCliente.Name = "txtCliente";
+            this.txtCliente.ShortcutsEnabled = false;
             this.txtCliente.Size = new System.Drawing.Size(184, 20);
             this.txtCliente.TabIndex = 18;
             // 
@@ -196,6 +199,7 @@
             // 
             this.txtIngresado.Location = new System.Drawing.Point(356, 448);
             this.txtIngresado.Name = "txtIngresado";
+            this.txtIngresado.ShortcutsEnabled = false;
             this.txtIngresado.Size = new System.Drawing.Size(116, 20);
             this.txtIngresado.TabIndex = 20;
             this.txtIngresado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIngresado_KeyPress);

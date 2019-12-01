@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
+
 namespace Sistema_Empenos_Anderson
 {
     public partial class Ingreso_de_Articulo : Form
@@ -34,11 +35,13 @@ namespace Sistema_Empenos_Anderson
             men.Show();
         }
 
+        
+
         private void btnAvanzar_Click(object sender, EventArgs e)
         {
             if(BD.Busqueda_Recibo(int.Parse(txtCod_Recibo.Text)) == 0)
             {
-                BD.Ingreso_Recibo(int.Parse(txtCod_Recibo.Text), Objetos_Globales.cliente.identidad_Cliente, Objetos_Globales.usuario.codigo_Usuario, clndrFecha.TodayDate.ToString());
+                BD.Ingreso_Recibo(int.Parse(txtCod_Recibo.Text), Objetos_Globales.cliente.identidad_Cliente, Objetos_Globales.usuario.codigo_Usuario, DateTime.Today.Month.ToString() + "-" + DateTime.Today.Day.ToString() + "-" + DateTime.Today.Year.ToString());
                 for (int i = 0; i < Objetos_Globales.articulos.Count; i++)
                     BD.Ingreso_Articulo(int.Parse(txtCod_Recibo.Text), ((Articulo)Objetos_Globales.articulos[i]).NumeroSerie,
                         ((Articulo)Objetos_Globales.articulos[i]).CodigoTipo, ((Articulo)Objetos_Globales.articulos[i]).Descripcion,
@@ -53,7 +56,7 @@ namespace Sistema_Empenos_Anderson
             else
             {
                 MessageBoxTemporal.Show("Este recibo ya existe", "Mensaje Importante", 1, false);
-                txtCod_Recibo.Enabled = true; ;
+                txtCod_Recibo.Enabled = true;
             }
         }
 
@@ -97,7 +100,19 @@ namespace Sistema_Empenos_Anderson
             }
         }
 
+
+
         private void txtMonto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBoxTemporal.Show("Solo se permiten numeros", "Advertencia", 1, false);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtTasa_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             {
@@ -118,7 +133,7 @@ namespace Sistema_Empenos_Anderson
                 if(Objetos_Globales.articulos.Count == 0)
                 {
                     Objetos_Globales.articulos.Add(new Articulo(1, double.Parse(txtMonto.Text),
-                double.Parse(txtTasa.Text), txtDescripcion.Text, txtMarca.Text, txtModelo.Text,
+                double.Parse(txtTasa.Text)/100, txtDescripcion.Text, txtMarca.Text, txtModelo.Text,
                 "En Prenda", txtNumero_Serie.Text, cmbTipo_Articulo.SelectedText,
                 cmbTipo_Articulo.SelectedIndex + 1, int.Parse(txtCod_Recibo.Text)));
 
@@ -154,7 +169,7 @@ namespace Sistema_Empenos_Anderson
                         "En Prenda", txtNumero_Serie.Text, cmbTipo_Articulo.SelectedValue.ToString(),
                         cmbTipo_Articulo.SelectedIndex + 1, int.Parse(txtCod_Recibo.Text)));
 
-                        MessageBoxTemporal.Show(cmbTipo_Articulo.SelectedValue.ToString(), "probando", 1, false);
+                        
                         dtgvArticulos.Rows.Add();
                         dtgvArticulos.Rows[row].Cells[0].Value = txtNumero_Serie.Text;
                         dtgvArticulos.Rows[row].Cells[1].Value = txtDescripcion.Text;

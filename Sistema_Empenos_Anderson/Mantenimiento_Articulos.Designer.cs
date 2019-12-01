@@ -260,6 +260,7 @@
             // 
             this.Serietxt.Location = new System.Drawing.Point(140, 24);
             this.Serietxt.Name = "Serietxt";
+            this.Serietxt.ShortcutsEnabled = false;
             this.Serietxt.Size = new System.Drawing.Size(100, 20);
             this.Serietxt.TabIndex = 2;
             // 
@@ -276,6 +277,7 @@
             // 
             this.Recibotxt.Location = new System.Drawing.Point(140, 62);
             this.Recibotxt.Name = "Recibotxt";
+            this.Recibotxt.ShortcutsEnabled = false;
             this.Recibotxt.Size = new System.Drawing.Size(100, 20);
             this.Recibotxt.TabIndex = 3;
             this.Recibotxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Recibotxt_KeyPress);
@@ -317,11 +319,13 @@
             this.bttAñadir.TabIndex = 2;
             this.bttAñadir.Text = "Añadir";
             this.bttAñadir.UseVisualStyleBackColor = false;
+            this.bttAñadir.Click += new System.EventHandler(this.bttAñadir_Click);
             // 
             // txtNom_TpArt
             // 
             this.txtNom_TpArt.Location = new System.Drawing.Point(125, 111);
             this.txtNom_TpArt.Name = "txtNom_TpArt";
+            this.txtNom_TpArt.ShortcutsEnabled = false;
             this.txtNom_TpArt.Size = new System.Drawing.Size(100, 20);
             this.txtNom_TpArt.TabIndex = 1;
             this.txtNom_TpArt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNom_TpArt_KeyPress);
@@ -499,6 +503,7 @@
             // 
             this.txtNum_Recibo.Location = new System.Drawing.Point(145, 58);
             this.txtNum_Recibo.Name = "txtNum_Recibo";
+            this.txtNum_Recibo.ShortcutsEnabled = false;
             this.txtNum_Recibo.Size = new System.Drawing.Size(121, 20);
             this.txtNum_Recibo.TabIndex = 13;
             this.txtNum_Recibo.TextChanged += new System.EventHandler(this.txtNum_Recibo_TextChanged);
@@ -508,6 +513,7 @@
             // 
             this.txtNum_Serie.Location = new System.Drawing.Point(145, 20);
             this.txtNum_Serie.Name = "txtNum_Serie";
+            this.txtNum_Serie.ShortcutsEnabled = false;
             this.txtNum_Serie.Size = new System.Drawing.Size(121, 20);
             this.txtNum_Serie.TabIndex = 12;
             // 

@@ -107,5 +107,25 @@ namespace Sistema_Empenos_Anderson
                 return;
             }
         }
+
+        private void txtSerie_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtRetiro_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtRecibo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtMontoPagado_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

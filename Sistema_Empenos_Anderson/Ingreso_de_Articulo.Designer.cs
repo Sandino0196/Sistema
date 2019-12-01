@@ -49,14 +49,14 @@
             this.txtTasa = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.dtgvArticulos = new System.Windows.Forms.DataGridView();
-            this.btnVolver = new System.Windows.Forms.Button();
-            this.btnAvanzar = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnIngresoArticulo = new System.Windows.Forms.Button();
             this.Numero_Serie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Articulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnVolver = new System.Windows.Forms.Button();
+            this.btnAvanzar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnIngresoArticulo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvArticulos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,7 +84,9 @@
             // txtCod_Recibo
             // 
             this.txtCod_Recibo.Location = new System.Drawing.Point(240, 163);
+            this.txtCod_Recibo.MaxLength = 50;
             this.txtCod_Recibo.Name = "txtCod_Recibo";
+            this.txtCod_Recibo.ShortcutsEnabled = false;
             this.txtCod_Recibo.Size = new System.Drawing.Size(116, 20);
             this.txtCod_Recibo.TabIndex = 11;
             this.txtCod_Recibo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCod_Recibo_KeyPress);
@@ -92,7 +94,9 @@
             // txtNumero_Serie
             // 
             this.txtNumero_Serie.Location = new System.Drawing.Point(240, 196);
+            this.txtNumero_Serie.MaxLength = 50;
             this.txtNumero_Serie.Name = "txtNumero_Serie";
+            this.txtNumero_Serie.ShortcutsEnabled = false;
             this.txtNumero_Serie.Size = new System.Drawing.Size(116, 20);
             this.txtNumero_Serie.TabIndex = 13;
             // 
@@ -151,7 +155,9 @@
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(189, 289);
+            this.txtDescripcion.MaxLength = 50;
             this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.ShortcutsEnabled = false;
             this.txtDescripcion.Size = new System.Drawing.Size(116, 20);
             this.txtDescripcion.TabIndex = 19;
             // 
@@ -168,7 +174,9 @@
             // txtMarca
             // 
             this.txtMarca.Location = new System.Drawing.Point(189, 315);
+            this.txtMarca.MaxLength = 50;
             this.txtMarca.Name = "txtMarca";
+            this.txtMarca.ShortcutsEnabled = false;
             this.txtMarca.Size = new System.Drawing.Size(116, 20);
             this.txtMarca.TabIndex = 21;
             // 
@@ -185,7 +193,9 @@
             // txtModelo
             // 
             this.txtModelo.Location = new System.Drawing.Point(189, 341);
+            this.txtModelo.MaxLength = 50;
             this.txtModelo.Name = "txtModelo";
+            this.txtModelo.ShortcutsEnabled = false;
             this.txtModelo.Size = new System.Drawing.Size(116, 20);
             this.txtModelo.TabIndex = 23;
             // 
@@ -223,6 +233,7 @@
             this.txtTasa.Name = "txtTasa";
             this.txtTasa.Size = new System.Drawing.Size(116, 20);
             this.txtTasa.TabIndex = 27;
+            this.txtTasa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTasa_KeyPress);
             // 
             // label10
             // 
@@ -242,10 +253,34 @@
             this.Articulo,
             this.Marca,
             this.Modelo});
-            this.dtgvArticulos.Location = new System.Drawing.Point(317, 328);
+            this.dtgvArticulos.Location = new System.Drawing.Point(311, 328);
             this.dtgvArticulos.Name = "dtgvArticulos";
             this.dtgvArticulos.Size = new System.Drawing.Size(635, 134);
             this.dtgvArticulos.TabIndex = 28;
+            // 
+            // Numero_Serie
+            // 
+            this.Numero_Serie.HeaderText = "Numero_Serie";
+            this.Numero_Serie.Name = "Numero_Serie";
+            this.Numero_Serie.ReadOnly = true;
+            // 
+            // Articulo
+            // 
+            this.Articulo.HeaderText = "Articulo";
+            this.Articulo.Name = "Articulo";
+            this.Articulo.ReadOnly = true;
+            // 
+            // Marca
+            // 
+            this.Marca.HeaderText = "Marca";
+            this.Marca.Name = "Marca";
+            this.Marca.ReadOnly = true;
+            // 
+            // Modelo
+            // 
+            this.Modelo.HeaderText = "Modelo";
+            this.Modelo.Name = "Modelo";
+            this.Modelo.ReadOnly = true;
             // 
             // btnVolver
             // 
@@ -305,30 +340,6 @@
             this.btnIngresoArticulo.Text = "Ingreso de Artículo";
             this.btnIngresoArticulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnIngresoArticulo.UseVisualStyleBackColor = false;
-            // 
-            // Numero_Serie
-            // 
-            this.Numero_Serie.HeaderText = "Numero_Serie";
-            this.Numero_Serie.Name = "Numero_Serie";
-            this.Numero_Serie.ReadOnly = true;
-            // 
-            // Articulo
-            // 
-            this.Articulo.HeaderText = "Articulo";
-            this.Articulo.Name = "Articulo";
-            this.Articulo.ReadOnly = true;
-            // 
-            // Marca
-            // 
-            this.Marca.HeaderText = "Marca";
-            this.Marca.Name = "Marca";
-            this.Marca.ReadOnly = true;
-            // 
-            // Modelo
-            // 
-            this.Modelo.HeaderText = "Modelo";
-            this.Modelo.Name = "Modelo";
-            this.Modelo.ReadOnly = true;
             // 
             // Ingreso_de_Articulo
             // 

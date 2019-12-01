@@ -25,6 +25,7 @@ namespace Sistema_Empenos_Anderson
                 txtCod.Visible = true;
                 txtCodCliente.Visible = false;
                 txtCod.Focus();
+                txtCod.ShortcutsEnabled = false;
             }
         }
 
@@ -36,6 +37,7 @@ namespace Sistema_Empenos_Anderson
                 txtCod.Visible = false;
                 txtCodCliente.Visible = true;
                 txtCodCliente.Focus();
+                txtCodCliente.ShortcutsEnabled = false;
             }
         }
 
@@ -76,6 +78,16 @@ namespace Sistema_Empenos_Anderson
         private void Volver_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtCod_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBoxTemporal.Show("Solo se permiten numeros", "Advertencia", 1, false);
+                e.Handled = true;
+                return;
+            }
         }
     }
 }

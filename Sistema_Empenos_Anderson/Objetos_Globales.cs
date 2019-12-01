@@ -15,7 +15,8 @@ namespace Sistema_Empenos_Anderson
 
         public static string fechaHoyCorta()
         {
-            return fecha.Day + "/" + fecha.Month + "/" + fecha.Year;
+            return DateTime.Today.Month.ToString() + "-" + DateTime.Today.Day.ToString() + "-" + DateTime.Today.Year.ToString()
+                ;
         }
 
         public static string fechaHoy()

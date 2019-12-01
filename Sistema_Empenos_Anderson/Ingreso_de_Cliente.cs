@@ -56,6 +56,7 @@ namespace Sistema_Empenos_Anderson
                     dtgv_Info_Cliente.Rows[0].Cells[2].Value = Objetos_Globales.cliente.telefono_Cliente;
                     dtgv_Info_Cliente.Rows[0].Cells[3].Value = Objetos_Globales.cliente.correo_Cliente;
                     btnAvanzar.Enabled = true;
+                    grpInfo_Nuevo_Cliente.Enabled = false;
                 }
                 else
                 {
@@ -66,8 +67,10 @@ namespace Sistema_Empenos_Anderson
                         btnAñadir.Enabled = true;
                         txtIdentidad.Text = txtBusqueda_ID.Text;
                         txtNombre.Focus();
+                        btnAvanzar.Enabled = false;
                     } else
                     {
+                        
                         grpInfo_Nuevo_Cliente.Enabled = false;
                         btnAñadir.Enabled = false;
                     }

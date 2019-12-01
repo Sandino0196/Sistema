@@ -47,9 +47,9 @@ namespace Sistema_Empenos_Anderson
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Menu men = new Sistema_Empenos_Anderson.Menu();
-            this.Hide();
-            men.Show();
+           
+            this.Close();
+            
         }
 
         private void Manteminiento_Load(object sender, EventArgs e)

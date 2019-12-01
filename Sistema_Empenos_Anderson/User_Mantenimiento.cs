@@ -63,9 +63,18 @@ namespace Sistema_Empenos_Anderson
 
         protected override void OnClosed(EventArgs e)
         {
-            Manteminiento man = new Manteminiento();
-            man.Show();
-            this.Dispose();
+            if (Objetos_Globales.usuario.codigo_Usuario == 0)
+            {
+                Form1 form = new Form1();
+                this.Hide();
+                form.Show();
+            }
+            else
+            {
+                Manteminiento manteminiento = new Manteminiento();
+                this.Hide();
+                manteminiento.Show();
+            }
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -73,11 +82,11 @@ namespace Sistema_Empenos_Anderson
             if(Objetos_Globales.usuario.codigo_Usuario == 0)
             {
                 Form1 form = new Form1();
-                this.Close();
+                this.Hide();
                 form.Show();
             } else {
                 Manteminiento manteminiento = new Manteminiento();
-                this.Close();
+                this.Hide();
                 manteminiento.Show();
             }
         }

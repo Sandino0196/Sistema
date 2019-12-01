@@ -88,5 +88,15 @@ namespace Sistema_Empenos_Anderson
         {
 
         }
+
+        private void txtCodigoPago_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBoxTemporal.Show("Solo se permiten numeros", "Advertencia", 1, false);
+                e.Handled = true;
+                return;
+            }
+        }
     }
 }

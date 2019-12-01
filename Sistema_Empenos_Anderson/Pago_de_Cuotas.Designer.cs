@@ -199,14 +199,18 @@
             // txtNumSerie
             // 
             this.txtNumSerie.Location = new System.Drawing.Point(125, 79);
+            this.txtNumSerie.MaxLength = 50;
             this.txtNumSerie.Name = "txtNumSerie";
+            this.txtNumSerie.ShortcutsEnabled = false;
             this.txtNumSerie.Size = new System.Drawing.Size(188, 20);
             this.txtNumSerie.TabIndex = 4;
             // 
             // txtNumRecibo
             // 
             this.txtNumRecibo.Location = new System.Drawing.Point(125, 30);
+            this.txtNumRecibo.MaxLength = 50;
             this.txtNumRecibo.Name = "txtNumRecibo";
+            this.txtNumRecibo.ShortcutsEnabled = false;
             this.txtNumRecibo.Size = new System.Drawing.Size(188, 20);
             this.txtNumRecibo.TabIndex = 5;
             this.txtNumRecibo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumRecibo_KeyPress);

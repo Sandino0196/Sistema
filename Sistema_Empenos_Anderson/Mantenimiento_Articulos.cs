@@ -179,5 +179,10 @@ namespace Sistema_Empenos_Anderson
                 return;
             }
         }
+
+        private void bttAñadir_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -609,6 +609,8 @@ namespace Sistema_Empenos_Anderson
             command.Parameters.Add(new SqlParameter("@Cod_Usuario", Codigo_user));
             command.Parameters.Add(new SqlParameter("@Fecha_Recibo", Fecha));
 
+            
+
             try
             {
                 command.ExecuteNonQuery();

@@ -40,6 +40,7 @@
             this.txtID = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnConsulta = new System.Windows.Forms.Button();
+            this.txtIngresochar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtConsultas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,17 +91,19 @@
             "Mueble",
             "Electrónico",
             "Entretenimiento"});
-            this.cmbtipartic.Location = new System.Drawing.Point(21, 187);
+            this.cmbtipartic.Location = new System.Drawing.Point(21, 190);
             this.cmbtipartic.Name = "cmbtipartic";
             this.cmbtipartic.Size = new System.Drawing.Size(163, 21);
             this.cmbtipartic.TabIndex = 5;
             // 
             // txtingreso
             // 
-            this.txtingreso.Location = new System.Drawing.Point(21, 188);
+            this.txtingreso.Location = new System.Drawing.Point(21, 190);
             this.txtingreso.Name = "txtingreso";
+            this.txtingreso.ShortcutsEnabled = false;
             this.txtingreso.Size = new System.Drawing.Size(163, 20);
             this.txtingreso.TabIndex = 6;
+            this.txtingreso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtingreso_KeyPress);
             // 
             // btnregresar
             // 
@@ -140,9 +143,10 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(21, 188);
+            this.txtID.Location = new System.Drawing.Point(21, 191);
             this.txtID.Mask = "0000-0000-00000";
             this.txtID.Name = "txtID";
+            this.txtID.ShortcutsEnabled = false;
             this.txtID.Size = new System.Drawing.Size(163, 20);
             this.txtID.TabIndex = 11;
             // 
@@ -172,12 +176,23 @@
             this.btnConsulta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConsulta.UseVisualStyleBackColor = false;
             // 
+            // txtIngresochar
+            // 
+            this.txtIngresochar.Location = new System.Drawing.Point(21, 191);
+            this.txtIngresochar.MaxLength = 50;
+            this.txtIngresochar.Name = "txtIngresochar";
+            this.txtIngresochar.ShortcutsEnabled = false;
+            this.txtIngresochar.Size = new System.Drawing.Size(163, 20);
+            this.txtIngresochar.TabIndex = 15;
+            this.txtIngresochar.Visible = false;
+            // 
             // Consultas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1208, 532);
+            this.Controls.Add(this.txtIngresochar);
             this.Controls.Add(this.btnConsulta);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtID);
@@ -212,5 +227,6 @@
         private System.Windows.Forms.MaskedTextBox txtID;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnConsulta;
+        private System.Windows.Forms.TextBox txtIngresochar;
     }
 }

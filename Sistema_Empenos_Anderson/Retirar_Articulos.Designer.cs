@@ -75,16 +75,20 @@
             // 
             this.txtRecibo.Location = new System.Drawing.Point(168, 152);
             this.txtRecibo.Name = "txtRecibo";
+            this.txtRecibo.ShortcutsEnabled = false;
             this.txtRecibo.Size = new System.Drawing.Size(100, 20);
             this.txtRecibo.TabIndex = 11;
+            this.txtRecibo.TextChanged += new System.EventHandler(this.txtRecibo_TextChanged);
             this.txtRecibo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRecibo_KeyPress);
             // 
             // txtSerie
             // 
             this.txtSerie.Location = new System.Drawing.Point(409, 149);
             this.txtSerie.Name = "txtSerie";
+            this.txtSerie.ShortcutsEnabled = false;
             this.txtSerie.Size = new System.Drawing.Size(100, 20);
             this.txtSerie.TabIndex = 13;
+            this.txtSerie.TextChanged += new System.EventHandler(this.txtSerie_TextChanged);
             // 
             // label2
             // 
@@ -147,8 +151,10 @@
             // 
             this.txtMontoPagado.Location = new System.Drawing.Point(326, 389);
             this.txtMontoPagado.Name = "txtMontoPagado";
+            this.txtMontoPagado.ShortcutsEnabled = false;
             this.txtMontoPagado.Size = new System.Drawing.Size(100, 20);
             this.txtMontoPagado.TabIndex = 17;
+            this.txtMontoPagado.TextChanged += new System.EventHandler(this.txtMontoPagado_TextChanged);
             this.txtMontoPagado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMontoPagado_KeyPress);
             // 
             // label3
@@ -208,8 +214,10 @@
             // 
             this.txtRetiro.Location = new System.Drawing.Point(326, 336);
             this.txtRetiro.Name = "txtRetiro";
+            this.txtRetiro.ShortcutsEnabled = false;
             this.txtRetiro.Size = new System.Drawing.Size(100, 20);
             this.txtRetiro.TabIndex = 22;
+            this.txtRetiro.TextChanged += new System.EventHandler(this.txtRetiro_TextChanged);
             this.txtRetiro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRetiro_KeyPress);
             // 
             // label4

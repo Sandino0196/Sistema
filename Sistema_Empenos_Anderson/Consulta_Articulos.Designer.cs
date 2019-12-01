@@ -94,9 +94,11 @@
             // txtCod
             // 
             this.txtCod.Location = new System.Drawing.Point(219, 236);
+            this.txtCod.MaxLength = 50;
             this.txtCod.Name = "txtCod";
             this.txtCod.Size = new System.Drawing.Size(124, 20);
             this.txtCod.TabIndex = 2;
+            this.txtCod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCod_KeyPress);
             // 
             // bttBuscar
             // 

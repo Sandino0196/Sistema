@@ -81,14 +81,18 @@
             // txtNumSerie
             // 
             this.txtNumSerie.Location = new System.Drawing.Point(107, 30);
+            this.txtNumSerie.MaxLength = 50;
             this.txtNumSerie.Name = "txtNumSerie";
+            this.txtNumSerie.ShortcutsEnabled = false;
             this.txtNumSerie.Size = new System.Drawing.Size(100, 20);
             this.txtNumSerie.TabIndex = 4;
             // 
             // txtNumRecibo
             // 
             this.txtNumRecibo.Location = new System.Drawing.Point(107, 58);
+            this.txtNumRecibo.MaxLength = 50;
             this.txtNumRecibo.Name = "txtNumRecibo";
+            this.txtNumRecibo.ShortcutsEnabled = false;
             this.txtNumRecibo.Size = new System.Drawing.Size(100, 20);
             this.txtNumRecibo.TabIndex = 5;
             this.txtNumRecibo.TextChanged += new System.EventHandler(this.txtNumRecibo_TextChanged);
@@ -123,6 +127,7 @@
             this.txtArticulo.Enabled = false;
             this.txtArticulo.Location = new System.Drawing.Point(107, 84);
             this.txtArticulo.Name = "txtArticulo";
+            this.txtArticulo.ShortcutsEnabled = false;
             this.txtArticulo.Size = new System.Drawing.Size(100, 20);
             this.txtArticulo.TabIndex = 8;
             // 
@@ -184,6 +189,7 @@
             // 
             this.txtPrecio.Location = new System.Drawing.Point(107, 162);
             this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.ShortcutsEnabled = false;
             this.txtPrecio.Size = new System.Drawing.Size(100, 20);
             this.txtPrecio.TabIndex = 30;
             this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
@@ -203,6 +209,7 @@
             this.txtMonto.Enabled = false;
             this.txtMonto.Location = new System.Drawing.Point(107, 136);
             this.txtMonto.Name = "txtMonto";
+            this.txtMonto.ShortcutsEnabled = false;
             this.txtMonto.Size = new System.Drawing.Size(100, 20);
             this.txtMonto.TabIndex = 28;
             // 
@@ -211,6 +218,7 @@
             this.txtEstado.Enabled = false;
             this.txtEstado.Location = new System.Drawing.Point(107, 110);
             this.txtEstado.Name = "txtEstado";
+            this.txtEstado.ShortcutsEnabled = false;
             this.txtEstado.Size = new System.Drawing.Size(100, 20);
             this.txtEstado.TabIndex = 27;
             // 

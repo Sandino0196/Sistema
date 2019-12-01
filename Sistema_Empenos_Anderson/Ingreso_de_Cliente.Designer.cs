@@ -103,6 +103,7 @@
             this.txtTelefono.Location = new System.Drawing.Point(117, 100);
             this.txtTelefono.Mask = "0000-0000";
             this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.ShortcutsEnabled = false;
             this.txtTelefono.Size = new System.Drawing.Size(116, 20);
             this.txtTelefono.TabIndex = 10;
             // 
@@ -112,13 +113,16 @@
             this.txtIdentidad.Location = new System.Drawing.Point(117, 19);
             this.txtIdentidad.Mask = "0000-0000-00000";
             this.txtIdentidad.Name = "txtIdentidad";
+            this.txtIdentidad.ShortcutsEnabled = false;
             this.txtIdentidad.Size = new System.Drawing.Size(116, 20);
             this.txtIdentidad.TabIndex = 10;
             // 
             // txtCorreo
             // 
             this.txtCorreo.Location = new System.Drawing.Point(117, 127);
+            this.txtCorreo.MaxLength = 50;
             this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.ShortcutsEnabled = false;
             this.txtCorreo.Size = new System.Drawing.Size(116, 20);
             this.txtCorreo.TabIndex = 16;
             // 
@@ -145,7 +149,9 @@
             // txtApellido
             // 
             this.txtApellido.Location = new System.Drawing.Point(117, 74);
+            this.txtApellido.MaxLength = 50;
             this.txtApellido.Name = "txtApellido";
+            this.txtApellido.ShortcutsEnabled = false;
             this.txtApellido.Size = new System.Drawing.Size(116, 20);
             this.txtApellido.TabIndex = 12;
             this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido_KeyPress);
@@ -163,7 +169,9 @@
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(117, 48);
+            this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
+            this.txtNombre.ShortcutsEnabled = false;
             this.txtNombre.Size = new System.Drawing.Size(116, 20);
             this.txtNombre.TabIndex = 10;
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
@@ -273,6 +281,7 @@
             this.txtBusqueda_ID.Location = new System.Drawing.Point(307, 74);
             this.txtBusqueda_ID.Mask = "0000-0000-00000";
             this.txtBusqueda_ID.Name = "txtBusqueda_ID";
+            this.txtBusqueda_ID.ShortcutsEnabled = false;
             this.txtBusqueda_ID.Size = new System.Drawing.Size(116, 20);
             this.txtBusqueda_ID.TabIndex = 9;
             // 
