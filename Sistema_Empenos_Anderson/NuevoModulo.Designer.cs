@@ -74,7 +74,7 @@
             // 
             this.btnBuscar.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnBuscar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnBuscar.Location = new System.Drawing.Point(12, 227);
+            this.btnBuscar.Location = new System.Drawing.Point(12, 211);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(108, 52);
             this.btnBuscar.TabIndex = 3;
