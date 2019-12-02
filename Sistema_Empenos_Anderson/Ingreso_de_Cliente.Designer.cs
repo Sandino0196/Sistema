@@ -51,14 +51,16 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtBusqueda_ID = new System.Windows.Forms.MaskedTextBox();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.grpInfo_Nuevo_Cliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_Info_Cliente)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblBusqueda_ID
             // 
             this.lblBusqueda_ID.AutoSize = true;
-            this.lblBusqueda_ID.Location = new System.Drawing.Point(82, 77);
+            this.lblBusqueda_ID.Location = new System.Drawing.Point(64, 78);
             this.lblBusqueda_ID.Name = "lblBusqueda_ID";
             this.lblBusqueda_ID.Size = new System.Drawing.Size(193, 13);
             this.lblBusqueda_ID.TabIndex = 0;
@@ -69,7 +71,7 @@
             this.btnBuscar.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnBuscar.Location = new System.Drawing.Point(307, 103);
+            this.btnBuscar.Location = new System.Drawing.Point(289, 104);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(87, 30);
             this.btnBuscar.TabIndex = 2;
@@ -91,7 +93,7 @@
             this.grpInfo_Nuevo_Cliente.Controls.Add(this.label1);
             this.grpInfo_Nuevo_Cliente.Enabled = false;
             this.grpInfo_Nuevo_Cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpInfo_Nuevo_Cliente.Location = new System.Drawing.Point(540, 17);
+            this.grpInfo_Nuevo_Cliente.Location = new System.Drawing.Point(526, 18);
             this.grpInfo_Nuevo_Cliente.Name = "grpInfo_Nuevo_Cliente";
             this.grpInfo_Nuevo_Cliente.Size = new System.Drawing.Size(278, 174);
             this.grpInfo_Nuevo_Cliente.TabIndex = 3;
@@ -204,7 +206,7 @@
             this.Apellido,
             this.Telefono,
             this.Correo_Electronico});
-            this.dtgv_Info_Cliente.Location = new System.Drawing.Point(14, 147);
+            this.dtgv_Info_Cliente.Location = new System.Drawing.Point(3, 148);
             this.dtgv_Info_Cliente.Name = "dtgv_Info_Cliente";
             this.dtgv_Info_Cliente.ReadOnly = true;
             this.dtgv_Info_Cliente.Size = new System.Drawing.Size(517, 47);
@@ -242,7 +244,7 @@
             this.btnAvanzar.Enabled = false;
             this.btnAvanzar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAvanzar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnAvanzar.Location = new System.Drawing.Point(433, 211);
+            this.btnAvanzar.Location = new System.Drawing.Point(415, 212);
             this.btnAvanzar.Name = "btnAvanzar";
             this.btnAvanzar.Size = new System.Drawing.Size(87, 30);
             this.btnAvanzar.TabIndex = 5;
@@ -257,7 +259,7 @@
             this.btnAñadir.Enabled = false;
             this.btnAñadir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAñadir.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnAñadir.Location = new System.Drawing.Point(717, 197);
+            this.btnAñadir.Location = new System.Drawing.Point(699, 198);
             this.btnAñadir.Name = "btnAñadir";
             this.btnAñadir.Size = new System.Drawing.Size(87, 30);
             this.btnAñadir.TabIndex = 7;
@@ -270,7 +272,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Navy;
-            this.label6.Location = new System.Drawing.Point(33, 9);
+            this.label6.Location = new System.Drawing.Point(15, 10);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(451, 33);
             this.label6.TabIndex = 8;
@@ -278,7 +280,7 @@
             // 
             // txtBusqueda_ID
             // 
-            this.txtBusqueda_ID.Location = new System.Drawing.Point(307, 74);
+            this.txtBusqueda_ID.Location = new System.Drawing.Point(289, 75);
             this.txtBusqueda_ID.Mask = "0000-0000-00000";
             this.txtBusqueda_ID.Name = "txtBusqueda_ID";
             this.txtBusqueda_ID.ShortcutsEnabled = false;
@@ -290,7 +292,7 @@
             this.btnVolver.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnVolver.Location = new System.Drawing.Point(21, 211);
+            this.btnVolver.Location = new System.Drawing.Point(3, 212);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(87, 30);
             this.btnVolver.TabIndex = 10;
@@ -298,32 +300,43 @@
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.btnVolver);
+            this.panel1.Controls.Add(this.lblBusqueda_ID);
+            this.panel1.Controls.Add(this.txtBusqueda_ID);
+            this.panel1.Controls.Add(this.btnBuscar);
+            this.panel1.Controls.Add(this.grpInfo_Nuevo_Cliente);
+            this.panel1.Controls.Add(this.btnAñadir);
+            this.panel1.Controls.Add(this.dtgv_Info_Cliente);
+            this.panel1.Controls.Add(this.btnAvanzar);
+            this.panel1.Location = new System.Drawing.Point(4, 9);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(823, 245);
+            this.panel1.TabIndex = 11;
+            // 
             // Ingreso_de_Cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(829, 253);
-            this.Controls.Add(this.btnVolver);
-            this.Controls.Add(this.txtBusqueda_ID);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.btnAñadir);
-            this.Controls.Add(this.btnAvanzar);
-            this.Controls.Add(this.dtgv_Info_Cliente);
-            this.Controls.Add(this.grpInfo_Nuevo_Cliente);
-            this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.lblBusqueda_ID);
+            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaximizeBox = false;
             this.Name = "Ingreso_de_Cliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Ingreso de Cliente";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Ingreso_de_Cliente_Load);
             this.grpInfo_Nuevo_Cliente.ResumeLayout(false);
             this.grpInfo_Nuevo_Cliente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_Info_Cliente)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -352,5 +365,6 @@
         private System.Windows.Forms.MaskedTextBox txtTelefono;
         private System.Windows.Forms.MaskedTextBox txtIdentidad;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Panel panel1;
     }
 }

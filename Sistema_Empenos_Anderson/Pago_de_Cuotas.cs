@@ -31,6 +31,10 @@ namespace Sistema_Empenos_Anderson
             txtMonto.Text = Objetos_Mantenimiento.articuloMantenimiento.Prestado.ToString();
             txtMeses.Text = Objetos_Mantenimiento.articuloMantenimiento.Meses.ToString();
             btnAvanzar.Enabled = false;
+            int tamanoL = this.Width / 4;
+            int tamanoR = this.Height / 6;
+            panel1.Left = tamanoL;
+            panel1.Top = tamanoR;
         }
 
         private void bttBuscar_Click(object sender, EventArgs e)

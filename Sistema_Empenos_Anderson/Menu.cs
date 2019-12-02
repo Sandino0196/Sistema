@@ -24,6 +24,10 @@ namespace Sistema_Empenos_Anderson
         private void Menu_Load(object sender, EventArgs e)
         {
             this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
+            int tamanoL = this.Width / 3;
+            int tamanoR = this.Height / 6;
+            panel1.Left = tamanoL;
+            panel1.Top = tamanoR;
         }
 
         private void button1_Click(object sender, EventArgs e)

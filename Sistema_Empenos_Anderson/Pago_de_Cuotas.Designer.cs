@@ -50,7 +50,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnAvanzar = new System.Windows.Forms.Button();
             this.btnInteres = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label6
@@ -58,7 +60,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Navy;
-            this.label6.Location = new System.Drawing.Point(167, 2);
+            this.label6.Location = new System.Drawing.Point(89, 7);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(379, 29);
             this.label6.TabIndex = 9;
@@ -83,7 +85,7 @@
             this.groupBox1.Controls.Add(this.txtArticulo);
             this.groupBox1.Controls.Add(this.lblArticulo);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(127, 127);
+            this.groupBox1.Location = new System.Drawing.Point(49, 132);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(427, 311);
             this.groupBox1.TabIndex = 28;
@@ -253,7 +255,7 @@
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(91, 459);
+            this.button1.Location = new System.Drawing.Point(13, 464);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 39);
             this.button1.TabIndex = 29;
@@ -267,7 +269,7 @@
             this.btnAvanzar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAvanzar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAvanzar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnAvanzar.Location = new System.Drawing.Point(450, 459);
+            this.btnAvanzar.Location = new System.Drawing.Point(372, 464);
             this.btnAvanzar.Name = "btnAvanzar";
             this.btnAvanzar.Size = new System.Drawing.Size(104, 39);
             this.btnAvanzar.TabIndex = 30;
@@ -282,7 +284,7 @@
             this.btnInteres.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInteres.ForeColor = System.Drawing.Color.Black;
             this.btnInteres.Image = ((System.Drawing.Image)(resources.GetObject("btnInteres.Image")));
-            this.btnInteres.Location = new System.Drawing.Point(210, 43);
+            this.btnInteres.Location = new System.Drawing.Point(132, 48);
             this.btnInteres.Name = "btnInteres";
             this.btnInteres.Size = new System.Drawing.Size(498, 52);
             this.btnInteres.TabIndex = 31;
@@ -290,28 +292,39 @@
             this.btnInteres.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInteres.UseVisualStyleBackColor = false;
             // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.btnInteres);
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Controls.Add(this.btnAvanzar);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Location = new System.Drawing.Point(12, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(689, 506);
+            this.panel1.TabIndex = 32;
+            // 
             // Pago_de_Cuotas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(736, 498);
-            this.Controls.Add(this.btnInteres);
-            this.Controls.Add(this.btnAvanzar);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label6);
+            this.ClientSize = new System.Drawing.Size(713, 514);
+            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(1);
             this.MaximizeBox = false;
             this.Name = "Pago_de_Cuotas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pago de Intereses";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Pago_de_Cuotas_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -338,5 +351,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnAvanzar;
         private System.Windows.Forms.Button btnInteres;
+        private System.Windows.Forms.Panel panel1;
     }
 }
