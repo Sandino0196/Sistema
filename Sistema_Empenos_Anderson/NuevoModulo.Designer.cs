@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.lblInventario = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dtArticulos = new System.Windows.Forms.DataGridView();
+            this.cmbTipo_Articulo = new System.Windows.Forms.ComboBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.lblSelect = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtArticulos)).BeginInit();
             this.SuspendLayout();
             // 
             // lblInventario
@@ -47,34 +47,36 @@
             this.lblInventario.TabIndex = 0;
             this.lblInventario.Text = "Inventario de Artículos";
             // 
-            // dataGridView1
+            // dtArticulos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(231, 132);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(438, 284);
-            this.dataGridView1.TabIndex = 1;
+            this.dtArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtArticulos.Location = new System.Drawing.Point(231, 132);
+            this.dtArticulos.Name = "dtArticulos";
+            this.dtArticulos.Size = new System.Drawing.Size(456, 284);
+            this.dtArticulos.TabIndex = 1;
+            this.dtArticulos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // comboBox1
+            // cmbTipo_Articulo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbTipo_Articulo.FormattingEnabled = true;
+            this.cmbTipo_Articulo.Items.AddRange(new object[] {
             "Joyeria",
             "Transporte",
             "Electrodomestico",
             "Mueble",
             "Electronico",
             "Entretenimiento"});
-            this.comboBox1.Location = new System.Drawing.Point(12, 132);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(182, 21);
-            this.comboBox1.TabIndex = 2;
+            this.cmbTipo_Articulo.Location = new System.Drawing.Point(13, 132);
+            this.cmbTipo_Articulo.Name = "cmbTipo_Articulo";
+            this.cmbTipo_Articulo.Size = new System.Drawing.Size(182, 21);
+            this.cmbTipo_Articulo.TabIndex = 2;
             // 
             // btnBuscar
             // 
             this.btnBuscar.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnBuscar.Location = new System.Drawing.Point(12, 211);
+            this.btnBuscar.Location = new System.Drawing.Point(12, 221);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(108, 52);
             this.btnBuscar.TabIndex = 3;
@@ -85,8 +87,9 @@
             // btnVolver
             // 
             this.btnVolver.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVolver.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnVolver.Location = new System.Drawing.Point(12, 359);
+            this.btnVolver.Location = new System.Drawing.Point(12, 342);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(108, 57);
             this.btnVolver.TabIndex = 4;
@@ -108,16 +111,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(681, 495);
+            this.ClientSize = new System.Drawing.Size(699, 495);
             this.Controls.Add(this.lblSelect);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.cmbTipo_Articulo);
+            this.Controls.Add(this.dtArticulos);
             this.Controls.Add(this.lblInventario);
             this.Name = "NuevoModulo";
             this.Text = "NuevoModulo";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.NuevoModulo_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dtArticulos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,8 +130,8 @@
         #endregion
 
         private System.Windows.Forms.Label lblInventario;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DataGridView dtArticulos;
+        private System.Windows.Forms.ComboBox cmbTipo_Articulo;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Label lblSelect;
