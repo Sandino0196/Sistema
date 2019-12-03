@@ -57,6 +57,11 @@ namespace Sistema_Empenos_Anderson
 
         private void bttBuscar_Click_1(object sender, EventArgs e)
         {
+            if (txtNumSerie.Text == "" || txtNumRecibo.Text == "")
+            {
+                MessageBoxTemporal.Show("Error no deje los campos vacios", "Error", 2, false);
+            }
+            else
             if (txtNumRecibo.Text.Equals("") && txtNumSerie.Text.Equals(""))
                 MessageBoxTemporal.Show("Ingrese los valores correspondientes", "Mensaje Importante", 2, false);
             else
