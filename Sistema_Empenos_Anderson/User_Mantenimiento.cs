@@ -193,11 +193,11 @@ namespace Sistema_Empenos_Anderson
                     }
                     else
                     {
-                        if (hasMinimum8Chars.IsMatch(txtPassNuevo_New.Text))
+                        if (hasMinimum8Chars.IsMatch(txtPassNuevo_Change.Text) && hasMinimum8Chars.IsMatch(txtPassConfirmar_Change.Text))
                         {
                             if (BD.Cambio_Password(txtNom_User_Pass.Text, txtPassNuevo_Change.Text, txtRespuesta1Pass.Text, txtRespuesta2Pass.Text) > 0)
                             {
-                                MessageBox.Show("Se ha modificado correctamente", "Mensaje");
+                                MessageBox.Show("Si se ingreso las 2 respuestas correctamente, la contraseña se ha modificado", "Mensaje");
                                 txtNom_User_Pass.Text = "";
                                 txtPassNuevo_Change.Text = "";
                                 txtPassConfirmar_Change.Text = "";
