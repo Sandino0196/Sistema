@@ -11,7 +11,7 @@ namespace Sistema_Empenos_Anderson
 
         public static void OpenConnection()
         {
-            connection.ConnectionString = @"Data Source=(local); Initial Catalog=Base_Empeños; Integrated Security=Yes";
+            connection.ConnectionString = @"Data Source=CHUYCHO\SQLEXPRESS; Initial Catalog=Base_Empeños; Integrated Security=Yes";
             connection.Open();
             //Donde dice DATA SOURCE le ponen el nombre de su máquina; 
         }
@@ -808,8 +808,19 @@ namespace Sistema_Empenos_Anderson
             command.Parameters.Add(new SqlParameter("@Recibo", recibo));
             command.Parameters.Add(new SqlParameter("@Numero", numero));
             command.Parameters.Add(new SqlParameter("@Fecha", fecha));
-        }
 
+            try
+            {
+                command.ExecuteNonQuery();
+                CloseConnection();
+            }
+            catch (SqlException e)
+            {
+                MessageBoxTemporal.Show(e.Message, "Mensaje Imporante", 3, false);
+
+                CloseConnection();
+            }
+        }
         #endregion
 
         #region Cambio de datos

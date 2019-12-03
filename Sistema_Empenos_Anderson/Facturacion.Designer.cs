@@ -187,6 +187,7 @@
             // 
             // txtPrecio
             // 
+            this.txtPrecio.Enabled = false;
             this.txtPrecio.Location = new System.Drawing.Point(107, 162);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.ShortcutsEnabled = false;
