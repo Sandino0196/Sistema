@@ -146,6 +146,26 @@ namespace Sistema_Empenos_Anderson
             }
         }
 
+        public static DataTable CargarArticulos(int codigo)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                OpenConnection();
+                SqlCommand cmd = new SqlCommand("Select  * from[dbo].[F_Inventario](" + codigo + ") ", BD.connection);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
+                CloseConnection();
+                return dt;
+            }
+            catch
+            {
+                CloseConnection();
+                return dt;
+            }
+        }
+
         public static DataTable CargarTipoArticulos()
         {
             DataTable dt = new DataTable();
