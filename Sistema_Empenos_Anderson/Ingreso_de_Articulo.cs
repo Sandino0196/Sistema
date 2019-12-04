@@ -68,6 +68,10 @@ namespace Sistema_Empenos_Anderson
             cmbTipo_Articulo.DataSource = BD.CargarTipoArticulos();
             cmbTipo_Articulo.DisplayMember = "Descripcion";
             cmbTipo_Articulo.ValueMember = "Codigo_Tipo_Articulo";
+            int tamanoL = this.Width / 5;
+            int tamanoR = this.Height / 7;
+            panel1.Left = tamanoL;
+            panel1.Top = tamanoR;
 
             if (Objetos_Globales.articulos.Count != 0)
             {

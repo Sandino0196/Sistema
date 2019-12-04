@@ -20,6 +20,10 @@ namespace Sistema_Empenos_Anderson
         private void Venta_Load(object sender, EventArgs e)
         {
             this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
+            int tamanoL = this.Width / 4;
+            int tamanoR = this.Height / 5;
+            panel1.Left = tamanoL;
+            panel1.Top = tamanoR;
             double subtotal = 0, isv = 0, total = 0;
             this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
             txtVendedor.Text = Objetos_Globales.usuario.nombre_Usuario;

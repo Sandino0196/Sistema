@@ -60,8 +60,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Facturacion = new System.Windows.Forms.GroupBox();
             this.btnVenta = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.gbInfoComp.SuspendLayout();
             this.Facturacion.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtMonto
@@ -163,7 +165,7 @@
             this.gbInfoComp.Controls.Add(this.label3);
             this.gbInfoComp.Controls.Add(this.label2);
             this.gbInfoComp.Controls.Add(this.txtNombre);
-            this.gbInfoComp.Location = new System.Drawing.Point(275, 96);
+            this.gbInfoComp.Location = new System.Drawing.Point(278, 87);
             this.gbInfoComp.Name = "gbInfoComp";
             this.gbInfoComp.Size = new System.Drawing.Size(328, 187);
             this.gbInfoComp.TabIndex = 34;
@@ -307,7 +309,7 @@
             this.btnVolver.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVolver.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnVolver.Location = new System.Drawing.Point(453, 312);
+            this.btnVolver.Location = new System.Drawing.Point(456, 303);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(90, 35);
             this.btnVolver.TabIndex = 35;
@@ -320,7 +322,7 @@
             this.btnAceptar.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAceptar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnAceptar.Location = new System.Drawing.Point(319, 312);
+            this.btnAceptar.Location = new System.Drawing.Point(322, 303);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(90, 35);
             this.btnAceptar.TabIndex = 36;
@@ -361,7 +363,7 @@
             this.Facturacion.Controls.Add(this.txtSubtotal);
             this.Facturacion.Controls.Add(this.lblVendedor);
             this.Facturacion.Controls.Add(this.txtTotalPagar);
-            this.Facturacion.Location = new System.Drawing.Point(28, 82);
+            this.Facturacion.Location = new System.Drawing.Point(31, 73);
             this.Facturacion.Name = "Facturacion";
             this.Facturacion.Size = new System.Drawing.Size(218, 265);
             this.Facturacion.TabIndex = 40;
@@ -375,7 +377,7 @@
             this.btnVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVenta.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.btnVenta.Image = ((System.Drawing.Image)(resources.GetObject("btnVenta.Image")));
-            this.btnVenta.Location = new System.Drawing.Point(64, 12);
+            this.btnVenta.Location = new System.Drawing.Point(67, 3);
             this.btnVenta.Name = "btnVenta";
             this.btnVenta.Size = new System.Drawing.Size(539, 52);
             this.btnVenta.TabIndex = 41;
@@ -383,26 +385,37 @@
             this.btnVenta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVenta.UseVisualStyleBackColor = false;
             // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnVenta);
+            this.panel1.Controls.Add(this.gbInfoComp);
+            this.panel1.Controls.Add(this.Facturacion);
+            this.panel1.Controls.Add(this.btnVolver);
+            this.panel1.Controls.Add(this.btnAceptar);
+            this.panel1.Location = new System.Drawing.Point(13, 13);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(616, 353);
+            this.panel1.TabIndex = 42;
+            // 
             // Facturacion_Detalle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(631, 369);
-            this.Controls.Add(this.btnVenta);
-            this.Controls.Add(this.Facturacion);
-            this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.btnVolver);
-            this.Controls.Add(this.gbInfoComp);
+            this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.Name = "Facturacion_Detalle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Facturación";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Venta_Load);
             this.gbInfoComp.ResumeLayout(false);
             this.gbInfoComp.PerformLayout();
             this.Facturacion.ResumeLayout(false);
             this.Facturacion.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -440,5 +453,6 @@
         private System.Windows.Forms.MaskedTextBox txtTelefono;
         private System.Windows.Forms.GroupBox Facturacion;
         private System.Windows.Forms.Button btnVenta;
+        private System.Windows.Forms.Panel panel1;
     }
 }

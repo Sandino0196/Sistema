@@ -54,8 +54,10 @@
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnVenta = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvArticulos)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNumSerie
@@ -164,7 +166,7 @@
             this.groupBox1.Controls.Add(this.txtArticulo);
             this.groupBox1.Controls.Add(this.lblArticulo);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(136, 132);
+            this.groupBox1.Location = new System.Drawing.Point(90, 134);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(410, 201);
             this.groupBox1.TabIndex = 26;
@@ -251,7 +253,7 @@
             this.Marca,
             this.Modelo,
             this.Precio});
-            this.dtgvArticulos.Location = new System.Drawing.Point(115, 339);
+            this.dtgvArticulos.Location = new System.Drawing.Point(69, 341);
             this.dtgvArticulos.Name = "dtgvArticulos";
             this.dtgvArticulos.Size = new System.Drawing.Size(449, 150);
             this.dtgvArticulos.TabIndex = 27;
@@ -286,7 +288,7 @@
             this.btnAvanzar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAvanzar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAvanzar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnAvanzar.Location = new System.Drawing.Point(396, 512);
+            this.btnAvanzar.Location = new System.Drawing.Point(563, 460);
             this.btnAvanzar.Name = "btnAvanzar";
             this.btnAvanzar.Size = new System.Drawing.Size(75, 31);
             this.btnAvanzar.TabIndex = 28;
@@ -300,7 +302,7 @@
             this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnVolver.Location = new System.Drawing.Point(106, 512);
+            this.btnVolver.Location = new System.Drawing.Point(563, 341);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(75, 31);
             this.btnVolver.TabIndex = 29;
@@ -311,11 +313,11 @@
             // btnVenta
             // 
             this.btnVenta.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnVenta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVenta.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.btnVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVenta.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.btnVenta.Image = ((System.Drawing.Image)(resources.GetObject("btnVenta.Image")));
-            this.btnVenta.Location = new System.Drawing.Point(135, 57);
+            this.btnVenta.Location = new System.Drawing.Point(89, 59);
             this.btnVenta.Name = "btnVenta";
             this.btnVenta.Size = new System.Drawing.Size(539, 52);
             this.btnVenta.TabIndex = 30;
@@ -328,34 +330,45 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Navy;
-            this.label6.Location = new System.Drawing.Point(130, 9);
+            this.label6.Location = new System.Drawing.Point(84, 11);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(451, 33);
             this.label6.TabIndex = 31;
             this.label6.Text = "Sistema de Empeños Anderson";
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Controls.Add(this.btnVenta);
+            this.panel1.Controls.Add(this.dtgvArticulos);
+            this.panel1.Controls.Add(this.btnVolver);
+            this.panel1.Controls.Add(this.btnAvanzar);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(695, 517);
+            this.panel1.TabIndex = 32;
             // 
             // Facturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(719, 547);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.btnVenta);
-            this.Controls.Add(this.btnVolver);
-            this.Controls.Add(this.btnAvanzar);
-            this.Controls.Add(this.dtgvArticulos);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(719, 535);
+            this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.Name = "Facturacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Facturación";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Facturacion_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvArticulos)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -385,5 +398,6 @@
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnVenta;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel1;
     }
 }

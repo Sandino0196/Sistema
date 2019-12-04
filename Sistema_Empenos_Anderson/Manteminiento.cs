@@ -55,6 +55,10 @@ namespace Sistema_Empenos_Anderson
         private void Manteminiento_Load(object sender, EventArgs e)
         {
             this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
+            int tamanoL = this.Width / 4;
+            int tamanoR = this.Height / 3;
+            panel1.Left = tamanoL;
+            panel1.Top = tamanoR;
         }
     }
 }

@@ -91,6 +91,10 @@ namespace Sistema_Empenos_Anderson
             this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
             txtBusqueda_ID.Focus();
             txtBusqueda_ID.Select();
+            int tamanoL = this.Width / 5;
+            int tamanoR = this.Height / 4;
+            panel1.Left = tamanoL;
+            panel1.Top = tamanoR;
         }
 
         private void btnAñadir_Click(object sender, EventArgs e)

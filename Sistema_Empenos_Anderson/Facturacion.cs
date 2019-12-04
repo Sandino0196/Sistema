@@ -21,7 +21,11 @@ namespace Sistema_Empenos_Anderson
         private void Facturacion_Load(object sender, EventArgs e)
         {
             this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
-            if(Objetos_Globales.articulos.Count != 0)
+            int tamanoL = this.Width / 4;
+            int tamanoR = this.Height / 6;
+            panel1.Left = tamanoL;
+            panel1.Top = tamanoR;
+            if (Objetos_Globales.articulos.Count != 0)
             {
                 for(int i = 0; i < Objetos_Globales.articulos.Count; i++)
                 {
