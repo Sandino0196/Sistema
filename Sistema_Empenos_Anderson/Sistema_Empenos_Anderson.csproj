@@ -200,6 +200,7 @@
     <EmbeddedResource Include="Facturacion_Detalle.resx">
       <DependentUpon>Facturacion_Detalle.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Ayuda\Modulo_de_ayuda_Empeños_Anderson.chm" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

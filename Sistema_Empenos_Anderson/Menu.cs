@@ -24,6 +24,7 @@ namespace Sistema_Empenos_Anderson
         private void Menu_Load(object sender, EventArgs e)
         {
             this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
+            this.HelpButton = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -84,6 +85,17 @@ namespace Sistema_Empenos_Anderson
             Objetos_Globales.usuario.codigo_Tipo_Usuario = 0;
             Objetos_Globales.usuario.nombre_Usuario = "";
             Objetos_Globales.usuario.password_Usuario = "";
+        }
+
+        private void btnAyuda_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void Menu_HelpButtonClicked(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            string Archivo = "Ayuda.chm";
+            Help.ShowHelp(this, "file://C:\\Users\\oflor\\Source\\Repos\\Sistema\\Sistema_Empenos_Anderson\\Ayuda\\Modulo_de_ayuda_Empeños_Anderson.chm");
         }
     }
 }
