@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace Sistema_Empenos_Anderson
 {
@@ -130,23 +131,44 @@ namespace Sistema_Empenos_Anderson
 
         private void btnAceptarNew_Click(object sender, EventArgs e)
         {
-            if(BD.Busqueda_Usuario(txtNom_User_Nuevo.Text) == 0)
+            var hasMinimum8Chars = new Regex(@".{8,}");
+
+            if (BD.Busqueda_Usuario(txtNom_User_Nuevo.Text) == 0)
             {
                 if (txtPassNuevo_New.Text.Equals(txtPassConfirmar_New.Text))
                 {
                     if(cmbPreguntas1.SelectedIndex != cmbPreguntas2.SelectedIndex)
                     {
-                        if (BD.Ingreso_Usuario(txtNom_User_Nuevo.Text, txtPassNuevo_New.Text,cbxTp_User_New.SelectedIndex+1, 1, "Usuario",
-                        Objetos_Globales.fechaHoy(), cmbPreguntas1.SelectedItem.ToString(),
-                        cmbPreguntas2.SelectedItem.ToString(), txtRespuesta1.Text, txtRespuesta2.Text) > 0)
+                        if (txtRespuesta1.Text == "" || txtRespuesta2.Text == "" || cmbPreguntas1.Text == "" || cmbPreguntas2.Text == "")
                         {
-                            MessageBoxTemporal.Show("El usuario se ha ingresado correctamente", "Mensaje", 1, false);
-                            txtNom_User_Tipo.Text = "";
-                            cbxTp_User_Modificar.Enabled = false;
-                            btnAceptarTipo.Enabled = false;
+                            MessageBoxTemporal.Show("No deje espacios vacíos", "Error", 1, false);
                         }
                         else
-                            MessageBoxTemporal.Show("El usuario no ha podido ser ingresado", "Error", 1, false);
+                        {
+                            if (txtPassNuevo_New.Text == "" || txtPassConfirmar_New.Text == "")
+                            {
+                                MessageBoxTemporal.Show("No deje ningun campo de contraseña vacío", "Error", 1, false);
+                            }
+                            else
+                            {
+                                if (hasMinimum8Chars.IsMatch(txtPassNuevo_New.Text))
+                                {
+                                    if (BD.Ingreso_Usuario(txtNom_User_Nuevo.Text, txtPassNuevo_New.Text, cbxTp_User_New.SelectedIndex + 1, 1, "Usuario",
+                                    Objetos_Globales.fechaHoy(), cmbPreguntas1.SelectedItem.ToString(),
+                                    cmbPreguntas2.SelectedItem.ToString(), txtRespuesta1.Text, txtRespuesta2.Text) > 0)
+                                    {
+                                        MessageBoxTemporal.Show("El usuario se ha ingresado correctamente", "Mensaje", 1, false);
+                                        txtNom_User_Tipo.Text = "";
+                                        cbxTp_User_Modificar.Enabled = false;
+                                        btnAceptarTipo.Enabled = false;
+                                    }
+                                    else
+                                        MessageBoxTemporal.Show("El usuario no ha podido ser ingresado", "Error", 1, false);
+                                }
+                                else
+                                    MessageBoxTemporal.Show("La contraseña necesita tener mínimo 8 caracteres", "Error", 1, false);
+                            }
+                        }
                     }
                     else
                         MessageBoxTemporal.Show("Las preguntas no pueden ser las mismas", "Error", 1, false);
@@ -159,21 +181,35 @@ namespace Sistema_Empenos_Anderson
 
         private void btnAceptarPassword_Click(object sender, EventArgs e)
         {
+            var hasMinimum8Chars = new Regex(@".{8,}");
+
             if (txtPassNuevo_Change.Text.Equals(txtPassConfirmar_Change.Text))
             {
                if (Objetos_Mantenimiento.usuarioMantenimiento.password_Usuario !=  (txtPassNuevo_Change.Text))
                 {
-                    if (BD.Cambio_Password(txtNom_User_Pass.Text, txtPassNuevo_Change.Text, txtRespuesta1Pass.Text, txtRespuesta2Pass.Text) > 0)
+                    if (txtPassNuevo_Change.Text == "" || txtPassConfirmar_Change.Text == "")
                     {
-                        MessageBox.Show("Se ha modificado correctamente", "Mensaje");
-                        txtNom_User_Pass.Text = "";
-                        txtPassNuevo_Change.Text = "";
-                        txtPassConfirmar_Change.Text = "";
-                        txtPassNuevo_Change.Enabled = false;
-                        txtPassConfirmar_Change.Enabled = false;
+                        MessageBoxTemporal.Show("No deje ningun campo de contraseña vacío", "Error", 1, false);
                     }
                     else
-                        MessageBox.Show("Hubo un error al ingresar la contraseña", "Error");
+                    {
+                        if (hasMinimum8Chars.IsMatch(txtPassNuevo_Change.Text) && hasMinimum8Chars.IsMatch(txtPassConfirmar_Change.Text))
+                        {
+                            if (BD.Cambio_Password(txtNom_User_Pass.Text, txtPassNuevo_Change.Text, txtRespuesta1Pass.Text, txtRespuesta2Pass.Text) > 0)
+                            {
+                                MessageBox.Show("Si se ingreso las 2 respuestas correctamente, la contraseña se ha modificado", "Mensaje");
+                                txtNom_User_Pass.Text = "";
+                                txtPassNuevo_Change.Text = "";
+                                txtPassConfirmar_Change.Text = "";
+                                txtPassNuevo_Change.Enabled = false;
+                                txtPassConfirmar_Change.Enabled = false;
+                            }
+                            else
+                                MessageBox.Show("Hubo un error al ingresar la contraseña", "Error");
+                        }
+                        else
+                            MessageBoxTemporal.Show("La contraseña necesita tener mínimo 8 caracteres", "Error", 1, false);
+                    }
                 } else
                     MessageBox.Show("No se puede cambiar porque la contraseña es la misma", "Error");
             } else

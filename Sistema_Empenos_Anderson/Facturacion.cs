@@ -40,15 +40,17 @@ namespace Sistema_Empenos_Anderson
 
         private void bttBuscar_Click(object sender, EventArgs e)
         {
-            if(BD.Busqueda_Articulo(int.Parse(txtNumRecibo.Text),txtNumSerie.Text) > 0)
+            if(BD.Busqueda_Articulo(int.Parse(txtNumRecibo.Text),txtNumSerie.Text) > 0 && Objetos_Mantenimiento.articuloMantenimiento.Estado == "Vencido")
             {
                 txtArticulo.Text = Objetos_Mantenimiento.articuloMantenimiento.Descripcion;
                 txtEstado.Text = Objetos_Mantenimiento.articuloMantenimiento.Estado;
                 txtMonto.Text = Objetos_Mantenimiento.articuloMantenimiento.Prestado.ToString();
                 bttAgregar.Enabled = true;
+                txtPrecio.Enabled = true;
             } else
             {
-                MessageBoxTemporal.Show("Artículo no encontrado", "Mensaje importante", 2, false);
+                txtPrecio.Enabled = false;
+                MessageBoxTemporal.Show("Artículo no encontrado o ya fue vendido, en prenda, o fue retirado.", "Mensaje importante", 2, false);
                 bttAgregar.Enabled = false;
             }
         }

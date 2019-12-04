@@ -101,38 +101,65 @@ namespace Sistema_Empenos_Anderson
 
         private void btnaceptar_Click(object sender, EventArgs e)
         {
-            if(cmbseleccion.Text=="Identidad del Cliente")
+            if (cmbseleccion.Text == "Identidad del Cliente")
+                if (txtID.MaskFull == false)
+                {
+                    MessageBox.Show("Error, campo vacio","Error");
+                }
+                else
                 dtConsultas.DataSource = BD.Cargar_Cliente(txtID.Text); 
             if(cmbseleccion.Text== "Codigo Recibo")
             {
+                if (txtingreso.Text == "")
+                {
+                    MessageBox.Show("Error, campo vacio", "Error");
+                }
+                else
                 dtConsultas.DataSource = BD.CargarArticulo(int.Parse(txtingreso.Text));
             }
             if(cmbseleccion.Text == "Codigo Factura")
             {
+                if (txtingreso.Text == "")
+                {
+                    MessageBox.Show("Error, campo vacio", "Error");
+                }
+                else
                 dtConsultas.DataSource = BD.Cargar_Factura(int.Parse(txtingreso.Text));
             }
             if(cmbseleccion.Text == "Numero de Serie")
             {
+                if (txtIngresochar.Text == "")
+                {
+                    MessageBox.Show("Error, campo vacio", "Error");
+                }
+                else
                 dtConsultas.DataSource = BD.Cargar_NumSerie(txtIngresochar.Text);
             }
             if(cmbseleccion.Text == "Tipo de Articulos")
             {
-                if(cmbtipartic.Text== "Joyería")
-                    dtConsultas.DataSource = BD.Cargar_TpArt(1);
-                 else
-                    if (cmbtipartic.Text == "Transporte")
-                         dtConsultas.DataSource = BD.Cargar_TpArt(2);
+                if (cmbtipartic.Text == "")
+                {
+                    MessageBox.Show("Error, seleccione un tipo de articulo", "Error");
+                }
+                else
+                {
+                    if (cmbtipartic.Text == "Joyería")
+                        dtConsultas.DataSource = BD.Cargar_TpArt(1);
                     else
-                        if (cmbtipartic.Text == "Electrodoméstico")
-                             dtConsultas.DataSource = BD.Cargar_TpArt(3);
-                         else
-                            if (cmbtipartic.Text == "Mueble")
-                                 dtConsultas.DataSource = BD.Cargar_TpArt(4);
-                               else
-                                   if (cmbtipartic.Text == "Electrónico")
-                                         dtConsultas.DataSource = BD.Cargar_TpArt(5);
-                                     else
-                                       dtConsultas.DataSource = BD.Cargar_TpArt(6);
+                        if (cmbtipartic.Text == "Transporte")
+                        dtConsultas.DataSource = BD.Cargar_TpArt(2);
+                    else
+                            if (cmbtipartic.Text == "Electrodoméstico")
+                        dtConsultas.DataSource = BD.Cargar_TpArt(3);
+                    else
+                                if (cmbtipartic.Text == "Mueble")
+                        dtConsultas.DataSource = BD.Cargar_TpArt(4);
+                    else
+                                       if (cmbtipartic.Text == "Electrónico")
+                        dtConsultas.DataSource = BD.Cargar_TpArt(5);
+                    else
+                        dtConsultas.DataSource = BD.Cargar_TpArt(6);
+                }
             }
 
             

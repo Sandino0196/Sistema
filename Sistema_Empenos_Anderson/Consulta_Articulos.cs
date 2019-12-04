@@ -44,9 +44,23 @@ namespace Sistema_Empenos_Anderson
         private void bttBuscar_Click(object sender, EventArgs e)
         {
             if (rbRecibo.Checked)
+            {
+                if (txtCod.Text == "")
+                {
+                    MessageBox.Show("Error, campo vacio", "Error");
+                }
+                else
                 dtgConsultaArticulo.DataSource = BD.CargarArticulo(int.Parse(txtCod.Text));
+            }
             if (rbCliente.Checked)
+            {
+                if (txtCodCliente.MaskFull == false)
+                {
+                    MessageBox.Show("Error, campo vacio", "Error");
+                }
+                else
                 dtgConsultaArticulo.DataSource = BD.Cargar_Cliente(txtCodCliente.Text);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
