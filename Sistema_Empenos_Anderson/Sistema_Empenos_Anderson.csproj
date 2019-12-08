@@ -210,7 +210,7 @@
       <DependentUpon>Facturacion_Detalle.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Ayuda\Modulo_de_ayuda_Empeños_Anderson.chm" />
-    <EmbeddedResource Include="Modulo_de_ayuda_Empeños_Anderson.chm">
+    <EmbeddedResource Include="Modulo_de_ayuda_Empenos_Anderson.chm">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">

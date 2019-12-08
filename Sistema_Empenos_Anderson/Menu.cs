@@ -99,7 +99,7 @@ namespace Sistema_Empenos_Anderson
         private void Menu_HelpButtonClicked(object sender, System.ComponentModel.CancelEventArgs e)
         {
             string Archivo = "Ayuda.chm";
-            Help.ShowHelp(this, Application.StartupPath + @"\\Modulo_de_ayuda_Empeños_Anderson.chm");
+            Help.ShowHelp(this, Application.StartupPath + @"\\Modulo_de_ayuda_Empenos_Anderson.chm");
         }
 
         private void button1_Click_2(object sender, EventArgs e)
