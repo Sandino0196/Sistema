@@ -128,8 +128,12 @@ namespace Sistema_Empenos_Anderson
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if(txtCod_Recibo.Text=="" || Validar_Monto(txtCod_Recibo.Text)==0 || txtNumero_Serie.Text=="" || txtDescripcion.Text=="" || txtMarca.Text=="" || txtModelo.Text=="" || Validar_Monto(txtMonto.Text)==0 || txtMonto.Text=="" || Validar_Monto(txtTasa.Text)==0)
+            if(txtCod_Recibo.Text=="" || Validar_Monto(txtCod_Recibo.Text)==0 || txtNumero_Serie.Text=="" || txtDescripcion.Text=="" || txtMarca.Text=="" || txtModelo.Text=="" || Validar_Monto(txtMonto.Text)==0 || txtMonto.Text=="" || Validar_Monto(txtTasa.Text)==0 || double.Parse(txtTasa.Text)> 20)
             {
+                if(double.Parse(txtTasa.Text) > 20)
+                {
+                    MessageBoxTemporal.Show("La tasa de interes máxima es de 20%", "ALERTA", 2, false);
+                }
                 MessageBoxTemporal.Show("Ha ingresado incorrectamente algunos datos!\nPorfavor Reviselos.", "Alerta",2,false);
             }
             else

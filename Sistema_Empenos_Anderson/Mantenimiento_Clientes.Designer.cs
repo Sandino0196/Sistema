@@ -52,9 +52,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnBuscarMod = new System.Windows.Forms.Button();
             this.txtIdentidadMod = new System.Windows.Forms.MaskedTextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ID_Clientelbl
@@ -98,7 +100,7 @@
             this.btnVolver.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVolver.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnVolver.Location = new System.Drawing.Point(114, 293);
+            this.btnVolver.Location = new System.Drawing.Point(119, 296);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(100, 48);
             this.btnVolver.TabIndex = 7;
@@ -152,7 +154,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
+            this.tabControl1.Location = new System.Drawing.Point(17, 15);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(297, 275);
@@ -314,24 +316,35 @@
             this.txtIdentidadMod.Size = new System.Drawing.Size(100, 20);
             this.txtIdentidadMod.TabIndex = 11;
             // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.tabControl1);
+            this.panel1.Controls.Add(this.btnVolver);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(327, 353);
+            this.panel1.TabIndex = 15;
+            // 
             // Mantenimiento_Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(319, 354);
-            this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.btnVolver);
+            this.ClientSize = new System.Drawing.Size(357, 377);
+            this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.Name = "Mantenimiento_Clientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenimiento de Clientes";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Mantenimiento_Clientes_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -361,5 +374,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtNombreMod;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panel1;
     }
 }

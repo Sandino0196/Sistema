@@ -39,6 +39,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,7 +130,7 @@
             this.btnMantenimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMantenimiento.ForeColor = System.Drawing.Color.Black;
             this.btnMantenimiento.Image = ((System.Drawing.Image)(resources.GetObject("btnMantenimiento.Image")));
-            this.btnMantenimiento.Location = new System.Drawing.Point(72, 397);
+            this.btnMantenimiento.Location = new System.Drawing.Point(72, 457);
             this.btnMantenimiento.Name = "btnMantenimiento";
             this.btnMantenimiento.Size = new System.Drawing.Size(319, 52);
             this.btnMantenimiento.TabIndex = 11;
@@ -145,7 +146,7 @@
             this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.ForeColor = System.Drawing.Color.Black;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(72, 462);
+            this.btnCerrar.Location = new System.Drawing.Point(72, 515);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(319, 52);
             this.btnCerrar.TabIndex = 12;
@@ -179,6 +180,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.btnInteres);
             this.panel1.Controls.Add(this.label1);
@@ -190,15 +192,31 @@
             this.panel1.Controls.Add(this.btnConsulta);
             this.panel1.Location = new System.Drawing.Point(12, 21);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(474, 530);
+            this.panel1.Size = new System.Drawing.Size(474, 584);
             this.panel1.TabIndex = 33;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(72, 399);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(319, 52);
+            this.button1.TabIndex = 33;
+            this.button1.Text = "Inventario";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(527, 563);
+            this.ClientSize = new System.Drawing.Size(527, 617);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -209,6 +227,7 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bienvenido a Empeños Anderson";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.Menu_HelpButtonClicked);
             this.Load += new System.EventHandler(this.Menu_Load);
             this.panel1.ResumeLayout(false);
@@ -229,5 +248,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button1;
     }
 }

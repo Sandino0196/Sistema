@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace Sistema_Empenos_Anderson
 {
@@ -15,6 +16,27 @@ namespace Sistema_Empenos_Anderson
         public Mantenimiento_Clientes()
         {
             InitializeComponent();
+        }
+
+        private Boolean Validar_Correo(string email)
+        {
+            string expresion;
+            expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            if (Regex.IsMatch(email, expresion))
+            {
+                if (Regex.Replace(email, expresion, String.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
         }
 
         protected override void OnClosed(EventArgs e)
@@ -85,8 +107,15 @@ namespace Sistema_Empenos_Anderson
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            BD.Actualizar_Cliente(txtIdentidadMod.Text, txtNombreMod.Text, txtApellidoMod.Text, txtTelefonoMod.Text, txtCorreoMod.Text);
-            MessageBoxTemporal.Show("Cliente modificado", "Mensaje Importante", 1, false);
+            if(txtNombreMod.Text=="" || txtApellidoMod.Text=="" || txtTelefonoMod.MaskFull==false || Validar_Correo(txtCorreoMod.Text) == false)
+            {
+                MessageBoxTemporal.Show("Ha ingresado datos de manera incorrecta","ALERTA",2,false);
+            }else
+            {
+                BD.Actualizar_Cliente(txtIdentidadMod.Text, txtNombreMod.Text, txtApellidoMod.Text, txtTelefonoMod.Text, txtCorreoMod.Text);
+                MessageBoxTemporal.Show("Cliente modificado", "Mensaje Importante", 1, false);
+            }
+            
         }
 
         private void txtNombreMod_TextChanged(object sender, EventArgs e)
@@ -117,6 +146,10 @@ namespace Sistema_Empenos_Anderson
         private void Mantenimiento_Clientes_Load(object sender, EventArgs e)
         {
             this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
+            int tamanoL = this.Width / 3;
+            int tamanoR = this.Height / 6;
+            panel1.Left = tamanoL;
+            panel1.Top = tamanoR;
         }
     }
 }

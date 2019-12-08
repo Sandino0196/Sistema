@@ -107,6 +107,10 @@ namespace Sistema_Empenos_Anderson
         private void User_Mantenimiento_Load(object sender, EventArgs e)
         {
             this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
+            int tamanoL = this.Width / 3;
+            int tamanoR = this.Height / 6;
+            panel1.Left = tamanoL;
+            panel1.Top = tamanoR;
             BD.OpenConnection();
             SqlDataAdapter da = new SqlDataAdapter("SP_Tipos_Usuario", BD.connection);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
