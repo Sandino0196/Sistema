@@ -64,6 +64,11 @@ namespace Sistema_Empenos_Anderson
             cmbEstados.ValueMember = "Codigo_Estado";
 
             this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
+
+            int tamanoL = this.Width / 3;
+            int tamanoR = this.Height / 6;
+            panel1.Left = tamanoL;
+            panel1.Top = tamanoR;
         }
 
         private void btnConsultaEstado_Click(object sender, EventArgs e)

@@ -48,10 +48,6 @@
             this.lblArt = new System.Windows.Forms.Label();
             this.Recibotxt = new System.Windows.Forms.TextBox();
             this.bttBuscar = new System.Windows.Forms.Button();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.bttAñadir = new System.Windows.Forms.Button();
-            this.txtNom_TpArt = new System.Windows.Forms.TextBox();
-            this.lblNom_TpArt = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.txtModelo2 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -70,10 +66,11 @@
             this.txtNum_Serie = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnVolver
@@ -82,7 +79,7 @@
             this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnVolver.Location = new System.Drawing.Point(141, 330);
+            this.btnVolver.Location = new System.Drawing.Point(141, 332);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(100, 49);
             this.btnVolver.TabIndex = 7;
@@ -93,9 +90,8 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
+            this.tabControl1.Location = new System.Drawing.Point(12, 14);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(349, 297);
@@ -295,51 +291,6 @@
             this.bttBuscar.UseVisualStyleBackColor = false;
             this.bttBuscar.Click += new System.EventHandler(this.bttBuscar_Click);
             // 
-            // tabPage2
-            // 
-            this.tabPage2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.tabPage2.Controls.Add(this.bttAñadir);
-            this.tabPage2.Controls.Add(this.txtNom_TpArt);
-            this.tabPage2.Controls.Add(this.lblNom_TpArt);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(341, 271);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Añadir Tipo de Artículo";
-            // 
-            // bttAñadir
-            // 
-            this.bttAñadir.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.bttAñadir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bttAñadir.ForeColor = System.Drawing.SystemColors.Control;
-            this.bttAñadir.Location = new System.Drawing.Point(125, 161);
-            this.bttAñadir.Name = "bttAñadir";
-            this.bttAñadir.Size = new System.Drawing.Size(100, 39);
-            this.bttAñadir.TabIndex = 2;
-            this.bttAñadir.Text = "Añadir";
-            this.bttAñadir.UseVisualStyleBackColor = false;
-            this.bttAñadir.Click += new System.EventHandler(this.bttAñadir_Click);
-            // 
-            // txtNom_TpArt
-            // 
-            this.txtNom_TpArt.Location = new System.Drawing.Point(125, 111);
-            this.txtNom_TpArt.Name = "txtNom_TpArt";
-            this.txtNom_TpArt.ShortcutsEnabled = false;
-            this.txtNom_TpArt.Size = new System.Drawing.Size(100, 20);
-            this.txtNom_TpArt.TabIndex = 1;
-            this.txtNom_TpArt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNom_TpArt_KeyPress);
-            // 
-            // lblNom_TpArt
-            // 
-            this.lblNom_TpArt.AutoSize = true;
-            this.lblNom_TpArt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNom_TpArt.Location = new System.Drawing.Point(56, 70);
-            this.lblNom_TpArt.Name = "lblNom_TpArt";
-            this.lblNom_TpArt.Size = new System.Drawing.Size(247, 16);
-            this.lblNom_TpArt.TabIndex = 0;
-            this.lblNom_TpArt.Text = "Ingrese un Nuevo Tipo de Artículo:";
-            // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -535,26 +486,35 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "Número de Serie:";
             // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.tabControl1);
+            this.panel1.Controls.Add(this.btnVolver);
+            this.panel1.Location = new System.Drawing.Point(0, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(377, 394);
+            this.panel1.TabIndex = 8;
+            // 
             // Mantenimiento_Articulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(372, 391);
-            this.Controls.Add(this.btnVolver);
-            this.Controls.Add(this.tabControl1);
+            this.ClientSize = new System.Drawing.Size(389, 418);
+            this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.Name = "Mantenimiento_Articulos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenimiento de Artículos";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Tipo_Art_Mantenimiento_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -570,12 +530,8 @@
         private System.Windows.Forms.Label Num_Reci_lbl;
         private System.Windows.Forms.Label Num_Se_lbl;
         private System.Windows.Forms.Button bttActualizar;
-        private System.Windows.Forms.Button bttAñadir;
-        private System.Windows.Forms.TextBox txtNom_TpArt;
-        private System.Windows.Forms.Label lblNom_TpArt;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnConsultaTipo;
         private System.Windows.Forms.TabPage tabPage3;
@@ -602,5 +558,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtMarca2;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel panel1;
     }
 }

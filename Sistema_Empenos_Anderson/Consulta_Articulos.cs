@@ -44,9 +44,23 @@ namespace Sistema_Empenos_Anderson
         private void bttBuscar_Click(object sender, EventArgs e)
         {
             if (rbRecibo.Checked)
+            {
+                if (txtCod.Text == "")
+                {
+                    MessageBox.Show("Error, campo vacio", "Error");
+                }
+                else
                 dtgConsultaArticulo.DataSource = BD.CargarArticulo(int.Parse(txtCod.Text));
+            }
             if (rbCliente.Checked)
+            {
+                if (txtCodCliente.MaskFull == false)
+                {
+                    MessageBox.Show("Error, campo vacio", "Error");
+                }
+                else
                 dtgConsultaArticulo.DataSource = BD.Cargar_Cliente(txtCodCliente.Text);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -58,7 +72,7 @@ namespace Sistema_Empenos_Anderson
 
         private void dtgConsultaArticulo_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            articulo.NumeroSerie = dtgConsultaArticulo.Rows[e.RowIndex].Cells["Numero_Serie_Articulo"].Value.ToString();
+            /*articulo.NumeroSerie = dtgConsultaArticulo.Rows[e.RowIndex].Cells["Numero_Serie_Articulo"].Value.ToString();
             articulo.Tipo = dtgConsultaArticulo.Rows[e.RowIndex].Cells["Tipo Articulo"].Value.ToString();
             articulo.Marca = dtgConsultaArticulo.Rows[e.RowIndex].Cells["Marca"].Value.ToString();
             articulo.Modelo = dtgConsultaArticulo.Rows[e.RowIndex].Cells["Modelo"].Value.ToString();
@@ -67,8 +81,9 @@ namespace Sistema_Empenos_Anderson
             articulo.Estado = dtgConsultaArticulo.Rows[e.RowIndex].Cells["Estado"].Value.ToString();
             articulo.Descripcion = dtgConsultaArticulo.Rows[e.RowIndex].Cells["Descripcion_Articulo"].Value.ToString();
             articulo.Meses = int.Parse(dtgConsultaArticulo.Rows[e.RowIndex].Cells["Cuotas_Meses"].Value.ToString());
-            Objetos_Globales.articulo = articulo;
+            Objetos_Globales.articulo = articulo;*/
         }
+
 
         private void btnCerrarConsulta_Click(object sender, EventArgs e)
         {

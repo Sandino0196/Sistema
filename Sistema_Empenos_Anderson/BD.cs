@@ -146,6 +146,26 @@ namespace Sistema_Empenos_Anderson
             }
         }
 
+        public static DataTable CargarArticulos(int codigo)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                OpenConnection();
+                SqlCommand cmd = new SqlCommand("Select  * from[dbo].[F_Inventario](" + codigo + ") ", BD.connection);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
+                CloseConnection();
+                return dt;
+            }
+            catch
+            {
+                CloseConnection();
+                return dt;
+            }
+        }
+
         public static DataTable CargarTipoArticulos()
         {
             DataTable dt = new DataTable();
@@ -808,8 +828,19 @@ namespace Sistema_Empenos_Anderson
             command.Parameters.Add(new SqlParameter("@Recibo", recibo));
             command.Parameters.Add(new SqlParameter("@Numero", numero));
             command.Parameters.Add(new SqlParameter("@Fecha", fecha));
-        }
 
+            try
+            {
+                command.ExecuteNonQuery();
+                CloseConnection();
+            }
+            catch (SqlException e)
+            {
+                MessageBoxTemporal.Show(e.Message, "Mensaje Imporante", 3, false);
+
+                CloseConnection();
+            }
+        }
         #endregion
 
         #region Cambio de datos
@@ -826,7 +857,7 @@ namespace Sistema_Empenos_Anderson
             command.Parameters.Add(new SqlParameter("@Usuario", usuario));
             command.Parameters.Add(new SqlParameter("@Password", password));
             command.Parameters.Add(new SqlParameter("@Respuesta1", respuesta1));
-            command.Parameters.Add(new SqlParameter("@@Respuesta2", respuesta2));
+            command.Parameters.Add(new SqlParameter("@Respuesta2", respuesta2));
 
             try
             {

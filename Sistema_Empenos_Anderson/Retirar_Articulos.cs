@@ -33,9 +33,14 @@ namespace Sistema_Empenos_Anderson
             btnRetirar.Enabled = false;
         }
 
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if(BD.Busqueda_Articulo(int.Parse(txtRecibo.Text), txtSerie.Text) > 0)
+            if (txtRecibo.Text == "" || txtSerie.Text == "")
+            {
+                MessageBoxTemporal.Show("Error no deje los campos vacios","Error",2,false);
+            } else
+            if(BD.Busqueda_Articulo(int.Parse(txtRecibo.Text), txtSerie.Text) > 0 && Objetos_Mantenimiento.articuloMantenimiento.Estado != "Retirado")
             {
                 dtgvInfo.Rows[0].Cells[0].Value = Objetos_Mantenimiento.articuloMantenimiento.Descripcion;
                 dtgvInfo.Rows[0].Cells[1].Value = Objetos_Mantenimiento.articuloMantenimiento.Marca;
@@ -45,12 +50,17 @@ namespace Sistema_Empenos_Anderson
             }
             else
             {
-                MessageBoxTemporal.Show("No se encontro el Articulo","Error",2,false);
+                MessageBoxTemporal.Show("No se encontro el Articulo o ya fue retirado","Error",2,false);
             }
         }
 
         private void btnRetirar_Click(object sender, EventArgs e)
         {
+            if (txtRetiro.Text == "" || txtMontoPagado.Text == "")
+            {
+                MessageBoxTemporal.Show("Error no deje los campos vacios", "Error", 2, false);
+            }
+            else
             if (BD.Busqueda_Retiro(int.Parse(txtRetiro.Text)) == 0)
             {
                 if (Double.Parse(txtMontoPagado.Text) < Objetos_Mantenimiento.articuloMantenimiento.PrecioPago(Objetos_Mantenimiento.articuloMantenimiento.Meses) || txtMontoPagado.Text == null)
@@ -63,7 +73,13 @@ namespace Sistema_Empenos_Anderson
                     BD.Actualizar_Estado_Articulo(txtSerie.Text, int.Parse(txtRecibo.Text), 4, "Articulo");
                     cambio = double.Parse(txtMontoPagado.Text) - Objetos_Mantenimiento.articuloMantenimiento.PrecioPago(Objetos_Mantenimiento.articuloMantenimiento.Meses);
                     MessageBoxTemporal.Show("El articulo fue retirado con exito\nCambio:" + cambio, "Informacion", 2, false);
-                    BD.Ingreso_Retiro(int.Parse(txtRetiro.Text), Objetos_Globales.identidadTemporal, int.Parse(txtRecibo.Text), txtSerie.Text, Objetos_Globales.fechaHoyCorta());
+                    try {
+                        BD.Ingreso_Retiro(int.Parse(txtRetiro.Text), Objetos_Globales.identidadTemporal, int.Parse(txtRecibo.Text), txtSerie.Text, Objetos_Globales.fechaHoyCorta());
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
                     this.Close();
                 }
             } else

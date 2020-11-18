@@ -90,10 +90,10 @@
             this.tabCUsuario.Controls.Add(this.tabPage2);
             this.tabCUsuario.Controls.Add(this.tabPage3);
             this.tabCUsuario.Controls.Add(this.tabPage4);
-            this.tabCUsuario.Location = new System.Drawing.Point(13, 12);
+            this.tabCUsuario.Location = new System.Drawing.Point(19, 13);
             this.tabCUsuario.Name = "tabCUsuario";
             this.tabCUsuario.SelectedIndex = 0;
-            this.tabCUsuario.Size = new System.Drawing.Size(451, 333);
+            this.tabCUsuario.Size = new System.Drawing.Size(362, 333);
             this.tabCUsuario.TabIndex = 0;
             // 
             // tabPage1
@@ -109,7 +109,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(443, 307);
+            this.tabPage1.Size = new System.Drawing.Size(354, 307);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Modificar Tipo";
             // 
@@ -577,7 +577,7 @@
             this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnVolver.Location = new System.Drawing.Point(198, 370);
+            this.btnVolver.Location = new System.Drawing.Point(156, 352);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(100, 30);
             this.btnVolver.TabIndex = 6;
@@ -592,7 +592,7 @@
             this.panel1.Controls.Add(this.btnVolver);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(492, 413);
+            this.panel1.Size = new System.Drawing.Size(397, 401);
             this.panel1.TabIndex = 7;
             // 
             // User_Mantenimiento
@@ -600,7 +600,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(523, 437);
+            this.ClientSize = new System.Drawing.Size(421, 425);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.Name = "User_Mantenimiento";

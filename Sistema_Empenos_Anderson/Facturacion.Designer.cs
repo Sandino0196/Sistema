@@ -189,6 +189,7 @@
             // 
             // txtPrecio
             // 
+            this.txtPrecio.Enabled = false;
             this.txtPrecio.Location = new System.Drawing.Point(107, 162);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.ShortcutsEnabled = false;
@@ -286,6 +287,7 @@
             // 
             this.btnAvanzar.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnAvanzar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAvanzar.Enabled = false;
             this.btnAvanzar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAvanzar.ForeColor = System.Drawing.SystemColors.Control;
             this.btnAvanzar.Location = new System.Drawing.Point(563, 460);

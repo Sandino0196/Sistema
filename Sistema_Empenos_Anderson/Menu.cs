@@ -25,7 +25,7 @@ namespace Sistema_Empenos_Anderson
         {
             this.Icon = Properties.Resources.Icons8_Windows_8_Ecommerce_Cash_Register;
             int tamanoL = this.Width / 3;
-            int tamanoR = this.Height / 6;
+            int tamanoR = this.Height / 8;
             panel1.Left = tamanoL;
             panel1.Top = tamanoR;
             this.HelpButton = true;
@@ -99,7 +99,14 @@ namespace Sistema_Empenos_Anderson
         private void Menu_HelpButtonClicked(object sender, System.ComponentModel.CancelEventArgs e)
         {
             string Archivo = "Ayuda.chm";
-            Help.ShowHelp(this, "file://C:\\Users\\oflor\\Source\\Repos\\Sistema\\Sistema_Empenos_Anderson\\Ayuda\\Modulo_de_ayuda_Empeños_Anderson.chm");
+            Help.ShowHelp(this, Application.StartupPath + @"\\Modulo_de_ayuda_Empenos_Anderson.chm");
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            NuevoModulo modulo = new NuevoModulo();
+            modulo.Show();
+            this.Hide();
         }
     }
 }
