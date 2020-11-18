@@ -61,6 +61,7 @@
     <Compile Include="Consulta_Articulos.Designer.cs">
       <DependentUpon>Consulta_Articulos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Jira.cs" />
     <Compile Include="Mantenimiento_Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
