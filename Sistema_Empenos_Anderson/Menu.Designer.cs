@@ -209,6 +209,7 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bienvenido a Empeños Anderson";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.Menu_HelpButtonClicked);
             this.Load += new System.EventHandler(this.Menu_Load);
             this.panel1.ResumeLayout(false);
